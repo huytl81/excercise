@@ -1,0 +1,7 @@
+D:\MyApp\C#_CanBan\C#_CanBan\bin\Debug\ConsoleApp1.exe.config
+D:\MyApp\C#_CanBan\C#_CanBan\bin\Debug\ConsoleApp1.exe
+D:\MyApp\C#_CanBan\C#_CanBan\bin\Debug\ConsoleApp1.pdb
+D:\MyApp\C#_CanBan\C#_CanBan\obj\Debug\C#_CanBan.csproj.AssemblyReference.cache
+D:\MyApp\C#_CanBan\C#_CanBan\obj\Debug\C#_CanBan.csproj.CoreCompileInputs.cache
+D:\MyApp\C#_CanBan\C#_CanBan\obj\Debug\ConsoleApp1.exe
+D:\MyApp\C#_CanBan\C#_CanBan\obj\Debug\ConsoleApp1.pdb
