@@ -1,2 +1,2 @@
-# MyApp
-Razor Page &amp; MVC
+# My App
+RazorPage/MVC & Python
