@@ -13,6 +13,6 @@ namespace MVCMovie.Data
         {
         }
 
-        public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<Movie> Movies { get; set; } = default!;
     }
 }
