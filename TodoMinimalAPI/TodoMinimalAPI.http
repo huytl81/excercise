@@ -1,0 +1,36 @@
+﻿@TodoMinimalAPI_HostAddress = https://localhost:7141
+
+POST {{TodoMinimalAPI_HostAddress}}/todoitems
+Content-Type: application/json
+
+    {
+        "name": "feed cat",
+        "isComplete": true
+    }
+
+###
+
+
+GET {{TodoMinimalAPI_HostAddress}}/todoitems
+
+###
+
+GET {{TodoMinimalAPI_HostAddress}}/todoitems/1
+
+###
+
+GET {{TodoMinimalAPI_HostAddress}}/todoitems/complete
+
+###
+
+GET {{TodoMinimalAPI_HostAddress}}/todoitems/complete
+
+###
+
+PUT {{TodoMinimalAPI_HostAddress}}/todoitems/1
+Content-Type: application/json
+
+{
+  "isComplete": false
+}
+###

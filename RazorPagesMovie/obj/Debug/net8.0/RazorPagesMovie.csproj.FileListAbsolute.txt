@@ -502,3 +502,4 @@ D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\refint\RazorPagesMovie.dll
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.pdb
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.genruntimeconfig.cache
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\ref\RazorPagesMovie.dll
+d:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.sourcelink.json

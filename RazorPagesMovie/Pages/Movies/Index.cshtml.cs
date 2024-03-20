@@ -68,6 +68,7 @@ namespace RazorPagesMovie.Pages.Movies
                 select m.Genre;
 
             var movies = from m in _context.Movie select m;
+            //var movies = _context.Movie.ToListAsync();
 
             if (!string.IsNullOrEmpty(SearchString))
             {
