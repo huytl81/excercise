@@ -34,3 +34,11 @@ Content-Type: application/json
   "isComplete": false
 }
 ###
+
+GET {{TodoMinimalAPI_HostAddress}}/hello
+
+###
+
+GET {{TodoMinimalAPI_HostAddress}}/hello
+
+###

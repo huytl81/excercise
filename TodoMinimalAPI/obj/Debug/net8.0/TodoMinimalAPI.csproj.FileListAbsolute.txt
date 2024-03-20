@@ -31,3 +31,11 @@ D:\MyApp\TodoMinimalAPI\obj\Debug\net8.0\refint\TodoMinimalAPI.dll
 D:\MyApp\TodoMinimalAPI\obj\Debug\net8.0\TodoMinimalAPI.pdb
 D:\MyApp\TodoMinimalAPI\obj\Debug\net8.0\TodoMinimalAPI.genruntimeconfig.cache
 D:\MyApp\TodoMinimalAPI\obj\Debug\net8.0\ref\TodoMinimalAPI.dll
+D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

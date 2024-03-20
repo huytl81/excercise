@@ -1,11 +1,30 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using TodoMinimalAPI.Data;
 using TodoMinimalAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+// Requires Microsoft.AspNetCore.Authentication.JwtBearer
+//builder.Services.AddAuthentication("LocalAuthIssuer").AddJwtBearer();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options => builder.Configuration.Bind("LocalAuthIssuer", options))
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => builder.Configuration.Bind("CookieSettings", options));
+
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("admin_greetings", policy => policy
+            .RequireRole("admin")
+            .RequireClaim("scope", "greetings_api"));
+builder.Services.AddAuthorization();
+
 builder.Services.AddDbContext<TodoContext>(option => option.UseInMemoryDatabase("TodoList"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
 var app = builder.Build();
+
+app.MapGet("/hello", () => "Hello world!").RequireAuthorization("admin_greetings");
+
 
 var todoItems = app.MapGroup("/todoitems");
 
