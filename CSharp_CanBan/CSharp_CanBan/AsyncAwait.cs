@@ -83,7 +83,7 @@ namespace CSharp_CanBan
 
     class AsyncAwait
     {
-        static void Main()
+        static void Maina()
         {
             Task task = new Task(CallMethod);
             task.Start();

@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TodoJavaScriptAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TodoJavaScriptAPI.props",
+      "PackagePath": "build\\TodoJavaScriptAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TodoJavaScriptAPI.props",
+      "PackagePath": "buildMultiTargeting\\TodoJavaScriptAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TodoJavaScriptAPI.props",
+      "PackagePath": "buildTransitive\\TodoJavaScriptAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

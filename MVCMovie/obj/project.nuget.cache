@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "WzPu/rD4X+oXGxgfIO9Ex4CqIDtodw/N6Gq5xMMCihNVxmnQxAaLT9IsV1KpHSuSdVtCnddKzHfgLuHh52hB4w==",
+  "dgSpecHash": "9IOFlr7CQhKLVs3BaVLloW3iZ1/wAVeajBtRjCnVbwuppF8/Ga8ZB2G72dqDNCYhKhrNTzJ/9nLQWanosTJLJw==",
   "success": true,
   "projectFilePath": "D:\\MyApp\\MVCMovie\\MVCMovie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\taleh\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\taleh\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -80,6 +81,7 @@
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.3\\microsoft.entityframeworkcore.abstractions.8.0.3.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.3\\microsoft.entityframeworkcore.analyzers.8.0.3.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.3\\microsoft.entityframeworkcore.design.8.0.3.nupkg.sha512",
+    "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\8.0.3\\microsoft.entityframeworkcore.proxies.8.0.3.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.3\\microsoft.entityframeworkcore.relational.8.0.3.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.3\\microsoft.entityframeworkcore.sqlserver.8.0.3.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.3\\microsoft.entityframeworkcore.tools.8.0.3.nupkg.sha512",

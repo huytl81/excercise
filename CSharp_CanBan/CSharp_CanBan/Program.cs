@@ -19,67 +19,201 @@ namespace Program
         static int _firstNumber = 5;
         static int _secondNumber = 10;
 
-        struct Student
+        static void Main(string[] args)
         {
-            public int MaSo;
-            public string HoTen;
-            public double DiemToan;
-            public double DiemLy;
-            public double DiemVan;
-        }
-        static void PrintSomeThing(string name, object obj)
-        {
-            // in ra màn hình tên và tuổi được truyền vào
-            Console.WriteLine("This is {0}, {1}", name, obj);
-        }
+            int myvalue = 10;
+            object obj = myvalue;
+            int newvalue = 0;
+            if (obj is int)
+            {
+                newvalue = (int)obj;
+            }
 
-        static void IncreaseValueRef(ref int value)
-        {
-            value++;
-        }
+            dynamic str = "13";
+            int? mystr = str as int?;
 
-        static void IncreaseValueOut(out int value)
-        {
-            value = 0;
-            value++;
-        }
+            
+            Console.WriteLine("My object is: {0}", obj);
+            Console.WriteLine("My newvalue is: {0}", newvalue);
+            Console.WriteLine("My dynamic is: {0}", str++);
 
-        /// <summary>
-        /// hàm trả ra kết quả tổng của 2 số firstNumber và secondNumber
-        /// </summary>
-        /// <returns></returns>
-        static int SumTwoNumber()
-        {
-            return _firstNumber + _secondNumber;
-        }
+            int refvalue = 5;
+            int outvalue;
+            Console.WriteLine("Value ref-out before increase: {0}", refvalue);
+            //IncreaseValueRef(ref refvalue);
+            IncreaseValueOut(out outvalue);
+            Console.WriteLine("Value ref-out after increase: {0}", outvalue);
+            Console.ReadKey();
 
-        static void GetCurrentDay(out int currday, out int currmonth, out int curryear)
-        {
-            currday = 0;
-            currmonth = 0;
-            curryear   = 0;
+            // Array 
+            int[] intArryaInts = new Int32[] { 1, 2, 3 };
+            Console.WriteLine(intArryaInts[1]);
 
-            DateTime now = DateTime.Now; // lấy ngày giờ hiện tại của hệ thống.
-            /* Sử dụng Constructor của Tuple<> để trả về hoặc có thể sử dụng phương thức Create đã trình bày ở trên. */
-            currday = now.Day;
-            currmonth = now.Month;
-            curryear = now.Year;
-        }
+            string[] strArray = new string[5];
+            strArray = new[] { "A", "B", "C","D" };
+            Console.WriteLine(strArray[3]);
 
-        /// <summary>
-        /// Phương thức trả về 1 Tuple có 3 thuộc tính (cả 3 đều có kiểu dữ liệu là int)
-        /// </summary>
-        /// <returns></returns>
+            string[] arrnames = new[] { "Huy", "Binh", "Ha", "Xuyen" };
+            Console.WriteLine(arrnames[3]);
 
-        static Tuple<int, int, int> GetCurrentDayMonthYear()
-        {
-            DateTime now = DateTime.Now; // lấy ngày giờ hiện tại của hệ thống.
-            /* Sử dụng Constructor của Tuple<> để trả về hoặc có thể sử dụng phương thức Create đã trình bày ở trên. */
-            return new Tuple<int, int, int>(now.Day, now.Month, now.Year);
-        }
+            // Array 2 directions
+            string[,] arrStrings = new string[2, 3] { { "Huy", "42", "10" }, { "Ha", "42", "9" } };
+            Console.WriteLine(arrStrings[1,0]);
 
-        static void Main1(string[] args)
-        {
+            // Khai báo, cấp phát và khởi tạo mảng 3 chiều kiểu int và tên là Mang3Chieu
+            int[,,] Mang3Chieu = new int[,,]
+            {
+                {
+                    {1, 2, 3},
+                    {4, 5, 6}
+                },
+                {
+                    {7, 8, 9},
+                    {10, 11, 12}
+                },
+                {
+                    {12, 18, 19},
+                    {110, 111, 112}
+                }
+                ,
+                {
+                    {212, 218, 219},
+                    {210, 111, 112}
+                }
+            };
+            /*
+            * Truy xuất đến phần tử có các chỉ số lần lượt là 1 1 2
+            */
+            Console.WriteLine(Mang3Chieu[2, 1, 2]);
+
+            //jagged array
+            int[][] jInts = new int[][] {
+                new int[] {1, 2, 3},
+                new int[] {6, 7, 8}
+            };
+            Console.WriteLine(jInts[0][2]);
+
+            // Mảng Can chứa các giá trị can tương ứng theo bảng can
+            string[] arrCan = { "Canh", "Tan", "Nham", "Quy", "Giap", "At", "Binh", "Dinh", "Mau", "Ky" };
+
+            // Mảng Chi chứa các giá trị chi tương ứng theo bảng chi
+            string[] arrChi = { "Than", "Dau", "Tuat", "Hoi", "Ty", "Suu", "Dan", "Mao", "Thin", "Ty", "Ngo", "Mui" };
+
+            int Year; // Biến chứa giá trị năm cần tính.
+            bool isYear;
+            string Can = "", Chi = ""; // Biến chứa kết quả.
+
+            Console.Write(" Moi ban nhap mot nam bat ky: ");
+            isYear = Int32.TryParse(Console.ReadLine(), out Year); // Nhập năm dương lịch và ép kiểu về kiểu số nguyên
+
+            if (isYear)
+            {
+                switch (Year % 10) // Tìm Can như thuật toán đã trình bày.
+                {
+                    case 0: // Mỗi case này tương ứng một kết quả cần tra cứu trong bảng tra cứu Can
+                        Can = "Canh"; // Giá trị tương ứng với mỗi case
+                        break;
+                    case 1:
+                        Can = "Tan";
+                        break;
+                    case 2:
+                        Can = "Nham";
+                        break;
+                    case 3:
+                        Can = "Quy";
+                        break;
+                    case 4:
+                        Can = "Giap";
+                        break;
+                    case 5:
+                        Can = "At";
+                        break;
+                    case 6:
+                        Can = "Binh";
+                        break;
+                    case 7:
+                        Can = "Dinh";
+                        break;
+                    case 8:
+                        Can = "Mau";
+                        break;
+                    case 9:
+                        Can = "Ky";
+                        break;
+                }
+
+                switch (Year % 12) // Tìm Chi như thuật toán đã trình bày
+                {
+                    case 0: // Mỗi case này tương ứng một kết quả cần tra cứu trong bảng tra cứu Chi
+                        Chi = "Than"; // Giá trị tương ứng với mỗi case
+                        break;
+                    case 1:
+                        Chi = "Dau";
+                        break;
+                    case 2:
+                        Chi = "Tuat";
+                        break;
+                    case 3:
+                        Chi = "Hoi";
+                        break;
+                    case 4:
+                        Chi = "Ty";
+                        break;
+                    case 5:
+                        Chi = "Suu";
+                        break;
+                    case 6:
+                        Chi = "Dan";
+                        break;
+                    case 7:
+                        Chi = "Mao";
+                        break;
+                    case 8:
+                        Chi = "Thin";
+                        break;
+                    case 9:
+                        Chi = "Ti";
+                        break;
+                    case 10:
+                        Chi = "Ngo";
+                        break;
+                    case 11:
+                        Chi = "Mui";
+                        break;
+                }
+            }
+
+            Console.WriteLine("Nam {0} co nam am lich la: {1} {2}", Year, Can, Chi); // Nối Can và Chi lại để được năm âm lịch
+            Console.WriteLine($"Nam {Year} co nam am lich la: {arrCan[Year%10]} {arrChi[Year % 12]}"); // Nối Can và Chi lại để được năm âm lịch
+
+            Student sv = new Student();
+            Console.WriteLine("Nhap thong tin sinh vien:");
+            NhapThongTinSinhVien(out sv);
+            Console.WriteLine("Thong tin sinh vien vua nhap:");
+            XuatThongTinSinhVien(sv);
+            Console.WriteLine("Diem trung binh cua sinh vien vua nhap: {0}", DiemTrungBinh(sv));
+
+            // Regular Expression example
+            Regex reg = new Regex(@"(?<times>(\d|:)+)\s" + @"(?<company>\S+)\s" + @"(?<ip>(\d|\.)+)\s" + @"(?<company>\S+)\s" + @"(?<company>\S+)");
+            foreach (Match item in reg.Matches("10:30:15 IBM 192.168.1.2 INTEL APPLE"))
+            {
+                Console.WriteLine(" time: " + item.Groups["times"]);
+                Console.WriteLine(" ip: " + item.Groups["ip"]);
+                Console.Write(" company: ");
+                /*
+                    Lấy ra tất cả các capture bắt được trong group company và duyệt lần lượt chúng
+                 * Sau đó ta có thể sử dụng hàm ToString() hoặc thuộc tính Value để lấy giá trị của Capture
+                 */
+                foreach (Capture i in item.Groups["company"].Captures)
+                {
+                    Console.Write(i.ToString() + " ");
+                }
+
+            }
+
+            Console.ReadKey();
+            // ==================================== END BASIC ========================================================//
+
             int d, m, y = 0;
             var myCurrent = GetCurrentDayMonthYear();
             GetCurrentDay(out d,out m,out y);
@@ -185,7 +319,7 @@ namespace Program
             dog.Speak();
 
             /* In ra màn hình giá trị của thuộc tính màu chủ đạo */
-            Console.WriteLine(" Mau chu dao cua hom nay: " + MauSac.MauChuDao);
+            Console.WriteLine(" Mau chu dao cua hom nay: " + Color.MauChuDao);
 
             /*
                 Khởi tạo 2 đối tượng thuộc lớp Animal là:
@@ -205,48 +339,6 @@ namespace Program
             Dog.Info(typeof(Dog)); // gọi phương thức của đối tượng
 
             Cat.Info(typeof(Cat));
-
-            int value = 5;
-            Console.WriteLine("Value before increase: {0}", value);
-            //IncreaseValueRef(ref value);
-            IncreaseValueOut(out value);
-            Console.WriteLine("Value after increase: {0}", value);
-            Console.ReadKey();
-
-            // Regular Expression example
-            Regex RE = new Regex(@"(?<times>(\d|:)+)\s" + @"(?<company>\S+)\s" + @"(?<ip>(\d|\.)+)\s" + @"(?<company>\S+)");
-            foreach (Match item in RE.Matches("10:30:15 IBM 192.168.1.2 INTEL"))
-            {
-                Console.WriteLine(" time: " + item.Groups["times"]);
-                Console.WriteLine(" ip: " + item.Groups["ip"]);
-                Console.Write(" company: ");
-                /*
-                    Lấy ra tất cả các capture bắt được trong group company và duyệt lần lượt chúng
-                 * Sau đó ta có thể sử dụng hàm ToString() hoặc thuộc tính Value để lấy giá trị của Capture
-                 */
-                foreach (Capture i in item.Groups["company"].Captures)
-                {
-                    Console.Write(i.ToString() + " ");
-                }
-
-            }
-            
-            // Array 
-            int[] intArryaInts = new Int32[] {1, 2, 3 };
-            string[] strArray = new string[5];
-            string[] arrnames = new[] { "Huy", "Binh", "Ha", "Xuyen" };
-
-            // Array 2 directions
-            string[,] arrStrings = new string[2, 3] { {"Huy", "42", "10"}, { "Ha", "42", "9" } };
-
-            //jagged array
-            int[][] jInts = new int[][] {
-                new int[] {1, 2, 3},
-                new int[] {4, 5, 6, 7, 8, 9}
-            };
-
-            PrintSomeThing("ABC", 22);
-            PrintSomeThing("XYZ", 'H');
 
             Console.WriteLine(SumTwoNumber());
             Console.ReadKey();
@@ -298,99 +390,6 @@ namespace Program
             }
             Console.ReadKey();
 
-            int Year; // Biến chứa giá trị năm cần tính.
-            bool isYear;
-            string Can = "", Chi = ""; // Biến chứa kết quả.
-
-            // Mảng Can chứa các giá trị can tương ứng theo bảng can
-            //string[] arrCan = { "Canh", "Tan", "Nham", "Quy", "Giap", "At", "Binh", "Dinh", "Mau", "Ky" };
-
-            // Mảng Chi chứa các giá trị chi tương ứng theo bảng chi
-            //string[] arrChi = { "Than", "Dau", "Tuat", "Hoi", "Ty", "Suu", "Dan", "Meo", "Thin", "Ty", "Ngo", "Mui" };
-
-
-            Console.Write(" Moi ban nhap mot nam bat ky: ");
-            isYear = Int32.TryParse(Console.ReadLine(), out Year); // Nhập năm dương lịch và ép kiểu về kiểu số nguyên
-            if (isYear)
-            {
-                switch (Year % 10) // Tìm Can như thuật toán đã trình bày.
-                {
-                    case 0: // Mỗi case này tương ứng một kết quả cần tra cứu trong bảng tra cứu Can
-                        Can = "Canh"; // Giá trị tương ứng với mỗi case
-                        break;
-                    case 1:
-                        Can = "Tan";
-                        break;
-                    case 2:
-                        Can = "Nham";
-                        break;
-                    case 3:
-                        Can = "Quy";
-                        break;
-                    case 4:
-                        Can = "Giap";
-                        break;
-                    case 5:
-                        Can = "At";
-                        break;
-                    case 6:
-                        Can = "Binh";
-                        break;
-                    case 7:
-                        Can = "Dinh";
-                        break;
-                    case 8:
-                        Can = "Mau";
-                        break;
-                    case 9:
-                        Can = "Ky";
-                        break;
-                }
-
-                switch (Year % 12) // Tìm Chi như thuật toán đã trình bày
-                {
-                    case 0: // Mỗi case này tương ứng một kết quả cần tra cứu trong bảng tra cứu Chi
-                        Chi = "Than"; // Giá trị tương ứng với mỗi case
-                        break;
-                    case 1:
-                        Chi = "Dau";
-                        break;
-                    case 2:
-                        Chi = "Tuat";
-                        break;
-                    case 3:
-                        Chi = "Hoi";
-                        break;
-                    case 4:
-                        Chi = "Ty";
-                        break;
-                    case 5:
-                        Chi = "Suu";
-                        break;
-                    case 6:
-                        Chi = "Dan";
-                        break;
-                    case 7:
-                        Chi = "Meo";
-                        break;
-                    case 8:
-                        Chi = "Thin";
-                        break;
-                    case 9:
-                        Chi = "Ti";
-                        break;
-                    case 10:
-                        Chi = "Ngo";
-                        break;
-                    case 11:
-                        Chi = "Mui";
-                        break;
-                }
-            }
-
-
-            Console.WriteLine("Nam {0} co nam am lich la: {1} {2}", Year, Can, Chi); // Nối Can và Chi lại để được năm âm lịch
-
             Console.ReadLine();
 
             Console.Write("Enter your name:");
@@ -416,6 +415,84 @@ namespace Program
 
 
             Console.ReadKey();
+        }
+
+        static void IncreaseValueRef(ref int refvalue)
+        {
+            refvalue++;
+        }
+
+        static void IncreaseValueOut(out int outvalue)
+        {
+            outvalue = 0;
+            outvalue++;
+        }
+
+        /// <summary>
+        /// hàm trả ra kết quả tổng của 2 số firstNumber và secondNumber
+        /// </summary>
+        /// <returns></returns>
+        static int SumTwoNumber()
+        {
+            return _firstNumber + _secondNumber;
+        }
+
+        static void GetCurrentDay(out int currday, out int currmonth, out int curryear)
+        {
+            currday = 0;
+            currmonth = 0;
+            curryear = 0;
+
+            DateTime now = DateTime.Now; // lấy ngày giờ hiện tại của hệ thống.
+            /* Sử dụng Constructor của Tuple<> để trả về hoặc có thể sử dụng phương thức Create đã trình bày ở trên. */
+            currday = now.Day;
+            currmonth = now.Month;
+            curryear = now.Year;
+        }
+
+        /// <summary>
+        /// Phương thức trả về 1 Tuple có 3 thuộc tính (cả 3 đều có kiểu dữ liệu là int)
+        /// </summary>
+        /// <returns>
+        /// Huy Ta - Tra ve 1 new tuple
+        /// </returns>
+
+        static Tuple<int, int, int> GetCurrentDayMonthYear()
+        {
+            // lấy ngày giờ hiện tại của hệ thống.
+            DateTime now = DateTime.Now;
+            /* Sử dụng Constructor của Tuple<> để trả về hoặc có thể sử dụng phương thức Create đã trình bày ở trên. */
+            return new Tuple<int, int, int>(now.Day, now.Month, now.Year);
+        }
+
+        static void NhapThongTinSinhVien(out Student sv)
+        {
+            Console.WriteLine("=================");
+            Console.Write("Nhap ma so sinh vien:");
+            sv.MaSo = int.Parse(Console.ReadLine() ?? string.Empty);
+            Console.Write("Nhap ho ten sinh vien:");
+            sv.HoTen = Console.ReadLine();
+            Console.Write("Nhap diem toan:");
+            sv.DiemToan = double.Parse(Console.ReadLine() ?? string.Empty);
+            Console.Write("Nhap diem ly:");
+            sv.DiemLy = double.Parse(Console.ReadLine() ?? string.Empty);
+            Console.Write("Nhap diem van:");
+            sv.DiemVan = double.Parse(Console.ReadLine() ?? string.Empty);
+        }
+        static void XuatThongTinSinhVien(Student sv)
+        {
+            Console.WriteLine("=================");
+            Console.WriteLine($"Ma so sinh vien: {sv.MaSo}");
+            Console.WriteLine($"Ho ten sinh vien: {sv.HoTen}");
+            Console.WriteLine($"Diem toan: {sv.DiemToan}");
+            Console.WriteLine($"Diem ly: {sv.DiemLy}");
+            Console.WriteLine($"Diem van: {sv.DiemVan}");
+        }
+
+        static double DiemTrungBinh(Student sv)
+        {
+            var dtb = (sv.DiemToan + sv.DiemLy + sv.DiemVan) / 3;
+            return dtb;
         }
     }
 
@@ -467,13 +544,12 @@ namespace Program
         }
     }
 
-
-    class MauSac
+    static class Color
     {
         /* Giả sử màu chủ đạo là 1 chuỗi ký tự lưu tên màu tương ứng */
         public static string MauChuDao;
         /* Dùng static constructor để kiểm tra ngày hiện tại và khởi tạo giá trị cho biến tĩnh MauChuDao */
-        static MauSac()
+        static Color()
         {
             /* Khai báo đối tượng ngày giờ và lấy ngày giờ hiện tại của hệ thống */
             DateTime now = DateTime.Now;
@@ -542,6 +618,15 @@ namespace Program
         {
             return "Name: " + name + " | Age: " + age;
         }
+    }
+
+    struct Student
+    {
+        public int MaSo;
+        public string HoTen;
+        public double DiemToan;
+        public double DiemLy;
+        public double DiemVan;
     }
 
     public class SortPersons : IComparer

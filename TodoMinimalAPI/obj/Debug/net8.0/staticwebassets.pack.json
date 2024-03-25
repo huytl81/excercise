@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\MyApp\\TodoMinimalAPI\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\MyApp\\TodoMinimalAPI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\MyApp\\TodoMinimalAPI\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TodoMinimalAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TodoMinimalAPI.props",
+      "PackagePath": "build\\TodoMinimalAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TodoMinimalAPI.props",
+      "PackagePath": "buildMultiTargeting\\TodoMinimalAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TodoMinimalAPI.props",
+      "PackagePath": "buildTransitive\\TodoMinimalAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

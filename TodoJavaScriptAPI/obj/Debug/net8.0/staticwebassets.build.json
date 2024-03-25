@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "WmWk08VZfk24sBFe7u6rptaTSwM3lr/aes8uRl7mvb8=",
+  "Source": "TodoJavaScriptAPI",
+  "BasePath": "_content/TodoJavaScriptAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TodoJavaScriptAPI\\wwwroot",
+      "Source": "TodoJavaScriptAPI",
+      "ContentRoot": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\",
+      "BasePath": "_content/TodoJavaScriptAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\css\\site.css",
+      "SourceId": "TodoJavaScriptAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\",
+      "BasePath": "_content/TodoJavaScriptAPI",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\index.html",
+      "SourceId": "TodoJavaScriptAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\",
+      "BasePath": "_content/TodoJavaScriptAPI",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\js\\site.js",
+      "SourceId": "TodoJavaScriptAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MyApp\\TodoJavaScriptAPI\\wwwroot\\",
+      "BasePath": "_content/TodoJavaScriptAPI",
+      "RelativePath": "js/site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ]
+}

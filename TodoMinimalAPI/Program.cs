@@ -23,6 +23,14 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var app = builder.Build();
 
+if (builder.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.MapGet("/hello", () => "Hello world!").RequireAuthorization("admin_greetings");
 
 
