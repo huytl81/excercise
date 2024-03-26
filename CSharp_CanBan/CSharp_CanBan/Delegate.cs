@@ -9,7 +9,7 @@ namespace Delegate
 
         static int ShowString(string stringValue)
         {
-            Console.WriteLine(stringValue);
+            Console.WriteLine("string is " + stringValue);
             return 0;
         }
 
@@ -22,26 +22,26 @@ namespace Delegate
 
             return valueInt;
         }
-        static void NhapVaShowTen(myDelegate showTen)
+        static void NhapVaShowTen(myDelegate delShowName)
         {
             Console.WriteLine("Mời nhập tên của bạn:");
-            string ten = Console.ReadLine();
-            showTen(ten);
+            string name = Console.ReadLine();
+            delShowName(name);
         }
 
-        static void Maind(string[] args)
+        static void MainD(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
-            myDelegate showString = new myDelegate(ShowString);
-            myDelegate delegateconvertToInt = new myDelegate(ConvertStringToInt);
+            myDelegate delshowString = ShowString;
+            var delconvertToInt = new myDelegate(ConvertStringToInt);
 
             //call back function
-            NhapVaShowTen(showString);
+            NhapVaShowTen(delshowString);
 
             string numberSTR = "35";
 
-            int valueConverted = delegateconvertToInt(numberSTR);
+            int valueConverted = delconvertToInt(numberSTR);
 
             Console.WriteLine("Giá trị đã convert thành int: " + valueConverted);
 

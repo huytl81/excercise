@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\MyApp\\CSharp_CanBan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\myapp\\csharp_canban\\csharp_canban\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\myapp\\csharp_canban\\csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Program.cs",
-              "RelativeDocumentMoniker": "CSharp_CanBan\\Program.cs",
-              "ToolTip": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Program.cs",
-              "RelativeToolTip": "CSharp_CanBan\\Program.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAYwCAAAAAlAAAA",
+              "Title": "AsyncAwait.cs",
+              "DocumentMoniker": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\AsyncAwait.cs",
+              "RelativeDocumentMoniker": "CSharp_CanBan\\AsyncAwait.cs",
+              "ToolTip": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\AsyncAwait.cs",
+              "RelativeToolTip": "CSharp_CanBan\\AsyncAwait.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAA4wG4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T01:21:40.491Z",
+              "WhenOpened": "2024-03-26T05:17:04.43Z",
               "EditorCaption": ""
             }
           ]

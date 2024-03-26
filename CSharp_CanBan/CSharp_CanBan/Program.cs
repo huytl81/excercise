@@ -16,10 +16,7 @@ namespace Program
         ///  Cần có từ khóa static vì các hàm sử dụng nó đều có từ khóa static
         /// </summary>
 
-        static int _firstNumber = 5;
-        static int _secondNumber = 10;
-
-        static void Main(string[] args)
+        static void MainP(string[] args)
         {
             int myvalue = 10;
             object obj = myvalue;
@@ -35,7 +32,7 @@ namespace Program
             
             Console.WriteLine("My object is: {0}", obj);
             Console.WriteLine("My newvalue is: {0}", newvalue);
-            Console.WriteLine("My dynamic is: {0}", str++);
+            Console.WriteLine("My dynamic is: {0}", str);
 
             int refvalue = 5;
             int outvalue;
@@ -186,16 +183,19 @@ namespace Program
             Console.WriteLine("Nam {0} co nam am lich la: {1} {2}", Year, Can, Chi); // Nối Can và Chi lại để được năm âm lịch
             Console.WriteLine($"Nam {Year} co nam am lich la: {arrCan[Year%10]} {arrChi[Year % 12]}"); // Nối Can và Chi lại để được năm âm lịch
 
-            Student sv = new Student();
+            Student objStudent = new Student();
             Console.WriteLine("Nhap thong tin sinh vien:");
-            NhapThongTinSinhVien(out sv);
+            NhapThongTinSinhVien(out objStudent);
             Console.WriteLine("Thong tin sinh vien vua nhap:");
-            XuatThongTinSinhVien(sv);
-            Console.WriteLine("Diem trung binh cua sinh vien vua nhap: {0}", DiemTrungBinh(sv));
+            XuatThongTinSinhVien(objStudent);
+            Console.WriteLine("Diem trung binh cua sinh vien vua nhap: {0}", DiemTrungBinh(objStudent));
 
             // Regular Expression example
-            Regex reg = new Regex(@"(?<times>(\d|:)+)\s" + @"(?<company>\S+)\s" + @"(?<ip>(\d|\.)+)\s" + @"(?<company>\S+)\s" + @"(?<company>\S+)");
-            foreach (Match item in reg.Matches("10:30:15 IBM 192.168.1.2 INTEL APPLE"))
+            string strinput = "10:30:15 IBM 192.168.1.2 INTEL APPLE";
+            string strpattern = @"(?<times>(\d|:)+)\s" + @"(?<company>\S+)\s" + @"(?<ip>(\d|\.)+)\s" +
+                                @"(?<company>\S+)\s" + @"(?<company>\S+)";
+            Regex reg = new Regex(strpattern);
+            foreach (Match item in reg.Matches(strinput))
             {
                 Console.WriteLine(" time: " + item.Groups["times"]);
                 Console.WriteLine(" ip: " + item.Groups["ip"]);
@@ -212,76 +212,34 @@ namespace Program
             }
 
             Console.ReadKey();
+
             // ==================================== END BASIC ========================================================//
 
-            int d, m, y = 0;
-            var myCurrent = GetCurrentDayMonthYear();
-            GetCurrentDay(out d,out m,out y);
+            /* In ra màn hình giá trị của thuộc tính màu chủ đạo */
+            Console.WriteLine(" Mau chu dao cua hom nay: " + Color.MauChuDao);
 
-            Console.WriteLine("Day: {0}, Month: {1}, Year: {2}", d, m, y);
-            Console.WriteLine("Day: {0}, Month: {1}, Year: {2}", myCurrent.Item1, myCurrent.Item2, myCurrent.Item3);
+            Cat cat = new Cat();
+            Animal dog = new Dog();
 
-            // Khởi tạo Tuple thông qua phương thức Create
-            var myTuple = Tuple.Create<int, string>(1, "HowKteam");
-            var myTuple2 = new Tuple<int,string>(2, "Hello world");
-
-            Console.WriteLine("ID: {0}, Name: {1}", myTuple.Item1, myTuple.Item2);
-
-            // Tạo 1 Queue rỗng
-            Queue MyQueue4 = new Queue();
-
-            // Thực hiện thêm vài phần tử vào Queue thông qua hàm Enqueue.
-            MyQueue4.Enqueue("HowKteam");
-            MyQueue4.Enqueue("Free");
-            MyQueue4.Enqueue("Education");
-
-            // Thử sử dụng các phương thức của Queue.
-            Console.WriteLine(" So phan tu hien tai cua Queue la: {0}", MyQueue4.Count);
-
-            // Lưu ý ở đây ta chỉ muốn xem giá trị mà không muốn nó khỏi Queue thì ta sẽ dùng Peek.
-            Console.WriteLine(" Phan tu dau cua Queue la: {0}", MyQueue4.Peek());
-
-            // Thử kiểm tra lại số phần tử để chắc chắn rằng hàm Peek không xoá phần tử ra khỏi Queue.
-            Console.WriteLine(" So phan tu cua Queue sau khi goi ham Peek: {0}", MyQueue4.Count);
-
-            // Thực hiện xoá các phần tử ra khỏi Queue thông qua hàm Dequeue.
-            Console.WriteLine(" Popping...");
-            int Length = MyQueue4.Count;
-            for (int i = 0; i < Length; i++)
-            {
-                Console.Write(" " + MyQueue4.Dequeue());
-            }
-            Console.WriteLine();
-
-            // Kiểm tra lại số phần tử của Queue sau khi Pop
-            Console.WriteLine(" So phan tu cua Queue sau khi Pop la: {0}", MyQueue4.Count);
-
-
-            SortedList MySL6 = new SortedList(new SortPersons());
-            MySL6.Add(new Person("HowKteam", 20), 30);
-            MySL6.Add(new Person("Kteam", 2), 15);
-            Console.WriteLine("Danh sach Person dc sap xep: ");
-            foreach (DictionaryEntry item in MySL6)
-            {
-                Console.WriteLine(item.Key + "\t" + item.Value);
-            }
-
-            // Tạo một Hashtable đơn giản với 3 phần tử
-            Hashtable hash = new Hashtable();
-            hash.Add("K", "Kteam");
-            hash.Add("H", "HowKteam");
-            hash.Add("FE", "Free Education");
+            cat.Speak();
+            dog.Speak();
 
             /*
-             * Duyệt qua các phần tử trong Hashtable.
-             * Vì mỗi phần tử là 1 DictionaryEntry nên ta chỉ định kiểu dữ liệu cho item là DictionaryEntry luôn.
-             * Thử in ra màn hình cặp Key - Value của mỗi phần tử được duyệt.
-             */
-            foreach (DictionaryEntry item in hash)
-            {
-                Console.WriteLine(item.Key + "\t" + item.Value);
-            }
+                Khởi tạo 2 đối tượng thuộc lớp Animal là:
+                + Dog có chiều cao 50cm và cân nặng 2kg.
+                + Cat có chiều cao 30cm và cân nặng 1kg.
+            */
+            Animal adog = new Dog();
+            adog.Weight = 2; // gán giá trị cho các thuộc tính của đối tượng
+            adog.Height = 50;
 
+
+            Animal acat = new Cat();
+            acat.Weight = 1;
+            acat.Height = 30;
+
+            adog.Info(typeof(Dog)); // gọi phương thức của đối tượng
+            acat.Info(typeof(Cat));
 
             // Tạo 1 danh sách kiểu ArrayList rỗng
             ArrayList arrPersons = new ArrayList();
@@ -302,7 +260,7 @@ namespace Program
              * Thực hiện sắp xếp danh sách Person theo tiêu chí đã được định nghĩa
              * trong phương thức Compare của lớp SortPerson (tuổi tăng dần).
              */
-            arrPersons.Sort(new SortPersons());
+            arrPersons.Sort(new CompareByAge());
 
             // In danh sách Person đã được sắp xếp ra màn hình.
             Console.WriteLine();
@@ -312,48 +270,119 @@ namespace Program
                 Console.WriteLine(item.ToString());
             }
 
-            Animal cat = new Cat();
-            Animal dog = new Dog();
-
-            cat.Speak();
-            dog.Speak();
-
-            /* In ra màn hình giá trị của thuộc tính màu chủ đạo */
-            Console.WriteLine(" Mau chu dao cua hom nay: " + Color.MauChuDao);
+            // Tạo một Hashtable đơn giản với 3 phần tử
+            Hashtable myhash = new Hashtable();
+            myhash.Add("K", 333);
+            myhash.Add("H", 444);
+            myhash.Add("FE", 555);
 
             /*
-                Khởi tạo 2 đối tượng thuộc lớp Animal là:
-                + Dog có chiều cao 50cm và cân nặng 2kg.
-                + Cat có chiều cao 30cm và cân nặng 1kg.
-            */
-            Animal Dog = new Dog();
-            Dog.Weight = 2; // gán giá trị cho các thuộc tính của đối tượng
-            Dog.Height = 50;
+             * Duyệt qua các phần tử trong Hashtable.
+             * Vì mỗi phần tử là 1 DictionaryEntry nên ta chỉ định kiểu dữ liệu cho item là DictionaryEntry luôn.
+             * Thử in ra màn hình cặp Key - Value của mỗi phần tử được duyệt.
+             */
+            foreach (DictionaryEntry item in myhash)
+            {
+                Console.WriteLine(item.Key + "\t" + item.Value);
+            }
+
+            SortedList mySortedList = new SortedList(new CompareByAge());
+            mySortedList.Add(new Person("HowKteam", 20), 30);
+            mySortedList.Add(new Person("Kteam", 2), 15);
+            Console.WriteLine("Danh sach Person dc sap xep: ");
+            foreach (DictionaryEntry item in mySortedList)
+            {
+                Console.WriteLine(item.Key + "\t" + item.Value);
+            }
+
+            // Tạo 1 Stack rỗng
+            Stack myStack = new Stack();
+
+            // Thực hiện thêm vài phần tử vào Stack thông qua hàm Push.
+            myStack.Push("Education");
+            myStack.Push("Free");
+            myStack.Push("HowKteam");
+
+            // Thử sử dụng các phương thức của Stack.
+            Console.WriteLine(" So phan tu hien tai cua Stack la: {0}", myStack.Count);
+
+            // Lưu ý ở đây ta chỉ muốn xem giá trị mà không muốn nó khỏi Stack thì ta sẽ dùng Peek.
+            Console.WriteLine(" Phan tu dau cua Stack la: {0}", myStack.Peek());
+
+            // Thử kiểm tra lại số phần tử để chắc chắn rằng hàm Peek không xoá phần tử ra khỏi Stack.
+            Console.WriteLine(" So phan tu cua Stack sau khi goi ham Peek: {0}", myStack.Count);
+
+            // Thực hiện xoá các phần tử ra khỏi Stack.
+            Console.WriteLine(" Popping...");
+            int Length = myStack.Count;
+            for (int i = 0; i < Length; i++)
+            {
+                Console.Write(" " + myStack.Pop());
+            }
+            Console.WriteLine();
+
+            // Kiểm tra lại số phần tử của Stack sau khi Pop
+            Console.WriteLine(" So phan tu cua Stack sau khi Pop la: {0}", myStack.Count);
 
 
-            Animal Cat = new Cat();
-            Cat.Weight = 1;
-            Cat.Height = 30;
+            // Tạo 1 Queue rỗng
+            Queue myqueseQueue = new Queue();
 
+            // Thực hiện thêm vài phần tử vào Queue thông qua hàm Enqueue.
+            myqueseQueue.Enqueue("HowKteam");
+            myqueseQueue.Enqueue("Free");
+            myqueseQueue.Enqueue("Education");
 
-            Dog.Info(typeof(Dog)); // gọi phương thức của đối tượng
+            // Thử sử dụng các phương thức của Queue.
+            Console.WriteLine(" So phan tu hien tai cua Queue la: {0}", myqueseQueue.Count);
 
-            Cat.Info(typeof(Cat));
+            // Lưu ý ở đây ta chỉ muốn xem giá trị mà không muốn nó khỏi Queue thì ta sẽ dùng Peek.
+            Console.WriteLine(" Phan tu dau cua Queue la: {0}", myqueseQueue.Peek());
 
-            Console.WriteLine(SumTwoNumber());
-            Console.ReadKey();
+            // Thử kiểm tra lại số phần tử để chắc chắn rằng hàm Peek không xoá phần tử ra khỏi Queue.
+            Console.WriteLine(" So phan tu cua Queue sau khi goi ham Peek: {0}", myqueseQueue.Count);
 
-            // Kiểu số thực
-            float bienFloat = 9.9f; // Giá trị của biến kiểu float phải có hậu tố f hoặc F. 
-            double bienDouble = 10.9; // Giá trị của biến kiểu double không cần hậu tố.
-            decimal bienDecimal = 11.9m; // Giá trị của biến kiểu decimal phải có hậu tố m.
+            // Thực hiện xoá các phần tử ra khỏi Queue thông qua hàm Dequeue.
+            Console.WriteLine(" Popping...");
+            int queuelength = myqueseQueue.Count;
+            for (int i = 0; i < queuelength; i++)
+            {
+                Console.Write(" " + myqueseQueue.Dequeue());
+            }
+            Console.WriteLine();
 
-            string name, age, address;
+            // Kiểm tra lại số phần tử của Queue sau khi Pop
+            Console.WriteLine(" So phan tu cua Queue sau khi Pop la: {0}", myqueseQueue.Count);
 
-            Console.WriteLine(bienFloat);
-            Console.WriteLine(bienDouble);
-            Console.WriteLine(bienDecimal);
+            // Tạo 1 Dictionary đơn giản và thêm vào 3 phần tử.
+            Dictionary<Person, Student> mydic = new Dictionary<Person, Student>();
+            mydic.Add(new Person("Nguyen Van A", 18), new Student("Huy", 9.5, 6.9,9.6));
+            mydic.Add(new Person("Nguyen Van B", 19), new Student("Ha", 9.5, 6.9, 9.6));
+            mydic.Add(new Person("Nguyen Van C", 20), new Student("Sen", 9.5, 6.9, 9.6));
 
+            /*
+             * Duyệt qua các phần tử trong Dictionary.
+             * Vì mỗi phần tử là 1 KeyValuePair nên ta chỉ định kiểu dữ liệu cho item là KeyValuePair luôn.
+             * Thử in ra màn hình cặp Key - Value của mỗi phần tử được duyệt.
+             */
+            foreach (KeyValuePair<Person, Student> item in mydic)
+            {
+                Console.WriteLine(item.Key + "\t" + item.Value);
+            }
+
+            // Khởi tạo Tuple thông qua phương thức Create
+            var myTuple = Tuple.Create<int, string>(1, "HowKteam");
+            var myTuple2 = new Tuple<int, string>(2, "Hello world");
+
+            Console.WriteLine("ID: {0}, Name: {1}", myTuple.Item1, myTuple.Item2);
+            Console.WriteLine("ID: {0}, Name: {1}", myTuple2.Item1, myTuple2.Item2);
+            int d, m, y = 0;
+            var myCurrent = GetCurrentDayMonthYear();
+            GetCurrentDay(out d,out m,out y);
+
+            Console.WriteLine("Day: {0}, Month: {1}, Year: {2}", d, m, y);
+            Console.WriteLine("Day: {0}, Month: {1}, Year: {2}", myCurrent.Item1, myCurrent.Item2, myCurrent.Item3);
+            
             int N = 10;
             int M = 20;
 
@@ -390,31 +419,9 @@ namespace Program
             }
             Console.ReadKey();
 
-            Console.ReadLine();
-
-            Console.Write("Enter your name:");
-            name = Console.ReadLine();
-            Console.WriteLine("HowKteam.com hello: {0}", name);
-            Console.Write("Enter your age:");
-            age = Console.ReadLine();
-            Console.Write("Enter your address:");
-            address = Console.ReadLine();
-            Console.WriteLine("Your name is {0}, {1} years old, live in {2}", name, age, address);
-
             Console.WriteLine(sizeof(float));
             Console.WriteLine(typeof(string));
-
-            string strInt;
-            int intNum;
-            string result;
-            Console.Write("Enter integer number:");
-            strInt = Console.ReadLine();
-            intNum = Int32.Parse(strInt);
-            result = (intNum % 2 == 0) ? "even" : "odd";
-            Console.WriteLine("{0} is {1}", strInt, result);
-
-
-            Console.ReadKey();
+            //Console.WriteLine(nameof("string"));
         }
 
         static void IncreaseValueRef(ref int refvalue)
@@ -426,15 +433,6 @@ namespace Program
         {
             outvalue = 0;
             outvalue++;
-        }
-
-        /// <summary>
-        /// hàm trả ra kết quả tổng của 2 số firstNumber và secondNumber
-        /// </summary>
-        /// <returns></returns>
-        static int SumTwoNumber()
-        {
-            return _firstNumber + _secondNumber;
         }
 
         static void GetCurrentDay(out int currday, out int currmonth, out int curryear)
@@ -501,6 +499,7 @@ namespace Program
 
         public double Weight;
         public double Height;
+        public int Legs;
 
         //public virtual void Speak()
         //{
@@ -508,6 +507,7 @@ namespace Program
         //}
 
         public abstract void Speak();
+        
 
         public void Info(object animal)
         {
@@ -516,14 +516,20 @@ namespace Program
                 Các phương thức bên trong lớp có thể gọi đến các thành phần khác (bao gồm thuộc tính và phương thức) trong lớp đó.
                 Giá trị của các thuộc tính này có thể được khởi tạo đâu đó trong lớp hoặc từ bên ngoài truyền vào.
             */
-            if (((Type)animal).Name == "Dog")
-            {
-                Console.WriteLine("Dog Height: " + Height + " Weight: " + Weight);
-            }
-            else
-            {
-                Console.WriteLine("Cat Height: " + Height + " Weight: " + Weight);
-            }
+
+            Console.WriteLine(((Type)animal).Name + "Height: " + Height + " Weight: " + Weight + " Legs: " + Legs);
+        }
+
+        protected Animal()
+        {
+
+        }
+
+        protected Animal(double weight, double height, int legs)
+        {
+            Weight = weight;
+            Height = height;
+            Legs = legs;
         }
     }
 
@@ -533,6 +539,20 @@ namespace Program
         {
             Console.WriteLine(" Cat is speaking. . .");
         }
+
+        public Cat()
+        {
+            Weight = 500;
+            Height = 20;
+            Legs = 4;
+        }
+
+        public Cat(double w, double h, int l) : base(w, h, l)
+        {
+            Weight = w;
+            Height = h;
+            Legs = l;
+        }
     }
 
 
@@ -541,6 +561,13 @@ namespace Program
         public override void Speak()
         {
             Console.WriteLine(" Dog is speaking. . .");
+        }
+
+        public Dog()
+        {
+        }
+        public Dog(double w, double h, int l) : base(w, h, l)
+        {
         }
     }
 
@@ -584,21 +611,25 @@ namespace Program
 
     public class Person
     {
-        private string name;
-        private int age;
+        private string _name;
+        private int _age;
 
         public string Name
         {
-            get { return name; }
-            set { name = value; }
+            get { return _name; }
+            set { _name = value; }
         }
 
         public int Age
         {
-            get { return age; }
-            set { age = value; }
+            get { return _age; }
+            set { _age = value; }
         }
 
+        public Person()
+        {
+
+        }
         /// <summary>
         /// Tạo 1 constructor có tham số để tiện cho việc khởi tạo nhanh đối tượng Person với các giá trị cho sẵn.
         /// </summary>
@@ -616,7 +647,7 @@ namespace Program
         /// <returns></returns>
         public override string ToString()
         {
-            return "Name: " + name + " | Age: " + age;
+            return "Name: " + _name + " | Age: " + _age;
         }
     }
 
@@ -627,9 +658,18 @@ namespace Program
         public double DiemToan;
         public double DiemLy;
         public double DiemVan;
+
+        public Student(string name, double t, double l, double v)
+        {
+            MaSo = 0;
+            HoTen = name;
+            DiemToan = t;
+            DiemLy = l;
+            DiemVan = v;
+        }
     }
 
-    public class SortPersons : IComparer
+    public class CompareByAge : IComparer
     {
         public int Compare(object x, object y)
         {

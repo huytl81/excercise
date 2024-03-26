@@ -17,9 +17,9 @@ namespace CSharp_CanBan
     //    {
     //        await Task.Run(() =>
     //        {
-    //            for (int i = 0; i < 100; i++)
+    //            for (int i = 0; i < 25; i++)
     //            {
-    //                Console.WriteLine(" Method 1: " + i);
+    //                Console.WriteLine(" Method 2: " + i);
     //                // Do something
     //                Task.Delay(100).Wait();
     //            }
@@ -42,14 +42,20 @@ namespace CSharp_CanBan
     //{
     //    static async Task Main(string[] args)
     //    {
-    //        await callMethod();
+    //        Task<int> task = Method1();
+    //        Method2();
+    //        int count = await task;
+    //        Method3(count);
+
+    //        //await callMethod();
     //        Console.ReadKey();
     //    }
 
     //    public static async Task callMethod()
     //    {
+    //        Task<int> task = Method1();
     //        Method2();
-    //        var count = await Method1();
+    //        int count = await task;
     //        Method3(count);
     //    }
 
@@ -81,9 +87,10 @@ namespace CSharp_CanBan
     //    }
     //}
 
+
     class AsyncAwait
     {
-        static void Maina()
+        static void Main()
         {
             Task task = new Task(CallMethod);
             task.Start();
@@ -111,7 +118,7 @@ namespace CSharp_CanBan
         {
             int length = 0;
 
-            Console.WriteLine(" File reading is stating");
+            Console.WriteLine(" File reading is starting");
             using (StreamReader reader = new StreamReader(file))
             {
                 // Reads all characters from the current position to the end of the stream asynchronously

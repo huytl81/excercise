@@ -1,21 +1,23 @@
 ﻿using System.Text;
 using System;
+using EventStandardNet;
 
 namespace Event
 {
-    public delegate void myDelegateNameHandler(string name);
+    public delegate void UpdateNameChangeHandler(string name);
 
     internal class Event
     {
-        static void Maine(string[] args)
+        static void MainE(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
             HocSinh hs = new HocSinh();
-            hs.my_Event_NameChanged += Hs_my_Event_NameChanged; ;
+            hs.NameChanged += HSNameChanged;
 
             hs.Name = "Kteam";
             Console.WriteLine("Tên từ class: " + hs.Name);
+
             hs.Name = "HowKteam.com";
             Console.WriteLine("Tên từ class: " + hs.Name);
 
@@ -23,7 +25,7 @@ namespace Event
 
         }
 
-        static void Hs_my_Event_NameChanged(string name)
+        static void HSNameChanged(string name)
         {
             Console.WriteLine("Tên mới: " + name);
         }
@@ -31,20 +33,30 @@ namespace Event
 
     public class HocSinh
     {
-        public event myDelegateNameHandler my_Event_NameChanged;
+        public event UpdateNameChangeHandler NameChanged;
 
         private string _name;
         public string Name
         {
-            get => _name;
+            //get => _name;
+            get { return _name; }
 
             set
             {
                 _name = value;
-                if (my_Event_NameChanged != null)
-                {
-                    my_Event_NameChanged(Name);
-                }
+                OnNameChanged(value);
+                //if (NameChanged != null)
+                //{
+                //    NameChanged(Name);
+                //}
+            }
+        }
+
+        void OnNameChanged(string name)
+        {
+            if (NameChanged != null)
+            {
+                NameChanged(this.Name);
             }
         }
     }

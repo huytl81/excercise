@@ -5,7 +5,7 @@ namespace EventStandardNet
 {
     internal class EventStandardNet
     {
-        static void Maine(string[] args)
+        static void MainE(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
@@ -13,7 +13,7 @@ namespace EventStandardNet
             hs.NameChanged += Hs_NameChanged;
             hs.Name = "Tên lần 1";
             hs.Name = "Tên lần 2";
-            hs.Name = "Tên cuối";
+            hs.Name = "Tên lần 3";
 
             Console.ReadLine();
         }
@@ -26,13 +26,13 @@ namespace EventStandardNet
 
     public class HocSinh
     {
-        private string _Name;
+        private string _name;
         public string Name
         {
-            get => _Name;
+            get => _name;
             set
             {
-                _Name = value;
+                _name = value;
                 OnNameChanged(value);
             }
         }

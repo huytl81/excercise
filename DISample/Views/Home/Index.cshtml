@@ -1,0 +1,28 @@
+﻿@model List<DISample.Service.DTOs.ProductViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @foreach (var item in Model)
+    {
+        <p>
+            @item.Id - @item.Name
+        </p>
+    }
+    
+    <h4>Transient</h4>
+        @ViewBag.Message1 <br/>
+        @ViewBag.Message2
+    
+    <h4>Scoped</h4>
+        @ViewBag.Message3 <br/>
+        @ViewBag.Message4
+    
+    <h4>Singleton</h4>
+        @ViewBag.Message5 <br />
+        @ViewBag.Message6
+    
+</div>
