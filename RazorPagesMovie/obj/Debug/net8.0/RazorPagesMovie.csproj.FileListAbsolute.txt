@@ -486,6 +486,7 @@ D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.csproj.CoreCompileInpu
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.MvcApplicationPartsAssemblyInfo.cache
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.RazorAssemblyInfo.cache
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.RazorAssemblyInfo.cs
+D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.sourcelink.json
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\staticwebassets.build.json
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\staticwebassets.development.json
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\staticwebassets\msbuild.RazorPagesMovie.Microsoft.AspNetCore.StaticWebAssets.props
@@ -493,6 +494,7 @@ D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\staticwebassets\msbuild.build.RazorPag
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.RazorPagesMovie.props
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.RazorPagesMovie.props
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\staticwebassets.pack.json
+D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\scopedcss\Pages\Movies\Index.cshtml.rz.scp.css
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\scopedcss\bundle\RazorPagesMovie.styles.css
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\scopedcss\projectbundle\RazorPagesMovie.bundle.scp.css
@@ -502,4 +504,3 @@ D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\refint\RazorPagesMovie.dll
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.pdb
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.genruntimeconfig.cache
 D:\MyApp\RazorPagesMovie\obj\Debug\net8.0\ref\RazorPagesMovie.dll
-d:\MyApp\RazorPagesMovie\obj\Debug\net8.0\RazorPagesMovie.sourcelink.json

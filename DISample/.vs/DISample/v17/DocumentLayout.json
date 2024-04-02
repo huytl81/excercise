@@ -3,48 +3,44 @@
   "WorkspaceRootPath": "D:\\MyApp\\DISample\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|d:\\myapp\\disample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\myapp\\disample\\disample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|d:\\myapp\\disample\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\myapp\\disample\\disample\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|d:\\myapp\\disample\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\myapp\\disample\\disample\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|d:\\myapp\\disample\\services\\someservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|solutionrelative:services\\someservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\myapp\\disample\\disample\\services\\someservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\services\\someservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|d:\\myapp\\disample\\services\\itransientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|solutionrelative:services\\itransientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|d:\\myapp\\disample\\disample.service\\dtos\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|solutionrelative:disample.service\\dtos\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|d:\\myapp\\disample\\services\\iscopedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|solutionrelative:services\\iscopedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|d:\\myapp\\disample\\disample.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|solutionrelative:disample.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|d:\\myapp\\disample\\services\\isingletonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|solutionrelative:services\\isingletonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\myapp\\disample\\disample\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|d:\\myapp\\disample\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F35360DD-8805-440E-B144-FB37D62DE350}|DISample.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|d:\\myapp\\disample\\disample.service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|solutionrelative:disample.service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69F42D33-4E1A-4E8C-9B9E-D09AAA58A071}|..\\DISample.Service\\DISample.Service.csproj|d:\\myapp\\disample.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|d:\\myapp\\disample\\disample.service\\disample.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|solutionrelative:disample.service\\disample.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69F42D33-4E1A-4E8C-9B9E-D09AAA58A071}|..\\DISample.Service\\DISample.Service.csproj|d:\\myapp\\disample.service\\betterproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F42D33-4E1A-4E8C-9B9E-D09AAA58A071}|..\\DISample.Service\\DISample.Service.csproj|d:\\myapp\\disample.service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F42D33-4E1A-4E8C-9B9E-D09AAA58A071}|..\\DISample.Service\\DISample.Service.csproj|d:\\myapp\\disample.service\\dtos\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\myapp\\disample\\disample\\myconfigservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\myconfigservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,149 +54,129 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DISample\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DISample\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-01T03:02:37.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "SomeService.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample\\Services\\SomeService.cs",
-              "RelativeDocumentMoniker": "Services\\SomeService.cs",
-              "ToolTip": "D:\\MyApp\\DISample\\Services\\SomeService.cs",
-              "RelativeToolTip": "Services\\SomeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAXAAAA",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample\\Services\\SomeService.cs",
+              "RelativeDocumentMoniker": "DISample\\Services\\SomeService.cs",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample\\Services\\SomeService.cs",
+              "RelativeToolTip": "DISample\\Services\\SomeService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T09:13:20.094Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ISingletonService.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample\\Services\\ISingletonService.cs",
-              "RelativeDocumentMoniker": "Services\\ISingletonService.cs",
-              "ToolTip": "D:\\MyApp\\DISample\\Services\\ISingletonService.cs",
-              "RelativeToolTip": "Services\\ISingletonService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T09:11:13.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IScopedService.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample\\Services\\IScopedService.cs",
-              "RelativeDocumentMoniker": "Services\\IScopedService.cs",
-              "ToolTip": "D:\\MyApp\\DISample\\Services\\IScopedService.cs",
-              "RelativeToolTip": "Services\\IScopedService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T09:10:45.528Z"
+              "WhenOpened": "2024-04-01T03:00:17.647Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ITransientService.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample\\Services\\ITransientService.cs",
-              "RelativeDocumentMoniker": "Services\\ITransientService.cs",
-              "ToolTip": "D:\\MyApp\\DISample\\Services\\ITransientService.cs",
-              "RelativeToolTip": "Services\\ITransientService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAVAAAA",
+              "Title": "ProductViewModel.cs",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample.Service\\DTOs\\ProductViewModel.cs",
+              "RelativeDocumentMoniker": "DISample.Service\\DTOs\\ProductViewModel.cs",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample.Service\\DTOs\\ProductViewModel.cs",
+              "RelativeToolTip": "DISample.Service\\DTOs\\ProductViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T09:10:28.873Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\MyApp\\DISample\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "D:\\MyApp\\DISample\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-26T08:46:21.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\MyApp\\DISample\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\MyApp\\DISample\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-26T08:21:39.861Z"
+              "WhenOpened": "2024-04-01T02:48:42.049Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\MyApp\\DISample\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAnwD0AAABeAAAA",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DISample\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DISample\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAwCYAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T08:10:38.164Z",
+              "WhenOpened": "2024-04-01T01:38:09.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BetterProductService.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample.Service\\BetterProductService.cs",
-              "RelativeDocumentMoniker": "..\\DISample.Service\\BetterProductService.cs",
-              "ToolTip": "D:\\MyApp\\DISample.Service\\BetterProductService.cs",
-              "RelativeToolTip": "..\\DISample.Service\\BetterProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAxAAAA",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "DISample\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample\\Properties\\launchSettings.json",
+              "RelativeToolTip": "DISample\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-01T01:11:03.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DISample.Service.csproj",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample.Service\\DISample.Service.csproj",
+              "RelativeDocumentMoniker": "DISample.Service\\DISample.Service.csproj",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample.Service\\DISample.Service.csproj",
+              "RelativeToolTip": "DISample.Service\\DISample.Service.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-01T01:09:42.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample.Service\\ProductService.cs",
+              "RelativeDocumentMoniker": "DISample.Service\\ProductService.cs",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample.Service\\ProductService.cs",
+              "RelativeToolTip": "DISample.Service\\ProductService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T08:07:44.228Z"
+              "WhenOpened": "2024-04-01T01:08:30.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample.Service\\IProductService.cs",
+              "RelativeDocumentMoniker": "DISample.Service\\IProductService.cs",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample.Service\\IProductService.cs",
+              "RelativeToolTip": "DISample.Service\\IProductService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T01:08:22.101Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\MyApp\\DISample\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAwAAAA",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample\\Program.cs",
+              "RelativeDocumentMoniker": "DISample\\Program.cs",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample\\Program.cs",
+              "RelativeToolTip": "DISample\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T07:58:58.788Z",
+              "WhenOpened": "2024-04-01T00:57:13.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample.Service\\IProductService.cs",
-              "RelativeDocumentMoniker": "..\\DISample.Service\\IProductService.cs",
-              "ToolTip": "D:\\MyApp\\DISample.Service\\IProductService.cs",
-              "RelativeToolTip": "..\\DISample.Service\\IProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
+              "DocumentIndex": 9,
+              "Title": "MyConfigServiceCollectionExtensions.cs",
+              "DocumentMoniker": "D:\\MyApp\\DISample\\DISample\\MyConfigServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "DISample\\MyConfigServiceCollectionExtensions.cs",
+              "ToolTip": "D:\\MyApp\\DISample\\DISample\\MyConfigServiceCollectionExtensions.cs",
+              "RelativeToolTip": "DISample\\MyConfigServiceCollectionExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T08:09:12.71Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample.Service\\ProductService.cs",
-              "RelativeDocumentMoniker": "..\\DISample.Service\\ProductService.cs",
-              "ToolTip": "D:\\MyApp\\DISample.Service\\ProductService.cs",
-              "RelativeToolTip": "..\\DISample.Service\\ProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T08:01:23.296Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProductViewModel.cs",
-              "DocumentMoniker": "D:\\MyApp\\DISample.Service\\DTOs\\ProductViewModel.cs",
-              "RelativeDocumentMoniker": "..\\DISample.Service\\DTOs\\ProductViewModel.cs",
-              "ToolTip": "D:\\MyApp\\DISample.Service\\DTOs\\ProductViewModel.cs",
-              "RelativeToolTip": "..\\DISample.Service\\DTOs\\ProductViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T08:03:20.554Z"
+              "WhenOpened": "2024-04-01T00:59:40.666Z"
             }
           ]
         }

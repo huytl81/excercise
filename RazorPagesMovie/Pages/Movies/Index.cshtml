@@ -1,12 +1,12 @@
 ﻿@page
-@model RazorPagesMovie.Pages.Movies.IndexModel
+@model IndexModel
 
 @{
     ViewData["Title"] = "List of Movies";
 }
 
 <h1>Index</h1>
-<h3>Msg from create function: @Model.Message</h3>
+<h3>Msg from Create method: @Model.Message</h3>
 <p>
     <a asp-page="./Create">Create New</a>
 </p>
@@ -16,7 +16,7 @@
             <option value="">All</option>
         </select>
         Title: <input type="text" asp-for="SearchString"/>
-        <input type="submit" value="Filter"/>
+        <input type="submit" value="Search"/>
     </p>
 
     <table class="table">

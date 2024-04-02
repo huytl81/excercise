@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Data;
 using RazorPagesMovie.Models;
 
 namespace RazorPagesMovie.Pages.Movies
@@ -23,6 +18,7 @@ namespace RazorPagesMovie.Pages.Movies
         public IList<Movie> Movie { get; set; } = default!;
 
         [BindProperty(SupportsGet = true)]
+        //[BindProperty]
         public string? SearchString { get; set; }
 
         public SelectList? Genres { get; set; }
@@ -33,16 +29,22 @@ namespace RazorPagesMovie.Pages.Movies
         [TempData]
         public string Message { get; set; }
 
+        public void OnHead()
+        {
+            HttpContext.Response.Headers.Add("Head Test", "Handled by OnHead!");
+        }
+
         public async Task OnGetAsync()
         {
-            await GenerateGenres();
+            await Generate();
             //Movie = await _context.Movie.ToListAsync();
         }
 
         public async Task OnPostAsync()
         {
-            await GenerateGenres();
+            await Generate();
         }
+
         public async Task<IActionResult> OnPostDeleteAsync(int? id)
         {
             if (id == null)
@@ -60,12 +62,12 @@ namespace RazorPagesMovie.Pages.Movies
             return RedirectToPage("./Index");
         }
 
-        private async Task GenerateGenres()
+        private async Task Generate()
         {
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Movie
-                orderby m.Genre
-                select m.Genre;
+                                            orderby m.Genre
+                                            select m.Genre;
 
             var movies = from m in _context.Movie select m;
             //var movies = _context.Movie.ToListAsync();
@@ -79,6 +81,7 @@ namespace RazorPagesMovie.Pages.Movies
             {
                 movies = movies.Where(x => x.Genre == MovieGenre);
             }
+
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
 
             Movie = await movies.ToListAsync();

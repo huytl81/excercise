@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using RazorPagesMovie.Models;
 
 namespace RazorPagesMovie.Pages.Movies
@@ -13,19 +14,19 @@ namespace RazorPagesMovie.Pages.Movies
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
-
         [BindProperty]
         public Movie Movie { get; set; } = default!;
 
         [ViewData]
         public string Title { get; set; } = "Create movie";
 
-        [TempData] 
+        [TempData]
         public string Message { get; set; }
+
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +36,9 @@ namespace RazorPagesMovie.Pages.Movies
                 return Page();
             }
 
-            _context.Movie.Add(Movie);
+            //_context.Movie.Add(Movie);
+
+            _context.Attach(Movie).State = EntityState.Added;
             await _context.SaveChangesAsync();
 
             Message = $"Movie {Movie.Title} has been added!";

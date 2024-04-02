@@ -86,6 +86,7 @@ namespace MVCMovie.Controllers
             {
                 _context.Movie.Add(movie);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             return View(movie);
@@ -137,8 +138,10 @@ namespace MVCMovie.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(movie);
         }
 

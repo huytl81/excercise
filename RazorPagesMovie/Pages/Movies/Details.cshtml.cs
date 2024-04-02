@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Data;
 using RazorPagesMovie.Models;
 
 namespace RazorPagesMovie.Pages.Movies
@@ -29,6 +24,7 @@ namespace RazorPagesMovie.Pages.Movies
             }
 
             var movie = await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
+
             if (movie == null)
             {
                 return NotFound();
@@ -37,6 +33,7 @@ namespace RazorPagesMovie.Pages.Movies
             {
                 Movie = movie;
             }
+
             return Page();
         }
     }
