@@ -9,11 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddAuthentication("LocalAuthIssuer").AddJwtBearer();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options => builder.Configuration.Bind("LocalAuthIssuer", options))
-    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => builder.Configuration.Bind("CookieSettings", options));
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options => builder.Configuration.Bind("LocalAuthIssuer", options))
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => builder.Configuration.Bind("CookieSettings", options));
 
+// Create scope and role for authorization
 builder.Services.AddAuthorizationBuilder()
-    .AddPolicy("admin_greetings", policy => policy
+            .AddPolicy("admin_greetings", policy => policy
             .RequireRole("admin")
             .RequireClaim("scope", "greetings_api"));
 builder.Services.AddAuthorization();
@@ -31,6 +32,10 @@ if (builder.Environment.IsDevelopment())
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
+// Require authorization for role admin and scope greeting_api above
+// create JWT token for testing: dotnet user-jwts create --scope "greetings_api" --role "admin"
+// then test: curl -i -H "Authorization: Bearer {token}" https://localhost:{port}/hello
+// remove-item alias:curl when needed
 app.MapGet("/hello", () => "Hello world!").RequireAuthorization("admin_greetings");
 
 

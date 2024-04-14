@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MyApp\\PartialViews\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\views\\home\\discovery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\home\\discovery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\views\\articles\\_articlesection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\articles\\_articlesection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\views\\home\\_authorpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\home\\_authorpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\viewmodels\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:viewmodels\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\viewmodels\\articlesection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:viewmodels\\articlesection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Article.cs",
+              "DocumentMoniker": "D:\\MyApp\\PartialViews\\ViewModels\\Article.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Article.cs",
+              "ToolTip": "D:\\MyApp\\PartialViews\\ViewModels\\Article.cs",
+              "RelativeToolTip": "ViewModels\\Article.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T08:23:13.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ArticleSection.cs",
+              "DocumentMoniker": "D:\\MyApp\\PartialViews\\ViewModels\\ArticleSection.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ArticleSection.cs",
+              "ToolTip": "D:\\MyApp\\PartialViews\\ViewModels\\ArticleSection.cs",
+              "RelativeToolTip": "ViewModels\\ArticleSection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T08:23:09.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ArticleSection.cshtml",
+              "DocumentMoniker": "D:\\MyApp\\PartialViews\\Views\\Articles\\_ArticleSection.cshtml",
+              "RelativeDocumentMoniker": "Views\\Articles\\_ArticleSection.cshtml",
+              "ToolTip": "D:\\MyApp\\PartialViews\\Views\\Articles\\_ArticleSection.cshtml",
+              "RelativeToolTip": "Views\\Articles\\_ArticleSection.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T08:22:52.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_AuthorPartial.cshtml",
+              "DocumentMoniker": "D:\\MyApp\\PartialViews\\Views\\Home\\_AuthorPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\_AuthorPartial.cshtml",
+              "ToolTip": "D:\\MyApp\\PartialViews\\Views\\Home\\_AuthorPartial.cshtml",
+              "RelativeToolTip": "Views\\Home\\_AuthorPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T08:21:09.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Discovery.cshtml",
+              "DocumentMoniker": "D:\\MyApp\\PartialViews\\Views\\Home\\Discovery.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Discovery.cshtml",
+              "ToolTip": "D:\\MyApp\\PartialViews\\Views\\Home\\Discovery.cshtml",
+              "RelativeToolTip": "Views\\Home\\Discovery.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T08:18:15.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\MyApp\\PartialViews\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\MyApp\\PartialViews\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T08:17:53.854Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

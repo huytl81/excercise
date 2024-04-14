@@ -3,4 +3,22 @@
 }
 <h1>@ViewData["Title"]</h1>
 
+<h2 class="display-4">
+   @*  @{
+        if (TempData["MyTemp"] != null)
+        {
+            <h3>Message: @TempData["MyTemp"]</h3>
+        }
+        TempData.Keep("MyTemp");
+    } *@
+    
+    @{
+        if (TempData.Peek("MyTemp") != null)
+        {
+            <h3>Message: @TempData.Peek("MyTemp")</h3>
+        }
+    }
+
+</h2>
+
 <p>Use this page to detail your site's privacy policy.</p>

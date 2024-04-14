@@ -34,6 +34,7 @@ namespace Delegate
             Console.OutputEncoding = Encoding.Unicode;
 
             myDelegate delshowString = ShowString;
+
             var delconvertToInt = new myDelegate(ConvertStringToInt);
 
             //call back function

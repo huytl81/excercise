@@ -7,8 +7,7 @@ using Customer.Microservice.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<CustomerDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("CustomerDbContext") ?? throw new InvalidOperationException("Connection string 'CustomerDbContext' not found."), b => b.MigrationsAssembly(typeof(CustomerDbContext).Assembly.FullName)));
+builder.Services.AddDbContext<CustomerDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CustomerDbContext") ?? throw new InvalidOperationException("Connection string 'CustomerDbContext' not found."), b => b.MigrationsAssembly(typeof(CustomerDbContext).Assembly.FullName)));
 builder.Services.AddScoped<ICustomerDbContext, CustomerDbContext>();
 //builder.Services.AddScoped<ICustomerDbContext>(provider => provider.GetService<CustomerDbContext>());
 

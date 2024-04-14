@@ -9,7 +9,7 @@ namespace Customer.Microservice.Data
         public DbSet<Models.Customer> Customers { get; set; }
 
         public async Task<int> SaveChanges()
-        {-
+        {
             return await base.SaveChangesAsync();
         }
 

@@ -13,7 +13,8 @@ namespace Event
             Console.OutputEncoding = Encoding.Unicode;
 
             HocSinh hs = new HocSinh();
-            hs.NameChanged += HSNameChanged;
+            hs.NameChanged += Hs_NameChanged;
+            //hs.NameChanged += HSNameChanged;
 
             hs.Name = "Kteam";
             Console.WriteLine("Tên từ class: " + hs.Name);
@@ -25,7 +26,7 @@ namespace Event
 
         }
 
-        static void HSNameChanged(string name)
+        private static void Hs_NameChanged(string name)
         {
             Console.WriteLine("Tên mới: " + name);
         }
@@ -44,15 +45,11 @@ namespace Event
             set
             {
                 _name = value;
-                OnNameChanged(value);
-                //if (NameChanged != null)
-                //{
-                //    NameChanged(Name);
-                //}
+                OnNameChanged();
             }
         }
 
-        void OnNameChanged(string name)
+        void OnNameChanged()
         {
             if (NameChanged != null)
             {

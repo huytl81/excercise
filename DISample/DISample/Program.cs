@@ -19,7 +19,7 @@ builder.Services.AddControllersWithViews();
 //builder.Services.AddScoped<IScopedService, SomeService>();
 //builder.Services.AddSingleton<ISingletonService, SomeService>();
 
-builder.Services.AddMyConfigCollection(builder.Configuration).AddMyServiceCollection();
+builder.Services.AddMyServiceCollection();
 
 var app = builder.Build();
 

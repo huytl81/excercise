@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "XY2mZmg+1dszANuZWwl2jMcxyNDf6/g2dFLRqb4m1SE=",
+  "Source": "BookStoreControllerAPI_MonggoDB",
+  "BasePath": "_content/BookStoreControllerAPI_MonggoDB",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

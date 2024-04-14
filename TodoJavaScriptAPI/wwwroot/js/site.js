@@ -9,9 +9,9 @@ function getItems() {
             'Content-Type': 'application/json'
         }
     })
-        .then(response => response.json())
-        .then(data => _displayItems(data))
-        .catch(error => console.error('Unable to get items.', error));
+    .then(response => response.json())
+    .then(data => _displayItems(data))
+    .catch(error => console.error('Unable to get items.', error));
 }
 
 function addItem() {
@@ -42,15 +42,15 @@ function deleteItem(id) {
     fetch(`${uri}/${id}`, {
         method: 'DELETE'
     })
-        .then(() => getItems())
-        .catch(error => console.error('Unable to delete item.', error));
+    .then(() => getItems())
+    .catch(error => console.error('Unable to delete item.', error));
 }
 
 function displayEditForm(id) {
     const item = todos.find(item => item.id === id);
 
-    document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-id').value = item.id;
+    document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-isComplete').checked = item.isComplete;
     document.getElementById('editForm').style.display = 'block';
 }

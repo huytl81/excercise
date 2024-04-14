@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TodoJavaScriptAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36a34b74c8176744d9125046f0aeb302578c075c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9954bc5106c0c85e214fb8bb97eaa89b8402c2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TodoJavaScriptAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TodoJavaScriptAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

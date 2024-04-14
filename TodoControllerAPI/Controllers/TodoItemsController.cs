@@ -17,17 +17,6 @@ public class TodoItemsController : ControllerBase
         _context = context;
     }
 
-    [ApiController]
-    [Route("/cache")]
-    public class TestApiController : Controller
-    {
-        [HttpGet("big-cache")]
-        public ActionResult<object> GetOk([FromKeyedServices("big")] ICache cache)
-        {
-            return cache.Get("data-mvc");
-        }
-    }
-
     // GET: api/TodoItems
     [HttpGet]
     public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
@@ -37,7 +26,7 @@ public class TodoItemsController : ControllerBase
 
     // GET: api/TodoItems/5
     // <snippet_GetByID>
-    [HttpGet("{id}")]
+    [HttpGet("{id}"), ActionName("GetTodoItem")]
     public async Task<ActionResult<TodoItemDTO>> GetTodoItem(long id)
     {
         var todoItem = await _context.TodoItems.FindAsync(id);
@@ -152,4 +141,15 @@ public class TodoItemsController : ControllerBase
            Name = todoItem.Name,
            IsComplete = todoItem.IsComplete
        };
+}
+
+[ApiController]
+[Route("/cache")]
+public class TestApiController : Controller
+{
+    [HttpGet("big-cache")]
+    public ActionResult<object> GetOk([FromKeyedServices("big")] ICache cache)
+    {
+        return cache.Get("data-mvc");
+    }
 }

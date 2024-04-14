@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "nI41WlN7tqrTsZkJahJvmN2LqS24sFjL28Ef0ONE8oE=",
-  "Source": "TodoAPI",
-  "BasePath": "_content/TodoAPI",
+  "Hash": "QIR7lx7JNd1VIcAfW/sv5a59nS+44mac7sdd39q9TOw=",
+  "Source": "TodoControllerAPI",
+  "BasePath": "_content/TodoControllerAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

@@ -4,13 +4,13 @@ namespace DISample
 {
     public static class MyConfigServiceCollectionExtensions
     {
-        public static IServiceCollection AddMyConfigCollection(this IServiceCollection services, IConfiguration config)
-        {
-            //services.Configure<PositionOptions>(config.GetSection(PositionOptions.Position));
-            //services.Configure<ColorOptions>(config.GetSection(ColorOptions.Color));
+        //public static IConfiguration AddMyConfigCollection(this IConfiguration configuration, IServiceCollection services)
+        //{
+        //    services.Configure<PositionOptions>(configuration.GetSection(PositionOptions.Position));
+        //    services.Configure<ColorOptions>(configuration.GetSection(ColorOptions.Color));
 
-            return services;
-        }
+        //    return configuration;
+        //}
 
         public static IServiceCollection AddMyServiceCollection(this IServiceCollection services)
         {

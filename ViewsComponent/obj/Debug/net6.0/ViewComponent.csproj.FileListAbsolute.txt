@@ -1,0 +1,9 @@
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.csproj.AssemblyReference.cache
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.AssemblyInfoInputs.cache
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.AssemblyInfo.cs
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.csproj.CoreCompileInputs.cache
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.MvcApplicationPartsAssemblyInfo.cache
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.RazorAssemblyInfo.cache
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.RazorAssemblyInfo.cs
+D:\MyApp\ViewComponent\obj\Debug\net6.0\ViewComponent.sourcelink.json

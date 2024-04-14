@@ -13,13 +13,26 @@ namespace MVCMovie.Controllers
             _logger = logger;
         }
 
+        [ViewData]
+        public string Hello { get; set; }
+
+        [TempData]
+        public string MyTemp { get; set; }
+
         public IActionResult Index()
         {
+            
+            Hello = "ViewData attribute!";
+            ViewData["Body"] = "ViewData";
+            ViewBag.Message = "ViewBag";
+
             return View();
         }
 
         public IActionResult Privacy()
         {
+            MyTemp = "Where is this?";
+
             return View();
         }
 

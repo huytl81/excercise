@@ -5,7 +5,7 @@ namespace EventStandardNet
 {
     internal class EventStandardNet
     {
-        static void MainE(string[] args)
+        static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
