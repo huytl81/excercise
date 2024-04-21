@@ -2,10 +2,9 @@
 
 namespace ViewsComponent.Models;
 
-public class ToDoContext : DbContext
+public class ToDoDBContext : DbContext
 {
-    public ToDoContext(DbContextOptions<ToDoContext> options)
-            : base(options)
+    public ToDoDBContext(DbContextOptions<ToDoDBContext> options) : base(options)
     {
     }
     public DbSet<TodoItem>? ToDo { get; set; }

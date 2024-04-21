@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "D:\\Projects\\MyApp\\BlazorApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp.bundle.scp.css",
+      "Id": "D:\\MyApp\\BlazorApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp.bundle.scp.css",
       "PackagePath": "staticwebassets\\BlazorApp.bundle.scp.css"
     },
     {
-      "Id": "D:\\Projects\\MyApp\\BlazorApp\\wwwroot\\app.css",
+      "Id": "D:\\MyApp\\BlazorApp\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "D:\\Projects\\MyApp\\BlazorApp\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "D:\\MyApp\\BlazorApp\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Projects\\MyApp\\BlazorApp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "D:\\MyApp\\BlazorApp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Projects\\MyApp\\BlazorApp\\wwwroot\\favicon.png",
+      "Id": "D:\\MyApp\\BlazorApp\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {

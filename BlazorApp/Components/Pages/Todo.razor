@@ -1,0 +1,39 @@
+﻿@page "/todo"
+@rendermode InteractiveServer
+<h1>New Todo is: @_newTodo</h1>
+<h3>Number of incomplete todo is: (@_todos.Count(todo => !todo.IsDone))</h3>
+
+<ul>
+    @foreach (var todo in _todos)
+    {
+        <li>
+            <input type="checkbox" @bind="todo.IsDone" />
+            @todo.Title
+        </li>
+    }
+</ul>
+
+<p>
+    Enter your birthdate:
+    <input @bind="Birthdate" @bind:format="dd-MM-yyyy" />
+</p>
+
+
+<input @bind-value="_newTodo" @bind-value:event="oninput" />
+<button @onclick="AddTodo">Add todo</button>
+
+@code {
+    private List<TodoItem> _todos = new();
+    string _newTodo = string.Empty;
+    private DateTime Birthdate { get; set; } = new(1981, 3, 16);
+
+    void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(_newTodo))
+        {
+            _todos.Add(new TodoItem { Title = _newTodo });
+            _newTodo = string.Empty;
+        }
+    }
+
+}

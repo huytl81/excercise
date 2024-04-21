@@ -3,7 +3,7 @@ using ViewsComponent.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ToDoContext>(options =>
+builder.Services.AddDbContext<ToDoDBContext>(options =>
         options.UseInMemoryDatabase("db"));
 
 builder.Services.AddControllersWithViews();

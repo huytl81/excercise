@@ -613,11 +613,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyApp\\ViewComponent\\ViewsComponent.csproj",
+      "projectUniqueName": "D:\\MyApp\\ViewsComponent\\ViewsComponent.csproj",
       "projectName": "ViewsComponent",
-      "projectPath": "D:\\MyApp\\ViewComponent\\ViewsComponent.csproj",
+      "projectPath": "D:\\MyApp\\ViewsComponent\\ViewsComponent.csproj",
       "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
-      "outputPath": "D:\\MyApp\\ViewComponent\\obj\\",
+      "outputPath": "D:\\MyApp\\ViewsComponent\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -684,7 +684,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

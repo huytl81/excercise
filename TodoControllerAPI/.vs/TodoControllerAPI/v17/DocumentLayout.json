@@ -11,16 +11,8 @@
       "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\myapp\\todocontrollerapi\\models\\todoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:models\\todoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\myapp\\todocontrollerapi\\data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\myapp\\todocontrollerapi\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,35 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TodoItemDTO.cs",
-              "DocumentMoniker": "D:\\MyApp\\TodoControllerAPI\\Models\\TodoItemDTO.cs",
-              "RelativeDocumentMoniker": "Models\\TodoItemDTO.cs",
-              "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Models\\TodoItemDTO.cs",
-              "RelativeToolTip": "Models\\TodoItemDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T02:47:15.695Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TodoItem.cs",
-              "DocumentMoniker": "D:\\MyApp\\TodoControllerAPI\\Models\\TodoItem.cs",
-              "RelativeDocumentMoniker": "Models\\TodoItem.cs",
-              "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Models\\TodoItem.cs",
-              "RelativeToolTip": "Models\\TodoItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T02:47:10.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "TodoContext.cs",
               "DocumentMoniker": "D:\\MyApp\\TodoControllerAPI\\Data\\TodoContext.cs",
               "RelativeDocumentMoniker": "Data\\TodoContext.cs",
@@ -76,7 +44,7 @@
               "RelativeDocumentMoniker": "Controllers\\TodoItemsController.cs",
               "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Controllers\\TodoItemsController.cs",
               "RelativeToolTip": "Controllers\\TodoItemsController.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAcwBwAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T02:46:29.786Z",
               "EditorCaption": ""
@@ -89,7 +57,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEcAAAARAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T02:46:14.302Z",
               "EditorCaption": ""

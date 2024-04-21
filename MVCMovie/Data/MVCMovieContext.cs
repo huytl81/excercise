@@ -7,12 +7,9 @@ using MvcMovie.Models;
 
 namespace MVCMovie.Data
 {
-    public class MVCMovieContext : DbContext
+    public class MVCMovieContext(DbContextOptions<MVCMovieContext> options) : DbContext(options)
     {
-        public MVCMovieContext (DbContextOptions<MVCMovieContext> options) : base(options)
-        {
-        }
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder

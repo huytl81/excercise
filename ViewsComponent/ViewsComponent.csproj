@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\ToDo\Components\**" />
+    <Content Remove="Views\ToDo\Components\**" />
+    <EmbeddedResource Remove="Views\ToDo\Components\**" />
+    <None Remove="Views\ToDo\Components\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.4" />
   </ItemGroup>
