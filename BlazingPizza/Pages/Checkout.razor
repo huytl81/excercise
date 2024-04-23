@@ -1,0 +1,52 @@
+﻿@page "/checkout"
+@using BlazingPizza.Services
+@inject OrderState PizzaOrderState
+@inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
+
+<Topbar></Topbar>
+
+<div class="main">
+    <div class="checkout-cols">
+        <div class="checkout-order-details">
+            <h4>Review order</h4>
+            @foreach (var pizza in PizzaOrder.Pizzas)
+            {
+                <p>
+                    <strong>
+                        @(pizza.Size)"
+                        @pizza.Special.Name
+                        (£@pizza.GetFormattedTotalPrice())
+                    </strong>
+                </p>
+            }
+
+            <p>
+                <strong>
+                    Total price:
+                    £@PizzaOrder.GetFormattedTotalPrice()
+                </strong>
+            </p>
+        </div>
+    </div>
+
+    <button class="checkout-button btn btn-warning" @onclick="PlaceOrder" disabled=@isSubmitting>
+        Place order
+    </button>
+</div>
+
+@code {
+    Order PizzaOrder => PizzaOrderState.PizzaOrder;
+    bool isSubmitting;
+    async Task PlaceOrder()
+    {
+        isSubmitting = true;
+
+        var response = await HttpClient.PostAsJsonAsync(NavigationManager.BaseUri + "api/orders", PizzaOrderState.PizzaOrder);
+        var newOrderId= await response.Content.ReadFromJsonAsync<int>();
+
+        PizzaOrderState.ResetOrder();
+
+        NavigationManager.NavigateTo("/myorders/{newOrderId}");
+    }
+}
