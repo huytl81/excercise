@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CqD731tEsO2fJVQp+VUjVc9qFihs7FxbrzRkwFhPZAXXqYFGrCImK0fPHGlvroR7MPVEqCxZe1/vIDInR8ZKJw==",
+  "dgSpecHash": "E40a+X7Upc+JG2IId0q4WYMpD++PcJinzuqm/6Kv5q0IGxK7RMF3TFZqTBWPJ60SALrzTL8Uvvhfwxbj87gcpQ==",
   "success": true,
-  "projectFilePath": "D:\\MyApp\\BlazingPizza\\BlazingPizza.csproj",
+  "projectFilePath": "d:\\MyApp\\BlazingPizza\\BlazingPizza.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.8\\microsoft.data.sqlite.core.6.0.8.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
