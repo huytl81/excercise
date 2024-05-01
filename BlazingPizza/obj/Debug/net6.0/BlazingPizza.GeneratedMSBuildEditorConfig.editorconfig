@@ -9,59 +9,59 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazingPizza
 build_property.RootNamespace = BlazingPizza
-build_property.ProjectDir = D:\MyApp\BlazingPizza\
+build_property.ProjectDir = d:\MyApp\BlazingPizza\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\MyApp\BlazingPizza
+build_property.MSBuildProjectDirectory = d:\MyApp\BlazingPizza
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/MyApp/BlazingPizza/App.razor]
+[d:/MyApp/BlazingPizza/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Pages/Checkout.razor]
+[d:/MyApp/BlazingPizza/Pages/Checkout.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Pages/Index.razor]
+[d:/MyApp/BlazingPizza/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Pages/MyOrders.razor]
+[d:/MyApp/BlazingPizza/Pages/MyOrders.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlPcmRlcnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Pages/OrderDetail.razor]
+[d:/MyApp/BlazingPizza/Pages/OrderDetail.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJEZXRhaWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Shared/ConfigurePizzaDialog.razor]
+[d:/MyApp/BlazingPizza/Shared/ConfigurePizzaDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENvbmZpZ3VyZVBpenphRGlhbG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Shared/MainLayout.razor]
+[d:/MyApp/BlazingPizza/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Shared/Sidebar.razor]
+[d:/MyApp/BlazingPizza/Shared/Sidebar.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNpZGViYXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Shared/Topbar.razor]
+[d:/MyApp/BlazingPizza/Shared/Topbar.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRvcGJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/_Imports.razor]
+[d:/MyApp/BlazingPizza/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Pages/Error.cshtml]
+[d:/MyApp/BlazingPizza/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/BlazingPizza/Pages/_Host.cshtml]
+[d:/MyApp/BlazingPizza/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

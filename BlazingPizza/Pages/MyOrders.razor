@@ -1,8 +1,6 @@
-﻿@page "/myorders"
+﻿@page "/myorder"
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
-
-<Topbar></Topbar>
 
 <div class="main">
     @if (ordersWithStatus == null)
@@ -33,7 +31,7 @@
                     @* @if (@item.StatusText != "Delivered")
                     { *@
                         <div class="col flex-grow-0">
-                            <a href="myorders/@item.Order.OrderId" class="btn btn-success">
+                            <a href="myorder/@item.Order.OrderId" class="btn btn-success">
                                 Track &gt;
                             </a>
                         </div>
@@ -49,6 +47,6 @@
 
     protected override async Task OnParametersSetAsync()
     {
-      ordersWithStatus = await HttpClient.GetFromJsonAsync<List<OrderWithStatus>>($"{NavigationManager.BaseUri}api/orders");
+      ordersWithStatus = await HttpClient.GetFromJsonAsync<List<OrderWithStatus>>($"{NavigationManager.BaseUri}api/order");
     }
 }

@@ -4,8 +4,6 @@
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
 
-<Topbar></Topbar>
-
 <div class="main">
     <div class="checkout-cols">
         <div class="checkout-order-details">
@@ -42,11 +40,11 @@
     {
         isSubmitting = true;
 
-        var response = await HttpClient.PostAsJsonAsync(NavigationManager.BaseUri + "api/orders", PizzaOrderState.PizzaOrder);
+        var response = await HttpClient.PostAsJsonAsync(NavigationManager.BaseUri + "api/order", PizzaOrderState.PizzaOrder);
         var newOrderId= await response.Content.ReadFromJsonAsync<int>();
 
         PizzaOrderState.ResetOrder();
 
-        NavigationManager.NavigateTo($"/myorders/{newOrderId}");
+        NavigationManager.NavigateTo($"/myorder/{newOrderId}");
     }
 }

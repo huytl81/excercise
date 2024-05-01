@@ -1,8 +1,6 @@
-﻿@page "/myorders/{orderId:int}"
+﻿@page "/myorder/{orderId:int}"
 @inject NavigationManager NavigationManager
 @inject HttpClient HttpClient
-
-<Topbar></Topbar>
 
 <div class="main">
     @if (invalidOrder)
@@ -61,7 +59,7 @@
     {
       try
       {
-          orderWithStatus = await HttpClient.GetFromJsonAsync<OrderWithStatus>($"{NavigationManager.BaseUri}api/orders/{OrderId}");
+          orderWithStatus = await HttpClient.GetFromJsonAsync<OrderWithStatus>($"{NavigationManager.BaseUri}api/order/{OrderId}");
       }
       catch (Exception ex)
       {
