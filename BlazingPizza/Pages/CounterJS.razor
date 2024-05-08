@@ -1,0 +1,20 @@
+﻿@page "/counterjs"
+
+<div class="main">
+    <h1>Counter</h1>
+    <p id="currentCount">Current count: 0</p>
+
+    <button class="btn btn-primary" onclick="incrementCount()">Click me</button>
+
+    <!-- Omitted for brevity -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var currentCount = 0;
+
+        function incrementCount() {
+            currentCount++;
+            $('#currentCount').html('Current count:' + currentCount);
+        }
+    </script>
+</div>
