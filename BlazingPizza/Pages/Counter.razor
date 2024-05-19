@@ -1,6 +1,4 @@
-﻿@inject HttpClient HttpClient
-@inject NavigationManager NavigationManager
-@inject IJSRuntime JS
+﻿@inject IJSRuntime JsRuntime
 
 @page "/counter"
 <div class="main">
@@ -8,18 +6,32 @@
 
     <p>Current count: @currentCount</p>
 
-    <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-    <button class="btn btn-primary" @onclick="() => currentCount++">Inline click me</button>
-    <button class="btn btn-primary" @onclick='mouseEvent => HandleClick(mouseEvent, "Hello ")'>Click me</button>
+    <button class="btn btn-primary" @onclick="IncrementCount">catch mouseeventargs</button>
+    <button class="btn btn-primary" @onclick="() => currentCount++">annonymouse/inline func ()=></button>
+    <button class="btn btn-primary" @onclick='mouseEvent => HandleClick(mouseEvent, "Hello ")'>Handle Ctrl key</button>
 
-    <button class="btn btn-primary" @onclick="ChangeFocus">Click me to change focus</button>
-    <input placeholder="Handle focus" @ref=InputField @onfocus="HandleFocus" value="@data"/>
+    <button class="btn btn-primary" @onclick="ChangeFocus">Change focus</button>
+    <input placeholder="Handle focus" @ref=MyInput @onfocus="HandleFocusAsync" value="@data"/>
 
-    <input placeholder="lower 2 UPPER" @onkeypress="keyEvent => ProcessKeyPress(keyEvent)" value=@lower2upper/>
+    <input id="myinput1" placeholder="lower 2 UPPER" @onkeypress="keyEvent => ProcessKeyPress(keyEvent)" @onkeypress:preventDefault value=@lower2upper/>
+    
+    <div @onclick="HandleDivClick">
+        <button class="btn btn-primary" @onclick="IncrementCount" @onclick:stopPropagation>Propagate</button>
+        <input id="myinput2" @onkeypress="ProcessKeyPress" @onkeypress:preventDefault value=@data/>
+    </div>
+
 </div>
 
 @code {
     private int currentCount = 0;
+    private ElementReference MyInput;
+    private string data;
+    private string lower2upper;
+
+    private async Task HandleDivClick()
+    {
+        await JsRuntime.InvokeVoidAsync("alert", "Div click");
+    }
 
     private void IncrementCount(MouseEventArgs e)
     {
@@ -33,27 +45,23 @@
         }
     }
 
-    private ElementReference InputField;
-    private string data;
-    private string lower2upper;
-
     private async Task ChangeFocus()
     {
-        await InputField.FocusAsync();
+        await MyInput.FocusAsync();
     }
 
-    private async Task HandleFocus()
+    private void HandleFocusAsync()
     {
-        data = "Received focus";
+        data = "Focused";
     }
 
     private async Task HandleClick(MouseEventArgs e, string msg)
     {
         if (e.CtrlKey) // Ctrl key pressed as well
         {
-            msg = msg + currentCount;
-            await JS.InvokeVoidAsync("alert", msg);
             currentCount += 5;
+            msg = msg + currentCount;
+            await JsRuntime.InvokeVoidAsync("alert", msg);
         }
         else
         {
@@ -65,7 +73,7 @@
     {
         if (e.Key == "@")
         {
-            await JS.InvokeVoidAsync("alert", "You pressed @");
+            await JsRuntime.InvokeVoidAsync("alert", "You pressed @");
         }
         else
         {

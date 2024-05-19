@@ -5,7 +5,7 @@ namespace Delegate
 {
     internal class Delegate
     {
-        delegate int myDelegate(string s);
+        delegate int MyDelegate(string s);
 
         static int ShowString(string stringValue)
         {
@@ -22,7 +22,7 @@ namespace Delegate
 
             return valueInt;
         }
-        static void NhapVaShowTen(myDelegate delShowName)
+        static void NhapVaShowTen(MyDelegate delShowName)
         {
             Console.WriteLine("Mời nhập tên của bạn:");
             string name = Console.ReadLine();
@@ -33,15 +33,8 @@ namespace Delegate
         {
             Console.OutputEncoding = Encoding.Unicode;
 
-            myDelegate delshowString = ShowString;
-
-            var delconvertToInt = new myDelegate(ConvertStringToInt);
-
-            //call back function
-            NhapVaShowTen(delshowString);
-
+            var delconvertToInt = new MyDelegate(ConvertStringToInt);
             string numberSTR = "35";
-
             int valueConverted = delconvertToInt(numberSTR);
 
             Console.WriteLine("Giá trị đã convert thành int: " + valueConverted);
@@ -49,6 +42,11 @@ namespace Delegate
             Console.ReadLine();
 
             //==========================================================================
+
+            //var delshowString = new MyDelegate(ShowString);
+            MyDelegate delshowString = ShowString;
+            //call back function
+            NhapVaShowTen(delshowString);
         }
     }
 }

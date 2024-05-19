@@ -1,107 +1,107 @@
 {
   "Files": [
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-300.woff",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-300.woff",
       "PackagePath": "staticwebassets\\css\\font\\quicksand-v8-latin-300.woff"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-300.woff2",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-300.woff2",
       "PackagePath": "staticwebassets\\css\\font\\quicksand-v8-latin-300.woff2"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-500.woff",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-500.woff",
       "PackagePath": "staticwebassets\\css\\font\\quicksand-v8-latin-500.woff"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-500.woff2",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-500.woff2",
       "PackagePath": "staticwebassets\\css\\font\\quicksand-v8-latin-500.woff2"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-700.woff",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-700.woff",
       "PackagePath": "staticwebassets\\css\\font\\quicksand-v8-latin-700.woff"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-700.woff2",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-700.woff2",
       "PackagePath": "staticwebassets\\css\\font\\quicksand-v8-latin-700.woff2"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-regular.woff",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-regular.woff",
       "PackagePath": "staticwebassets\\css\\font\\quicksand-v8-latin-regular.woff"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-regular.woff2",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand-v8-latin-regular.woff2",
       "PackagePath": "staticwebassets\\css\\font\\quicksand-v8-latin-regular.woff2"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand.css",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\font\\quicksand.css",
       "PackagePath": "staticwebassets\\css\\font\\quicksand.css"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\css\\site.css",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\favicon.ico",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\bike.svg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\bike.svg",
       "PackagePath": "staticwebassets\\img\\bike.svg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\icon-512.png",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\icon-512.png",
       "PackagePath": "staticwebassets\\img\\icon-512.png"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\logo.svg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\logo.svg",
       "PackagePath": "staticwebassets\\img\\logo.svg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizza-slice.svg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizza-slice.svg",
       "PackagePath": "staticwebassets\\img\\pizza-slice.svg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\bacon.jpg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\bacon.jpg",
       "PackagePath": "staticwebassets\\img\\pizzas\\bacon.jpg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\brit.jpg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\brit.jpg",
       "PackagePath": "staticwebassets\\img\\pizzas\\brit.jpg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\cheese.jpg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\cheese.jpg",
       "PackagePath": "staticwebassets\\img\\pizzas\\cheese.jpg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\margherita.jpg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\margherita.jpg",
       "PackagePath": "staticwebassets\\img\\pizzas\\margherita.jpg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\meaty.jpg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\meaty.jpg",
       "PackagePath": "staticwebassets\\img\\pizzas\\meaty.jpg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\mushroom.jpg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\mushroom.jpg",
       "PackagePath": "staticwebassets\\img\\pizzas\\mushroom.jpg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\pepperoni.jpg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\pepperoni.jpg",
       "PackagePath": "staticwebassets\\img\\pizzas\\pepperoni.jpg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\salad.jpg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\pizzas\\salad.jpg",
       "PackagePath": "staticwebassets\\img\\pizzas\\salad.jpg"
     },
     {
-      "Id": "d:\\MyApp\\BlazingPizza\\wwwroot\\img\\user.svg",
+      "Id": "D:\\MyApp\\BlazingPizza\\wwwroot\\img\\user.svg",
       "PackagePath": "staticwebassets\\img\\user.svg"
     },
     {

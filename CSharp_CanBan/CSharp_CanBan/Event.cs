@@ -14,7 +14,6 @@ namespace Event
 
             HocSinh hs = new HocSinh();
             hs.NameChanged += Hs_NameChanged;
-            //hs.NameChanged += HSNameChanged;
 
             hs.Name = "Kteam";
             Console.WriteLine("Tên từ class: " + hs.Name);

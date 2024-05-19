@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\event_standard_net.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\myapp\\csharp_canban\\csharp_canban\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|D:\\MyApp\\CSharp_CanBan\\csharp_canban\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\myapp\\csharp_canban\\csharp_canban\\delegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|D:\\MyApp\\CSharp_CanBan\\csharp_canban\\delegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\delegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\myapp\\csharp_canban\\csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|D:\\MyApp\\CSharp_CanBan\\csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "CSharp_CanBan\\Event_Standard_Net.cs",
               "ToolTip": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Event_Standard_Net.cs",
               "RelativeToolTip": "CSharp_CanBan\\Event_Standard_Net.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAYwC0AAAAcAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAADwvzkAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T10:52:20.337Z",
               "EditorCaption": ""
@@ -49,7 +49,7 @@
               "RelativeDocumentMoniker": "CSharp_CanBan\\Event.cs",
               "ToolTip": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Event.cs",
               "RelativeToolTip": "CSharp_CanBan\\Event.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAcwCQAAAA4AAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAswAYAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T10:06:34.531Z",
               "EditorCaption": ""
@@ -62,7 +62,7 @@
               "RelativeDocumentMoniker": "CSharp_CanBan\\Delegate.cs",
               "ToolTip": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Delegate.cs",
               "RelativeToolTip": "CSharp_CanBan\\Delegate.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAYwB8AAAAZAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAswDAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T09:48:39.487Z",
               "EditorCaption": ""
@@ -75,7 +75,7 @@
               "RelativeDocumentMoniker": "CSharp_CanBan\\AsyncAwait.cs",
               "ToolTip": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\AsyncAwait.cs",
               "RelativeToolTip": "CSharp_CanBan\\AsyncAwait.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAWwG0AAAAjAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAAgAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-26T05:17:04.43Z",
               "EditorCaption": ""
