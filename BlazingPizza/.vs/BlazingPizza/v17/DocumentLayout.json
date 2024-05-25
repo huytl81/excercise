@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "D:\\MyApp\\BlazingPizza\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\shared\\textdisplay.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:shared\\textdisplay.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\pages\\texttransformer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:pages\\texttransformer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\model\\keytransformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:model\\keytransformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\shared\\addresseditor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:shared\\addresseditor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\pages\\checkout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:pages\\checkout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\shared\\sidebar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:shared\\sidebar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "KeyTransformation.cs",
-              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Model\\KeyTransformation.cs",
-              "RelativeDocumentMoniker": "Model\\KeyTransformation.cs",
-              "ToolTip": "D:\\MyApp\\BlazingPizza\\Model\\KeyTransformation.cs",
-              "RelativeToolTip": "Model\\KeyTransformation.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T16:21:38.367Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TextDisplay.razor",
-              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Shared\\TextDisplay.razor",
-              "RelativeDocumentMoniker": "Shared\\TextDisplay.razor",
-              "ToolTip": "D:\\MyApp\\BlazingPizza\\Shared\\TextDisplay.razor",
-              "RelativeToolTip": "Shared\\TextDisplay.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAUAAAA",
+              "Title": "Sidebar.razor",
+              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Shared\\Sidebar.razor",
+              "RelativeDocumentMoniker": "Shared\\Sidebar.razor",
+              "ToolTip": "D:\\MyApp\\BlazingPizza\\Shared\\Sidebar.razor",
+              "RelativeToolTip": "Shared\\Sidebar.razor",
+              "ViewState": "AQIAACsAAAAAAAAAAAAcwDkAAAB1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T16:20:36.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TextTransformer.razor",
-              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Pages\\TextTransformer.razor",
-              "RelativeDocumentMoniker": "Pages\\TextTransformer.razor",
-              "ToolTip": "D:\\MyApp\\BlazingPizza\\Pages\\TextTransformer.razor",
-              "RelativeToolTip": "Pages\\TextTransformer.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T16:19:58.843Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Counter.razor",
-              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Pages\\Counter.razor",
-              "RelativeDocumentMoniker": "Pages\\Counter.razor",
-              "ToolTip": "D:\\MyApp\\BlazingPizza\\Pages\\Counter.razor",
-              "RelativeToolTip": "Pages\\Counter.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T16:10:50.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddressEditor.razor",
-              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Shared\\AddressEditor.razor",
-              "RelativeDocumentMoniker": "Shared\\AddressEditor.razor",
-              "ToolTip": "D:\\MyApp\\BlazingPizza\\Shared\\AddressEditor.razor",
-              "RelativeToolTip": "Shared\\AddressEditor.razor",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAC4AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T15:58:21.632Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Checkout.razor",
-              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Pages\\Checkout.razor",
-              "RelativeDocumentMoniker": "Pages\\Checkout.razor",
-              "ToolTip": "D:\\MyApp\\BlazingPizza\\Pages\\Checkout.razor",
-              "RelativeToolTip": "Pages\\Checkout.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T15:38:20.689Z",
+              "WhenOpened": "2024-05-20T15:10:24.973Z",
               "EditorCaption": ""
             }
           ]

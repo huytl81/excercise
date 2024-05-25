@@ -1,0 +1,16 @@
+﻿<p>Enter text:</p>
+<input @onkeypress="HandleKeyPress" value="@data" />
+
+@code {
+    [Parameter]
+    public EventCallback<KeyTransformation> OnKeyPressCallback { get; set; }
+
+    private string data;
+
+    private async Task HandleKeyPress(KeyboardEventArgs e)
+    {
+        KeyTransformation t = new KeyTransformation() { Key = e.Key };
+        await OnKeyPressCallback.InvokeAsync(t);
+        data += t.TransformedKey;
+    }
+}

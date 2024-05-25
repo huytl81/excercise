@@ -7,7 +7,7 @@
     <p>Current count: @currentCount</p>
 
     <button class="btn btn-primary" @onclick="IncrementCount">catch mouseeventargs</button>
-    <button class="btn btn-primary" @onclick="() => currentCount++">annonymouse/inline func ()=></button>
+    <button class="btn btn-primary" @onclick="() => currentCount++">[()=>]</button>
     <button class="btn btn-primary" @onclick='mouseEvent => HandleClick(mouseEvent, "Hello ")'>Handle Ctrl key</button>
 
     <button class="btn btn-primary" @onclick="ChangeFocus">Change focus</button>
