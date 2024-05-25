@@ -64,7 +64,7 @@
     bool IsOrderIncomplete => orderWithStatus is null || orderWithStatus.IsDelivered == false;
     PeriodicTimer timer = new(TimeSpan.FromSeconds(3));
     
-    protected override async Task OnParametersSet() 
+    protected override async Task OnParametersSetAsync() 
     {
         await GetLatestOrderStatusUpdatesAsync();
     }
