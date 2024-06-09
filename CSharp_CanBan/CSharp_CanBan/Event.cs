@@ -1,31 +1,32 @@
 ﻿using System.Text;
 using System;
-using EventStandardNet;
 
 namespace Event
 {
-    public delegate void UpdateNameChangeHandler(string name);
+    public delegate void DelegateNameChange(string name);
 
     internal class Event
     {
-        static void MainE(string[] args)
+        static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
             HocSinh hs = new HocSinh();
-            hs.NameChanged += Hs_NameChanged;
-
+            
             hs.Name = "Kteam";
             Console.WriteLine("Tên từ class: " + hs.Name);
 
-            hs.Name = "HowKteam.com";
-            Console.WriteLine("Tên từ class: " + hs.Name);
+            // start handle event the changing of name
+            hs.EventNameChangedHandler += NameChange;
+
+            Console.Write("Sửa tên học sinh:");
+            hs.Name = Console.ReadLine();
 
             Console.ReadLine();
 
         }
 
-        private static void Hs_NameChanged(string name)
+        private static void NameChange(string name)
         {
             Console.WriteLine("Tên mới: " + name);
         }
@@ -33,7 +34,7 @@ namespace Event
 
     public class HocSinh
     {
-        public event UpdateNameChangeHandler NameChanged;
+        public event DelegateNameChange EventNameChangedHandler;
 
         private string _name;
         public string Name
@@ -44,15 +45,15 @@ namespace Event
             set
             {
                 _name = value;
-                OnNameChanged();
+                OnNameChange();
             }
         }
 
-        void OnNameChanged()
+        void OnNameChange()
         {
-            if (NameChanged != null)
+            if (EventNameChangedHandler != null)
             {
-                NameChanged(this.Name);
+                EventNameChangedHandler(this.Name);
             }
         }
     }
