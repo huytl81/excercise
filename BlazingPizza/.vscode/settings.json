@@ -1,4 +1,4 @@
 {
-    "editor.fontFamily": "'Courier New',Cascadia Mono, monospace",
+    "editor.fontFamily": "'Cascadia Code', 'Cascadia Mono', 'Courier New', monospace",
     "editor.fontSize": 16
 }
