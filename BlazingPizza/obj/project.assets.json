@@ -1202,23 +1202,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Huy Ta\\.nuget\\packages\\": {},
+    "C:\\Users\\taleh\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\MyApp\\BlazingPizza\\BlazingPizza.csproj",
+      "projectUniqueName": "D:\\MyApp\\BlazingPizza\\BlazingPizza.csproj",
       "projectName": "BlazingPizza",
-      "projectPath": "D:\\Projects\\MyApp\\BlazingPizza\\BlazingPizza.csproj",
-      "packagesPath": "C:\\Users\\Huy Ta\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\MyApp\\BlazingPizza\\obj\\",
+      "projectPath": "D:\\MyApp\\BlazingPizza\\BlazingPizza.csproj",
+      "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
+      "outputPath": "D:\\MyApp\\BlazingPizza\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Huy Ta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\taleh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1283,7 +1283,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\MyApp\\BlazingPizza\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|d:\\myapp\\blazingpizza\\shared\\sidebar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13EFA0AF-A6A0-4B39-A2FD-01BB3F772C63}|BlazingPizza.csproj|solutionrelative:shared\\sidebar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SeedData.cs",
-              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Data\\SeedData.cs",
-              "RelativeDocumentMoniker": "Data\\SeedData.cs",
-              "ToolTip": "D:\\MyApp\\BlazingPizza\\Data\\SeedData.cs",
-              "RelativeToolTip": "Data\\SeedData.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-18T13:22:32.607Z",
+              "Title": "Sidebar.razor",
+              "DocumentMoniker": "D:\\MyApp\\BlazingPizza\\Shared\\Sidebar.razor",
+              "RelativeDocumentMoniker": "Shared\\Sidebar.razor",
+              "ToolTip": "D:\\MyApp\\BlazingPizza\\Shared\\Sidebar.razor",
+              "RelativeToolTip": "Shared\\Sidebar.razor",
+              "ViewState": "AQIAACsAAAAAAAAAAAAcwDkAAAB1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T15:10:24.973Z",
               "EditorCaption": ""
             }
           ]

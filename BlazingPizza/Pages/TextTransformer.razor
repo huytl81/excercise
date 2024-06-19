@@ -1,0 +1,12 @@
+﻿@page "/texttransformer"
+
+<h1>Text Transformer - Parent</h1>
+
+<TextDisplay OnKeyPressCallback="@TransformText" />
+
+@code {
+    private void TransformText(KeyTransformation k)
+    {
+        k.TransformedKey = k.Key.ToUpper();
+    }
+}

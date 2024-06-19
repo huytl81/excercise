@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 
+// https://www.c-sharpcorner.com/article/async-and-await-in-c-sharp/
 namespace CSharp_CanBan
 {
     //class AsyncAwait
@@ -15,15 +16,16 @@ namespace CSharp_CanBan
 
     //    public static async Task Method1()
     //    {
+
     //        await Task.Run(() =>
     //        {
     //            for (int i = 0; i < 25; i++)
     //            {
-    //                Console.WriteLine(" Method 2: " + i);
+    //                Console.WriteLine(" Method 1: " + i);
     //                // Do something
     //                Task.Delay(100).Wait();
     //            }
-    //        });
+    //        }); 
     //    }
 
 
@@ -42,20 +44,15 @@ namespace CSharp_CanBan
     //{
     //    static async Task Main(string[] args)
     //    {
-    //        Task<int> task = Method1();
-    //        Method2();
-    //        int count = await task;
-    //        Method3(count);
-
-    //        //await callMethod();
+    //        await callMethod();
     //        Console.ReadKey();
     //    }
 
     //    public static async Task callMethod()
     //    {
-    //        Task<int> task = Method1();
+    //        //Task<int> task = Method1();
     //        Method2();
-    //        int count = await task;
+    //        int count = await Method1();
     //        Method3(count);
     //    }
 
@@ -100,7 +97,7 @@ namespace CSharp_CanBan
 
         static async void CallMethod()
         {
-            string filePath = "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Program.cs";
+            string filePath = "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Sample.txt";
             Task<int> task = ReadFile(filePath);
 
             Console.WriteLine(" Other Work 1");

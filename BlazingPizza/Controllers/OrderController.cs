@@ -7,11 +7,11 @@ namespace BlazingPizza;
 [Route("api/[controller]")]
 [ApiController]
 [Produces("application/json")]
-public class OrdersController : Controller
+public class OrderController : Controller
 {
     private readonly PizzaStoreContext _db;
 
-    public OrdersController(PizzaStoreContext db)
+    public OrderController(PizzaStoreContext db)
     {
         _db = db;
     }

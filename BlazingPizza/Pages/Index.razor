@@ -1,10 +1,8 @@
 @page "/"
+@using BlazingPizza.Services
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
-@using BlazingPizza.Services
 @inject OrderState PizzaOrderState
-
-<Topbar></Topbar>
 
 <div class="main">
     <h1>Blazing Pizzas</h1>
@@ -36,6 +34,13 @@
 @code {
     List<PizzaSpecial> specials = new();
     Order SideBarOrder => PizzaOrderState.PizzaOrder;
+    @* Order SideBarOrder
+    {
+        get
+        {
+            return PizzaOrderState.PizzaOrder;
+        }
+    } *@
 
     @* private Order SideBarOrder()
     {
@@ -44,7 +49,8 @@
 
     @* Pizza configuringPizza;
     bool showingConfigureDialog; *@
-            @* protected override void OnInitialized()
+
+    @* protected override void OnInitialized()
     {
         specials.AddRange(new List<PizzaSpecial>
         {
@@ -56,6 +62,7 @@
             new PizzaSpecial { Name = "Classic pepperoni", BasePrice =  10.5M, Description = "It's the pizza you grew up with, but Blazing hot!", ImageUrl="img/pizzas/pepperoni.jpg" }               
         });
     } *@
+    
     protected override async Task OnInitializedAsync()
     {
         specials = await HttpClient.GetFromJsonAsync<List<PizzaSpecial>>(NavigationManager.BaseUri + "api/specials");

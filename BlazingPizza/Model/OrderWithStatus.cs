@@ -25,7 +25,7 @@ namespace BlazingPizza
             {
                 statusText = "Preparing";
             }
-            else if (DateTime.Now < dispatchTime + DeliveryDuration)
+            else if (dispatchTime < DateTime.Now  & DateTime.Now < dispatchTime + DeliveryDuration)
             {
                 statusText = "Out for delivery";
             }
