@@ -5,12 +5,12 @@ namespace EventStandardNet
 {
     internal class EventStandardNet
     {
-        static void MainES(string[] args)
+        static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
             HocSinh hs = new HocSinh();
-            hs.NameChanged += Hs_NameChanged;
+            hs.EventNameChangeHandler += NameChange;
             hs.Name = "Tên lần 1";
             hs.Name = "Tên lần 2";
             hs.Name = "Tên lần 3";
@@ -18,7 +18,7 @@ namespace EventStandardNet
             Console.ReadLine();
         }
 
-        private static void Hs_NameChanged(object sender, NameChangedEventArgs e)
+        private static void NameChange(object sender, NameChangeEventArgs e)
         {
             Console.WriteLine("Tên có thay đổi: " + e.Name);
         }
@@ -27,6 +27,7 @@ namespace EventStandardNet
     public class HocSinh
     {
         private string _name;
+
         public string Name
         {
             get => _name;
@@ -37,33 +38,41 @@ namespace EventStandardNet
             }
         }
 
+        //public int Age
+        //{
+        //    get => _age;
+        //    set => _age = value;
+        //}
+        //public int Age { get; set; }
+        
 
-        private event EventHandler<NameChangedEventArgs> _nameChanged;
-        public event EventHandler<NameChangedEventArgs> NameChanged
+
+        private event EventHandler<NameChangeEventArgs> _eventNameChangeHandler;
+        internal event EventHandler<NameChangeEventArgs> EventNameChangeHandler
         {
             add
             {
-                _nameChanged += value;
+                _eventNameChangeHandler += value;
             }
             remove
             {
-                _nameChanged -= value;
+                _eventNameChangeHandler -= value;
             }
         }
 
         void OnNameChanged(string name)
         {
-            if (_nameChanged != null)
+            if (_eventNameChangeHandler != null)
             {
-                _nameChanged(this, new NameChangedEventArgs(name));
+                _eventNameChangeHandler(this, new NameChangeEventArgs(name));
             }
         }
     }
-
-    public class NameChangedEventArgs : EventArgs
+    
+    internal class NameChangeEventArgs : EventArgs
     {
         public string Name { get; set; }
-        public NameChangedEventArgs(string name)
+        public NameChangeEventArgs(string name)
         {
             Name = name;
         }

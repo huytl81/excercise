@@ -7,7 +7,7 @@ namespace Event
 
     internal class Event
     {
-        static void Main(string[] args)
+        static void MainE(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
@@ -17,13 +17,10 @@ namespace Event
             Console.WriteLine("Tên từ class: " + hs.Name);
 
             // start handle event the changing of name
-            hs.EventNameChangedHandler += NameChange;
-
-            Console.Write("Sửa tên học sinh:");
+            //hs.EventNameChangedHandler += NameChange;
+            hs.EventNameChangedHandler += new DelegateNameChange(NameChange);
+            Console.Write("Sửa lại tên học sinh:");
             hs.Name = Console.ReadLine();
-
-            Console.ReadLine();
-
         }
 
         private static void NameChange(string name)

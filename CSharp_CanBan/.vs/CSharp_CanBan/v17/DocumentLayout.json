@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\MyApp\\CSharp_CanBan\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\myapp\\csharp_canban\\csharp_canban\\event_standard_net.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\event_standard_net.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|D:\\MyApp\\CSharp_CanBan\\csharp_canban\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,12 +15,8 @@
       "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\delegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\myapp\\csharp_canban\\csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|D:\\MyApp\\CSharp_CanBan\\csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|D:\\MyApp\\CSharp_CanBan\\csharp_canban\\event_standard_net.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\event_standard_net.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|D:\\MyApp\\CSharp_CanBan\\csharp_canban\\sample.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -46,33 +46,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Event_Standard_Net.cs",
               "DocumentMoniker": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Event_Standard_Net.cs",
               "RelativeDocumentMoniker": "CSharp_CanBan\\Event_Standard_Net.cs",
               "ToolTip": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Event_Standard_Net.cs",
               "RelativeToolTip": "CSharp_CanBan\\Event_Standard_Net.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAOAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAuwDQAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T10:52:20.337Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Event.cs",
               "DocumentMoniker": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Event.cs",
               "RelativeDocumentMoniker": "CSharp_CanBan\\Event.cs",
               "ToolTip": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Event.cs",
               "RelativeToolTip": "CSharp_CanBan\\Event.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAxwDMAAAAZAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAcwAkAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T10:06:34.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T10:06:34.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Delegate.cs",
               "DocumentMoniker": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\Delegate.cs",
               "RelativeDocumentMoniker": "CSharp_CanBan\\Delegate.cs",
@@ -80,12 +79,11 @@
               "RelativeToolTip": "CSharp_CanBan\\Delegate.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T09:48:39.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T09:48:39.487Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AsyncAwait.cs",
               "DocumentMoniker": "D:\\MyApp\\CSharp_CanBan\\CSharp_CanBan\\AsyncAwait.cs",
               "RelativeDocumentMoniker": "CSharp_CanBan\\AsyncAwait.cs",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "CSharp_CanBan\\AsyncAwait.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAAAFkAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T05:17:04.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-26T05:17:04.43Z"
             }
           ]
         }

@@ -43,7 +43,7 @@ namespace Delegate
 
             //==========================================================================
 
-            //var delshowString = new MyDelegate(ShowString);
+            //MyDelegate delshowString = new MyDelegate(ShowString);
             MyDelegate delshowString = ShowString;
             //call back function
             NhapVaShowTen(delshowString);
