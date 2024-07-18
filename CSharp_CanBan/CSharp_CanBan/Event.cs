@@ -7,7 +7,7 @@ namespace Event
 
     internal class Event
     {
-        static void MainE(string[] args)
+        static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 

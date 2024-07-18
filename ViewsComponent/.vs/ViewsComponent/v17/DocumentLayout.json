@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\MyApp\\ViewsComponent\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\views\\todo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:views\\todo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\viewcomponents\\prioritylistviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:viewcomponents\\prioritylistviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\views\\shared\\components\\prioritylist\\pvc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -42,17 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
               "ToolTip": "D:\\MyApp\\ViewsComponent\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-18T00:20:44.714Z",
               "EditorCaption": ""
@@ -83,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ToDoController.cs",
               "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Controllers\\ToDoController.cs",
               "RelativeDocumentMoniker": "Controllers\\ToDoController.cs",
@@ -91,18 +91,17 @@
               "RelativeToolTip": "Controllers\\ToDoController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvxwAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T14:43:44.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T14:43:44.046Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Views\\ToDo\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\ToDo\\Index.cshtml",
               "ToolTip": "D:\\MyApp\\ViewsComponent\\Views\\ToDo\\Index.cshtml",
               "RelativeToolTip": "Views\\ToDo\\Index.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAjwDAAAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-16T14:44:13.874Z",
               "EditorCaption": ""
@@ -117,8 +116,7 @@
               "RelativeToolTip": "Views\\Shared\\Components\\PriorityList\\PVC.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwMAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-16T14:20:58.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T14:20:58.703Z"
             },
             {
               "$type": "Document",
@@ -130,12 +128,11 @@
               "RelativeToolTip": "Views\\Shared\\Components\\PriorityList\\Default.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-16T14:20:19.539Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T14:20:19.539Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PriorityListViewComponent.cs",
               "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\ViewComponents\\PriorityListViewComponent.cs",
               "RelativeDocumentMoniker": "ViewComponents\\PriorityListViewComponent.cs",
@@ -143,8 +140,7 @@
               "RelativeToolTip": "ViewComponents\\PriorityListViewComponent.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T07:44:27.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T07:44:27.367Z"
             }
           ]
         }

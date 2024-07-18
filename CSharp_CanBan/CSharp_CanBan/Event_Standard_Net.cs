@@ -5,7 +5,7 @@ namespace EventStandardNet
 {
     internal class EventStandardNet
     {
-        static void Main(string[] args)
+        static void ESMain(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
