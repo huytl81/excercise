@@ -11,16 +11,24 @@
       "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\views\\home\\discovery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\home\\discovery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\views\\articles\\_articlesection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\articles\\_articlesection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\viewmodels\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:viewmodels\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\viewmodels\\articlesection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:viewmodels\\articlesection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\views\\home\\_authorpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\home\\_authorpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\views\\articles\\_articlesection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\articles\\_articlesection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\views\\home\\discovery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\home\\discovery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\myapp\\partialviews\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,8 +42,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ArticleSection.cs",
+              "DocumentMoniker": "D:\\MyApp\\PartialViews\\ViewModels\\ArticleSection.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ArticleSection.cs",
+              "ToolTip": "D:\\MyApp\\PartialViews\\ViewModels\\ArticleSection.cs",
+              "RelativeToolTip": "ViewModels\\ArticleSection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T09:47:26.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Article.cs",
+              "DocumentMoniker": "D:\\MyApp\\PartialViews\\ViewModels\\Article.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Article.cs",
+              "ToolTip": "D:\\MyApp\\PartialViews\\ViewModels\\Article.cs",
+              "RelativeToolTip": "ViewModels\\Article.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T09:47:21.039Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -44,7 +78,7 @@
               "RelativeDocumentMoniker": "Views\\Articles\\Read.cshtml",
               "ToolTip": "D:\\MyApp\\PartialViews\\Views\\Articles\\Read.cshtml",
               "RelativeToolTip": "Views\\Articles\\Read.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-10T14:16:49.118Z",
               "EditorCaption": ""
@@ -57,27 +91,27 @@
               "RelativeDocumentMoniker": "Controllers\\ArticlesController.cs",
               "ToolTip": "D:\\MyApp\\PartialViews\\Controllers\\ArticlesController.cs",
               "RelativeToolTip": "Controllers\\ArticlesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-10T14:15:44.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "_ArticleSection.cshtml",
               "DocumentMoniker": "D:\\MyApp\\PartialViews\\Views\\Articles\\_ArticleSection.cshtml",
               "RelativeDocumentMoniker": "Views\\Articles\\_ArticleSection.cshtml",
               "ToolTip": "D:\\MyApp\\PartialViews\\Views\\Articles\\_ArticleSection.cshtml",
               "RelativeToolTip": "Views\\Articles\\_ArticleSection.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAPAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-10T14:10:47.048Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "_AuthorPartial.cshtml",
               "DocumentMoniker": "D:\\MyApp\\PartialViews\\Views\\Home\\_AuthorPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\_AuthorPartial.cshtml",
@@ -90,26 +124,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Discovery.cshtml",
               "DocumentMoniker": "D:\\MyApp\\PartialViews\\Views\\Home\\Discovery.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Discovery.cshtml",
               "ToolTip": "D:\\MyApp\\PartialViews\\Views\\Home\\Discovery.cshtml",
               "RelativeToolTip": "Views\\Home\\Discovery.cshtml",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAGcAAAARAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAE4AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-10T14:09:40.973Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\MyApp\\PartialViews\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "D:\\MyApp\\PartialViews\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T14:38:02.922Z",
               "EditorCaption": ""

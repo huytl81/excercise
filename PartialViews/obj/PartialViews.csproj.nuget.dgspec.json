@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyApp\\PartialViews\\PartialViews.csproj": {}
+    "d:\\MyApp\\PartialViews\\PartialViews.csproj": {}
   },
   "projects": {
-    "D:\\MyApp\\PartialViews\\PartialViews.csproj": {
+    "d:\\MyApp\\PartialViews\\PartialViews.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyApp\\PartialViews\\PartialViews.csproj",
+        "projectUniqueName": "d:\\MyApp\\PartialViews\\PartialViews.csproj",
         "projectName": "PartialViews",
-        "projectPath": "D:\\MyApp\\PartialViews\\PartialViews.csproj",
+        "projectPath": "d:\\MyApp\\PartialViews\\PartialViews.csproj",
         "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
-        "outputPath": "D:\\MyApp\\PartialViews\\obj\\",
+        "outputPath": "d:\\MyApp\\PartialViews\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

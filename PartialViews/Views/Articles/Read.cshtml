@@ -20,12 +20,13 @@
         //                             { "index", index }
         //                         }))
 
-        await Html.RenderPartialAsync("_ArticleSection",
-            section,
+        await Html.RenderPartialAsync("_ArticleSection", section,
             new ViewDataDictionary(ViewData)
+                {
                     {
-                { "index", index }
-                    });
+                        "index", index
+                    }
+                });
 
         index++;
     }
