@@ -18,20 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\MyApp\ViewsComponent
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/MyApp/ViewsComponent/Views/Shared/Components/PriorityList/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJpb3JpdHlMaXN0XERlZmF1bHQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/MyApp/ViewsComponent/Views/Shared/Components/PriorityList/PVC.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJpb3JpdHlMaXN0XFBWQy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/MyApp/ViewsComponent/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/MyApp/ViewsComponent/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApp/ViewsComponent/Views/ToDo/Components/PriorityList/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9Eb1xDb21wb25lbnRzXFByaW9yaXR5TGlzdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyApp/ViewsComponent/Views/ToDo/Components/PriorityList/PVC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9Eb1xDb21wb25lbnRzXFByaW9yaXR5TGlzdFxQVkMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/MyApp/ViewsComponent/Views/ToDo/Index.cshtml]

@@ -9,91 +9,91 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PartialViews
 build_property.RootNamespace = PartialViews
-build_property.ProjectDir = d:\MyApp\PartialViews\
+build_property.ProjectDir = D:\MyApp\PartialViews\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\MyApp\PartialViews
+build_property.MSBuildProjectDirectory = D:\MyApp\PartialViews
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/MyApp/PartialViews/Pages/ArticlesRP/ReadRP.cshtml]
+[D:/MyApp/PartialViews/Pages/ArticlesRP/ReadRP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJ0aWNsZXNSUFxSZWFkUlAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/ArticlesRP/_ArticleSectionRP.cshtml]
+[D:/MyApp/PartialViews/Pages/ArticlesRP/_ArticleSectionRP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJ0aWNsZXNSUFxfQXJ0aWNsZVNlY3Rpb25SUC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/DiscoveryRP.cshtml]
+[D:/MyApp/PartialViews/Pages/DiscoveryRP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY292ZXJ5UlAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/Shared/_AuthorPartialRP.cshtml]
+[D:/MyApp/PartialViews/Pages/Shared/_AuthorPartialRP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BdXRob3JQYXJ0aWFsUlAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/Shared/_CookieConsentPartial.cshtml]
+[D:/MyApp/PartialViews/Pages/Shared/_CookieConsentPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Db29raWVDb25zZW50UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/Shared/_Layout.cshtml]
+[D:/MyApp/PartialViews/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/MyApp/PartialViews/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/_AuthorPartialRP.cshtml]
+[D:/MyApp/PartialViews/Pages/_AuthorPartialRP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0F1dGhvclBhcnRpYWxSUC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/_ViewImports.cshtml]
+[D:/MyApp/PartialViews/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Pages/_ViewStart.cshtml]
+[D:/MyApp/PartialViews/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/Articles/Read.cshtml]
+[D:/MyApp/PartialViews/Views/Articles/Read.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcUmVhZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/Articles/_ArticleSection.cshtml]
+[D:/MyApp/PartialViews/Views/Articles/_ArticleSection.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcX0FydGljbGVTZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/Home/Discovery.cshtml]
+[D:/MyApp/PartialViews/Views/Home/Discovery.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaXNjb3ZlcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/Home/_AuthorPartial.cshtml]
+[D:/MyApp/PartialViews/Views/Home/_AuthorPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQXV0aG9yUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/Shared/Error.cshtml]
+[D:/MyApp/PartialViews/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/Shared/_AuthorPartial.cshtml]
+[D:/MyApp/PartialViews/Views/Shared/_AuthorPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdXRob3JQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/Shared/_CookieConsentPartial.cshtml]
+[D:/MyApp/PartialViews/Views/Shared/_CookieConsentPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db29raWVDb25zZW50UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/Shared/_Layout.cshtml]
+[D:/MyApp/PartialViews/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/_ViewImports.cshtml]
+[D:/MyApp/PartialViews/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/MyApp/PartialViews/Views/_ViewStart.cshtml]
+[D:/MyApp/PartialViews/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

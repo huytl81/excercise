@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\ToDo\Components\**" />
-    <Content Remove="Views\ToDo\Components\**" />
-    <EmbeddedResource Remove="Views\ToDo\Components\**" />
-    <None Remove="Views\ToDo\Components\**" />
+    <Compile Remove="Views\Shared\Components\**" />
+    <Content Remove="Views\Shared\Components\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\**" />
+    <None Remove="Views\Shared\Components\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\ToDo\Components\PriorityList\Default.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

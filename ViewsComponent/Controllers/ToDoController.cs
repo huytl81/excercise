@@ -5,20 +5,20 @@ namespace ViewsComponent.Controllers;
 
 public class ToDoController : Controller
 {
-    private readonly ToDoDBContext _ToDoDBContext;
+    private readonly ToDoDbContext _toDoDbContext;
 
-    public ToDoController(ToDoDBContext context)
+    public ToDoController(ToDoDbContext context)
     {
-        _ToDoDBContext = context;
+        _toDoDbContext = context;
 
         // EnsureCreated() is used to call OnModelCreating for In-Memory databases as migration is not possible
         // see: https://github.com/aspnet/EntityFrameworkCore/issues/11666 
-        _ToDoDBContext.Database.EnsureCreated();
+        _toDoDbContext.Database.EnsureCreated();
     }
 
-    public IActionResult Index(int maxPriority = 3, bool isDone = true)
+    public IActionResult Index(int maxPriority = 2, bool isDone = false)
     {
-        var model = _ToDoDBContext!.ToDo!.ToList();
+        var model = _toDoDbContext!.ToDo!.ToList();
         ViewData["maxPriority"] = maxPriority;
         ViewData["isDone"] = isDone;
         ViewBag.PriorityMessage = "My PVC view component";
@@ -26,7 +26,7 @@ public class ToDoController : Controller
         return View(model);
     }
 
-    public IActionResult IndexVC(int maxPriority = 3, bool isDone = false)
+    public IActionResult IndexVC(int maxPriority = 9, bool isDone = true)
     {
         return ViewComponent("PriorityList",
             new

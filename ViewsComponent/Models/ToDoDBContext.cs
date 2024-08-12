@@ -2,11 +2,11 @@
 
 namespace ViewsComponent.Models;
 
-public class ToDoDBContext : DbContext
+public class ToDoDbContext(DbContextOptions<ToDoDbContext> options) : DbContext(options)
 {
-    public ToDoDBContext(DbContextOptions<ToDoDBContext> options) : base(options)
-    {
-    }
+    //public ToDoDbContext(DbContextOptions<ToDoDbContext> options) : base(options)
+    //{
+    //}
     public DbSet<TodoItem>? ToDo { get; set; }
 
     //The following code is used to seed the DB.

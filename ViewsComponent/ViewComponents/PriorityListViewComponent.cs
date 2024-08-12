@@ -4,18 +4,19 @@ using ViewsComponent.Models;
 
 namespace ViewsComponent.ViewComponents;
 
-[ViewComponent(Name = "PriorityList")]
-public class PriorityListViewComponent : ViewComponent
+//[ViewComponent(Name = "PriorityList")]
+//public class PriorityListViewComponent : ViewComponent
+public class PriorityList : ViewComponent
 {
-    private readonly ToDoDBContext db;
+    private readonly ToDoDbContext db;
 
-    public PriorityListViewComponent(ToDoDBContext context) => db = context;
+    public PriorityList(ToDoDbContext context) => db = context;
 
     public async Task<IViewComponentResult> InvokeAsync(int maxPriority, bool isDone)
     {
         string viewname = "Default";
         // If asking for all completed tasks, render with the "PVC" view.
-        if (maxPriority > 3 && isDone)
+        if (maxPriority > 2 && isDone)
         {
             viewname = "PVC";
         }
@@ -24,7 +25,7 @@ public class PriorityListViewComponent : ViewComponent
         return View(viewname, items);
     }
 
-    private Task<List<TodoItem>> GetItemsAsync(int maxPriority, bool isDone)
+    private  Task<List<TodoItem>> GetItemsAsync(int maxPriority, bool isDone)
     {
         return db!.ToDo!.Where(x => x.IsDone == isDone && x.Priority <= maxPriority).ToListAsync();
     }

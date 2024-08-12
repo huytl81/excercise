@@ -3,10 +3,12 @@ using ViewsComponent.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ToDoDBContext>(options =>
-        options.UseInMemoryDatabase("db"));
+builder.Services.AddDbContext<ToDoDbContext>(options => options.UseInMemoryDatabase("db"));
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorOptions(options =>
+{
+    options.ViewLocationFormats.Add("/{0}.cshtml");
+});
 
 var app = builder.Build();
 

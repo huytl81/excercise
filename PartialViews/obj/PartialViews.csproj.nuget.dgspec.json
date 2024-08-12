@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\MyApp\\PartialViews\\PartialViews.csproj": {}
+    "D:\\MyApp\\PartialViews\\PartialViews.csproj": {}
   },
   "projects": {
-    "d:\\MyApp\\PartialViews\\PartialViews.csproj": {
+    "D:\\MyApp\\PartialViews\\PartialViews.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\MyApp\\PartialViews\\PartialViews.csproj",
+        "projectUniqueName": "D:\\MyApp\\PartialViews\\PartialViews.csproj",
         "projectName": "PartialViews",
-        "projectPath": "d:\\MyApp\\PartialViews\\PartialViews.csproj",
+        "projectPath": "D:\\MyApp\\PartialViews\\PartialViews.csproj",
         "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
-        "outputPath": "d:\\MyApp\\PartialViews\\obj\\",
+        "outputPath": "D:\\MyApp\\PartialViews\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

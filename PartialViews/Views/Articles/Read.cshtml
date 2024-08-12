@@ -3,7 +3,7 @@
 
 <h2>@Model.Title</h2>
 @* Pass the author's name to Views\Shared\_AuthorPartial.cshtml *@
-@await Html.PartialAsync("_AuthorPartial", Model.AuthorName)
+@await Html.PartialAsync("_AuthorPartial", Model)
 @Model.PublicationDate
 
 @* Loop over the Sections and pass in a section and additional ViewData to 
