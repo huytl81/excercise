@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MVCMovie.Migrations
 {
-    [DbContext(typeof(MVCMovieContext))]
+    [DbContext(typeof(MvcMovieContext))]
     [Migration("20240315091959_InitialCreate")]
     partial class InitialCreate
     {

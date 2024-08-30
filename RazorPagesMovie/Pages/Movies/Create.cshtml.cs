@@ -23,7 +23,7 @@ namespace RazorPagesMovie.Pages.Movies
         [TempData]
         public string Message { get; set; }
 
-        public IActionResult OnGet()
+        public IActionResult OnGetAsync()
         {
             return Page();
         }
