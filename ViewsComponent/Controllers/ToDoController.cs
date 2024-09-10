@@ -21,12 +21,12 @@ public class ToDoController : Controller
         var model = _toDoDbContext!.ToDo!.ToList();
         ViewData["maxPriority"] = maxPriority;
         ViewData["isDone"] = isDone;
-        ViewBag.PriorityMessage = "My PVC view component";
+        ViewBag.PriorityMessage = "My Priority view component";
 
         return View(model);
     }
 
-    public IActionResult IndexVC(int maxPriority = 9, bool isDone = true)
+    public IActionResult Index1(int maxPriority = 4, bool isDone = false)
     {
         return ViewComponent("PriorityList",
             new

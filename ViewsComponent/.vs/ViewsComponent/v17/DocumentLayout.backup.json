@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MyApp\\ViewsComponent\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\viewcomponents\\prioritylistviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:viewcomponents\\prioritylistviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\views\\todo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:views\\todo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\views\\todo\\components\\prioritylist\\pvc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:views\\todo\\components\\prioritylist\\pvc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\views\\todo\\components\\prioritylist\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:views\\todo\\components\\prioritylist\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\models\\tododbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:models\\tododbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|d:\\myapp\\viewscomponent\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7D865FE-8ADE-4810-AAAD-27029E0C8C0A}|ViewsComponent.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-12T04:39:33.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PVC.cshtml",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Views\\ToDo\\Components\\PriorityList\\PVC.cshtml",
+              "RelativeDocumentMoniker": "Views\\ToDo\\Components\\PriorityList\\PVC.cshtml",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\Views\\ToDo\\Components\\PriorityList\\PVC.cshtml",
+              "RelativeToolTip": "Views\\ToDo\\Components\\PriorityList\\PVC.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-12T03:46:18.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Views\\ToDo\\Components\\PriorityList\\Default.cshtml",
+              "RelativeDocumentMoniker": "Views\\ToDo\\Components\\PriorityList\\Default.cshtml",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\Views\\ToDo\\Components\\PriorityList\\Default.cshtml",
+              "RelativeToolTip": "Views\\ToDo\\Components\\PriorityList\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-12T03:44:34.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T03:10:57.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ToDoDBContext.cs",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Models\\ToDoDBContext.cs",
+              "RelativeDocumentMoniker": "Models\\ToDoDBContext.cs",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\Models\\ToDoDBContext.cs",
+              "RelativeToolTip": "Models\\ToDoDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T14:53:20.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ToDoItem.cs",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Models\\ToDoItem.cs",
+              "RelativeDocumentMoniker": "Models\\ToDoItem.cs",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\Models\\ToDoItem.cs",
+              "RelativeToolTip": "Models\\ToDoItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T14:53:14.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PriorityListViewComponent.cs",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\ViewComponents\\PriorityListViewComponent.cs",
+              "RelativeDocumentMoniker": "ViewComponents\\PriorityListViewComponent.cs",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\ViewComponents\\PriorityListViewComponent.cs",
+              "RelativeToolTip": "ViewComponents\\PriorityListViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T07:44:27.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ToDoController.cs",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Controllers\\ToDoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ToDoController.cs",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\Controllers\\ToDoController.cs",
+              "RelativeToolTip": "Controllers\\ToDoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T14:43:44.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\MyApp\\ViewsComponent\\Views\\ToDo\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\ToDo\\Index.cshtml",
+              "ToolTip": "D:\\MyApp\\ViewsComponent\\Views\\ToDo\\Index.cshtml",
+              "RelativeToolTip": "Views\\ToDo\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-16T14:44:13.874Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
