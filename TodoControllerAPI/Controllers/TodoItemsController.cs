@@ -8,6 +8,7 @@ namespace TodoControllerAPI.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 [Produces("application/json")]
+[Consumes("application/json")]
 public class TodoItemsController : ControllerBase
 {
     private readonly TodoContext _context;
