@@ -11,6 +11,6 @@ namespace PartialViews.ViewModels
 
         public string Title { get; set; }
 
-        public List<ArticleSection> Sections { get; } = new List<ArticleSection>();
+        public List<Section> Sections { get; } = new List<Section>();
     }
 }

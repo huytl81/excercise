@@ -16,7 +16,7 @@ public class PriorityList : ViewComponent
     {
         string viewname = "Default";
         // If asking for all completed tasks, render with the "PVC" view.
-        if (maxPriority > 2 && isDone)
+        if (maxPriority > 2 && !isDone)
         {
             viewname = "PVC";
         }
