@@ -39,3 +39,17 @@ D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Namotion.Reflection.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NJsonSchema.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NJsonSchema.Annotations.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NJsonSchema.NewtonsoftJson.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NJsonSchema.Yaml.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NSwag.Annotations.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NSwag.AspNetCore.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NSwag.Core.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NSwag.Core.Yaml.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NSwag.Generation.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\NSwag.Generation.AspNetCore.dll
+d:\MyApp\TodoMinimalAPI\bin\Debug\net8.0\YamlDotNet.dll
+d:\MyApp\TodoMinimalAPI\obj\Debug\net8.0\TodoMinimalAPI.MvcApplicationPartsAssemblyInfo.cs

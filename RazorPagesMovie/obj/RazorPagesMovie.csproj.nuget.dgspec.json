@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyApp\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
+    "d:\\MyApp\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
   },
   "projects": {
-    "D:\\MyApp\\RazorPagesMovie\\RazorPagesMovie.csproj": {
+    "d:\\MyApp\\RazorPagesMovie\\RazorPagesMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyApp\\RazorPagesMovie\\RazorPagesMovie.csproj",
+        "projectUniqueName": "d:\\MyApp\\RazorPagesMovie\\RazorPagesMovie.csproj",
         "projectName": "RazorPagesMovie",
-        "projectPath": "D:\\MyApp\\RazorPagesMovie\\RazorPagesMovie.csproj",
+        "projectPath": "d:\\MyApp\\RazorPagesMovie\\RazorPagesMovie.csproj",
         "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
-        "outputPath": "D:\\MyApp\\RazorPagesMovie\\obj\\",
+        "outputPath": "d:\\MyApp\\RazorPagesMovie\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

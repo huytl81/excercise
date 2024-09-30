@@ -4,7 +4,7 @@ POST {{TodoMinimalAPI_HostAddress}}/todoitems
 Content-Type: application/json
 
     {
-        "name": "feed cat",
+        "name": "play workout",
         "isComplete": true
     }
 
@@ -27,11 +27,12 @@ GET {{TodoMinimalAPI_HostAddress}}/todoitems/complete
 
 ###
 
-PUT {{TodoMinimalAPI_HostAddress}}/todoitems/1
+PUT {{TodoMinimalAPI_HostAddress}}/todoitems/2
 Content-Type: application/json
 
 {
-  "isComplete": false
+    "name": "sleep",
+    "isComplete": true
 }
 ###
 
@@ -40,5 +41,13 @@ GET {{TodoMinimalAPI_HostAddress}}/hello
 ###
 
 GET {{TodoMinimalAPI_HostAddress}}/hello
+
+###
+
+POST {{TodoMinimalAPI_HostAddress}}/todoitems/
+
+###
+
+PUT {{TodoMinimalAPI_HostAddress}}/todoitems/{id}
 
 ###

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using TodoMinimalAPI;
 using TodoMinimalAPI.Data;
 using TodoMinimalAPI.Models;
 
@@ -19,90 +21,43 @@ builder.Services.AddAuthorizationBuilder()
             .RequireClaim("scope", "greetings_api"));
 builder.Services.AddAuthorization();
 
-builder.Services.AddDbContext<TodoContext>(option => option.UseInMemoryDatabase("TodoList"));
+builder.Services.AddDbContext<TodoDbContext>(option => option.UseInMemoryDatabase("TodoList"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-var app = builder.Build();
+//Step 1: First of all, install NSwag => dotnet add package NSwag.AspNetCore
 
-if (builder.Environment.IsDevelopment())
+//Step 2: Enables the API Explorer, which is a service that provides metadata about the HTTP API. The API Explorer is used by Swagger to generate the Swagger document.
+builder.Services.AddEndpointsApiExplorer();
+
+//Step 3: Adds the Swagger OpenAPI document generator to the application services and configures it to provide more information about the API
+builder.Services.AddOpenApiDocument(config =>
 {
+    config.DocumentName = "TodoAPI";
+    config.Title = "TodoAPI v1 - Minimal version";
+    config.Version = "v1";
+});
+
+var app = builder.Build();
+app.Urls.Add("http://localhost:3000");
+app.Urls.Add("http://localhost:4000");
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseOpenApi();
+    app.UseSwaggerUi(config =>
+    {
+        config.DocumentTitle = "TodoAPI";
+        config.Path = "/swagger";
+        config.DocumentPath = "/swagger/{documentName}/swagger.json";
+        config.DocExpansion = "list";
+    });
     app.UseDeveloperExceptionPage();
 }
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-// Require authorization for role admin and scope greeting_api above
-// create JWT token for testing: dotnet user-jwts create --scope "greetings_api" --role "admin"
-// then test: curl -i -H "Authorization: Bearer {token}" https://localhost:{port}/hello
-// remove-item alias:curl when needed
-app.MapGet("/hello", () => "Hello world!").RequireAuthorization("admin_greetings");
-
-
-var todoItems = app.MapGroup("/todoitems");
-
-todoItems.MapGet("/", GetAllTodoItems);
-todoItems.MapGet("/complete", GetCompleteTodoItems);
-todoItems.MapGet("/{id}", GetTodo);
-todoItems.MapPost("/", CreateTodo);
-todoItems.MapPut("/{id}", UpdateTodo);
-todoItems.MapDelete("/{id}", DeleteTodo);
+// Endpoint defined outside of Program.cs
+TodoEndpoints.Map(app); 
 
 app.Run();
-
-static async Task<IResult> GetAllTodoItems(TodoContext context)
-{
-    return TypedResults.Ok(await context.TodoItems.Select(x=> new TodoItemDTO(x)).ToArrayAsync());
-}
-
-static async Task<IResult> GetCompleteTodoItems(TodoContext context)
-{
-    return TypedResults.Ok(await context.TodoItems.Where(t => t.IsComplete).Select(x => new TodoItemDTO(x)).ToListAsync());
-}
-
-static async Task<IResult> GetTodo(int id, TodoContext context)
-{
-    return await context.TodoItems.FindAsync(id) is TodoItem todoItem
-        ? TypedResults.Ok(new TodoItemDTO(todoItem))
-        : TypedResults.NotFound();
-}
-
-static async Task<IResult> CreateTodo(TodoItemDTO todoItemDTO, TodoContext context)
-{
-    var todoItem = new TodoItem()
-    {
-        Name = todoItemDTO.Name,
-        IsComplete = todoItemDTO.IsComplete
-    };
-
-    context.TodoItems.Add(todoItem);
-    await context.SaveChangesAsync();
-
-    return TypedResults.Created($"/todoitems/{todoItem.Id}", todoItem);
-}
-
-static async Task<IResult> UpdateTodo(int id, TodoItemDTO todoItemDTO, TodoContext context)
-{
-    var todoItem = await context.TodoItems.FindAsync(id);
-
-    if (todoItem is null) return TypedResults.NotFound();
-
-    todoItem.Name = todoItemDTO.Name;
-    todoItem.IsComplete = todoItemDTO.IsComplete;
-
-    await context.SaveChangesAsync();
-
-    return TypedResults.NoContent();
-}
-
-static async Task<IResult> DeleteTodo(int id, TodoContext context)
-{
-    if (await context.TodoItems.FindAsync(id) is TodoItem todoItem)
-    {
-        context.TodoItems.Remove(todoItem);
-        await context.SaveChangesAsync();
-        return TypedResults.NoContent();
-    }
-
-    return TypedResults.NotFound();
-}
