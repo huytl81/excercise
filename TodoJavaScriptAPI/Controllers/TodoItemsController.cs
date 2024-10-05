@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Mime;
 using TodoJavaScriptAPI.Data;
 using TodoJavaScriptAPI.Models;
 
@@ -24,17 +25,32 @@ namespace TodoJavaScriptAPI.Controllers
         }
 
         // GET: api/TodoItems/5
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<TodoItem>> GetTodoItem(int id)
+        //{
+        //    var todoItem = await _context.TodoItems.FindAsync(id);
+
+        //    if (todoItem == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return todoItem;
+        //}
+
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoItem>> GetTodoItem(int id)
+        [ProducesResponseType<TodoItem>(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult GetTodoItem(int id)
         {
-            var todoItem = await _context.TodoItems.FindAsync(id);
+            var todoItem = _context.TodoItems.FindAsync(id);
 
             if (todoItem == null)
             {
-                return NotFound();
+                return new NotFoundResult();
             }
 
-            return todoItem;
+            return Ok(todoItem);
         }
 
         // PUT: api/TodoItems/5
@@ -78,6 +94,23 @@ namespace TodoJavaScriptAPI.Controllers
 
             return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, todoItem);
         }
+
+
+        //// POST: api/TodoItems
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //[Consumes(MediaTypeNames.Application.Json)]
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //public async Task<IActionResult> PostTodoItem(TodoItem todoItem)
+        //{
+        //    _context.TodoItems.Add(todoItem);
+        //    await _context.SaveChangesAsync();
+
+        //    //return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, todoItem);
+        //    return new CreatedAtActionResult(nameof(GetTodoItem), "TodoItems", new { id = todoItem.Id }, todoItem);
+        //}
+
 
         // DELETE: api/TodoItems/5
         [HttpDelete("{id}")]

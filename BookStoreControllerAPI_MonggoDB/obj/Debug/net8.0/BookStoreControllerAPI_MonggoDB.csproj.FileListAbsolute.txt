@@ -44,3 +44,7 @@ D:\MyApp\BookStoreControllerAPI_MonggoDB\obj\Debug\net8.0\refint\BookStoreContro
 D:\MyApp\BookStoreControllerAPI_MonggoDB\obj\Debug\net8.0\BookStoreControllerAPI_MonggoDB.pdb
 D:\MyApp\BookStoreControllerAPI_MonggoDB\obj\Debug\net8.0\BookStoreControllerAPI_MonggoDB.genruntimeconfig.cache
 D:\MyApp\BookStoreControllerAPI_MonggoDB\obj\Debug\net8.0\ref\BookStoreControllerAPI_MonggoDB.dll
+D:\MyApp\BookStoreControllerAPI_MonggoDB\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\MyApp\BookStoreControllerAPI_MonggoDB\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\MyApp\BookStoreControllerAPI_MonggoDB\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\MyApp\BookStoreControllerAPI_MonggoDB\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

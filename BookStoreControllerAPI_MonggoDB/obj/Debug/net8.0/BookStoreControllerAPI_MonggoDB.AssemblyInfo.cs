@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookStoreControllerAPI_MonggoDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ae220c2429decd4e56bd9ce092123b404024535")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+daf82bf728705c012b4f1fc0b02f555d30bca3c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookStoreControllerAPI_MonggoDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookStoreControllerAPI_MonggoDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
