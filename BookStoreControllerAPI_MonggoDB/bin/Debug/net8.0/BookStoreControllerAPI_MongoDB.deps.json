@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "BookStoreControllerAPI_MonggoDB/1.0.0": {
+      "BookStoreControllerAPI_MongoDB/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.JsonPatch": "8.0.8",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.8",
@@ -14,7 +14,7 @@
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
-          "BookStoreControllerAPI_MonggoDB.dll": {}
+          "BookStoreControllerAPI_MongoDB.dll": {}
         }
       },
       "AWSSDK.Core/3.7.100.14": {
@@ -254,7 +254,7 @@
     }
   },
   "libraries": {
-    "BookStoreControllerAPI_MonggoDB/1.0.0": {
+    "BookStoreControllerAPI_MongoDB/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

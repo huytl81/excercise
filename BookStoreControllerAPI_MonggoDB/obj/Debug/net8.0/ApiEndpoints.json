@@ -1,7 +1,7 @@
 [
   {
-    "ContainingType": "BookStoreControllerAPI_MonggoDB.Controllers.BooksController",
-    "Method": "Get",
+    "ContainingType": "BookStoreControllerAPI_MongoDB.Controllers.BooksController",
+    "Method": "Gets",
     "RelativePath": "api/Books",
     "HttpMethod": "GET",
     "IsController": true,
@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[BookStoreControllerAPI_MonggoDB.Models.Book, BookStoreControllerAPI_MonggoDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[BookStoreControllerAPI_MonggoDB.Models.Book, BookStoreControllerAPI_MongoDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "ContainingType": "BookStoreControllerAPI_MonggoDB.Controllers.BooksController",
+    "ContainingType": "BookStoreControllerAPI_MongoDB.Controllers.BooksController",
     "Method": "Post",
     "RelativePath": "api/Books",
     "HttpMethod": "POST",
@@ -36,7 +36,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookStoreControllerAPI_MonggoDB.Controllers.BooksController",
+    "ContainingType": "BookStoreControllerAPI_MongoDB.Controllers.BooksController",
     "Method": "Get",
     "RelativePath": "api/Books/{id}",
     "HttpMethod": "GET",
@@ -62,8 +62,8 @@
     ]
   },
   {
-    "ContainingType": "BookStoreControllerAPI_MonggoDB.Controllers.BooksController",
-    "Method": "Update",
+    "ContainingType": "BookStoreControllerAPI_MongoDB.Controllers.BooksController",
+    "Method": "Put",
     "RelativePath": "api/Books/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -83,7 +83,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookStoreControllerAPI_MonggoDB.Controllers.BooksController",
+    "ContainingType": "BookStoreControllerAPI_MongoDB.Controllers.BooksController",
     "Method": "PatchPrice",
     "RelativePath": "api/Books/{id}",
     "HttpMethod": "PATCH",
@@ -104,7 +104,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookStoreControllerAPI_MonggoDB.Controllers.BooksController",
+    "ContainingType": "BookStoreControllerAPI_MongoDB.Controllers.BooksController",
     "Method": "Delete",
     "RelativePath": "api/Books/{id}",
     "HttpMethod": "DELETE",
@@ -129,7 +129,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BookStoreControllerAPI_MonggoDB.WeatherForecast, BookStoreControllerAPI_MonggoDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BookStoreControllerAPI_MonggoDB.WeatherForecast, BookStoreControllerAPI_MongoDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

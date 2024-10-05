@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Av4SKjNBQNs=",
+  "dgSpecHash": "BfZTaY0ezMI=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MonggoDB.csproj",
+  "projectFilePath": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Huy Ta\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Huy Ta\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

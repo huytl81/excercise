@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\",
+  "WorkspaceRootPath": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\myapp\\bookstorecontrollerapi_monggodb\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\projects\\myapp\\bookstorecontrollerapi_monggodb\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\myapp\\bookstorecontrollerapi_monggodb\\models\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\projects\\myapp\\bookstorecontrollerapi_monggodb\\models\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:models\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\myapp\\bookstorecontrollerapi_monggodb\\services\\booksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:services\\booksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\myapp\\bookstorecontrollerapi_monggodb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\projects\\myapp\\bookstorecontrollerapi_monggodb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\myapp\\bookstorecontrollerapi_monggodb\\models\\bookstoredatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:models\\bookstoredatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\myapp\\bookstorecontrollerapi_monggodb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\projects\\myapp\\bookstorecontrollerapi_monggodb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\myapp\\bookstorecontrollerapi_monggodb\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\projects\\myapp\\bookstorecontrollerapi_monggodb\\models\\bookstoredatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:models\\bookstoredatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\projects\\myapp\\bookstorecontrollerapi_monggodb\\services\\booksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:services\\booksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|d:\\projects\\myapp\\bookstorecontrollerapi_monggodb\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44F4D3FA-0D06-4A5A-A664-DCB88033733D}|BookStoreControllerAPI_MonggoDB.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,9 +44,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Book.cs",
-              "DocumentMoniker": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\Book.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\Book.cs",
               "RelativeDocumentMoniker": "Models\\Book.cs",
-              "ToolTip": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\Book.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\Book.cs",
               "RelativeToolTip": "Models\\Book.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -57,22 +57,22 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "BookDTO.cs",
-              "DocumentMoniker": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\BookDTO.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\BookDTO.cs",
               "RelativeDocumentMoniker": "Models\\BookDTO.cs",
-              "ToolTip": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\BookDTO.cs",
-              "RelativeToolTip": "Models\\BookDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "ToolTip": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\BookDTO.cs*",
+              "RelativeToolTip": "Models\\BookDTO.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-15T12:56:55.128Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\appsettings.json",
+              "ToolTip": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -83,22 +83,22 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "BookStoreDatabaseSettings.cs",
-              "DocumentMoniker": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\BookStoreDatabaseSettings.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\BookStoreDatabaseSettings.cs",
               "RelativeDocumentMoniker": "Models\\BookStoreDatabaseSettings.cs",
-              "ToolTip": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\BookStoreDatabaseSettings.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Models\\BookStoreDatabaseSettings.cs",
               "RelativeToolTip": "Models\\BookStoreDatabaseSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T05:44:49.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "BooksService.cs",
-              "DocumentMoniker": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Services\\BooksService.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Services\\BooksService.cs",
               "RelativeDocumentMoniker": "Services\\BooksService.cs",
-              "ToolTip": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Services\\BooksService.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Services\\BooksService.cs",
               "RelativeToolTip": "Services\\BooksService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -109,24 +109,24 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "BooksController.cs",
-              "DocumentMoniker": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Controllers\\BooksController.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Controllers\\BooksController.cs",
               "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
-              "ToolTip": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Controllers\\BooksController.cs",
-              "RelativeToolTip": "Controllers\\BooksController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAwEoAAAAlAAAAAAAAAA==",
+              "ToolTip": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Controllers\\BooksController.cs*",
+              "RelativeToolTip": "Controllers\\BooksController.cs*",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAwDsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T05:37:34.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Program.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\MyApp\\BookStoreControllerAPI_MonggoDB\\Program.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T05:45:40.037Z",
               "EditorCaption": ""

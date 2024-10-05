@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "XY2mZmg+1dszANuZWwl2jMcxyNDf6/g2dFLRqb4m1SE=",
-  "Source": "BookStoreControllerAPI_MonggoDB",
-  "BasePath": "_content/BookStoreControllerAPI_MonggoDB",
+  "Hash": "euxOqEgGZMy0317OJ2g5o3vYYvafc13mSURhjQsOQt0=",
+  "Source": "BookStoreControllerAPI_MongoDB",
+  "BasePath": "_content/BookStoreControllerAPI_MongoDB",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

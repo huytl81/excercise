@@ -1,11 +1,9 @@
-﻿using BookStoreControllerAPI_MonggoDB.Services;
-using BookStoreControllerAPI_MonggoDB.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using BookStoreControllerAPI_MonggoDB.Models;
+using BookStoreControllerAPI_MonggoDB.Services;
 using Microsoft.AspNetCore.JsonPatch;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc;
 
-
-namespace BookStoreControllerAPI_MonggoDB.Controllers;
+namespace BookStoreControllerAPI_MongoDB.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -57,6 +55,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpPatch("{id}")]
+    [Consumes("application/json-patch+json")]
     public async Task<IActionResult> PatchPrice(string id, [FromBody] JsonPatchDocument<BookDTO> patchDoc)
     {
         if (patchDoc != null)
@@ -78,6 +77,7 @@ public class BooksController : ControllerBase
             {
                 try
                 {
+                    book.BookName = bookDto.Name;
                     book.Price = bookDto.Price;
                     await _booksService.UpdateAsync(id, book);
                     //return NoContent(); // No content to return on successful patch => 204
