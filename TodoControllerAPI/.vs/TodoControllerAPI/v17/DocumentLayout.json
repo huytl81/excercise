@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\MyApp\\TodoControllerAPI\\",
+  "WorkspaceRootPath": "D:\\Projects\\MyApp\\TodoControllerAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\myapp\\todocontrollerapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\myapp\\todocontrollerapi\\controllers\\todoitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:controllers\\todoitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\myapp\\todocontrollerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\projects\\myapp\\todocontrollerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\myapp\\todocontrollerapi\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\projects\\myapp\\todocontrollerapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\projects\\myapp\\todocontrollerapi\\controllers\\todoitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:controllers\\todoitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\projects\\myapp\\todocontrollerapi\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\myapp\\todocontrollerapi\\data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|d:\\projects\\myapp\\todocontrollerapi\\data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEA85749-8C4E-4FCE-B6E6-070969A507DD}|TodoControllerAPI.csproj|solutionrelative:data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,15 +30,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "D:\\MyApp\\TodoControllerAPI\\Controllers\\WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\TodoControllerAPI\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
-              "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\TodoControllerAPI\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -49,22 +53,21 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "TodoItem.cs",
-              "DocumentMoniker": "D:\\MyApp\\TodoControllerAPI\\Models\\TodoItem.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\TodoControllerAPI\\Models\\TodoItem.cs",
               "RelativeDocumentMoniker": "Models\\TodoItem.cs",
-              "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Models\\TodoItem.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\TodoControllerAPI\\Models\\TodoItem.cs",
               "RelativeToolTip": "Models\\TodoItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T15:05:35.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T15:05:35.081Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "TodoContext.cs",
-              "DocumentMoniker": "D:\\MyApp\\TodoControllerAPI\\Data\\TodoContext.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\TodoControllerAPI\\Data\\TodoContext.cs",
               "RelativeDocumentMoniker": "Data\\TodoContext.cs",
-              "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Data\\TodoContext.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\TodoControllerAPI\\Data\\TodoContext.cs",
               "RelativeToolTip": "Data\\TodoContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -72,24 +75,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TodoItemsController.cs",
-              "DocumentMoniker": "D:\\MyApp\\TodoControllerAPI\\Controllers\\TodoItemsController.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\TodoControllerAPI\\Controllers\\TodoItemsController.cs",
               "RelativeDocumentMoniker": "Controllers\\TodoItemsController.cs",
-              "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Controllers\\TodoItemsController.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\TodoControllerAPI\\Controllers\\TodoItemsController.cs",
               "RelativeToolTip": "Controllers\\TodoItemsController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAA1wDAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T02:46:29.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-01T02:46:29.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\MyApp\\TodoControllerAPI\\Program.cs",
+              "DocumentMoniker": "D:\\Projects\\MyApp\\TodoControllerAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\MyApp\\TodoControllerAPI\\Program.cs",
+              "ToolTip": "D:\\Projects\\MyApp\\TodoControllerAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

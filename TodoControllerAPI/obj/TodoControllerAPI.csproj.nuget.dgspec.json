@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj": {}
+    "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj": {}
   },
   "projects": {
-    "D:\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj": {
+    "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
+        "projectUniqueName": "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
         "projectName": "TodoControllerAPI",
-        "projectPath": "D:\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
-        "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
-        "outputPath": "D:\\MyApp\\TodoControllerAPI\\obj\\",
+        "projectPath": "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
+        "packagesPath": "C:\\Users\\Huy Ta\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\MyApp\\TodoControllerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\taleh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Huy Ta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
