@@ -11,7 +11,7 @@ namespace TodoMinimalAPI
             // Require authorization for role admin and scope greeting_api above
             // create JWT token for testing: dotnet user-jwts create --scope "greetings_api" --role "admin"
             // then test: curl -i -H "Authorization: Bearer {token}" https://localhost:{port}/hello
-            // remove-item alias:curl when needed
+            // NOTES: remove-item alias:curl if needed
             app.MapGet("/hello", () => "Hello world!").RequireAuthorization("admin_greetings");
             app.MapGet("/users/{userId}/books/{bookId}", (int userId, int bookId) => $"The user id is {userId} and the book id is {bookId}");
 

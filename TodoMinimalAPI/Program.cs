@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using TodoMinimalAPI;
 using TodoMinimalAPI.Data;
-using TodoMinimalAPI.Models;
+using OpenApiContact = NSwag.OpenApiContact;
+using OpenApiInfo = NSwag.OpenApiInfo;
+using OpenApiLicense = NSwag.OpenApiLicense;
 
 var builder = WebApplication.CreateBuilder(args);
 // Requires Microsoft.AspNetCore.Authentication.JwtBearer
@@ -30,12 +31,30 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddEndpointsApiExplorer();
 
 //Step 3: Adds the Swagger OpenAPI document generator to the application services and configures it to provide more information about the API
-builder.Services.AddOpenApiDocument(config =>
-{
-    config.DocumentName = "TodoAPI";
-    config.Title = "TodoAPI v1 - Minimal version";
-    config.Version = "v1";
+
+builder.Services.AddOpenApiDocument(options => {
+    options.PostProcess = document =>
+    {
+        document.Info = new OpenApiInfo
+        {
+            Version = "v1",
+            Title = "TodoAPI v1 - Minimal version with Redoc",
+            Description = "An ASP.NET Core Web API for managing ToDo items",
+            TermsOfService = "https://example.com/terms",
+            Contact = new OpenApiContact
+            {
+                Name = "Example Contact",
+                Url = "https://example.com/contact"
+            },
+            License = new OpenApiLicense
+            {
+                Name = "Example License",
+                Url = "https://example.com/license"
+            }
+        };
+    };
 });
+
 
 var app = builder.Build();
 app.Urls.Add("http://localhost:3000");
@@ -44,6 +63,11 @@ app.Urls.Add("http://localhost:4000");
 if (app.Environment.IsDevelopment())
 {
     app.UseOpenApi();
+    //ReDoc is exposed via/api-docs we can change this when enabling middleware by setting RoutePrefix:
+    //app.UseReDoc(options =>
+    //{
+    //    options.Path = "/redoc";
+    //});
     app.UseSwaggerUi(config =>
     {
         config.DocumentTitle = "TodoAPI";

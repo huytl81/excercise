@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyApp\\TodoMinimalAPI\\TodoMinimalAPI.csproj": {}
+    "D:\\Projects\\MyApp\\TodoMinimalAPI\\TodoMinimalAPI.csproj": {}
   },
   "projects": {
-    "D:\\MyApp\\TodoMinimalAPI\\TodoMinimalAPI.csproj": {
+    "D:\\Projects\\MyApp\\TodoMinimalAPI\\TodoMinimalAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyApp\\TodoMinimalAPI\\TodoMinimalAPI.csproj",
+        "projectUniqueName": "D:\\Projects\\MyApp\\TodoMinimalAPI\\TodoMinimalAPI.csproj",
         "projectName": "TodoMinimalAPI",
-        "projectPath": "D:\\MyApp\\TodoMinimalAPI\\TodoMinimalAPI.csproj",
-        "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
-        "outputPath": "D:\\MyApp\\TodoMinimalAPI\\obj\\",
+        "projectPath": "D:\\Projects\\MyApp\\TodoMinimalAPI\\TodoMinimalAPI.csproj",
+        "packagesPath": "C:\\Users\\Huy Ta\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\MyApp\\TodoMinimalAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\taleh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Huy Ta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -65,6 +65,10 @@
             "NSwag.AspNetCore": {
               "target": "Package",
               "version": "[14.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.8.1, )"
             }
           },
           "imports": [
