@@ -12,8 +12,7 @@ namespace MVCMovie.Data
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder
-                .UseLazyLoadingProxies();
+            optionsBuilder.UseLazyLoadingProxies();
         }
 
         public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
