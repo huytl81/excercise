@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj": {}
+    "d:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj": {
+    "d:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
+        "projectUniqueName": "d:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
         "projectName": "TodoControllerAPI",
-        "projectPath": "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
+        "projectPath": "d:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
         "packagesPath": "C:\\Users\\Huy Ta\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\MyApp\\TodoControllerAPI\\obj\\",
+        "outputPath": "d:\\Projects\\MyApp\\TodoControllerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

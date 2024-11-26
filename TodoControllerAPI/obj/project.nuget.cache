@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "inr/qqdWVew=",
+  "dgSpecHash": "//53w8xgK2c=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
+  "projectFilePath": "d:\\Projects\\MyApp\\TodoControllerAPI\\TodoControllerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Huy Ta\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Huy Ta\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
