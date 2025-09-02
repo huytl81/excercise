@@ -1,2 +1,2 @@
 # My App
-RazorPage/MVC & Python
+.NET RazorPage/MVC/Blazor & Python
