@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\projects\\excercise\\asp.net\\csharp_canban\\csharp_canban\\event_standard_net.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\event_standard_net.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\projects\\excercise\\asp.net\\csharp_canban\\csharp_canban\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\projects\\excercise\\asp.net\\csharp_canban\\csharp_canban\\delegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\delegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|d:\\projects\\excercise\\asp.net\\csharp_canban\\csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F1DDAAE-DAF0-4D35-8862-BB9971AAB492}|CSharp_CanBan\\CSharp_CanBan.csproj|solutionrelative:csharp_canban\\asyncawait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Event_Standard_Net.cs",
+              "DocumentMoniker": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\CSharp_CanBan\\Event_Standard_Net.cs",
+              "RelativeDocumentMoniker": "CSharp_CanBan\\Event_Standard_Net.cs",
+              "ToolTip": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\CSharp_CanBan\\Event_Standard_Net.cs",
+              "RelativeToolTip": "CSharp_CanBan\\Event_Standard_Net.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T17:34:08.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Event.cs",
+              "DocumentMoniker": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\CSharp_CanBan\\Event.cs",
+              "RelativeDocumentMoniker": "CSharp_CanBan\\Event.cs",
+              "ToolTip": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\CSharp_CanBan\\Event.cs",
+              "RelativeToolTip": "CSharp_CanBan\\Event.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAgwCsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T16:25:39.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Delegate.cs",
+              "DocumentMoniker": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\CSharp_CanBan\\Delegate.cs",
+              "RelativeDocumentMoniker": "CSharp_CanBan\\Delegate.cs",
+              "ToolTip": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\CSharp_CanBan\\Delegate.cs",
+              "RelativeToolTip": "CSharp_CanBan\\Delegate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T15:11:51.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AsyncAwait.cs",
+              "DocumentMoniker": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\CSharp_CanBan\\AsyncAwait.cs",
+              "RelativeDocumentMoniker": "CSharp_CanBan\\AsyncAwait.cs",
+              "ToolTip": "D:\\Projects\\excercise\\ASP.NET\\CSharp_CanBan\\CSharp_CanBan\\AsyncAwait.cs",
+              "RelativeToolTip": "CSharp_CanBan\\AsyncAwait.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAH8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:32:49.166Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

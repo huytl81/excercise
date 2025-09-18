@@ -1,0 +1,14 @@
+D:\MyApp\CSharp_CanBan\CSharp_CanBan\bin\Debug\CSharp_CanBan.exe.config
+D:\MyApp\CSharp_CanBan\CSharp_CanBan\bin\Debug\CSharp_CanBan.exe
+D:\MyApp\CSharp_CanBan\CSharp_CanBan\bin\Debug\CSharp_CanBan.pdb
+D:\MyApp\CSharp_CanBan\CSharp_CanBan\obj\Debug\CSharp_CanBan.csproj.AssemblyReference.cache
+D:\MyApp\CSharp_CanBan\CSharp_CanBan\obj\Debug\CSharp_CanBan.csproj.CoreCompileInputs.cache
+D:\MyApp\CSharp_CanBan\CSharp_CanBan\obj\Debug\CSharp_CanBan.exe
+D:\MyApp\CSharp_CanBan\CSharp_CanBan\obj\Debug\CSharp_CanBan.pdb
+D:\Projects\excercise\ASP.NET\CSharp_CanBan\CSharp_CanBan\obj\Debug\CSharp_CanBan.csproj.AssemblyReference.cache
+D:\Projects\excercise\ASP.NET\CSharp_CanBan\CSharp_CanBan\obj\Debug\CSharp_CanBan.csproj.CoreCompileInputs.cache
+D:\Projects\excercise\ASP.NET\CSharp_CanBan\CSharp_CanBan\obj\Debug\CSharp_CanBan.exe
+D:\Projects\excercise\ASP.NET\CSharp_CanBan\CSharp_CanBan\obj\Debug\CSharp_CanBan.pdb
+D:\Projects\excercise\ASP.NET\CSharp_CanBan\CSharp_CanBan\bin\Debug\CSharp_CanBan.exe.config
+D:\Projects\excercise\ASP.NET\CSharp_CanBan\CSharp_CanBan\bin\Debug\CSharp_CanBan.exe
+D:\Projects\excercise\ASP.NET\CSharp_CanBan\CSharp_CanBan\bin\Debug\CSharp_CanBan.pdb
