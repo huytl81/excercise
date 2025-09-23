@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\exercise\\ASP.NET\\DISample\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample\\repository\\itodoitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\repository\\itodoitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample\\repository\\todoitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\repository\\todoitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample\\models\\tododbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\models\\tododbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample\\services\\statisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\services\\statisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample\\services\\istatisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A63E-8CA8-47D8-A416-B17FC1F7BA22}|DISample\\DISample.csproj|solutionrelative:disample\\services\\istatisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample.service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|solutionrelative:disample.service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|d:\\projects\\exercise\\asp.net\\disample\\disample.service\\dtos\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABDD2F81-0DDD-48C4-8653-D8C54554D7D1}|DISample.Service\\DISample.Service.csproj|solutionrelative:disample.service\\dtos\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample.Service\\IProductService.cs",
+              "RelativeDocumentMoniker": "DISample.Service\\IProductService.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample.Service\\IProductService.cs",
+              "RelativeToolTip": "DISample.Service\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T14:05:54.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IStatisticsService.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Services\\IStatisticsService.cs",
+              "RelativeDocumentMoniker": "DISample\\Services\\IStatisticsService.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Services\\IStatisticsService.cs",
+              "RelativeToolTip": "DISample\\Services\\IStatisticsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T14:05:02.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ToDoItem.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample.Service\\DTOs\\ToDoItem.cs",
+              "RelativeDocumentMoniker": "DISample.Service\\DTOs\\ToDoItem.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample.Service\\DTOs\\ToDoItem.cs",
+              "RelativeToolTip": "DISample.Service\\DTOs\\ToDoItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T13:21:52.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IToDoItemRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Repository\\IToDoItemRepository.cs",
+              "RelativeDocumentMoniker": "DISample\\Repository\\IToDoItemRepository.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Repository\\IToDoItemRepository.cs",
+              "RelativeToolTip": "DISample\\Repository\\IToDoItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T12:54:57.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ToDoItemRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Repository\\ToDoItemRepository.cs",
+              "RelativeDocumentMoniker": "DISample\\Repository\\ToDoItemRepository.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Repository\\ToDoItemRepository.cs",
+              "RelativeToolTip": "DISample\\Repository\\ToDoItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T12:54:52.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ToDoDBContext.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Models\\ToDoDBContext.cs",
+              "RelativeDocumentMoniker": "DISample\\Models\\ToDoDBContext.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Models\\ToDoDBContext.cs",
+              "RelativeToolTip": "DISample\\Models\\ToDoDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T12:45:58.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StatisticsService.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Services\\StatisticsService.cs",
+              "RelativeDocumentMoniker": "DISample\\Services\\StatisticsService.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Services\\StatisticsService.cs",
+              "RelativeToolTip": "DISample\\Services\\StatisticsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T12:42:49.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DISample\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DISample\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T11:15:51.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DISample\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DISample\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowEIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T10:52:42.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Program.cs",
+              "RelativeDocumentMoniker": "DISample\\Program.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample\\Program.cs",
+              "RelativeToolTip": "DISample\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T10:15:06.819Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -36,9 +36,8 @@ namespace RazorPagesMovie.Pages.Movies
                 return Page();
             }
 
-            //_context.Movie.Add(Movie);
-
-            _context.Attach(Movie).State = EntityState.Added;
+            _context.Movie.Add(Movie);
+            //_context.Attach(Movie).State = EntityState.Added;
             await _context.SaveChangesAsync();
 
             Message = $"Movie {Movie.Title} has been added!";

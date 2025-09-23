@@ -10,41 +10,40 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers()
-                .ConfigureApiBehaviorOptions(options =>
-                {
-                    // To preserve the default behavior, capture the original delegate to call later.
-                    var builtInFactory = options.InvalidModelStateResponseFactory;
-                    // retrieve an instance of ILogger<TCategoryName> to log information about an automatic 400 response
-                    options.InvalidModelStateResponseFactory = context =>
-                    {
-                        var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
+builder.Services.AddControllers().ConfigureApiBehaviorOptions(options => {
+    // To preserve the default behavior, capture the original delegate to call later.
+    var builtInFactory = options.InvalidModelStateResponseFactory;
+    // retrieve an instance of ILogger<TCategoryName> to log information about an automatic 400 response
+    options.InvalidModelStateResponseFactory = context =>
+    {
+        var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
 
-                        // Perform logging here.
-                        // ...
+        // Perform logging here.
+        // ...
 
-                        // Invoke the default behavior, which produces a ValidationProblemDetails
-                        // response.
-                        // To produce a custom response, return a different implementation of 
-                        // IActionResult instead.
-                        return builtInFactory(context);
-                    };
-                    //disable the action parameters of type IFormFile and IFormFileCollection
-                    //options.SuppressConsumesConstraintForFormFileParameters = true;
+        // Invoke the default behavior, which produces a ValidationProblemDetails
+        // response.
+        // To produce a custom response, return a different implementation of 
+        // IActionResult instead.
+        return builtInFactory(context);
+    };
+    //disable the action parameters of type IFormFile and IFormFileCollection
+    //options.SuppressConsumesConstraintForFormFileParameters = true;
                     
-                    //Disable binding source inference, set SuppressInferBindingSourcesForParameters to true
-                    //options.SuppressInferBindingSourcesForParameters = true;
+    //Disable binding source inference, set SuppressInferBindingSourcesForParameters to true
+    //options.SuppressInferBindingSourcesForParameters = true;
 
-                    //Disable automatic 400 response
-                    //options.SuppressModelStateInvalidFilter = true;
+    //Disable automatic 400 response
+    //options.SuppressModelStateInvalidFilter = true;
                     
-                    //Disable ProblemDetails response
-                    //options.SuppressMapClientErrors = true;
-                    options.ClientErrorMapping[StatusCodes.Status404NotFound].Link = "https://httpstatuses.com/404";
+    //Disable ProblemDetails response
+    //options.SuppressMapClientErrors = true;
+    options.ClientErrorMapping[StatusCodes.Status404NotFound].Link = "https://httpstatuses.com/404";
 
-                    //Disable[FromServices] inference globally, set DisableImplicitFromServicesParameters to true
-                    //options.DisableImplicitFromServicesParameters = true;
-                });
+    //Disable[FromServices] inference globally, set DisableImplicitFromServicesParameters to true
+    //options.DisableImplicitFromServicesParameters = true;
+});
+
 builder.Services.AddDbContext<TodoContext>(option => option.UseInMemoryDatabase("TodoList"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

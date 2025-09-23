@@ -14,9 +14,9 @@ namespace DISample
 
         public static IServiceCollection AddMyServiceCollection(this IServiceCollection services)
         {
-            services.AddTransient<ITransientService, SomeService>();
-            services.AddScoped<IScopedService, SomeService>();
-            services.AddSingleton<ISingletonService, SomeService>();
+            services.AddTransient<ITransientService, GuidService>();
+            services.AddScoped<IScopedService, GuidService>();
+            services.AddSingleton<ISingletonService, GuidService>();
 
             return services;
         }

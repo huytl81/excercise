@@ -74,9 +74,7 @@
                 <span class="badge">2.1+</span>
             </td>
             <td>
-                <partial name="../Articles/_ArticleSection.cshtml"
-                         model='new ArticleSection { Title="Section", Content="Coming soon..." }'
-                         view-data="ViewData" />
+                <partial name="../Articles/_ArticleSection.cshtml" model='new ArticleSection { Title="Section", Content="Upcoming soon..." }' view-data="ViewData" />
             </td>
         </tr>
         <tr>
@@ -94,7 +92,7 @@
         <tr>
             <td>
                 <code>
-                    &#64;{ await Html.RenderPartialAsync("_AuthorPartial"); }
+                    @{ await Html.RenderPartialAsync("_AuthorPartial"); }
                 </code>
             </td>
             <td>

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
+    "net9.0": {
       "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
@@ -8094,7 +8094,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
+    "net9.0": [
       "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Proxies >= 8.0.3",
       "Microsoft.EntityFrameworkCore.SQLite >= 8.0.10",
@@ -8104,29 +8104,37 @@
     ]
   },
   "packageFolders": {
-    "/home/huyta/.nuget/packages/": {}
+    "C:\\Users\\taleh\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/huyta/Projects/MyApp/MVCMovie/MVCMovie.csproj",
+      "projectUniqueName": "D:\\Projects\\exercise\\ASP.NET\\MVCMovie\\MVCMovie.csproj",
       "projectName": "MVCMovie",
-      "projectPath": "/home/huyta/Projects/MyApp/MVCMovie/MVCMovie.csproj",
-      "packagesPath": "/home/huyta/.nuget/packages/",
-      "outputPath": "/home/huyta/Projects/MyApp/MVCMovie/obj/",
+      "projectPath": "D:\\Projects\\exercise\\ASP.NET\\MVCMovie\\MVCMovie.csproj",
+      "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\exercise\\ASP.NET\\MVCMovie\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/huyta/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\taleh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "projectReferences": {}
         }
       },
@@ -8139,11 +8147,12 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net9.0": {
+        "targetAlias": "net9.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -8193,7 +8202,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/var/lib/snapd/snap/dotnet-sdk/252/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

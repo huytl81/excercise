@@ -1,0 +1,6 @@
+wwwroot\css\site.css
+wwwroot\index.html
+wwwroot\js\site.js
+D:\Projects\exercise\ASP.NET\TodoJavaScriptAPI\wwwroot\css\site.css
+D:\Projects\exercise\ASP.NET\TodoJavaScriptAPI\wwwroot\index.html
+D:\Projects\exercise\ASP.NET\TodoJavaScriptAPI\wwwroot\js\site.js

@@ -18,7 +18,6 @@ namespace RazorPagesMovie.Pages.Movies
         public IList<Movie> Movie { get; set; } = default!;
 
         [BindProperty(SupportsGet = true)]
-        //[BindProperty]
         public string? SearchString { get; set; }
 
         public SelectList? Genres { get; set; }
@@ -56,6 +55,7 @@ namespace RazorPagesMovie.Pages.Movies
             if (movie != null)
             {
                 _context.Movie.Remove(movie);
+                //_context.Attach(movie).State = EntityState.Deleted;
                 await _context.SaveChangesAsync();
             }
 

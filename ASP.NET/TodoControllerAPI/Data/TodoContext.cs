@@ -10,4 +10,3 @@ public class TodoContext : DbContext
 
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();
 }
-#pragma warning restore CS1591

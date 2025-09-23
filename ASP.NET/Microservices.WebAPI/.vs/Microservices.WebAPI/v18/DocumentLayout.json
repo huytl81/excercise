@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8BCEB514-E11F-4A57-B979-D70873FB7775}|Gateway.WebAPI\\Gateway.WebAPI.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\gateway.webapi\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8BCEB514-E11F-4A57-B979-D70873FB7775}|Gateway.WebAPI\\Gateway.WebAPI.csproj|solutionrelative:gateway.webapi\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F7C898A-8410-4FB5-A0F9-A1A53498A9DF}|Customer.Microservice\\Customer.Microservice.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\customer.microservice\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F7C898A-8410-4FB5-A0F9-A1A53498A9DF}|Customer.Microservice\\Customer.Microservice.csproj|solutionrelative:customer.microservice\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\product.microservice\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|solutionrelative:product.microservice\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\product.microservice\\data\\productdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|solutionrelative:product.microservice\\data\\productdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\product.microservice\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|solutionrelative:product.microservice\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\product.microservice\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|solutionrelative:product.microservice\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\product.microservice\\data\\iproductdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|solutionrelative:product.microservice\\data\\iproductdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\product.microservice\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|solutionrelative:product.microservice\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|d:\\projects\\exercise\\asp.net\\microservices.webapi\\product.microservice\\models\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0013851B-E1DC-4755-922F-B25C92B5F0FD}|Product.Microservice\\Product.Microservice.csproj|solutionrelative:product.microservice\\models\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Customer.Microservice\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Customer.Microservice\\Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Customer.Microservice\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Customer.Microservice\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T10:04:41.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ocelot.json",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Gateway.WebAPI\\ocelot.json",
+              "RelativeDocumentMoniker": "Gateway.WebAPI\\ocelot.json",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Gateway.WebAPI\\ocelot.json",
+              "RelativeToolTip": "Gateway.WebAPI\\ocelot.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-23T09:10:36.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Repository\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Product.Microservice\\Repository\\IProductRepository.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Repository\\IProductRepository.cs",
+              "RelativeToolTip": "Product.Microservice\\Repository\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:00:17.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IProductDbContext.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Data\\IProductDbContext.cs",
+              "RelativeDocumentMoniker": "Product.Microservice\\Data\\IProductDbContext.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Data\\IProductDbContext.cs",
+              "RelativeToolTip": "Product.Microservice\\Data\\IProductDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:29:24.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductDbContext.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Data\\ProductDbContext.cs",
+              "RelativeDocumentMoniker": "Product.Microservice\\Data\\ProductDbContext.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Data\\ProductDbContext.cs",
+              "RelativeToolTip": "Product.Microservice\\Data\\ProductDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:29:30.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Product.Microservice\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Product.Microservice\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwGAAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:41:02.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BaseModel.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Models\\BaseModel.cs",
+              "RelativeDocumentMoniker": "Product.Microservice\\Models\\BaseModel.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Models\\BaseModel.cs",
+              "RelativeToolTip": "Product.Microservice\\Models\\BaseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:29:42.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Product.Microservice\\Models\\Category.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Models\\Category.cs",
+              "RelativeToolTip": "Product.Microservice\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:29:36.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Product.Microservice\\Repository\\ProductRepository.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\Microservices.WebAPI\\Product.Microservice\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "Product.Microservice\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:00:33.447Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

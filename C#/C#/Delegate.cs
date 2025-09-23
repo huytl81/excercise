@@ -44,33 +44,33 @@ namespace Delegate
         //    delShowName(name);
         //}
 
-        //static void Main(string[] args)
-        //{
-        //    Console.OutputEncoding = Encoding.Unicode;
+        static void MainD(string[] args)
+        {
+            Console.OutputEncoding = Encoding.Unicode;
 
-        //    mydelegate customdel = ConvertStringToInt;
-        //    string numberSTR = "35";
-        //    int valueConverted = customdel(numberSTR);
+            mydelegate customdel = ConvertStringToInt;
+            string numberSTR = "35";
+            int valueConverted = customdel(numberSTR);
 
-        //    Console.WriteLine("Giá trị đã convert thành int: " + valueConverted);
+            Console.WriteLine("Giá trị đã convert thành int: " + valueConverted);
 
-        //    Console.ReadLine();
+            Console.ReadLine();
 
-        //    //sử dụng built-in delegate
-        //    // void thi dung Action<string> show = ShowString;
-        //    Func<string,int> delshowname = ShowString;
-        //    NhapVaShowTen(delshowname);
+            //sử dụng built-in delegate
+            // void thi dung Action<string> show = ShowString;
+            Func<string, int> delshowname = ShowString;
+            NhapVaShowTen(delshowname);
 
-        //    //sử dụng custom delegate
-        //    //var delshowname = new mydelegate(ShowString);
-        //    //NhapVaShowTen(delshowname);
+            //sử dụng custom delegate
+            //var delshowname = new mydelegate(ShowString);
+            //NhapVaShowTen(delshowname);
 
-        //    //multicast delegate
-        //    mydelegate a = ConvertStringToInt;
-        //    mydelegate b = ShowString;
-        //    var both = b + a;
-        //    int kq = both("12345");
-        //    Console.WriteLine("Kết quả trả về: " + kq);
-        //}
+            //multicast delegate
+            mydelegate a = ConvertStringToInt;
+            mydelegate b = ShowString;
+            var both = b + a;
+            int kq = both("12345");
+            Console.WriteLine("Kết quả trả về: " + kq);
+        }
     }
 }

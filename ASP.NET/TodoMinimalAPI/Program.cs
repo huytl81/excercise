@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using TodoMinimalAPI;
 using TodoMinimalAPI.Data;
 using OpenApiContact = NSwag.OpenApiContact;
@@ -8,19 +10,36 @@ using OpenApiInfo = NSwag.OpenApiInfo;
 using OpenApiLicense = NSwag.OpenApiLicense;
 
 var builder = WebApplication.CreateBuilder(args);
-// Requires Microsoft.AspNetCore.Authentication.JwtBearer
-//builder.Services.AddAuthentication("LocalAuthIssuer").AddJwtBearer();
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options => builder.Configuration.Bind("LocalAuthIssuer", options))
-                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => builder.Configuration.Bind("CookieSettings", options));
+// ===== 1. Cấu hình Authentication JWT =====
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
+var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>();
 
-// Create scope and role for authorization
-builder.Services.AddAuthorizationBuilder()
-            .AddPolicy("admin_greetings", policy => policy
-            .RequireRole("admin")
-            .RequireClaim("scope", "greetings_api"));
-builder.Services.AddAuthorization();
+var key = builder.Configuration["Jwt:Key"];
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key!)),
+        ClockSkew = TimeSpan.Zero
+    };
+}).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => builder.Configuration.Bind("CookieSettings", options));
+
+// ===== 2. Cấu hình Authorization Policy =====
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("admin_policy", 
+    policy => policy.RequireClaim("scope", "admin_scope").RequireRole("admin_role"));
+});
+
 
 builder.Services.AddDbContext<TodoDbContext>(option => option.UseInMemoryDatabase("TodoList"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -57,8 +76,10 @@ builder.Services.AddOpenApiDocument(options => {
 
 
 var app = builder.Build();
-app.Urls.Add("http://localhost:3000");
-app.Urls.Add("http://localhost:4000");
+
+app.Urls.Add("https://localhost:7141");
+app.Urls.Add("http://localhost:5143");
+
 
 if (app.Environment.IsDevelopment())
 {
@@ -80,6 +101,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Endpoint defined outside of Program.cs
 TodoEndpoints.Map(app); 

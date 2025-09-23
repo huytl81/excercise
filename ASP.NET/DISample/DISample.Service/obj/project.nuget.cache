@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5nmCX4yoDiumYvoOvUU6lwEFBiHePM4XpWdO5qapOI+bWY11Mn8ihLnBiHWgm/kLAzBLChxpMTVmpVGeqR9Cqw==",
+  "dgSpecHash": "mGq4NqlB5bA=",
   "success": true,
-  "projectFilePath": "D:\\MyApp\\DISample\\DISample.Service\\DISample.Service.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Projects\\exercise\\ASP.NET\\DISample\\DISample.Service\\DISample.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\taleh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.20\\microsoft.windowsdesktop.app.ref.8.0.20.nupkg.sha512",
+    "C:\\Users\\taleh\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.20\\microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
+    "C:\\Users\\taleh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.20\\microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512"
+  ],
   "logs": []
 }

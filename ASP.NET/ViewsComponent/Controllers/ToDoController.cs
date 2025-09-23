@@ -26,7 +26,7 @@ public class ToDoController : Controller
         return View(model);
     }
 
-    public IActionResult Index1(int maxPriority = 4, bool isDone = false)
+    public IActionResult IndexVC(int maxPriority = 2, bool isDone = false)
     {
         return ViewComponent("PriorityList",
             new

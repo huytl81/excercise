@@ -1,18 +1,42 @@
 ﻿const uri = 'api/todoitems';
 let todos = [];
 
-function getItems() {
-    fetch(uri, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => _displayItems(data))
-    .catch(error => console.error('Unable to get items.', error));
+//function getItems() {
+//    fetch(uri, {
+//        method: 'GET',
+//        headers: {
+//            'Accept': 'application/json',
+//            'Content-Type': 'application/json'
+//        }
+//    })
+//    .then(response => response.json())
+//    .then(data => _displayItems(data))
+//    .catch(error => console.error('Unable to get items.', error));
+//}
+
+async function getItems() {
+    try {
+        const response = await fetch(uri, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
+
+        // Chờ response chuyển đổi sang JSON
+        const data = await response.json();
+
+        // Hiển thị dữ liệu
+        await _displayItems(data);
+
+        console.log(response.ok, 'Network response was OK');
+
+    } catch (error) {
+        console.error('Unable to get items.', error);
+    }
 }
+
 
 function addItem() {
     const addNameTextbox = document.getElementById('add-name');
@@ -29,9 +53,7 @@ function addItem() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(item)
-    })
-        .then(response => response.json())
-        .then(() => {
+    }).then(response => response.json()).then(() => {
             getItems();
             addNameTextbox.value = '';
         })
@@ -44,15 +66,6 @@ function deleteItem(id) {
     })
     .then(() => getItems())
     .catch(error => console.error('Unable to delete item.', error));
-}
-
-function displayEditForm(id) {
-    const item = todos.find(item => item.id === id);
-
-    document.getElementById('edit-id').value = item.id;
-    document.getElementById('edit-name').value = item.name;
-    document.getElementById('edit-isComplete').checked = item.isComplete;
-    document.getElementById('editForm').style.display = 'block';
 }
 
 function updateItem() {
@@ -79,6 +92,14 @@ function updateItem() {
     return false;
 }
 
+function displayEditForm(id) {
+    const item = todos.find(item => item.id === id);
+
+    document.getElementById('edit-id').value = item.id;
+    document.getElementById('edit-name').value = item.name;
+    document.getElementById('edit-isComplete').checked = item.isComplete;
+    document.getElementById('editForm').style.display = 'block';
+}
 function closeInput() {
     document.getElementById('editForm').style.display = 'none';
 }

@@ -1,4 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using TodoMinimalAPI.Data;
 using TodoMinimalAPI.Models;
 
@@ -12,7 +15,38 @@ namespace TodoMinimalAPI
             // create JWT token for testing: dotnet user-jwts create --scope "greetings_api" --role "admin"
             // then test: curl -i -H "Authorization: Bearer {token}" https://localhost:{port}/hello
             // NOTES: remove-item alias:curl if needed
-            app.MapGet("/hello", () => "Hello world!").RequireAuthorization("admin_greetings");
+            var jwtSettings = app.Services.GetRequiredService<IOptions<JwtSettings>>().Value;
+            var key = jwtSettings.Key;
+
+            app.MapPost("/login", (string username, string password) =>
+            {
+                if (username == "admin" && password == "123456")
+                {
+                    var claims = new[]
+                    {
+                        new System.Security.Claims.Claim("scope", "admin_scope"),
+                        new System.Security.Claims.Claim("role", "admin_role"),
+                        new System.Security.Claims.Claim("name", username)
+                    };
+
+                    var token = new System.IdentityModel.Tokens.Jwt.JwtSecurityToken(
+                        claims: claims,
+                        expires: DateTime.UtcNow.AddHours(1),
+                        signingCredentials: new SigningCredentials(
+                            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
+                            SecurityAlgorithms.HmacSha256
+                        )
+                    );
+
+                    var tokenString = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler().WriteToken(token);
+
+                    return Results.Ok(new { access_token = tokenString });
+                }
+
+                return Results.Unauthorized();
+            });
+
+            app.MapGet("/hello", () => "Hello world!").RequireAuthorization("admin_policy");
             app.MapGet("/users/{userId}/books/{bookId}", (int userId, int bookId) => $"The user id is {userId} and the book id is {bookId}");
 
 

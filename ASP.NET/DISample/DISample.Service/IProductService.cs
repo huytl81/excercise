@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DISample.Service.DTOs;
+﻿using DISample.Service.DTOs;
 
-namespace DISample.Service
+namespace DISample.Services
 {
     public interface IProductService
     {
-        public List<ProductViewModel> GetAll();
+        public List<TodoItem> GetAll();
     }
 }

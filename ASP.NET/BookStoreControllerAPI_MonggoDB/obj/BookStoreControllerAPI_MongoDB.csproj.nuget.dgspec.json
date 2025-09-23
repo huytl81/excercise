@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj": {}
+    "D:\\Projects\\exercise\\ASP.NET\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj": {
+    "D:\\Projects\\exercise\\ASP.NET\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj",
+        "projectUniqueName": "D:\\Projects\\exercise\\ASP.NET\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj",
         "projectName": "BookStoreControllerAPI_MongoDB",
-        "projectPath": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj",
-        "packagesPath": "C:\\Users\\Huy Ta\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\MyApp\\BookStoreControllerAPI_MonggoDB\\obj\\",
+        "projectPath": "D:\\Projects\\exercise\\ASP.NET\\BookStoreControllerAPI_MonggoDB\\BookStoreControllerAPI_MongoDB.csproj",
+        "packagesPath": "C:\\Users\\taleh\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\exercise\\ASP.NET\\BookStoreControllerAPI_MonggoDB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Huy Ta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\taleh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -78,6 +79,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -86,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

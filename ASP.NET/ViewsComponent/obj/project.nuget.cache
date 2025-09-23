@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "skMErVWaMKI=",
+  "dgSpecHash": "dYDkqzMulT0=",
   "success": true,
-  "projectFilePath": "D:\\MyApp\\ViewsComponent\\ViewsComponent.csproj",
+  "projectFilePath": "D:\\Projects\\exercise\\ASP.NET\\ViewsComponent\\ViewsComponent.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",
     "C:\\Users\\taleh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.4\\microsoft.entityframeworkcore.abstractions.6.0.4.nupkg.sha512",

@@ -5,7 +5,7 @@ namespace EventStandardNet
 {
     internal class EventStdExample
     {
-        static void Main(string[] args)
+        static void MainES(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
@@ -13,7 +13,7 @@ namespace EventStandardNet
                 Name = "Nguyễn Văn A"
             };
 
-            hs.EventNameChangeHandler += NameChange;
+            hs.CustomeEventHandler += NameChange;
             
             hs.Name = "Tên lần 1";
             hs.Name = "Tên lần 2";
@@ -22,7 +22,7 @@ namespace EventStandardNet
             Console.ReadLine();
         }
 
-        private static void NameChange(object sender, NameChangeEventArgs e)
+        private static void NameChange(object sender, CustomEventArgs e)
         {
             Console.WriteLine("Tên có thay đổi: " + e.Name);
         }

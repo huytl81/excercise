@@ -15,11 +15,11 @@ namespace MVCMovie.Controllers
             _context = context;
         }
 
-        [HttpPost]
-        public string Index(string searchString, bool notUsed)
-        {
-            return "From [HttpPost]Index: filter on " + searchString;
-        }
+        //[HttpPost]
+        //public string Index(string searchString, bool notUsed)
+        //{
+        //    return "From [HttpPost]Index: filter on " + searchString;
+        //}
 
         // GET: Movies
         public async Task<IActionResult> Index(string movieGenre, string searchString)
@@ -32,7 +32,7 @@ namespace MVCMovie.Controllers
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Movie orderby m.Genre select m.Genre;
 
-            var movies = from m in _context.Movie select m;
+            IQueryable<Movie> movies = from m in _context.Movie select m;
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -47,7 +47,9 @@ namespace MVCMovie.Controllers
             var movieGenreVm = new MovieGenreViewModel
             {
                 Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
-                Movies = await movies.ToListAsync()
+                Movies = await movies.ToListAsync(),
+                MovieGenre = movieGenre,
+                SearchString = searchString
             };
 
             return View(movieGenreVm);

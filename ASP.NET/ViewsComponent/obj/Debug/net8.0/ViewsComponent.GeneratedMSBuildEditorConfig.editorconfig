@@ -1,5 +1,7 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
@@ -9,43 +11,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ViewsComponent
 build_property.RootNamespace = ViewsComponent
-build_property.ProjectDir = D:\MyApp\ViewsComponent\
+build_property.ProjectDir = D:\Projects\exercise\ASP.NET\ViewsComponent\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\MyApp\ViewsComponent
+build_property.MSBuildProjectDirectory = D:\Projects\exercise\ASP.NET\ViewsComponent
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[D:/MyApp/ViewsComponent/Views/Shared/Error.cshtml]
+[D:/Projects/exercise/ASP.NET/ViewsComponent/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/ViewsComponent/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Projects/exercise/ASP.NET/ViewsComponent/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/ViewsComponent/Views/ToDo/Components/PriorityList/Default.cshtml]
+[D:/Projects/exercise/ASP.NET/ViewsComponent/Views/ToDo/Components/PriorityList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9Eb1xDb21wb25lbnRzXFByaW9yaXR5TGlzdFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/ViewsComponent/Views/ToDo/Components/PriorityList/PVC.cshtml]
+[D:/Projects/exercise/ASP.NET/ViewsComponent/Views/ToDo/Components/PriorityList/PVC.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9Eb1xDb21wb25lbnRzXFByaW9yaXR5TGlzdFxQVkMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/ViewsComponent/Views/ToDo/Index.cshtml]
+[D:/Projects/exercise/ASP.NET/ViewsComponent/Views/ToDo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9Eb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/ViewsComponent/Views/_ViewImports.cshtml]
+[D:/Projects/exercise/ASP.NET/ViewsComponent/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/ViewsComponent/Views/_ViewStart.cshtml]
+[D:/Projects/exercise/ASP.NET/ViewsComponent/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MyApp/ViewsComponent/Views/Shared/_Layout.cshtml]
+[D:/Projects/exercise/ASP.NET/ViewsComponent/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6s90mjy6jr

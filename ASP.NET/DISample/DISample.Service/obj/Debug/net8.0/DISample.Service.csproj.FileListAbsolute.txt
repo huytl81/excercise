@@ -22,3 +22,15 @@ D:\MyApp\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.dll
 D:\MyApp\DISample\DISample.Service\obj\Debug\net8.0\refint\DISample.Service.dll
 D:\MyApp\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.pdb
 D:\MyApp\DISample\DISample.Service\obj\Debug\net8.0\ref\DISample.Service.dll
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\bin\Debug\net8.0\DISample.Service.deps.json
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\bin\Debug\net8.0\DISample.Service.dll
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\bin\Debug\net8.0\DISample.Service.pdb
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.AssemblyInfoInputs.cache
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.AssemblyInfo.cs
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.csproj.CoreCompileInputs.cache
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.sourcelink.json
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.dll
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\refint\DISample.Service.dll
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\DISample.Service.pdb
+D:\Projects\exercise\ASP.NET\DISample\DISample.Service\obj\Debug\net8.0\ref\DISample.Service.dll

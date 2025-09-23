@@ -1,7 +1,6 @@
 using DISample.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using DISample.Service;
 using DISample.Services;
 
 namespace DISample.Controllers
@@ -10,6 +9,7 @@ namespace DISample.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
+        private readonly IStatisticsService _statisticsService;
 
         private readonly ITransientService _iTransientService1;
         private readonly ITransientService _iTransientService2;
@@ -20,9 +20,10 @@ namespace DISample.Controllers
         private readonly ISingletonService _iSingletonService1;
         private readonly ISingletonService _iSingletonService2;
 
-        public HomeController(ILogger<HomeController> logger, 
-            IProductService productService, 
 
+        public HomeController(ILogger<HomeController> logger, 
+            IProductService productService,
+            IStatisticsService statisticsService,
             ITransientService iTransientService1, 
             ITransientService iTransientService2,
 
@@ -45,13 +46,13 @@ namespace DISample.Controllers
             _iSingletonService1 = iSingletonService1;
             _iSingletonService2 = iSingletonService2;
 
+            _statisticsService = statisticsService;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            var lstProducts = _productService.GetAll();
-
+            
             ViewBag.TransientService1 = "First Instance: " + _iTransientService1.GetGuid().ToString();
             ViewBag.TransientService2 = "Second Instance: " + _iTransientService2.GetGuid().ToString();
 
@@ -61,7 +62,10 @@ namespace DISample.Controllers
             ViewBag.SingletonService1 = "First Instance: " + _iSingletonService1.GetGuid().ToString();
             ViewBag.SingletonService2 = "Second Instance: " + _iSingletonService2.GetGuid().ToString();
 
-            return View(lstProducts);
+            //var lstProducts = _productService.GetAll();
+            //return View(lstProducts);
+            var lstItems = _statisticsService.GetAllItems();
+            return View(lstItems);
         }
 
         //private readonly ILogger<HomeController> _logger;

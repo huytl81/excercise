@@ -5,3 +5,10 @@ D:\Projects\excercise\C#\C#\obj\Debug\C#.csproj.AssemblyReference.cache
 D:\Projects\excercise\C#\C#\obj\Debug\C#.csproj.CoreCompileInputs.cache
 D:\Projects\excercise\C#\C#\obj\Debug\C#.exe
 D:\Projects\excercise\C#\C#\obj\Debug\C#.pdb
+D:\Projects\exercise\C#\C#\obj\Debug\C#.csproj.AssemblyReference.cache
+D:\Projects\exercise\C#\C#\obj\Debug\C#.csproj.CoreCompileInputs.cache
+D:\Projects\exercise\C#\C#\obj\Debug\C#.exe
+D:\Projects\exercise\C#\C#\obj\Debug\C#.pdb
+D:\Projects\exercise\C#\C#\bin\Debug\C#.exe.config
+D:\Projects\exercise\C#\C#\bin\Debug\C#.exe
+D:\Projects\exercise\C#\C#\bin\Debug\C#.pdb

@@ -2,13 +2,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Product.Microservice.Data;
 using Product.Microservice.Models;
+using Product.Microservice.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ProductDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ProductDbContext") ?? throw new InvalidOperationException("Connection string 'ProductDbContext' not found."), b => b.MigrationsAssembly(typeof(ProductDbContext).Assembly.FullName)));
-//builder.Services.AddScoped<IProductDbContext, ProductDbContext>();
+builder.Services.AddScoped<IProductDbContext, ProductDbContext>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -33,8 +35,9 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    SeedData.Initialize(services);
+    await SeedData.Initialize(services);
 }
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

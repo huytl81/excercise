@@ -7,12 +7,11 @@ namespace EventExample
     
     internal class EventExample
     {
-        static void Main(string[] args)
+        static void MainE(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
 
-            HocSinh hs = new HocSinh()
-            {
+            HocSinh hs = new HocSinh(){
                 Name = "Nguyễn Văn A"
             };
             //HocSinh hs = new HocSinh();
@@ -21,8 +20,8 @@ namespace EventExample
             Console.WriteLine("Tên từ class: " + hs.Name);
 
             // register event handler
-            //hs.customEventHandler += new customDelegate(NameChange);
-            hs.customEventHandler += NameChange;
+            hs.customEventHandler += new customDelegate(NameChange);
+            //hs.customEventHandler += NameChange;
             
             Console.Write("Sửa lại tên học sinh:");
             hs.Name = Console.ReadLine();

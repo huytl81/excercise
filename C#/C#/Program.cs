@@ -6,56 +6,95 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Program
 {
     internal class Program
     {
-        /// <summary>
-        ///  hai biến firstNumber và secondNumber hiện là biến toàn cục của các hàm nằm bên trong class Program nhưng lại là biến cục bộ của class Program
-        ///  Cần có từ khóa static vì các hàm sử dụng nó đều có từ khóa static
-        /// </summary>
-
-        static void MainP(string[] args)
+        enum Process
         {
+            Start,
+            Process,
+            End
+        }
+
+        public static void Swap<T>(ref T a, ref T b)
+        {
+
+            T temp = a;
+            a = b;
+            b = temp;
+
+        }
+
+        static void IncreaseValueRef(ref int refvalue)
+        {
+            refvalue++;
+        }
+
+        static void IncreaseValueOut(out int outvalue)
+        {
+            outvalue = 0;
+            outvalue++;
+        }
+
+        static void Main(string[] args)
+        {
+
+
+
             int myvalue = 10;
             object obj = myvalue;
+
             int newvalue = 0;
             if (obj is int)
             {
                 newvalue = (int)obj;
             }
 
+            // Type information and memory addresses for obj and newvalue
+            Console.WriteLine("Type of obj: {0}", obj?.GetType().FullName ?? "<null>");
+            Console.WriteLine("Type of newvalue: {0}", newvalue.GetType().FullName);
+
             dynamic str = "13";
             int? mystr = str as int?;
 
-            
+
             Console.WriteLine("My object is: {0}", obj);
             Console.WriteLine("My newvalue is: {0}", newvalue);
             Console.WriteLine("My dynamic is: {0}", str);
+            Console.WriteLine("Length:{0}", str.Length);
 
             int refvalue = 5;
             int outvalue;
-            Console.WriteLine("Value ref-out before increase: {0}", refvalue);
-            //IncreaseValueRef(ref refvalue);
+
+            Console.WriteLine("Value refvalue before increase: {0}", refvalue);
+
+            IncreaseValueRef(ref refvalue);
             IncreaseValueOut(out outvalue);
-            Console.WriteLine("Value ref-out after increase: {0}", outvalue);
+
+            Console.WriteLine("Value refvalue after increase: {0}", refvalue);
+            Console.WriteLine("Value outvalue after increase: {0}", outvalue);
+
             Console.ReadKey();
 
             // Array 
-            int[] intArryaInts = new Int32[] { 1, 2, 3 };
-            Console.WriteLine(intArryaInts[1]);
+            int[] intArrayInts = new int[5] { 1, 2, 3, 4, 5 };
+            Console.WriteLine(intArrayInts[1]);
 
             string[] strArray = new string[5];
-            strArray = new[] { "A", "B", "C","D" };
+            strArray = new[] { "A", "B", "C", "D" };
             Console.WriteLine(strArray[3]);
 
-            string[] arrnames = new[] { "Huy", "Binh", "Ha", "Xuyen" };
+            string[] arrnames = new[] { "Huy", "Binh", "Ha", "Xuyen", "Doan" };
             Console.WriteLine(arrnames[3]);
 
             // Array 2 directions
             string[,] arrStrings = new string[2, 3] { { "Huy", "42", "10" }, { "Ha", "42", "9" } };
-            Console.WriteLine(arrStrings[1,0]);
+            Console.WriteLine(arrStrings[1, 0]);
 
             // Khai báo, cấp phát và khởi tạo mảng 3 chiều kiểu int và tên là Mang3Chieu
             int[,,] Mang3Chieu = new int[,,]
@@ -70,9 +109,8 @@ namespace Program
                 },
                 {
                     {12, 18, 19},
-                    {110, 111, 112}
-                }
-                ,
+                    {110, 111, 6789}
+                },
                 {
                     {212, 218, 219},
                     {210, 111, 112}
@@ -84,136 +122,163 @@ namespace Program
             Console.WriteLine(Mang3Chieu[2, 1, 2]);
 
             //jagged array
-            int[][] jInts = new int[][] {
+            int[][] jInts = new int[][]
+            {
                 new int[] {1, 2, 3},
                 new int[] {6, 7, 8}
             };
-            Console.WriteLine(jInts[0][2]);
 
-            // Mảng Can chứa các giá trị can tương ứng theo bảng can
-            string[] arrCan = { "Canh", "Tan", "Nham", "Quy", "Giap", "At", "Binh", "Dinh", "Mau", "Ky" };
+            Console.WriteLine($"jagged: {jInts[1][2]}");
 
-            // Mảng Chi chứa các giá trị chi tương ứng theo bảng chi
-            string[] arrChi = { "Than", "Dau", "Tuat", "Hoi", "Ty", "Suu", "Dan", "Mao", "Thin", "Ty", "Ngo", "Mui" };
+            //// Mảng Can chứa các giá trị can tương ứng theo bảng can
+            //string[] arrCan = { "Canh", "Tan", "Nham", "Quy", "Giap", "At", "Binh", "Dinh", "Mau", "Ky" };
 
-            int Year; // Biến chứa giá trị năm cần tính.
-            bool isYear;
-            string Can = "", Chi = ""; // Biến chứa kết quả.
+            //// Mảng Chi chứa các giá trị chi tương ứng theo bảng chi
+            //string[] arrChi = { "Than", "Dau", "Tuat", "Hoi", "Ty", "Suu", "Dan", "Mao", "Thin", "Ty", "Ngo", "Mui" };
 
-            Console.Write(" Moi ban nhap mot nam bat ky: ");
-            isYear = Int32.TryParse(Console.ReadLine(), out Year); // Nhập năm dương lịch và ép kiểu về kiểu số nguyên
+            //int Year; // Biến chứa giá trị năm cần tính.
+            //bool isYear;
+            //string Can = "", Chi = ""; // Biến chứa kết quả.
 
-            if (isYear)
-            {
-                switch (Year % 10) // Tìm Can như thuật toán đã trình bày.
-                {
-                    case 0: // Mỗi case này tương ứng một kết quả cần tra cứu trong bảng tra cứu Can
-                        Can = "Canh"; // Giá trị tương ứng với mỗi case
-                        break;
-                    case 1:
-                        Can = "Tan";
-                        break;
-                    case 2:
-                        Can = "Nham";
-                        break;
-                    case 3:
-                        Can = "Quy";
-                        break;
-                    case 4:
-                        Can = "Giap";
-                        break;
-                    case 5:
-                        Can = "At";
-                        break;
-                    case 6:
-                        Can = "Binh";
-                        break;
-                    case 7:
-                        Can = "Dinh";
-                        break;
-                    case 8:
-                        Can = "Mau";
-                        break;
-                    case 9:
-                        Can = "Ky";
-                        break;
-                }
+            //Console.Write(" Moi ban nhap mot nam bat ky: ");
+            //isYear = Int32.TryParse(Console.ReadLine(), out Year); // Nhập năm dương lịch và ép kiểu về kiểu số nguyên
 
-                switch (Year % 12) // Tìm Chi như thuật toán đã trình bày
-                {
-                    case 0: // Mỗi case này tương ứng một kết quả cần tra cứu trong bảng tra cứu Chi
-                        Chi = "Than"; // Giá trị tương ứng với mỗi case
-                        break;
-                    case 1:
-                        Chi = "Dau";
-                        break;
-                    case 2:
-                        Chi = "Tuat";
-                        break;
-                    case 3:
-                        Chi = "Hoi";
-                        break;
-                    case 4:
-                        Chi = "Ty";
-                        break;
-                    case 5:
-                        Chi = "Suu";
-                        break;
-                    case 6:
-                        Chi = "Dan";
-                        break;
-                    case 7:
-                        Chi = "Mao";
-                        break;
-                    case 8:
-                        Chi = "Thin";
-                        break;
-                    case 9:
-                        Chi = "Ti";
-                        break;
-                    case 10:
-                        Chi = "Ngo";
-                        break;
-                    case 11:
-                        Chi = "Mui";
-                        break;
-                }
-            }
+            //if (isYear)
+            //{
+            //    switch (Year % 10) // Tìm Can như thuật toán đã trình bày.
+            //    {
+            //        case 0: // Mỗi case này tương ứng một kết quả cần tra cứu trong bảng tra cứu Can
+            //            Can = "Canh"; // Giá trị tương ứng với mỗi case
+            //            break;
+            //        case 1:
+            //            Can = "Tan";
+            //            break;
+            //        case 2:
+            //            Can = "Nham";
+            //            break;
+            //        case 3:
+            //            Can = "Quy";
+            //            break;
+            //        case 4:
+            //            Can = "Giap";
+            //            break;
+            //        case 5:
+            //            Can = "At";
+            //            break;
+            //        case 6:
+            //            Can = "Binh";
+            //            break;
+            //        case 7:
+            //            Can = "Dinh";
+            //            break;
+            //        case 8:
+            //            Can = "Mau";
+            //            break;
+            //        case 9:
+            //            Can = "Ky";
+            //            break;
+            //    }
 
-            Console.WriteLine("Nam {0} co nam am lich la: {1} {2}", Year, Can, Chi); // Nối Can và Chi lại để được năm âm lịch
-            Console.WriteLine($"Nam {Year} co nam am lich la: {arrCan[Year%10]} {arrChi[Year % 12]}"); // Nối Can và Chi lại để được năm âm lịch
+            //    switch (Year % 12) // Tìm Chi như thuật toán đã trình bày
+            //    {
+            //        case 0: // Mỗi case này tương ứng một kết quả cần tra cứu trong bảng tra cứu Chi
+            //            Chi = "Than"; // Giá trị tương ứng với mỗi case
+            //            break;
+            //        case 1:
+            //            Chi = "Dau";
+            //            break;
+            //        case 2:
+            //            Chi = "Tuat";
+            //            break;
+            //        case 3:
+            //            Chi = "Hoi";
+            //            break;
+            //        case 4:
+            //            Chi = "Ty";
+            //            break;
+            //        case 5:
+            //            Chi = "Suu";
+            //            break;
+            //        case 6:
+            //            Chi = "Dan";
+            //            break;
+            //        case 7:
+            //            Chi = "Mao";
+            //            break;
+            //        case 8:
+            //            Chi = "Thin";
+            //            break;
+            //        case 9:
+            //            Chi = "Ti";
+            //            break;
+            //        case 10:
+            //            Chi = "Ngo";
+            //            break;
+            //        case 11:
+            //            Chi = "Mui";
+            //            break;
+            //    }
+            //}
 
-            Student objStudent = new Student();
-            Console.WriteLine("Nhap thong tin sinh vien:");
-            NhapThongTinSinhVien(out objStudent);
-            Console.WriteLine("Thong tin sinh vien vua nhap:");
-            XuatThongTinSinhVien(objStudent);
-            Console.WriteLine("Diem trung binh cua sinh vien vua nhap: {0}", DiemTrungBinh(objStudent));
+            //Console.WriteLine("Nam {0} co nam am lich la: {1} {2}", Year, Can, Chi); // Nối Can và Chi lại để được năm âm lịch
+            //Console.WriteLine($"Nam {Year} co nam am lich la: {arrCan[Year % 10]} {arrChi[Year % 12]}"); // Nối Can và Chi lại để được năm âm lịch
+
+            //Student objStudent = new Student();
+            //Console.WriteLine("Nhap thong tin sinh vien:");
+            //NhapThongTinSinhVien(out objStudent);
+            //Console.WriteLine("Thong tin sinh vien vua nhap:");
+            //XuatThongTinSinhVien(objStudent);
+            //Console.WriteLine("Diem trung binh cua sinh vien vua nhap: {0}", DiemTrungBinh(objStudent));
 
             // Regular Expression example
-            string strinput = "10:30:15 IBM 192.168.1.2 INTEL APPLE";
-            string strpattern = @"(?<times>(\d|:)+)\s" + @"(?<company>\S+)\s" + @"(?<ip>(\d|\.)+)\s" +
-                                @"(?<company>\S+)\s" + @"(?<company>\S+)";
-            Regex reg = new Regex(strpattern);
-            foreach (Match item in reg.Matches(strinput))
+            //string partten = @"\d";
+            //string inputString = "-howKteam 21092025-";
+            //Regex regex = new Regex(partten);
+            //Match match = regex.Match(inputString);
+
+            // just one
+            //if (match.Success)
+            //{
+            //    Console.WriteLine("Index trong inputString: " + match);
+            //}
+
+            // manual loop
+            //do
+            //{
+            //    Console.WriteLine("Index trong inputString: " + match.Value);
+            //    match = match.NextMatch();
+            //} while (match.Success);
+
+            // MatchCollection
+
+            //MatchCollection matches = regex.Matches(inputString);
+            //foreach (Match item in matches) {
+            //    Console.WriteLine("Index trong inputString: " + item.Value);
+            //}
+
+            // Group and Capture
+            string inputString = "10:30:15 IBM 192.168.1.2 NVIDIA APPLE";
+            string pattern = @"(?<times>(\d|:)+)\s" + @"(?<company>\S+)\s" + @"(?<ip>(\d|\.)+)\s" + @"(?<company>\S+)\s" + @"(?<company>\S+)";
+            Regex regex = new Regex(pattern);
+            MatchCollection matches = regex.Matches(inputString);
+            foreach (Match match in matches)
             {
-                Console.WriteLine(" time: " + item.Groups["times"]);
-                Console.WriteLine(" ip: " + item.Groups["ip"]);
+                Console.WriteLine(" time: " + match.Groups["times"]);
+                Console.WriteLine(" ip: " + match.Groups["ip"]);
                 Console.Write(" company: ");
-                /*
-                    Lấy ra tất cả các capture bắt được trong group company và duyệt lần lượt chúng
-                 * Sau đó ta có thể sử dụng hàm ToString() hoặc thuộc tính Value để lấy giá trị của Capture
-                 */
-                foreach (Capture i in item.Groups["company"].Captures)
+
+                /* Lấy ra tất cả các capture bắt được trong group company và duyệt lần lượt chúng
+                 * Sau đó ta có thể sử dụng hàm ToString() hoặc thuộc tính Value để lấy giá trị của Capture */
+
+                CaptureCollection captures = match.Groups["company"].Captures;
+                foreach (Capture cap in captures)
                 {
-                    Console.Write(i.ToString() + " ");
+                    Console.Write(cap.ToString() + " ");
                 }
 
             }
 
             Console.ReadKey();
-
-            // ==================================== END BASIC ========================================================//
 
             /* In ra màn hình giá trị của thuộc tính màu chủ đạo */
             Console.WriteLine(" Mau chu dao cua hom nay: " + Color.MauChuDao);
@@ -224,13 +289,8 @@ namespace Program
             cat.Speak();
             dog.Speak();
 
-            /*
-                Khởi tạo 2 đối tượng thuộc lớp Animal là:
-                + Dog có chiều cao 50cm và cân nặng 2kg.
-                + Cat có chiều cao 30cm và cân nặng 1kg.
-            */
             Animal adog = new Dog();
-            adog.Weight = 2; // gán giá trị cho các thuộc tính của đối tượng
+            adog.Weight = 2;
             adog.Height = 50;
 
 
@@ -238,7 +298,7 @@ namespace Program
             acat.Weight = 1;
             acat.Height = 30;
 
-            adog.Info(typeof(Dog)); // gọi phương thức của đối tượng
+            adog.Info(typeof(Dog));
             acat.Info(typeof(Cat));
 
             // Tạo 1 danh sách kiểu ArrayList rỗng
@@ -275,6 +335,8 @@ namespace Program
             myhash.Add("K", 333);
             myhash.Add("H", 444);
             myhash.Add("FE", 555);
+            myhash['A'] = 777; // Cách khác để thêm phần tử vào Hashtable
+            myhash[10] = 888; // Key có thể là bất kỳ kiểu dữ liệu nào miễn là không trùng nhau.
 
             /*
              * Duyệt qua các phần tử trong Hashtable.
@@ -290,6 +352,7 @@ namespace Program
             mySortedList.Add(new Person("HowKteam", 20), 30);
             mySortedList.Add(new Person("Kteam", 2), 15);
             Console.WriteLine("Danh sach Person dc sap xep: ");
+
             foreach (DictionaryEntry item in mySortedList)
             {
                 Console.WriteLine(item.Key + "\t" + item.Value);
@@ -354,9 +417,30 @@ namespace Program
             // Kiểm tra lại số phần tử của Queue sau khi Pop
             Console.WriteLine(" So phan tu cua Queue sau khi Pop la: {0}", myqueseQueue.Count);
 
+            int aa = 1;
+            int bb = 2;
+            double cc = 3.5;
+            double dd = 7.8;
+
+            Console.WriteLine($"Before swap: a = {aa}, b = {bb}");
+            Swap<int>(ref aa, ref bb);
+            Console.WriteLine($"After swap: a = {aa}, b = {bb}");
+            Console.WriteLine($"Before swap: c = {cc}, d = {dd}");
+            Swap<double>(ref cc, ref dd);
+            Console.WriteLine($"After swap: c = {cc}, d = {dd}");
+
+            Console.ReadKey();
+
+            MyGeneric<int> myGeneric = new MyGeneric<int>(5);
+            myGeneric.SetItemValue(0, 10);
+            Console.WriteLine(myGeneric.GetByIndex(0));
+            MyGeneric<string> myGeneric2 = new MyGeneric<string>(5);
+            myGeneric2.SetItemValue(0, "Hello");
+            Console.WriteLine(myGeneric2.GetByIndex(0));
+
             // Tạo 1 Dictionary đơn giản và thêm vào 3 phần tử.
             Dictionary<Person, Student> mydic = new Dictionary<Person, Student>();
-            mydic.Add(new Person("Nguyen Van A", 18), new Student("Huy", 9.5, 6.9,9.6));
+            mydic.Add(new Person("Nguyen Van A", 18), new Student("Huy", 9.5, 6.9, 9.6));
             mydic.Add(new Person("Nguyen Van B", 19), new Student("Ha", 9.5, 6.9, 9.6));
             mydic.Add(new Person("Nguyen Van C", 20), new Student("Sen", 9.5, 6.9, 9.6));
 
@@ -376,13 +460,14 @@ namespace Program
 
             Console.WriteLine("ID: {0}, Name: {1}", myTuple.Item1, myTuple.Item2);
             Console.WriteLine("ID: {0}, Name: {1}", myTuple2.Item1, myTuple2.Item2);
-            int d, m, y = 0;
-            var myCurrent = GetCurrentDayMonthYear();
-            GetCurrentDay(out d,out m,out y);
 
+            int d, m, y;
+            GetCurrentDay(out d, out m, out y);
             Console.WriteLine("Day: {0}, Month: {1}, Year: {2}", d, m, y);
+
+            var myCurrent = GetCurrentDayMonthYear();
             Console.WriteLine("Day: {0}, Month: {1}, Year: {2}", myCurrent.Item1, myCurrent.Item2, myCurrent.Item3);
-            
+
             int N = 10;
             int M = 20;
 
@@ -422,17 +507,6 @@ namespace Program
             Console.WriteLine(sizeof(float));
             Console.WriteLine(typeof(string));
             //Console.WriteLine(nameof("string"));
-        }
-
-        static void IncreaseValueRef(ref int refvalue)
-        {
-            refvalue++;
-        }
-
-        static void IncreaseValueOut(out int outvalue)
-        {
-            outvalue = 0;
-            outvalue++;
         }
 
         static void GetCurrentDay(out int currday, out int currmonth, out int curryear)
@@ -507,15 +581,10 @@ namespace Program
         //}
 
         public abstract void Speak();
-        
+
 
         public void Info(object animal)
         {
-
-            /*
-                Các phương thức bên trong lớp có thể gọi đến các thành phần khác (bao gồm thuộc tính và phương thức) trong lớp đó.
-                Giá trị của các thuộc tính này có thể được khởi tạo đâu đó trong lớp hoặc từ bên ngoài truyền vào.
-            */
 
             Console.WriteLine(((Type)animal).Name + "Height: " + Height + " Weight: " + Weight + " Legs: " + Legs);
         }
@@ -616,8 +685,8 @@ namespace Program
 
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get => _name;
+            set => _name = value;
         }
 
         public int Age
@@ -635,7 +704,7 @@ namespace Program
         /// </summary>
         /// <param name="Name"></param>
         /// <param name="Age"></param>
-        public Person(string Name, int Age)
+        public Person(string Name, int Age) : this()
         {
             this.Name = Name;
             this.Age = Age;
@@ -759,4 +828,43 @@ namespace Program
         }
     }
 
+    public class MyGeneric<T>
+    {
+        private T[] items;
+        public T[] Items
+        {
+            get => items;
+            set => items = value;
+        }
+
+        public MyGeneric(int size)
+        {
+            items = new T[size];
+        }
+
+        public T GetByIndex(int index)
+        {
+            if (index < 0 || index > items.Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            else
+            {
+                return items[index];
+            }
+        }
+
+        public T SetItemValue(int index, T value)
+        {
+            if (index < 0 || index > items.Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            else
+            {
+                items[index] = value;
+                return items[index];
+            }
+        }
+    }
 }

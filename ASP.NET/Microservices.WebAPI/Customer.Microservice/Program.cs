@@ -2,7 +2,6 @@ using Customer.Microservice.Data;
 using Customer.Microservice.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Customer.Microservice.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

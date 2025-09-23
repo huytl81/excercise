@@ -1,16 +1,16 @@
 ﻿using DISample.Service.DTOs;
 
-namespace DISample.Service
+namespace DISample.Services
 {
     public class ProductService : IProductService
     {
-        public List<ProductViewModel> GetAll()
+        public List<TodoItem> GetAll()
         {
-            return new List<ProductViewModel>
+            return new List<TodoItem>
             {
-                new ProductViewModel { Id = 1, Name = "Huy Ta 1" },
-                new ProductViewModel { Id = 2, Name = "Huy Ta 2" },
-                new ProductViewModel { Id = 3, Name = "Huy Ta 3" }
+                new TodoItem { Id = 1, Name = "Huy Ta 1" },
+                new TodoItem { Id = 2, Name = "Huy Ta 2" },
+                new TodoItem { Id = 3, Name = "Huy Ta 3" }
             };
         }
     }

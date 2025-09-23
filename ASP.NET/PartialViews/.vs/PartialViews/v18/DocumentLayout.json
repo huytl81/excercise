@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\projects\\exercise\\asp.net\\partialviews\\viewmodels\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:viewmodels\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\projects\\exercise\\asp.net\\partialviews\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\projects\\exercise\\asp.net\\partialviews\\views\\articles\\read.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\articles\\read.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\projects\\exercise\\asp.net\\partialviews\\views\\articles\\_articlesection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\articles\\_articlesection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\projects\\exercise\\asp.net\\partialviews\\viewmodels\\articlesection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:viewmodels\\articlesection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\projects\\exercise\\asp.net\\partialviews\\views\\shared\\_authorpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\shared\\_authorpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|d:\\projects\\exercise\\asp.net\\partialviews\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9663A9-6780-418E-AC50-E3644CA67228}|PartialViews.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ArticleSection.cshtml",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Views\\Articles\\_ArticleSection.cshtml",
+              "RelativeDocumentMoniker": "Views\\Articles\\_ArticleSection.cshtml",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Views\\Articles\\_ArticleSection.cshtml",
+              "RelativeToolTip": "Views\\Articles\\_ArticleSection.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T08:29:02.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_AuthorPartial.cshtml",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Views\\Shared\\_AuthorPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_AuthorPartial.cshtml",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Views\\Shared\\_AuthorPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_AuthorPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T08:25:16.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Article.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\ViewModels\\Article.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Article.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\ViewModels\\Article.cs",
+              "RelativeToolTip": "ViewModels\\Article.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T08:22:02.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ArticleSection.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\ViewModels\\ArticleSection.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ArticleSection.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\ViewModels\\ArticleSection.cs",
+              "RelativeToolTip": "ViewModels\\ArticleSection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T08:22:17.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Read.cshtml",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Views\\Articles\\Read.cshtml",
+              "RelativeDocumentMoniker": "Views\\Articles\\Read.cshtml",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Views\\Articles\\Read.cshtml",
+              "RelativeToolTip": "Views\\Articles\\Read.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T08:20:54.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ArticlesController.cs",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Controllers\\ArticlesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ArticlesController.cs",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Controllers\\ArticlesController.cs",
+              "RelativeToolTip": "Controllers\\ArticlesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T07:57:36.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Projects\\exercise\\ASP.NET\\PartialViews\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T08:20:15.172Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

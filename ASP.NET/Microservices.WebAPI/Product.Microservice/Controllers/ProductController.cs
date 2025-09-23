@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Product.Microservice.Data;
-using Product.Microservice.Models;
 
-namespace Product.Microservice.Controllers
+namespace ProductService.Microservice.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -23,14 +17,14 @@ namespace Product.Microservice.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Models.Product>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<Product.Microservice.Models.Product>>> GetProducts()
         {
             return await _context.Products.ToListAsync();
         }
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Models.Product>> GetProduct(int id)
+        public async Task<ActionResult<Product.Microservice.Models.Product>> GetProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
 
@@ -45,7 +39,7 @@ namespace Product.Microservice.Controllers
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Models.Product>> PostProduct(Models.Product product)
+        public async Task<ActionResult<Product.Microservice.Models.Product>> PostProduct(Product.Microservice.Models.Product product)
         {
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
@@ -56,7 +50,7 @@ namespace Product.Microservice.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(int id, Models.Product product)
+        public async Task<IActionResult> PutProduct(int id, Product.Microservice.Models.Product product)
         {
             if (id != product.Id)
             {

@@ -1,11 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "euxOqEgGZMy0317OJ2g5o3vYYvafc13mSURhjQsOQt0=",
-  "Source": "BookStoreControllerAPI_MongoDB",
-  "BasePath": "_content/BookStoreControllerAPI_MongoDB",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
-}
+{"Version":1,"Hash":"F0Vz469pYrqjjFZ95Ccdznll36W85IA6ESSkSm9QQVM=","Source":"BookStoreControllerAPI_MongoDB","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

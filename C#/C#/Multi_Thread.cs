@@ -5,7 +5,7 @@ namespace MultiThread
 {
     class SingleThread
     {
-        static void Main1(string[] args)
+        static void MainST(string[] args)
         {
             DemoThread();
             DemoThread();
@@ -29,7 +29,7 @@ namespace MultiThread
 
     class MultiThread
     {
-        static void MainT(string[] args)
+        static void MainMT(string[] args)
         {
             /* Tạo một Thread t với anonymous function và gọi hàm DemoThread bên trong
              * Thread chỉ bắt đầu chạy khi gọi hàm Start
@@ -69,11 +69,11 @@ namespace MultiThread
         static void DemoThread(string threadIndex)
         {
             // Thực hiện vòng lặp 5 lần. Mỗi lần tốn 1 giây
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 5; i++)
             {
                 // Làm gì đó tốn 1s. Dùng Thread.Sleep để luồng hiện tại ngủ theo thời gian được cài đặt.
                 // Mục đích để giả lập độ trễ của code xử lý
-                //Thread.Sleep(TimeSpan.FromSeconds(1));
+                Thread.Sleep(TimeSpan.FromSeconds(1));
 
                 Console.WriteLine(threadIndex + " - " + i);
             }

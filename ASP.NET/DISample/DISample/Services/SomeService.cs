@@ -1,10 +1,10 @@
 ﻿namespace DISample.Services
 {
-    public class SomeService : ITransientService, IScopedService, ISingletonService
+    public class GuidService : ITransientService, IScopedService, ISingletonService
     {
         private Guid _id;
 
-        public SomeService()
+        public GuidService()
         {
             _id = Guid.NewGuid();
         }

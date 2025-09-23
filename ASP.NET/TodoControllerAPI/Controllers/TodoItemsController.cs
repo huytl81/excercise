@@ -22,7 +22,7 @@ public class TodoItemsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
     {
-        return await _context.TodoItems.Select(x => ItemToDTO(x)).ToListAsync();
+        return await _context.TodoItems.Select(x => TodoItemDTO(x)).ToListAsync();
     }
 
     // GET: api/TodoItems/5
@@ -37,7 +37,7 @@ public class TodoItemsController : ControllerBase
             return NotFound();
         }
 
-        return ItemToDTO(todoItem);
+        return TodoItemDTO(todoItem);
     }
     // </snippet_GetByID>
 
@@ -107,7 +107,7 @@ public class TodoItemsController : ControllerBase
         _context.TodoItems.Add(todoItem);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, ItemToDTO(todoItem));
+        return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, TodoItemDTO(todoItem));
     }
     // </snippet_Create>
 
@@ -135,7 +135,7 @@ public class TodoItemsController : ControllerBase
         return _context.TodoItems.Any(e => e.Id == id);
     }
 
-    private static TodoItemDTO ItemToDTO(TodoItem todoItem) =>
+    private static TodoItemDTO TodoItemDTO(TodoItem todoItem) =>
        new TodoItemDTO
        {
            Id = todoItem.Id,

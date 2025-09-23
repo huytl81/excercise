@@ -40,14 +40,26 @@ GET {{TodoMinimalAPI_HostAddress}}/hello
 
 ###
 
-GET {{TodoMinimalAPI_HostAddress}}/hello
-
-###
-
 POST {{TodoMinimalAPI_HostAddress}}/todoitems/
 
 ###
 
 PUT {{TodoMinimalAPI_HostAddress}}/todoitems/{id}
+
+###
+
+GET {{TodoMinimalAPI_HostAddress}}/hello
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6ImFkbWluX3Njb3BlIiwicm9sZSI6ImFkbWluX3JvbGUiLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE3NTg2MDY5Njl9.q05ir71ZZzojvu5p8kjbh17kqeoR9bh8F0VGHFlDc2k
+###
+
+@userId=3
+@bookId=8
+GET {{TodoMinimalAPI_HostAddress}}/users/{{userId}}/books/{{bookId}}
+
+###
+
+@username=admin 
+@password=123456
+POST {{TodoMinimalAPI_HostAddress}}/login?username={{username}}&password={{password}}
 
 ###
