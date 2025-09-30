@@ -17,5 +17,3 @@ public interface ITodoAppService : IApplicationService
     Task<TodoItemDto> CreateAsync(string text);
     Task DeleteAsync(Guid id);
 }
-
-

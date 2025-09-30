@@ -1,9 +1,8 @@
 import { ToasterService } from '@abp/ng.theme.shared';
 import { Component, OnInit } from '@angular/core';
-import { TodoItemDto, TodoService } from '@proxy';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { TodoItemDto, TodoService } from '@proxy';
 
 @Component({
   standalone: true,
