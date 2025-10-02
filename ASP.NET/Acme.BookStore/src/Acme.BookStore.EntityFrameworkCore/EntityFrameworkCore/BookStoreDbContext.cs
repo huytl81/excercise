@@ -28,7 +28,7 @@ public class BookStoreDbContext :
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
-    private DbSet<Book> Books { get; set; }
+    public DbSet<Book> Books { get; set; }
 
     #region Entities from the modules
 

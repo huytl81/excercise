@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -14,6 +14,7 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
+      "@proxy": ["app/proxy/index.ts"],
     },
     "useDefineForClassFields": false
   },
