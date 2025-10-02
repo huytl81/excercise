@@ -58,10 +58,8 @@ public class TodoAppDbContext :
 
     #endregion
 
-    public TodoAppDbContext(DbContextOptions<TodoAppDbContext> options)
-        : base(options)
+    public TodoAppDbContext(DbContextOptions<TodoAppDbContext> options) : base(options)
     {
-
     }
 
     protected override void OnModelCreating(ModelBuilder builder)

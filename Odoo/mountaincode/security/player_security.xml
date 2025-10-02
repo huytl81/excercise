@@ -15,6 +15,7 @@
 
         <record id="group_player_user" model="res.groups">
             <field name="name">Player User Group</field>
+            <field name="privilege_id" ref="privilege_player" />
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
         </record>
 
