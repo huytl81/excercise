@@ -1893,6 +1893,13 @@
   dependencies:
     tslib "^2.0.0"
 
+"@swimlane/ngx-datatable@^22.0.0":
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/@swimlane/ngx-datatable/-/ngx-datatable-22.0.0.tgz#cb36eb0c803eab9868babf69db6ff283802ab59c"
+  integrity sha512-NteAxuMHNnXMeRun0qGZNz5ocoRmoypmhJtfvQRpO6umZPDVlf0+GzlEsTSOfqJNrKiYjtaMJ8EP+1lRYxrigw==
+  dependencies:
+    tslib "^2.0.0"
+
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-4.0.6.tgz#b4a914bb62e7c272d4e5989fe4440f812ab1d807"

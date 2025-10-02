@@ -3,6 +3,10 @@ import { Routes } from '@angular/router';
 
 export const APP_ROUTES: Routes = [
   {
+    path: 'books',
+    loadComponent: () => import('./book/book').then(m => m.BookComponent)
+  },
+  {
     path: '',
     pathMatch: 'full',
     loadComponent: () => import('./home/home.component').then(c => c.HomeComponent),
