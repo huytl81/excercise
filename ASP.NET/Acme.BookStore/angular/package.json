@@ -21,7 +21,7 @@
     "@abp/ng.setting-management": "~9.3.4",
     "@abp/ng.tenant-management": "~9.3.4",
     "@abp/ng.theme.lepton-x": "~4.3.4",
-    "@abp/ng.theme.shared": "~9.3.4",
+    "@abp/ng.theme.shared": "^9.3.5",
     "@angular/animations": "~20.0.0",
     "@angular/common": "~20.0.0",
     "@angular/compiler": "~20.0.0",
@@ -31,7 +31,7 @@
     "@angular/platform-browser": "~20.0.0",
     "@angular/platform-browser-dynamic": "~20.0.0",
     "@angular/router": "~20.0.0",
-    "@swimlane/ngx-datatable": "^22.0.0",
+    "@swimlane/ngx-datatable": "21.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.15.0"

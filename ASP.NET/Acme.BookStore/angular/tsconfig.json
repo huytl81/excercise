@@ -14,7 +14,7 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "@proxy": ["app/proxy/index.ts"],
+      "@proxy": ["app/proxy/index.ts"]
     },
     "useDefineForClassFields": false
   },
