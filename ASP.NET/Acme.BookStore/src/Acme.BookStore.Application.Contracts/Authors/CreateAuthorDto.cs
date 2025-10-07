@@ -7,7 +7,7 @@ public class CreateAuthorDto
 {
     [Required]
     [StringLength(AuthorConsts.MaxNameLength)]
-    public string Name { get; set; }  = string.Empty;
+    public string Name { get; set; } = string.Empty;
 
     [Required]
     public DateTime BirthDate { get; set; }
