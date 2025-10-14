@@ -9,6 +9,16 @@ export const APP_ROUTES: Routes = [
     loadComponent: () => import('./book/book').then(m => m.BookComponent),
   },
   {
+    path: 'authors',
+    canActivate: [authGuard, permissionGuard],
+    loadComponent: () => import('./author/author').then(m => m.AuthorComponent),
+  },
+  {
+    path: 'books/:id',
+    canActivate: [authGuard, permissionGuard],
+    loadComponent: () => import('./book/book').then(m => m.BookComponent),
+  },
+  {
     path: '',
     pathMatch: 'full',
     loadComponent: () => import('./home/home.component').then(c => c.HomeComponent),
