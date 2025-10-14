@@ -10,13 +10,13 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace Acme.BookStore.Authors;
 
-public class EfCoreAuthorRepository : EfCoreRepository<BookStoreDbContext, Author, Guid>, IAuthorRepository
+public class AuthorRepository : EfCoreRepository<BookStoreDbContext, Author, Guid>, IAuthorRepository
 {
-    public EfCoreAuthorRepository(IDbContextProvider<BookStoreDbContext> dbContextProvider) : base(dbContextProvider)
+    public AuthorRepository(IDbContextProvider<BookStoreDbContext> dbContextProvider) : base(dbContextProvider)
     {
     }
 
-    public async Task<Author> FindByNameAsync(string name)
+    public async Task<Author?> FindByNameAsync(string name)
     {
         var dbSet = await GetDbSetAsync();
         return await dbSet.FirstOrDefaultAsync(author => author.Name == name);

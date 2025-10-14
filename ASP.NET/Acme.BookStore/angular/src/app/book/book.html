@@ -7,7 +7,6 @@
                 </h5>
             </div>
             <div class="text-end col col-md-6">
-                <!-- Add the "new book" button here -->
                 <div class="text-lg-end pt-2">
                     <button *abpPermission="'BookStore.Books.Create'" id="create" class="btn btn-primary" type="button" (click)="createBook()">
                         <i class="fa fa-plus me-1"></i>
@@ -38,25 +37,22 @@
                 </ng-template>
             </ngx-datatable-column>
 
-            <!-- Name -->
-            <ngx-datatable-column [name]="'::Name' | abpLocalization" prop="name">
-            </ngx-datatable-column>
+            <ngx-datatable-column [name]="'::Name' | abpLocalization" prop="name"/>
 
-            <!-- Type -->
+            <ngx-datatable-column [name]="'::Author' | abpLocalization" prop="authorName" [sortable]="false"/>
+
             <ngx-datatable-column [name]="'::Type' | abpLocalization" prop="type">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                     {{ '::Enum:BookType.' + row.type | abpLocalization }}
                 </ng-template>
             </ngx-datatable-column>
 
-            <!-- Publish Date -->
             <ngx-datatable-column [name]="'::PublishDate' | abpLocalization" prop="publishDate">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                     {{ row.publishDate | date }}
                 </ng-template>
             </ngx-datatable-column>
 
-            <!-- Price -->
             <ngx-datatable-column [name]="'::Price' | abpLocalization" prop="price">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                     {{ row.price | currency }}
@@ -73,6 +69,16 @@
     
         <ng-template #abpBody>
             <form [formGroup]="form" (ngSubmit)="save()">
+                <div class="mt-2">
+                    <label for="author-id">Author</label><span> * </span>
+                    <select class="form-control" id="author-id" formControlName="authorId">
+                        <option [ngValue]="null">Select author</option>
+                        <option [ngValue]="author.id" *ngFor="let author of authors$ | async">
+                            {{ author.name }}
+                        </option>
+                    </select>
+                </div>
+
                 <div class="mt-2">
                     <label for="book-name">Name</label><span> * </span>
                     <input type="text" id="book-name" class="form-control" formControlName="name" autofocus />

@@ -2,7 +2,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListService, PagedResultDto } from '@abp/ng.core';
-import { Books } from '@proxy';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FormGroup, FormsModule, FormBuilder, Validators } from '@angular/forms';
 import { CoreModule } from '@abp/ng.core';
@@ -11,11 +10,13 @@ import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDateNativeAdapter, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { Books } from '@proxy';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgxDatatableModule, CoreModule, ModalComponent, NgbDatepickerModule,NgbDropdownModule],
+  imports: [CommonModule, FormsModule, NgxDatatableModule, CoreModule, ModalComponent, NgbDatepickerModule, NgbDropdownModule],
   templateUrl: './book.html',
   styleUrls: ['./book.scss'],
   providers: [ListService, { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],
@@ -26,18 +27,17 @@ export class BookComponent implements OnInit {
 
   selectedBook = {} as Books.BookDto;
 
+  authors$: Observable<Books.AuthorLookupDto[]>;
+
   form: FormGroup;
 
   bookTypes = Books.bookTypeOptions;
 
   isModalOpen = false;
 
-  constructor(
-    public readonly list: ListService,
-    private bookService: Books.BookService,
-    private fb: FormBuilder,
-    private confirmation: ConfirmationService
-  ) {}
+  constructor(public readonly list: ListService, private bookService: Books.BookService, private fb: FormBuilder, private confirmation: ConfirmationService) {
+    this.authors$ = bookService.getAuthorLookup().pipe(map((r) => r.items));
+  }
 
   ngOnInit() {
     const bookStreamCreator = query => this.bookService.getList(query);
@@ -71,6 +71,7 @@ export class BookComponent implements OnInit {
 
   buildForm() {
     this.form = this.fb.group({
+      authorId: [this.selectedBook.authorId || null, Validators.required],
       name: [this.selectedBook.name || '', Validators.required],
       type: [this.selectedBook.type || null, Validators.required],
       publishDate: [
@@ -94,6 +95,4 @@ export class BookComponent implements OnInit {
       this.list.get();
     });
   }
-
-  
 }
