@@ -172,7 +172,7 @@
                 <separator/>
 
                 <!-- Group By Options -->
-                <group expand="0" string="Group By">
+                <group>
                     <filter name="group_by_state" string="State" context="{'group_by':'state'}"/>
                     <filter name="group_by_seller" string="Seller" context="{'group_by': 'seller_id'}"/>
                 </group>

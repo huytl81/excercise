@@ -56,7 +56,7 @@ class HostelRoom(models.Model):
         # else:
         #     values_list = values
 
-        if not self.env.user.has_groups('hostel.group_hostel_room_manager'):
+        if not self.env.user.has_groups('hostel.group_hostel_manager'):
             for vals in values_list:
                 if vals.get('remarks'):
                     raise UserError(_('You are not allowed to modify remarks'))
@@ -64,7 +64,7 @@ class HostelRoom(models.Model):
         return super().create(values_list)
 
     def write(self, values):
-        if not self.env.user.has_groups('hostel.group_hostel_room_manager'):
+        if not self.env.user.has_groups('hostel.group_hostel_manager'):
             if values.get('remarks'):
                 raise UserError('You are not allowed to modify remarks')
 
