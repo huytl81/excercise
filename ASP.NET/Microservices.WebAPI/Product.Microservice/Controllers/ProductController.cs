@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Product.Microservice.Data;
+using Product.Microservice.Repository;
 
 namespace ProductService.Microservice.Controllers
 {
@@ -9,24 +10,28 @@ namespace ProductService.Microservice.Controllers
     public class ProductController : ControllerBase
     {
         private readonly ProductDbContext _context;
+        private readonly ProductRepository _productRepository;
 
-        public ProductController(ProductDbContext context)
+        public ProductController(ProductDbContext context, ProductRepository productRepository)
         {
             _context = context;
+            _productRepository = productRepository;
         }
 
         // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product.Microservice.Models.Product>>> GetProducts()
         {
-            return await _context.Products.ToListAsync();
+            //return await _context.Products.ToListAsync();
+            return await _productRepository.GetProducts();
         }
 
         // GET: api/Products/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Product.Microservice.Models.Product>> GetProduct(int id)
         {
-            var product = await _context.Products.FindAsync(id);
+            //var product = await _context.Products.FindAsync(id);
+            var product = await _productRepository.GetProductByID(id);
 
             if (product == null)
             {

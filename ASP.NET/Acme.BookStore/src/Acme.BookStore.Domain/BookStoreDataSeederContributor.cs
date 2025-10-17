@@ -8,17 +8,13 @@ using Volo.Abp.Domain.Repositories;
 
 namespace Acme.BookStore;
 
-public class BookStoreDataSeederContributor
-    : IDataSeedContributor, ITransientDependency
+public class BookStoreDataSeederContributor : IDataSeedContributor, ITransientDependency
 {
     private readonly IRepository<Book, Guid> _bookRepository;
     private readonly IAuthorRepository _authorRepository;
     private readonly AuthorManager _authorManager;
 
-    public BookStoreDataSeederContributor(
-        IRepository<Book, Guid> bookRepository,
-        IAuthorRepository authorRepository,
-        AuthorManager authorManager)
+    public BookStoreDataSeederContributor(IRepository<Book, Guid> bookRepository, IAuthorRepository authorRepository, AuthorManager authorManager)
     {
         _bookRepository = bookRepository;
         _authorRepository = authorRepository;
@@ -49,8 +45,7 @@ public class BookStoreDataSeederContributor
         );
 
         await _bookRepository.InsertAsync(
-            new Book
-            {
+            new Book {
                 AuthorId = orwell.Id, // SET THE AUTHOR
                 Name = "1984",
                 Type = BookType.Dystopia,
@@ -61,8 +56,7 @@ public class BookStoreDataSeederContributor
         );
 
         await _bookRepository.InsertAsync(
-            new Book
-            {
+            new Book {
                 AuthorId = douglas.Id, // SET THE AUTHOR
                 Name = "The Hitchhiker's Guide to the Galaxy",
                 Type = BookType.ScienceFiction,

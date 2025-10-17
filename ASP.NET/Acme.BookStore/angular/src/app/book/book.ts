@@ -1,15 +1,11 @@
 // filepath: book.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListService, PagedResultDto } from '@abp/ng.core';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FormGroup, FormsModule, FormBuilder, Validators } from '@angular/forms';
-import { CoreModule } from '@abp/ng.core';
-import { ModalComponent } from '@abp/ng.theme.shared';
-import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbDateNativeAdapter, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
-import { ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { CoreModule, ListService, PagedResultDto } from '@abp/ng.core';
+import { ModalComponent, ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { NgbDatepickerModule, NgbDateNativeAdapter, NgbDateAdapter, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { Books } from '@proxy';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
