@@ -6,6 +6,5 @@ namespace Product.Microservice.Data
     {
         DbSet<Models.Product> Products { get; set; }
         Task<int> SaveChanges();
-
     }
 }

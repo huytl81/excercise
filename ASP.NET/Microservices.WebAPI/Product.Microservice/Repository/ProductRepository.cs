@@ -25,7 +25,7 @@ namespace Product.Microservice.Repository
             return await _dbContext.Products.FindAsync(productId);
         }
 
-        public async Task<IEnumerable<Models.Product>> GetProducts()
+        public async Task<List<Models.Product>> GetProducts()
         {
             return await _dbContext.Products.ToListAsync();
         }
