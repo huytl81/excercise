@@ -4641,7 +4641,7 @@
           "jsonName": null,
           "type": "System.Guid",
           "typeSimple": "string",
-          "isRequired": false,
+          "isRequired": true,
           "minLength": null,
           "maxLength": null,
           "minimum": null,

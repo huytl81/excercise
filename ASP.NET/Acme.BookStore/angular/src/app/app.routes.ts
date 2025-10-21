@@ -1,22 +1,21 @@
 import { Routes } from '@angular/router';
 import { authGuard, permissionGuard } from '@abp/ng.core';
-import { BookComponent } from './book/book';
 
 export const APP_ROUTES: Routes = [
   {
     path: 'books',
     canActivate: [authGuard, permissionGuard],
-    loadComponent: () => import('./book/book').then(m => m.BookComponent),
+    loadComponent: () => import('./book/book').then(c => c.BookComponent),
   },
   {
     path: 'authors',
     canActivate: [authGuard, permissionGuard],
-    loadComponent: () => import('./author/author').then(m => m.AuthorComponent),
+    loadComponent: () => import('./author/author').then(c => c.AuthorComponent),
   },
   {
     path: 'books/:id',
     canActivate: [authGuard, permissionGuard],
-    loadComponent: () => import('./book/book').then(m => m.BookComponent),
+    loadComponent: () => import('./book/book').then(c => c.BookComponent),
   },
   {
     path: '',
@@ -25,18 +24,18 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'account',
-    loadChildren: () => import('@abp/ng.account').then(c => c.createRoutes()),
+    loadChildren: () => import('@abp/ng.account').then(c => c.AccountModule),
   },
   {
     path: 'identity',
-    loadChildren: () => import('@abp/ng.identity').then(c => c.createRoutes()),
+    loadChildren: () => import('@abp/ng.identity').then(c => c.IdentityModule),
   },
   {
     path: 'tenant-management',
-    loadChildren: () => import('@abp/ng.tenant-management').then(c => c.createRoutes()),
+    loadChildren: () => import('@abp/ng.tenant-management').then(c => c.TenantManagementModule),
   },
   {
     path: 'setting-management',
-    loadChildren: () => import('@abp/ng.setting-management').then(c => c.createRoutes()),
+    loadChildren: () => import('@abp/ng.setting-management').then(c => c.SettingManagementModule),
   },
 ];
