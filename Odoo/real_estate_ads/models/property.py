@@ -61,7 +61,7 @@ class Property(models.Model):
 
     @api.depends('offer_ids')
     def _compute_offer_count(self):
-        self.ensure_one()
+        # self.ensure_one()
         self.offer_count = len(self.offer_ids)
 
     def _group_expand_states(self, states, domain, order=None):

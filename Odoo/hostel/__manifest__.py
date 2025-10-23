@@ -17,7 +17,7 @@
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '19.0.0.1',
+    'version': '1.2',
     'application': True,
     'installable':True,
     # any module necessary for this one to work correctly
@@ -26,11 +26,7 @@
     # always loaded
     'data': [
         'data/data.xml',
-        'security/hostel_category_security.xml',
-        'security/hostel_room_category_security.xml',
         'security/hostel_security.xml',
-        'security/hostel_room_security.xml',
-        'security/hostel_student_security.xml',
         'security/ir.model.access.csv',
         'views/hostel_category.xml',
         'views/hostel.xml',
