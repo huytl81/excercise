@@ -37,7 +37,7 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@abp/ng.schematics": "~9.3.4",
+    "@abp/ng.schematics": "~9.3.6",
     "@angular-eslint/builder": "~20.0.0",
     "@angular-eslint/eslint-plugin": "~20.0.0",
     "@angular-eslint/eslint-plugin-template": "~20.0.0",

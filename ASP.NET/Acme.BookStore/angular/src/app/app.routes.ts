@@ -1,22 +1,21 @@
 import { Routes } from '@angular/router';
 import { authGuard, permissionGuard } from '@abp/ng.core';
-import { BookComponent } from './book/book';
 
 export const APP_ROUTES: Routes = [
   {
     path: 'books',
     canActivate: [authGuard, permissionGuard],
-    loadComponent: () => import('./book/book').then(m => m.BookComponent),
+    loadComponent: () => import('./book/book').then(c => c.BookComponent),
   },
   {
     path: 'authors',
     canActivate: [authGuard, permissionGuard],
-    loadComponent: () => import('./author/author').then(m => m.AuthorComponent),
+    loadComponent: () => import('./author/author').then(c => c.AuthorComponent),
   },
   {
     path: 'books/:id',
     canActivate: [authGuard, permissionGuard],
-    loadComponent: () => import('./book/book').then(m => m.BookComponent),
+    loadComponent: () => import('./book/book').then(c => c.BookComponent),
   },
   {
     path: '',

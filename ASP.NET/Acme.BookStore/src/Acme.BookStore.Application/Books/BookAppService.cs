@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic.Core;
@@ -30,54 +30,56 @@ public class BookAppService : CrudAppService<Book, BookDto, Guid, PagedAndSorted
 
     public override async Task<BookDto> GetAsync(Guid id)
     {
-        //Get the IQueryable<Book> from the repository
-        var bookqueryable = Repository.GetQueryableAsync();
-        var authorqueryable = _authorRepository.GetQueryableAsync();
-        //Prepare a query to join books and authors
-        var query = from book in await bookqueryable
-            join author in await authorqueryable
+        IQueryable<Book> bq = await Repository.GetQueryableAsync();
+        IQueryable<Author> aq = await _authorRepository.GetQueryableAsync();
+
+        var query = from book in bq
+            join author in aq 
                 on book.AuthorId equals author.Id
             where book.Id == id
             select new { book, author };
-
-        //Execute the query and get the book with author
-        var queryResult = await AsyncExecuter.FirstOrDefaultAsync(query);
-        if (queryResult == null)
+        
+        var result = await AsyncExecuter.FirstOrDefaultAsync(query);
+        if (result == null)
         {
             throw new EntityNotFoundException(typeof(Book), id);
         }
 
-        var bookDto = ObjectMapper.Map<Book, BookDto>(queryResult.book);
-        bookDto.AuthorName = queryResult.author.Name;
+        var bookDto = ObjectMapper.Map<Book, BookDto>(result.book);
+        bookDto.AuthorName = result.author.Name;
         return bookDto;
     }
-
+        
     public override async Task<PagedResultDto<BookDto>> GetListAsync(PagedAndSortedResultRequestDto input)
     {
         //Get the IQueryable<Book> from the repository
-        var queryable = await Repository.GetQueryableAsync();
+        IQueryable<Book> bq = await Repository.GetQueryableAsync();
+        IQueryable<Author> aq = await _authorRepository.GetQueryableAsync();
 
         //Prepare a query to join books and authors
-        var query = from book in queryable
-            join author in await _authorRepository.GetQueryableAsync() on book.AuthorId equals author.Id
+        var query = from book in bq
+            join author in aq 
+                on book.AuthorId equals author.Id
             select new {book, author};
 
         //Paging
-        query = query
-            .OrderBy(NormalizeSorting(input.Sorting))
-            .Skip(input.SkipCount)
-            .Take(input.MaxResultCount);
+        if (input.Sorting != null)
+        {
+            query = query.OrderBy(NormalizeSorting(input.Sorting)).Skip(input.SkipCount).Take(input.MaxResultCount);
+        }
 
         //Execute the query and get a list
-        var queryResult = await AsyncExecuter.ToListAsync(query);
+        var result = await AsyncExecuter.ToListAsync(query);
 
         //Convert the query result to a list of BookDto objects
-        var bookDtos = queryResult.Select(x =>
+        IEnumerable<BookDto> iebookDtos = result.Select(x =>
         {
-            var bookDto = ObjectMapper.Map<Book, BookDto>(x.book);
+            BookDto bookDto = ObjectMapper.Map<Book, BookDto>(x.book);
             bookDto.AuthorName = x.author.Name;
             return bookDto;
-        }).ToList();
+        });
+        
+        List<BookDto> bookDtos = iebookDtos.ToList();
 
         //Get the total count with another query
         var totalCount = await Repository.GetCountAsync();

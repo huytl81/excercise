@@ -12,7 +12,13 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgxDatatableModule, CoreModule, ModalComponent, NgbDatepickerModule, NgbDropdownModule],
+  imports: [CommonModule, 
+            FormsModule, 
+            NgxDatatableModule, 
+            CoreModule, 
+            ModalComponent, 
+            NgbDatepickerModule, 
+            NgbDropdownModule],
   templateUrl: './book.html',
   styleUrls: ['./book.scss'],
   providers: [ListService, { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],
@@ -31,7 +37,11 @@ export class BookComponent implements OnInit {
 
   isModalOpen = false;
 
-  constructor(public readonly list: ListService, private bookService: Books.BookService, private fb: FormBuilder, private confirmation: ConfirmationService) {
+  constructor(public readonly list: ListService, 
+              private bookService: Books.BookService, 
+              private fb: FormBuilder, 
+              private confirmation: ConfirmationService) 
+  { 
     this.authors$ = bookService.getAuthorLookup().pipe(map((r) => r.items));
   }
 
@@ -70,10 +80,7 @@ export class BookComponent implements OnInit {
       authorId: [this.selectedBook.authorId || null, Validators.required],
       name: [this.selectedBook.name || '', Validators.required],
       type: [this.selectedBook.type || null, Validators.required],
-      publishDate: [
-        this.selectedBook.publishDate ? new Date(this.selectedBook.publishDate) : null,
-        Validators.required,
-      ],
+      publishDate: [this.selectedBook.publishDate ? new Date(this.selectedBook.publishDate) : null, Validators.required,],
       price: [this.selectedBook.price || null, Validators.required],
     });
   }
