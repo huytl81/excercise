@@ -7,5 +7,5 @@ namespace Acme.BookStore.Books;
 
 public interface IBookAppService : ICrudAppService<BookDto, Guid, PagedAndSortedResultRequestDto, CreateUpdateBookDto>
     {
-        Task<ListResultDto<AuthorLookupDto>> GetAuthorLookupAsync();
+        Task<PagedResultDto<AuthorLookupDto>> GetAuthorLookupAsync();
     }

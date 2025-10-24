@@ -34,6 +34,7 @@ public class AuthorManager : DomainService
         Check.NotNullOrWhiteSpace(newName, nameof(newName));
 
         var existingAuthor = await _authorRepository.FindByNameAsync(newName);
+
         if (existingAuthor != null && existingAuthor.Id != author.Id)
         {
             throw new AuthorAlreadyExistsException(newName);
