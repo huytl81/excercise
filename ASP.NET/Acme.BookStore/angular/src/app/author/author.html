@@ -19,7 +19,6 @@
 
     <div class="card-body">
         <ngx-datatable [rows]="author.items" [count]="author.totalCount" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50">
-            
             <ngx-datatable-column [name]="'::Actions' | abpLocalization" [maxWidth]="150" [sortable]="false">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                     <div ngbDropdown container="body" class="d-inline-block">
@@ -30,7 +29,7 @@
                             <button *abpPermission="'BookStore.Authors.Edit'" ngbDropdownItem (click)="editAuthor(row.id)">
                                 {{ '::Edit' | abpLocalization }}
                             </button>
-                            <button *abpPermission="'BookStore.Authors.Delete'" ngbDropdownItem (click)="delete(row.id)">
+                            <button *abpPermission="'BookStore.Authors.Delete'" ngbDropdownItem (click)="deleteAuthor(row.id)">
                                 {{ '::Delete' | abpLocalization }}
                             </button>
                         </div>
@@ -47,7 +46,6 @@
             </ngx-datatable-column>
 
             <ngx-datatable-column [name]="'::ShortBio' | abpLocalization" prop="shortBio"/>
-
         </ngx-datatable>
     </div>
 
@@ -75,7 +73,7 @@
         </ng-template>
 
         <ng-template #abpFooter>
-            <button type="button" class="btn btn-secondary" abpClose>
+            <button type="button" class="btn btn-secondary" (click)="close()" abpClose>
                 {{ '::Close' | abpLocalization }}
             </button>
 

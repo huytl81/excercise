@@ -1241,8 +1241,8 @@
                   "name": "GetAuthorLookupAsync",
                   "parametersOnMethod": [],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.ListResultDto<Acme.BookStore.Books.AuthorLookupDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Acme.BookStore.Books.AuthorLookupDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<Acme.BookStore.Books.AuthorLookupDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Acme.BookStore.Books.AuthorLookupDto>"
                   }
                 },
                 {
@@ -1449,8 +1449,8 @@
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.ListResultDto<Acme.BookStore.Books.AuthorLookupDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Acme.BookStore.Books.AuthorLookupDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Acme.BookStore.Books.AuthorLookupDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Acme.BookStore.Books.AuthorLookupDto>"
               },
               "allowAnonymous": false,
               "implementFrom": "Acme.BookStore.Books.IBookAppService"

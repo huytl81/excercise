@@ -47,6 +47,7 @@ public class BookAppService : CrudAppService<Book, BookDto, Guid, PagedAndSorted
 
         var bookDto = ObjectMapper.Map<Book, BookDto>(result.book);
         bookDto.AuthorName = result.author.Name;
+
         return bookDto;
     }
         
@@ -72,31 +73,28 @@ public class BookAppService : CrudAppService<Book, BookDto, Guid, PagedAndSorted
         var result = await AsyncExecuter.ToListAsync(query);
 
         //Convert the query result to a list of BookDto objects
-        IEnumerable<BookDto> iebookDtos = result.Select(x =>
+        IEnumerable<BookDto> bookDtos = result.Select(x =>
         {
             BookDto bookDto = ObjectMapper.Map<Book, BookDto>(x.book);
             bookDto.AuthorName = x.author.Name;
             return bookDto;
         });
+
         
-        List<BookDto> bookDtos = iebookDtos.ToList();
+        List<BookDto> listbookDtos = bookDtos.ToList();
 
         //Get the total count with another query
         var totalCount = await Repository.GetCountAsync();
 
-        return new PagedResultDto<BookDto>(
-            totalCount,
-            bookDtos
-        );
+        return new PagedResultDto<BookDto>(totalCount, listbookDtos);
     }
 
-    public async Task<ListResultDto<AuthorLookupDto>> GetAuthorLookupAsync()
+    public async Task<PagedResultDto<AuthorLookupDto>> GetAuthorLookupAsync()
     {
         var authors = await _authorRepository.GetListAsync();
-
-        return new ListResultDto<AuthorLookupDto>(
-            ObjectMapper.Map<List<Author>, List<AuthorLookupDto>>(authors)
-        );
+        var totalCount = await _authorRepository.CountAsync();
+            
+        return new PagedResultDto<AuthorLookupDto>(totalCount,ObjectMapper.Map<List<Author>, List<AuthorLookupDto>>(authors));
     }
 
     private static string NormalizeSorting(string sorting)

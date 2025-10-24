@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Acme.BookStore.Permissions;
 using Microsoft.AspNetCore.Authorization;
+using OpenIddict.Abstractions;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 
@@ -12,7 +15,7 @@ namespace Acme.BookStore.Authors;
 [Authorize(BookStorePermissions.Authors.Default)]
 public class AuthorAppService : BookStoreAppService, IAuthorAppService
 {
-    private readonly IAuthorRepository _authorRepository;
+    private readonly IAuthorRepository _authorRepository;   
     private readonly AuthorManager _authorManager;
 
     public AuthorAppService(IAuthorRepository authorRepository, AuthorManager authorManager)
@@ -34,32 +37,19 @@ public class AuthorAppService : BookStoreAppService, IAuthorAppService
             input.Sorting = nameof(Author.Name);
         }
 
-        var authors = await _authorRepository.GetListAsync(
-            input.SkipCount,
-            input.MaxResultCount,
-            input.Sorting,
-            input.Filter
-        );
-
+        var authors = await _authorRepository.GetListAsync(input.SkipCount, input.MaxResultCount, input.Sorting, input.Filter);
         var totalCount = input.Filter == null
             ? await _authorRepository.CountAsync()
-            : await _authorRepository.CountAsync(
-                author => author.Name.Contains(input.Filter));
+            : await _authorRepository.CountAsync(a => a.Name.Contains(input.Filter));
 
-        return new PagedResultDto<AuthorDto>(
-            totalCount,
-            ObjectMapper.Map<List<Author>, List<AuthorDto>>(authors)
-        );
+        return new PagedResultDto<AuthorDto>(totalCount, ObjectMapper.Map<List<Author>,List<AuthorDto>>(authors));
+
     }
 
     [Authorize(BookStorePermissions.Authors.Create)]
     public async Task<AuthorDto> CreateAsync(CreateAuthorDto input)
     {
-        var author = await _authorManager.CreateAsync(
-            input.Name,
-            input.BirthDate,
-            input.ShortBio
-        );
+        var author = await _authorManager.CreateAsync(input.Name, input.BirthDate, input.ShortBio);
 
         await _authorRepository.InsertAsync(author);
 

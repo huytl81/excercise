@@ -58,11 +58,20 @@ export class AuthorComponent implements OnInit {
   }
 
   editAuthor(id: string) {
-    this.authorService.get(id).subscribe((author) => {
+    this.authorService.get(id).subscribe(author => {
       this.selectedAuthor = author;
       this.buildForm();
       this.isModalOpen = true;
     });
+  }
+
+  deleteAuthor(id: string) {
+    this.confirmation.warn('::AreYouSureToDelete', '::AreYouSure')
+        .subscribe(status => {
+          if (status === Confirmation.Status.confirm) {
+            this.authorService.delete(id).subscribe(() => this.list.get());
+          }
+        });
   }
 
   buildForm() {
@@ -79,29 +88,19 @@ export class AuthorComponent implements OnInit {
     }
 
     if (this.selectedAuthor.id) {
-      this.authorService
-        .update(this.selectedAuthor.id, this.form.value)
-        .subscribe(() => {
-          this.isModalOpen = false;
-          this.form.reset();
-          this.list.get();
+      this.authorService.update(this.selectedAuthor.id, this.form.value).subscribe(() => {
+          this.close();
         });
     } else {
-      this.authorService.create(this.form.value).subscribe(() => {
-        this.isModalOpen = false;
-        this.form.reset();
-        this.list.get();
+        this.authorService.create(this.form.value).subscribe(() => {
+        this.close();
       });
     }
   }
-
-  delete(id: string) {
-    this.confirmation.warn('::AreYouSureToDelete', '::AreYouSure')
-        .subscribe((status) => {
-          if (status === Confirmation.Status.confirm) {
-            this.authorService.delete(id).subscribe(() => this.list.get());
-          }
-});
+  close(){
+    this.isModalOpen = false;
+    this.form.reset();
+    this.list.get();
   }
 }
 
