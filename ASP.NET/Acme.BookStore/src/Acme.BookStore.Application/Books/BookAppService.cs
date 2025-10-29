@@ -33,13 +33,19 @@ public class BookAppService : CrudAppService<Book, BookDto, Guid, PagedAndSorted
         IQueryable<Book> bq = await Repository.GetQueryableAsync();
         IQueryable<Author> aq = await _authorRepository.GetQueryableAsync();
 
-        var query = from book in bq
-            join author in aq 
-                on book.AuthorId equals author.Id
-            where book.Id == id
-            select new { book, author };
+        // var query = from book in bq
+        //     join author in aq 
+        //         on book.AuthorId equals author.Id
+        //     where book.Id == id
+        //     select new { book, author };
+        
+        // LINQ version
+        var query = bq
+            .Join(aq, book => book.AuthorId, author => author.Id, (book, author) => new { book, author })
+            .Where(x => x.book.Id == id);
         
         var result = await AsyncExecuter.FirstOrDefaultAsync(query);
+        
         if (result == null)
         {
             throw new EntityNotFoundException(typeof(Book), id);

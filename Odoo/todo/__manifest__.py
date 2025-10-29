@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Lean & Lank Code",
+    'name': "Todolist management with OWL",
 
-    'summary': "Mèo béo ngáo ngơ",
+    'summary': "Todolist management with OWL",
 
     'description': """
-        ... by Mèo béo ngáo ngơ
+        ... by meobeongaongo
     """,
 
-    'author': "Huy Ta",
-    'website': "https://www.huyta.info",
+    'author': "meobeongaongo",
+    'website': "https://www.odoovn.info",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -33,16 +33,16 @@
     'assets': {
         'web.assets_backend': [
             # Services
-            'mountaincode/static/src/services/todo_task_service.js',
-            'mountaincode/static/src/services/user_service.js',
+            'todo/static/src/services/todo_task_service.js',
+            'todo/static/src/services/user_service.js',
 
             # Form Component
-            'mountaincode/static/src/xml/todo_task_popup_modal.xml',
-            'mountaincode/static/src/js/todo_task_popup_modal.js',
+            'todo/static/src/xml/todo_task_popup_modal.xml',
+            'todo/static/src/js/todo_task_popup_modal.js',
             
             # Main Component - Must be last
-            'mountaincode/static/src/xml/todo_task_action.xml',
-            'mountaincode/static/src/js/todo_task_action.js',
+            'todo/static/src/xml/todo_task_action.xml',
+            'todo/static/src/js/todo_task_action.js',
         ]
     }
 
