@@ -1,6 +1,5 @@
 import logging
 from odoo import models, fields, api
-from odoo.osv.expression import TRUE_LEAF
 from odoo.tools.translate import _
 from odoo.exceptions import ValidationError, UserError
 
