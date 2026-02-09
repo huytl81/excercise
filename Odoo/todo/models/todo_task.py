@@ -1,4 +1,5 @@
-from odoo import models, fields, api, _
+from odoo import models, fields, api
+from odoo.tools.translate import _
 from random import randint
 
 class TodoTask(models.Model):

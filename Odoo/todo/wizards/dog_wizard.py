@@ -1,4 +1,5 @@
-from odoo import _, api, fields, models, SUPERUSER_ID
+from odoo import fields, models
+from odoo.api import SUPERUSER_ID
 
 
 class DogWizard(models.TransientModel):

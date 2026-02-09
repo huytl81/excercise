@@ -5,10 +5,10 @@
     'summary': "Todolist management with OWL",
 
     'description': """
-        ... by meobeongaongo
+        ... by Huy Ta
     """,
 
-    'author': "meobeongaongo",
+    'author': "Huy Ta",
     'website': "https://www.odoovn.info",
 
     # Categories can be used to filter modules in modules listing

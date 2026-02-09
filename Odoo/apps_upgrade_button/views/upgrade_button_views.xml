@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="custom_upgrade_btn" model="ir.ui.view">
+            <field name="name">Apps Kanban</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//footer[hasclass('w-100')]" position="inside">
+                    <button type="object" class="btn btn-warning btn-sm"
+                            name="button_immediate_upgrade" t-if="record.state.raw_value == 'installed'" groups="base.group_system">Upgrade
+                    </button>
+                    <button type="object" class="btn btn-danger btn-sm"
+                            name="button_uninstall_wizard" t-if="record.state.raw_value == 'installed'" groups="base.group_system">Uninstall
+                    </button>
+                    <a type="open" class="btn btn-info btn-sm" role="button"><i class="fa fa-info-circle"></i></a>
+                </xpath>
+            </field>
+        </record>
+        <record id="custom_list_uninstall_btn" model="ir.ui.view">
+            <field name="name">Apps List</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='button_immediate_upgrade']" position="after">
+                    <button name="button_uninstall_wizard" type="object" string="Uninstall" groups="base.group_system"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
