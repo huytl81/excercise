@@ -1,0 +1,24 @@
+<Solution>
+    <Configurations>
+        <Platform Name="Any CPU" />
+    </Configurations>
+    <Folder Name="/src/">
+        <Project Path="src/AbpSolution2.Domain/AbpSolution2.Domain.csproj" />
+        <Project Path="src/AbpSolution2.Application/AbpSolution2.Application.csproj" />
+        <Project Path="src/AbpSolution2.EntityFrameworkCore/AbpSolution2.EntityFrameworkCore.csproj" />
+        <Project Path="src/AbpSolution2.Domain.Shared/AbpSolution2.Domain.Shared.csproj" />
+        <Project Path="src/AbpSolution2.Application.Contracts/AbpSolution2.Application.Contracts.csproj" />
+        <Project Path="src/AbpSolution2.HttpApi/AbpSolution2.HttpApi.csproj" />
+        <Project Path="src/AbpSolution2.HttpApi.Client/AbpSolution2.HttpApi.Client.csproj" />
+        <Project Path="src/AbpSolution2.AuthServer/AbpSolution2.AuthServer.csproj" />
+        <Project Path="src/AbpSolution2.HttpApi.Host/AbpSolution2.HttpApi.Host.csproj" />
+        <Project Path="src/AbpSolution2.DbMigrator/AbpSolution2.DbMigrator.csproj" />
+    </Folder>
+    <Folder Name="/test/">
+        <Project Path="test/AbpSolution2.Application.Tests/AbpSolution2.Application.Tests.csproj" />
+        <Project Path="test/AbpSolution2.EntityFrameworkCore.Tests/AbpSolution2.EntityFrameworkCore.Tests.csproj" />
+        <Project Path="test/AbpSolution2.TestBase/AbpSolution2.TestBase.csproj" />
+        <Project Path="test/AbpSolution2.Domain.Tests/AbpSolution2.Domain.Tests.csproj" />
+        <Project Path="test/AbpSolution2.HttpApi.Client.ConsoleTestApp/AbpSolution2.HttpApi.Client.ConsoleTestApp.csproj" />
+    </Folder>
+</Solution>

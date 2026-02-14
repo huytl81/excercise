@@ -1,0 +1,57 @@
+﻿{
+  "applications": {
+    "AbpSolution2.AuthServer": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44381",
+      "path": "../../../src/AbpSolution2.AuthServer/AbpSolution2.AuthServer.csproj",
+      "kubernetesService": ".*-authserver$",
+      "healthCheckEndpoint": "/health-status",
+      "healthUiEndpoint": "/health-ui",
+      "execution": {
+        "order": 3
+      }
+    },
+    "AbpSolution2.HttpApi.Host": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44301",
+      "path": "../../../src/AbpSolution2.HttpApi.Host/AbpSolution2.HttpApi.Host.csproj",
+      "kubernetesService": ".*-httpapihost$",
+      "healthCheckEndpoint": "/health-status",
+      "healthUiEndpoint": "/health-ui",
+      "execution": {
+        "order": 4
+      }
+    },
+    "AbpSolution2.Angular": {
+      "type": "cli",
+      "workingDirectory": "../../../angular",
+      "startCommand": "./start.ps1",
+      "launchUrl": "http://localhost:4200",
+      "kubernetesService": ".*-angular$",
+      "execution": {
+        "order": 2
+      }    
+    }
+  },
+  "containers": {
+    "serviceName": "AbpSolution2-Containers",
+    "files": {
+      "../../docker/containers/redis.yml": {
+      }
+    }
+  },
+  "tasks":{
+    "Initialize Solution":{
+      "behaviour": 2,
+      "startCommand": "./initialize-solution.ps1",
+      "workingDirectory": "../../scripts",
+      "shortDescription": "Installs required UI libraries, creates required certificates and seeds the database."
+    },
+    "Migrate Database":{
+      "behaviour": 0,
+      "startCommand": "./migrate-database.ps1",
+      "workingDirectory": "../../scripts",
+      "shortDescription": "Migrates the database to the latest version."
+    }
+  }
+}

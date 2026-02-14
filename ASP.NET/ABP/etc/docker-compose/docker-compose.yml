@@ -1,0 +1,130 @@
+services:
+  abpsolution2-angular:
+    image: abpsolution2-angular:latest
+    container_name: abpsolution2-angular
+    build:
+      context: ../../
+      dockerfile: angular/Dockerfile.local
+    ports:
+      - "4200:80"
+    depends_on:
+      - abpsolution2-api
+    volumes:
+      - ./dynamic-env.json://usr/share/nginx/html/dynamic-env.json
+    networks:
+      - abp-network
+
+  abpsolution2-api:
+    image: abpsolution2-api:latest
+    container_name: abpsolution2-api
+    hostname: abpsolution2-api
+    build:
+      context: ../../
+      dockerfile: src/AbpSolution2.HttpApi.Host/Dockerfile.local
+    environment:
+      - ASPNETCORE_URLS=https://+:8081;http://+:8080;
+      - Kestrel__Certificates__Default__Path=/app/certs/localhost.pfx
+      - Kestrel__Certificates__Default__Password=fe667b70-a174-4cd7-a93d-7d264e0a8da7
+      - App__SelfUrl=https://localhost:44333
+      - App__AngularUrl=http://localhost:4200
+      - App_CorsOrigins=http://localhost:4200
+      - App__HealthCheckUrl=http://abpsolution2-api:8080/health-status
+      - AuthServer__RequireHttpsMetadata=false
+      - AuthServer__Authority=http://abpsolution2-authserver:8080
+      - AuthServer__MetaAddress=https://localhost:44381
+      - ConnectionStrings__Default=User ID=postgres;Password=myPassw0rd;Host=postgres;Port=5432;Database=AbpSolution2;Pooling=false;
+      - Redis__Configuration=redis
+    ports:
+      - "44301:8081"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: on-failure    
+    volumes:
+      - ./certs:/app/certs
+    networks:
+      - abp-network
+  
+  abpsolution2-authserver:
+    image: abpsolution2-authserver:latest
+    container_name: abpsolution2-authserver
+    build:
+      context: ../../
+      dockerfile: src/AbpSolution2.AuthServer/Dockerfile.local
+    environment:
+      - ASPNETCORE_URLS=https://+:8081;http://+:8080;
+      - App__SelfUrl=https://localhost:44381
+      - App__CorsOrigins=http://localhost:4200,https://localhost:44301
+      - App__HealthCheckUrl=http://abpsolution2-authserver:8080/health-status
+      - AuthServer__RequireHttpsMetadata=false
+      - AuthServer__Authority=https://localhost:44381
+      - Kestrel__Certificates__Default__Path=/app/certs/localhost.pfx
+      - Kestrel__Certificates__Default__Password=fe667b70-a174-4cd7-a93d-7d264e0a8da7
+      - ConnectionStrings__Default=User ID=postgres;Password=myPassw0rd;Host=postgres;Port=5432;Database=AbpSolution2;Pooling=false;
+      - Redis__Configuration=redis
+    ports:
+      - "44381:8081"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: on-failure
+    volumes:
+      - ./certs:/app/certs
+    networks:
+      - abp-network
+
+  db-migrator:
+    image: abpsolution2-db-migrator:latest
+    container_name: db-migrator
+    build:
+      context: ../../
+      dockerfile: src/AbpSolution2.DbMigrator/Dockerfile.local
+    environment:
+      - OpenIddict__Applications__AbpSolution2_App__RootUrl=http://localhost:4200
+      - OpenIddict__Applications__AbpSolution2_Swagger__RootUrl=https://localhost:44301
+      - ConnectionStrings__Default=User ID=postgres;Password=myPassw0rd;Host=postgres;Port=5432;Database=AbpSolution2;Pooling=false;
+      - Redis__Configuration=redis
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - abp-network    
+  
+  postgres:
+    container_name: postgres-db
+    image: postgres:14.1
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "myPassw0rd"
+    volumes:
+      - postgres_data:/var/opt/postgres
+    networks: 
+      - abp-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5    
+  redis:
+    container_name: redis
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - abp-network  
+    healthcheck:
+      test: ["CMD", "redis-cli","ping"]      
+volumes:
+  postgres_data:
+    name: abpsolution2_postgres_data
+networks:
+  abp-network:
+    name: abpsolution2-network
+    driver: bridge

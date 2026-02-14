@@ -1,0 +1,4 @@
+image:
+  repository: "abpsolution2/httpapihost"
+  tag: "latest"
+  pullPolicy: IfNotPresent
