@@ -8,10 +8,10 @@
             <field name="arch" type="xml">
                 <xpath expr="//footer[hasclass('w-100')]" position="inside">
                     <button type="object" class="btn btn-warning btn-sm"
-                            name="button_immediate_upgrade" t-if="record.state.raw_value == 'installed'" groups="base.group_system">Upgrade
+                            name="button_immediate_upgrade" t-if="record.state.raw_value == 'installed'" groups="base.group_system">Update
                     </button>
                     <button type="object" class="btn btn-danger btn-sm"
-                            name="button_uninstall_wizard" t-if="record.state.raw_value == 'installed'" groups="base.group_system">Uninstall
+                            name="button_uninstall_wizard" t-if="record.state.raw_value == 'installed'" groups="base.group_system">Remove
                     </button>
                     <a type="open" class="btn btn-info btn-sm" role="button"><i class="fa fa-info-circle"></i></a>
                 </xpath>
