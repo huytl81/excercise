@@ -1,0 +1,12 @@
+{
+    "python.defaultInterpreterPath": "D:\\Projects\\odoo19\\.venv\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.extraPaths": [
+        "D:\\Projects\\odoo19\\odoo",
+        "D:\\Projects\\odoo19\\enterprise",
+        "D:\\Projects\\odoo19\\custom_addons",
+        "D:\\Projects\\odoo19",
+        "D:\\Projects\\exercise\\odoo"
+    ],
+    "python.envFile": "${workspaceFolder}/.env"
+}
