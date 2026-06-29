@@ -9,4 +9,3 @@ from . import hostel_student
 from . import hostel_category
 from . import res_partner
 from . import hostel_room_category
-

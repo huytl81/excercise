@@ -1,23 +1,19 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Hostel Management",
-
     'summary': "Manage Hostel easily",
-
     'description': """
            Efficiently manage the entire residential 
-           facility in the school.", # Supports reStructuredText(RST) 
-           format (description is Deprecated)
+           facility in the school.
     """,
-
     'author': "Huy Ta",
-    'website': "https://www.yourcompany.com",
+    'website': "https://www.odoovn.info",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '1.2',
+    'version': '19.0.1.2.2',
     'application': True,
     'installable':True,
     # any module necessary for this one to work correctly

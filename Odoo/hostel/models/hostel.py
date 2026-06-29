@@ -17,9 +17,9 @@ class Hostel(models.Model):
     category_id = fields.Many2one(comodel_name='hostel.category', string="Hostel Category")
     street = fields.Char('Street', required=True)
     street2 = fields.Char('Street2')
+    state_id = fields.Many2one("res.country.state", string='State')
     zip = fields.Char('Zip', change_default=True)
     city = fields.Char('City')
-    state_id = fields.Many2one("res.country.state", string='State')
     country_id = fields.Many2one('res.country', string='Country')
     phone = fields.Char('Phone', required=True)
     mobile = fields.Char('Mobile', required=True)
@@ -34,8 +34,8 @@ class Hostel(models.Model):
     hostel_rating = fields.Float('Hostel Average Rating', digits = 'Custom Rating Value')  # Method 2
     hostel_room_ids = fields.One2many('hostel.room', inverse_name='hostel_id', string="Rooms")
     reference = fields.Reference(selection='_list_models', string='Reference Models')
-    model_ref = fields.Selection(selection=[('res.partner', 'Partner'), ('res.users', 'User')], string="Related Model")
-    many2one_reference = fields.Many2oneReference(comodel_names=['res.partner', 'res.users'], model_field='model_ref', string='Related Record')
+    model_ref = fields.Selection(selection=[('res.partner', 'Partner'), ('res.users', 'User')], string="Related Model", default='res.partner')
+    many2one_reference = fields.Many2oneReference(model_field='model_ref', string='Related Record')
 
     @api.depends('hostel_code')
     def _compute_display_name(self):
