@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data noupdate="0">
+        <!-- Decimal Precision -->
         <record forcecreate="True" id="decimal_point" model="decimal.precision">
             <field name="name">Custom Rating Value</field>
             <field name="digits">3</field>
         </record>
 
-        <record id="hostel_room_69" model="hostel.room">
-            <field name="name">Hostel Room 69</field>
-            <field name="occupancy">96</field>
-            <field name="room_number">69</field>
-        </record>
-
+        <!-- Company & Partner -->
         <record id="base.main_company" model="res.company">
             <field name="name">Pack Publishing</field>
         </record>
@@ -22,27 +18,113 @@
             <field name="country_id" ref="base.uk" />
         </record>
 
+        <!-- Room Categories (4 standard categories + 1 all category) -->
         <record id="room_category_all" model="hostel.room.category" forcecreate="False">
             <field name="name">All Rooms</field>
         </record>
 
-        <!-- Temp category to delete, in real case this record created from another module -->
-        <record id="room_category_to_remove1" model="hostel.room.category">
-            <field name="name">Single Sharing</field>
-        </record>
-        <record id="room_category_to_remove2" model="hostel.room.category">
-            <field name="name">Double Sharing</field>
+        <record id="room_category_single" model="hostel.room.category">
+            <field name="name">Single Standard</field>
         </record>
 
-        <record id="room_category_not_to_remove" model="hostel.room.category">
-            <field name="name">Triple Sharing</field>
+        <record id="room_category_double" model="hostel.room.category">
+            <field name="name">Double Standard</field>
+        </record>
+
+        <record id="room_category_deluxe" model="hostel.room.category">
+            <field name="name">Deluxe Room</field>
+        </record>
+
+        <record id="room_category_vip" model="hostel.room.category">
+            <field name="name">President Suite VIP</field>
+        </record>
+
+        <!-- Temporary categories to delete (standard Odoo training/test patterns) -->
+        <record id="room_category_to_remove1" model="hostel.room.category">
+            <field name="name">Single Sharing Temp</field>
+        </record>
+        <record id="room_category_to_remove2" model="hostel.room.category">
+            <field name="name">Double Sharing Temp</field>
         </record>
 
         <delete model="hostel.room.category" id="room_category_to_remove1"/>
-        <delete model="hostel.room.category" search="[('name', 'ilike','Double')]"/>
+        <delete model="hostel.room.category" search="[('name', 'ilike', 'Double Sharing Temp')]"/>
 
+        <!-- 9 Rooms -->
+        <record id="hostel_room_201" model="hostel.room">
+            <field name="name">Standard Room 201</field>
+            <field name="room_number">R201</field>
+            <field name="occupancy">1</field>
+            <field name="category_id" ref="room_category_single"/>
+            <field name="rent_amount">150</field>
+        </record>
+
+        <record id="hostel_room_202" model="hostel.room">
+            <field name="name">Standard Room 202</field>
+            <field name="room_number">R202</field>
+            <field name="occupancy">1</field>
+            <field name="category_id" ref="room_category_single"/>
+            <field name="rent_amount">150</field>
+        </record>
+
+        <record id="hostel_room_203" model="hostel.room">
+            <field name="name">Standard Room 203</field>
+            <field name="room_number">R203</field>
+            <field name="occupancy">1</field>
+            <field name="category_id" ref="room_category_single"/>
+            <field name="rent_amount">160</field>
+        </record>
+
+        <record id="hostel_room_301" model="hostel.room">
+            <field name="name">Double Room 301</field>
+            <field name="room_number">R301</field>
+            <field name="occupancy">2</field>
+            <field name="category_id" ref="room_category_double"/>
+            <field name="rent_amount">250</field>
+        </record>
+
+        <record id="hostel_room_302" model="hostel.room">
+            <field name="name">Double Room 302</field>
+            <field name="room_number">R302</field>
+            <field name="occupancy">2</field>
+            <field name="category_id" ref="room_category_double"/>
+            <field name="rent_amount">250</field>
+        </record>
+
+        <record id="hostel_room_401" model="hostel.room">
+            <field name="name">Deluxe Room 401</field>
+            <field name="room_number">R401</field>
+            <field name="occupancy">3</field>
+            <field name="category_id" ref="room_category_deluxe"/>
+            <field name="rent_amount">400</field>
+        </record>
+
+        <record id="hostel_room_402" model="hostel.room">
+            <field name="name">Deluxe Room 402</field>
+            <field name="room_number">R402</field>
+            <field name="occupancy">3</field>
+            <field name="category_id" ref="room_category_deluxe"/>
+            <field name="rent_amount">420</field>
+        </record>
+
+        <record id="hostel_room_501" model="hostel.room">
+            <field name="name">President VIP 501</field>
+            <field name="room_number">R501</field>
+            <field name="occupancy">4</field>
+            <field name="category_id" ref="room_category_vip"/>
+            <field name="rent_amount">800</field>
+        </record>
+
+        <record id="hostel_room_502" model="hostel.room">
+            <field name="name">President VIP 502</field>
+            <field name="room_number">R502</field>
+            <field name="occupancy">4</field>
+            <field name="category_id" ref="room_category_vip"/>
+            <field name="rent_amount">850</field>
+        </record>
+
+        <!-- Cron-like and initial function updates -->
         <function model="hostel.room" name="_update_room_rent_amount"/>
         <function model="hostel.room" name="_update_room_cost_price" eval="(ref('room_category_all'), 20)"/>
     </data>
-
 </odoo>

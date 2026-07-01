@@ -7,9 +7,12 @@ from odoo import fields, models, api
 class Hostel(models.Model):
     _name = 'hostel.hostel'
     _description = "Information about hostel"
-    _order = "id desc, name"
+    _order = "write_date desc, name asc"
     _rec_name = 'hostel_code'
     _rec_names_search = ['name', 'hostel_code', 'email', 'mobile'] #similar to using the name_search function.
+    _check_company_auto = True
+    _translate = True # or False
+    _allow_sudo_commands = False # or True "Allow One2many and Many2many commands targeting this model in an environment using sudo() or with_user()"
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Hostel Name", required=True)
@@ -25,6 +28,7 @@ class Hostel(models.Model):
     mobile = fields.Char('Mobile', required=True)
     email = fields.Char('Email')
     hostel_floors = fields.Integer(string="Total Floors")
+    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company, index=True, required=True)  # Auto‑check company consistency
     image = fields.Binary('Hostel Image')
     active = fields.Boolean("Active", default=True, help="Activate/Deactivate hostel record")
     type = fields.Selection([("male", "Boys"), ("female","Girls"),("common", "Common")], "Type", help="Type of Hostel",required=True, default="common")
@@ -32,7 +36,7 @@ class Hostel(models.Model):
     description = fields.Html('Description', translate=True)
     #hostel_rating = fields.Float('Hostel Average Rating',digits=(14, 4)) # Method 1: Optional precision (total,decimals)
     hostel_rating = fields.Float('Hostel Average Rating', digits = 'Custom Rating Value')  # Method 2
-    hostel_room_ids = fields.One2many('hostel.room', inverse_name='hostel_id', string="Rooms")
+    hostel_room_ids = fields.One2many('hostel.room.line', inverse_name='hostel_id', string="Rooms")
     reference = fields.Reference(selection='_list_models', string='Reference Models')
     model_ref = fields.Selection(selection=[('res.partner', 'Partner'), ('res.users', 'User')], string="Related Model", default='res.partner')
     many2one_reference = fields.Many2oneReference(model_field='model_ref', string='Related Record')
@@ -40,14 +44,15 @@ class Hostel(models.Model):
     @api.depends('hostel_code')
     def _compute_display_name(self):
         for record in self:
-            # name = record.name
+            record_name = record.name or ''
             if record.hostel_code:
-                record.display_name = f'{record.name} - {record.hostel_code}'
+                record.display_name = f'{record_name} ({record.hostel_code})'
             else:
-                record.display_name = f'{record.name}'
+                record.display_name = f'{record_name}'
 
     @api.model
     def _list_models(self):
         # models = self.env['ir.model'].search([('field_id.name', '=', 'message_ids')])
         models = self.env['ir.model'].search([])
         return [(m.model, m.name) for m in models]
+

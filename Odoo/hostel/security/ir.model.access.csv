@@ -1,13 +1,15 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hostel_user,Hostel User,model_hostel_hostel,group_hostel_user,1,0,0,0
-access_hostel_manager,Hostel Manager,model_hostel_hostel,group_hostel_manager,1,1,1,1
-access_hostel_room_user,Hostel Room User,model_hostel_room,group_hostel_user,1,1,0,0
-access_hostel_room_manager,Hostel Room Manager,model_hostel_room,group_hostel_manager,1,1,1,1
-access_hostel_category_user,Hostel Category User,model_hostel_category,group_hostel_user,1,0,0,0
-access_hostel_category_manager,Hostel Category Manager,model_hostel_category,group_hostel_manager,1,1,1,1
-access_hostel_student_user,Hostel Student User,model_hostel_student,group_hostel_user,1,0,0,0
-access_hostel_student_manager,Hostel Student Manager,model_hostel_student,group_hostel_manager,1,1,1,1
-access_hostel_room_category_user,Hostel Room Category User,model_hostel_room_category,group_hostel_user,1,0,0,0
-access_hostel_room_category_manager,Hostel Room Category Manager,model_hostel_room_category,group_hostel_manager,1,1,1,1
-access_hostel_room_member_user,Hostel Room Member User,model_hostel_room_member,group_hostel_user,1,0,0,0
-access_hostel_room_member_manager,Hostel Room Member Manager,model_hostel_room_member,group_hostel_manager,1,1,1,1
+access_hostel_user,access.hostel.user,hostel.model_hostel_hostel,hostel.group_hostel_user,1,0,0,0
+access_hostel_manager,access.hostel.manager,hostel.model_hostel_hostel,hostel.group_hostel_manager,1,1,1,1
+access_hostel_room_user,access.hostel.room.user,hostel.model_hostel_room,hostel.group_hostel_user,1,0,0,0
+access_hostel_room_manager,access.hostel.room.manager,hostel.model_hostel_room,hostel.group_hostel_manager,1,1,1,1
+access_hostel_category_user,access.hostel.category.user,hostel.model_hostel_category,hostel.group_hostel_user,1,0,0,0
+access_hostel_category_manager,access.hostel.category.manager,hostel.model_hostel_category,hostel.group_hostel_manager,1,1,1,1
+access_hostel_student_user,access.hostel.student.user,hostel.model_hostel_student,hostel.group_hostel_user,1,0,0,0
+access_hostel_student_manager,access.hostel.student.manager,hostel.model_hostel_student,hostel.group_hostel_manager,1,1,1,1
+access_hostel_room_category_user,access.hostel.room.category.user,hostel.model_hostel_room_category,hostel.group_hostel_user,1,0,0,0
+access_hostel_room_category_manager,access.hostel.room.category.manager,hostel.model_hostel_room_category,hostel.group_hostel_manager,1,1,1,1
+access_hostel_room_member_user,access.hostel.room.member.user,hostel.model_hostel_room_member,hostel.group_hostel_user,1,0,0,0
+access_hostel_room_member_manager,access.hostel.room.member.manager,hostel.model_hostel_room_member,hostel.group_hostel_manager,1,1,1,1
+access_hostel_room_line_user,access.hostel.room.line.user,hostel.model_hostel_room_line,hostel.group_hostel_user,1,1,1,1
+access_hostel_room_line_manager,access.hostel.room.line.manager,hostel.model_hostel_room_line,hostel.group_hostel_manager,1,1,1,1

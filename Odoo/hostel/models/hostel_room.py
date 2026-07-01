@@ -94,6 +94,16 @@ class HostelRoom(models.Model):
                 msg = _("Rent Amount Per Month should not be a negative value!")
                 raise ValidationError(msg)
 
+    @api.constrains('hostel_id')
+    def _check_hostel_id_change(self):
+        for record in self:
+            if record._origin.id and record._origin.hostel_id and record.hostel_id and record._origin.hostel_id != record.hostel_id:
+                raise ValidationError(_(
+                    "The room '%s' already belongs to hostel '%s'. "
+                    "You cannot assign it to hostel '%s' directly. "
+                    "Please clear its current hostel first."
+                ) % (record.name, record._origin.hostel_id.name, record.hostel_id.name))
+
     @api.depends("occupancy", "student_ids")
     # @api.depends_context("occupancy", "student_ids")
     def _compute_check_availability(self):

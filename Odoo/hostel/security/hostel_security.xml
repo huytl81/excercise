@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record model="ir.module.category" id="module_category_hostel">
+    <record id="module_category_hostel" model="ir.module.category">
         <field name="name">Hostel</field>
         <field name="description">Hostel Category</field>
         <field name="sequence">100</field>
     </record>
 
-    <record id="privilege_hostel_management" model="res.groups.privilege">
-        <field name="name">Hostel Management</field>
+    <record id="res_group_privilege_Hostel" model="res.groups.privilege">
+        <field name="name">Hostel Privilege</field>
         <field name="description">Access to Hostel Management features</field>
         <field name="category_id" ref="module_category_hostel"/>
         <field name="sequence">50</field>
@@ -16,13 +16,13 @@
     <record id="group_hostel_user" model="res.groups">
         <field name="name">Hostel User</field>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-        <field name="privilege_id" ref="privilege_hostel_management"/>
+        <field name="privilege_id" ref="res_group_privilege_Hostel"/>
     </record>
 
     <record id="group_hostel_manager" model="res.groups">
         <field name="name">Hostel Manager</field>
         <field name="implied_ids" eval="[(4, ref('group_hostel_user'))]"/>
-        <field name="privilege_id" ref="privilege_hostel_management"/>
-        <!--<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>-->
+        <field name="privilege_id" ref="res_group_privilege_Hostel"/>
+        <field name="user_ids" eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"/>
     </record>
 </odoo>

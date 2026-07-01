@@ -1,50 +1,128 @@
 <odoo>
     <data>
-        <record id="1" model="hostel.category">
+        <!-- Categories -->
+        <record id="hostel_category_hotel" model="hostel.category">
             <field name="name">Hotel</field>
         </record>
-        <record id="2" model="hostel.category">
+        <record id="hostel_category_motel" model="hostel.category">
             <field name="name">Motel</field>
         </record>
-        <record id="3" model="hostel.category">
+        <record id="hostel_category_hostel" model="hostel.category">
             <field name="name">Hostel</field>
         </record>
-        <record id="4" model="hostel.hostel">
-            <field name="name">A25</field>
-            <field name="category_id">2</field>
-            <field name="hostel_code">A_25</field>
-            <field name="street">Nghia Tan</field>
-            <field name="phone">024755866</field>
-            <field name="mobile">0982824818</field>
+
+        <!-- Famous Hostels/Hotels/Motels -->
+        <!-- 1. The Plaza Hotel (USA) -->
+        <record id="hostel_plaza_us" model="hostel.hostel">
+            <field name="name">The Plaza Hotel</field>
+            <field name="category_id" ref="hostel_category_hotel"/>
+            <field name="hostel_code">PLZ_NY</field>
+            <field name="street">768 5th Ave</field>
+            <field name="phone">+12127593000</field>
+            <field name="mobile">+12127593001</field>
             <field name="type">common</field>
         </record>
-        <record id="5" model="hostel.hostel">
-            <field name="name">Mai Villa</field>
-            <field name="category_id">3</field>
-            <field name="hostel_code">M_VL</field>
-            <field name="street">Phan Van Truong</field>
-            <field name="phone">0246531245</field>
-            <field name="mobile">0984313978</field>
+
+        <!-- 2. The Savoy (UK) -->
+        <record id="hostel_savoy_uk" model="hostel.hostel">
+            <field name="name">The Savoy</field>
+            <field name="category_id" ref="hostel_category_hotel"/>
+            <field name="hostel_code">SVY_LDN</field>
+            <field name="street">Strand</field>
+            <field name="phone">+442078364343</field>
+            <field name="mobile">+442078364344</field>
             <field name="type">common</field>
         </record>
-        <record id="6" model="hostel.hostel">
-            <field name="name">Vuon Thu Do</field>
-            <field name="category_id">1</field>
-            <field name="hostel_code">V_TD</field>
-            <field name="street">Vu Ngoc Phan</field>
-            <field name="phone">0245789134</field>
-            <field name="mobile">0989445996</field>
+
+        <!-- 3. Le Bristol (France) -->
+        <record id="hostel_bristol_fr" model="hostel.hostel">
+            <field name="name">Le Bristol</field>
+            <field name="category_id" ref="hostel_category_hotel"/>
+            <field name="hostel_code">BRS_PAR</field>
+            <field name="street">112 Rue du Faubourg Saint-Honoré</field>
+            <field name="phone">+33153434300</field>
+            <field name="mobile">+33153434301</field>
             <field name="type">male</field>
         </record>
-        <record id="7" model="hostel.hostel">
-            <field name="name">Khan Quang Do</field>
-            <field name="category_id">1</field>
-            <field name="hostel_code">K_QD</field>
-            <field name="street">Phung Chi Kien</field>
-            <field name="phone">0246324675</field>
-            <field name="mobile">0989445996</field>
+
+        <!-- 4. Fairmont Chateau Laurier (Canada) -->
+        <record id="hostel_chateau_laurier_ca" model="hostel.hostel">
+            <field name="name">Fairmont Chateau Laurier</field>
+            <field name="category_id" ref="hostel_category_hotel"/>
+            <field name="hostel_code">FCL_OTT</field>
+            <field name="street">1 Rideau St</field>
+            <field name="phone">+16132411414</field>
+            <field name="mobile">+16132411415</field>
             <field name="type">female</field>
         </record>
+
+        <!-- 5. Ritz-Carlton Boston (USA) -->
+        <record id="hostel_ritz_boston_us" model="hostel.hostel">
+            <field name="name">Ritz-Carlton Boston</field>
+            <field name="category_id" ref="hostel_category_hotel"/>
+            <field name="hostel_code">RTZ_BOS</field>
+            <field name="street">15 Avery St</field>
+            <field name="phone">+16175747000</field>
+            <field name="mobile">+16175747001</field>
+            <field name="type">common</field>
+        </record>
+
+        <!-- 6. Badrutt's Palace Hotel (Switzerland) -->
+        <record id="hostel_badrutt_palace_ch" model="hostel.hostel">
+            <field name="name">Badrutt's Palace Hotel</field>
+            <field name="category_id" ref="hostel_category_hotel"/>
+            <field name="hostel_code">BPH_STM</field>
+            <field name="street">Via Serlas 27</field>
+            <field name="phone">+41818371000</field>
+            <field name="mobile">+41818371001</field>
+            <field name="type">common</field>
+        </record>
+
+        <!-- 7. Hotel Danieli (Italy) -->
+        <record id="hostel_danieli_it" model="hostel.hostel">
+            <field name="name">Hotel Danieli</field>
+            <field name="category_id" ref="hostel_category_hotel"/>
+            <field name="hostel_code">HDN_VEN</field>
+            <field name="street">Riva degli Schiavoni 4196</field>
+            <field name="phone">+390415260111</field>
+            <field name="mobile">+390415260112</field>
+            <field name="type">common</field>
+        </record>
+
+        <!-- 8. Generator Hostel London (UK) -->
+        <record id="hostel_generator_london_uk" model="hostel.hostel">
+            <field name="name">Generator Hostel London</field>
+            <field name="category_id" ref="hostel_category_hostel"/>
+            <field name="hostel_code">GEN_LDN</field>
+            <field name="street">37 Tavistock Pl</field>
+            <field name="phone">+442073887666</field>
+            <field name="mobile">+442073887667</field>
+            <field name="type">common</field>
+        </record>
+
+        <!-- 9. St Christopher's Inn Canal (France) -->
+        <record id="hostel_st_christophers_paris_fr" model="hostel.hostel">
+            <field name="name">St Christopher's Inn Canal</field>
+            <field name="category_id" ref="hostel_category_hostel"/>
+            <field name="hostel_code">SCI_PAR</field>
+            <field name="street">159 Rue de Crimée</field>
+            <field name="phone">+33140343440</field>
+            <field name="mobile">+33140343441</field>
+            <field name="type">common</field>
+        </record>
+
+        <!-- 10. Motel 6 Los Angeles (USA) -->
+        <record id="hostel_motel6_la_us" model="hostel.hostel">
+            <field name="name">Motel 6 Los Angeles</field>
+            <field name="category_id" ref="hostel_category_motel"/>
+            <field name="hostel_code">M6_LA</field>
+            <field name="street">1015 W Olympic Blvd</field>
+            <field name="phone">+12137461015</field>
+            <field name="mobile">+12137461016</field>
+            <field name="type">common</field>
+        </record>
+
+        <!-- Members -->
         <record id="member_hda" model="hostel.room.member">
             <field name="name">Husen Daudi</field>
         </record>
@@ -57,12 +135,43 @@
         <record id="member_jb" model="hostel.room.member">
             <field name="name">John Brunn</field>
         </record>
+        <record id="member_alice" model="hostel.room.member">
+            <field name="name">Alice Smith</field>
+        </record>
+        <record id="member_bob" model="hostel.room.member">
+            <field name="name">Bob Jones</field>
+        </record>
+        <record id="member_charlie" model="hostel.room.member">
+            <field name="name">Charlie Brown</field>
+        </record>
+        <record id="member_david" model="hostel.room.member">
+            <field name="name">David Miller</field>
+        </record>
+        <record id="member_eva" model="hostel.room.member">
+            <field name="name">Eva Green</field>
+        </record>
+        <record id="member_frank" model="hostel.room.member">
+            <field name="name">Frank Harris</field>
+        </record>
 
+        <!-- Rooms -->
         <record id="hostel_room_102" model="hostel.room">
             <field name="name">Hostel Room 102</field>
             <field name="room_number">HR102</field>
-            <field name="occupancy">102</field>
+            <field name="occupancy">6</field>
             <field name="member_ids" eval="[(6, 0, [ref('member_hda'),ref('member_jvo'),ref('member_vb'),ref('member_jb'), ref('base.user_root'), ref('base.user_admin')])]" />
+        </record>
+        <record id="hostel_room_103" model="hostel.room">
+            <field name="name">Hostel Room 103</field>
+            <field name="room_number">HR103</field>
+            <field name="occupancy">3</field>
+            <field name="member_ids" eval="[(6, 0, [ref('member_alice'), ref('member_bob'), ref('member_charlie')])]" />
+        </record>
+        <record id="hostel_room_104" model="hostel.room">
+            <field name="name">Hostel Room 104</field>
+            <field name="room_number">HR104</field>
+            <field name="occupancy">3</field>
+            <field name="member_ids" eval="[(6, 0, [ref('member_david'), ref('member_eva'), ref('member_frank')])]" />
         </record>
     </data>
 </odoo>

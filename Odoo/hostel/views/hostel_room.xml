@@ -27,7 +27,7 @@
                         <field name="availability"/>
                         <field name="image"/>
                         <field name="active"/>
-                        <field name="hostel_id"/>
+                        <field name="hostel_id" readonly="1"/>
                         <field name="member_ids" widget="many2many_tags"/>
                         <field name="rent_amount"/>
                         <field name="cost_price"/>
@@ -56,7 +56,7 @@
                 <field name="availability"/>
                 <field name="image"/>
                 <field name="active"/>
-                <field name="hostel_id"/>
+                <field name="hostel_id" readonly="1"/>
                 <field name="rent_amount"/>
                 <field name="currency_id"/>
             </list>
