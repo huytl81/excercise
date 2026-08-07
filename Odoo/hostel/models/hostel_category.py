@@ -6,7 +6,7 @@ class HostelCategory(models.Model):
     _name = 'hostel.category'
     _description = "Hostel Category"
     _parent_store = True
-    _parent_name = "parent_id"  # optional if parent field is not 'parent_id'
+    _parent_name = "dad_id"  # optional if parent field is not 'parent_id'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Category Name", required=True)
@@ -14,8 +14,9 @@ class HostelCategory(models.Model):
     active = fields.Boolean(string="Active", default=True)
     hostel_ids = fields.One2many(comodel_name='hostel.hostel', inverse_name='category_id', string="Hostels")
     hostel_count = fields.Integer(string="Hostel Count", compute="_compute_hostel_count")
-    parent_id = fields.Many2one(comodel_name='hostel.category', string='Parent Category', ondelete='restrict', index=True)
-    child_ids = fields.One2many(comodel_name='hostel.category', inverse_name='parent_id', string='Children Categories')
+    #parent_id = fields.Many2one(comodel_name='hostel.category', string='Parent Category', ondelete='restrict', index=True)
+    dad_id = fields.Many2one(comodel_name='hostel.category', string='Mother Category', ondelete='restrict', index=True)
+    child_ids = fields.One2many(comodel_name='hostel.category', inverse_name='dad_id', string='Children Categories')
     parent_path = fields.Char(index=True, unaccent=False)
 
     @api.depends('hostel_ids')
@@ -23,7 +24,7 @@ class HostelCategory(models.Model):
         for record in self:
             record.hostel_count = len(record.hostel_ids)
 
-    @api.constrains('parent_id')
+    @api.constrains('mother_id')
     def _check_hierarchy(self):
         if self._has_cycle():
             raise ValidationError('Error! You cannot create recursive categories.')

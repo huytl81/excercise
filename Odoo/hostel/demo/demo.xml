@@ -158,19 +158,19 @@
         <record id="hostel_room_102" model="hostel.room">
             <field name="name">Hostel Room 102</field>
             <field name="room_number">HR102</field>
-            <field name="occupancy">6</field>
+            <field name="student_per_room">6</field>
             <field name="member_ids" eval="[(6, 0, [ref('member_hda'),ref('member_jvo'),ref('member_vb'),ref('member_jb'), ref('base.user_root'), ref('base.user_admin')])]" />
         </record>
         <record id="hostel_room_103" model="hostel.room">
             <field name="name">Hostel Room 103</field>
             <field name="room_number">HR103</field>
-            <field name="occupancy">3</field>
+            <field name="student_per_room">3</field>
             <field name="member_ids" eval="[(6, 0, [ref('member_alice'), ref('member_bob'), ref('member_charlie')])]" />
         </record>
         <record id="hostel_room_104" model="hostel.room">
             <field name="name">Hostel Room 104</field>
             <field name="room_number">HR104</field>
-            <field name="occupancy">3</field>
+            <field name="student_per_room">3</field>
             <field name="member_ids" eval="[(6, 0, [ref('member_david'), ref('member_eva'), ref('member_frank')])]" />
         </record>
     </data>

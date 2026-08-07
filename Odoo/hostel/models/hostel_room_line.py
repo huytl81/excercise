@@ -4,20 +4,17 @@ from odoo import models, fields, api
 class HostelRoomLine(models.Model):
     _name = 'hostel.room.line'
     _description = 'Hostel Room Line'
-
+    _check_company_auto = True
+    
+    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company, required=True, index=True)  # Auto‑check company consistency
     hostel_id = fields.Many2one('hostel.hostel', string="Hostel", ondelete='cascade', required=True)
-    room_id = fields.Many2one(
-        'hostel.room',
-        string="Room",
-        domain="[('hostel_id', '=', False)]",
-        required=True
-    )
+    room_id = fields.Many2one('hostel.room', string="Room", check_company=True, domain="[('hostel_id', '=', False)]", required=True)
     
     # Related fields to show information of the selected room
     room_number = fields.Char(related='room_id.room_number', string="Room Number", readonly=True)
     room_type = fields.Selection(related='room_id.room_type', string="Room Type", readonly=True)
     rent_amount = fields.Monetary(related='room_id.rent_amount', string="Rent Amount", readonly=True)
-    currency_id = fields.Many2one(related='room_id.currency_id', string="Currency", readonly=True)
+    currency_id = fields.Many2one(related='room_id.hostel_room_currency', string="Currency", readonly=True)
 
     @api.model_create_multi
     def create(self, vals_list):

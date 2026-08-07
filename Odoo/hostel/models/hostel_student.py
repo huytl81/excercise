@@ -7,12 +7,14 @@ class HostelStudent(models.Model):
     _description = "Hostel Student"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _inherits = {'res.partner': 'partner_id'}
-    
+    _check_company_auto = True
+
     name = fields.Char("Student Name")
     gender = fields.Selection([("male", "Male"),("female", "Female"), ("other", "Other")], string="Gender", help="Student gender")
     active = fields.Boolean("Active", default=True, help="Activate/Deactivate hostel record")
-    room_id = fields.Many2one("hostel.room", "Room", help="Select hostel room", ondelete='restrict')
-    hostel_id = fields.Many2one("hostel.hostel", string="Hostel Name", related="room_id.hostel_id")
+
+    room_id = fields.Many2one("hostel.room", "Room", check_company=True, help="Select hostel room", ondelete='restrict')
+    hostel_id = fields.Many2one("hostel.hostel", string="Hostel Name", related="room_id.hostel_id", related_sudo=True)
     admission_date = fields.Date('Admission Date', help='Enter student admission date', default=fields.Datetime.today)
     discharge_date = fields.Date('Discharge Date', help='Enter student discharge date')
     duration = fields.Integer('Duration', help='Enter student duration of living in hostel', compute='_compute_check_duration', inverse='_inverse_duration')
@@ -25,10 +27,10 @@ class HostelStudent(models.Model):
         for record in self:
             if record.admission_date and record.discharge_date:
                 record.duration = (record.discharge_date - record.admission_date).days
-
+                
     def _inverse_duration(self):
         for record in self:
             if record.admission_date and record.discharge_date:
                 duration = (record.discharge_date - record.admission_date).days
                 if duration != record.duration:
-                    record.discharge_date = record.admission_date + timedelta(record.duration)
+                    record.discharge_date = record.admission_date + timedelta(days=record.duration).strftime('%Y-%m-%d')

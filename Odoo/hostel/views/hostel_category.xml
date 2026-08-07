@@ -16,7 +16,7 @@
                         <group>
                             <field name="hostel_ids" widget="many2many_tags"/>
                             <field name="hostel_count"/>
-                            <field name="parent_id"/>
+                            <field name="dad_id"/>
                             <field name="child_ids" widget="many2many_tags"/>
                         </group>
                     </sheet>
@@ -36,7 +36,7 @@
                     <field name="active"/>
                     <field name="hostel_ids" widget="many2many_tags"/>
                     <field name="hostel_count"/>
-                    <field name="parent_id"/>
+                    <field name="dad_id"/>
                     <field name="child_ids" widget="many2many_tags"/>
                 </list>
             </field>

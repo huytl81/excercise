@@ -20,28 +20,32 @@ class HostelRoom(models.Model):
     _name = "hostel.room"
     _description = "Hostel Room"
     _inherit = ['mail.thread', 'mail.activity.mixin', 'base.archive']
-    _sql_constraints = [("room_no_unique", "unique(room_number)", "Room number must be unique!")]
+    #_sql_constraints = [("room_no_unique", "unique(room_number)", "Room number must be unique!")]
+    _room_no_uniq = models.Constraint('UNIQUE(room_number)','Room number must be unique!')
 
     name = fields.Char(string="Room Name", required=True)
     description = fields.Text(string="Description")
-    room_number = fields.Char(string="Room Number", required=True)
     floor = fields.Integer(string="Floor")
-    room_type = fields.Selection([('single', 'Single'), ('double', 'Double'), ('triple', 'Triple')], string="Room Type")
+    
     image = fields.Binary(string="Image")
     state = fields.Selection([('draft', 'Unavailable'), ('available', 'Available'), ('closed', 'Closed')],string='State', default='draft')
     # active = fields.Boolean(string="Active", default=True)
     hostel_id = fields.Many2one(comodel_name='hostel.hostel', string="Hostel Name", ondelete='restrict')
-    currency_id = fields.Many2one(comodel_name="res.currency", string="Currency")
-    # hostel_currency = fields.Many2one(comodel_name="res.currency", string="Currency", currency_field='currency_id')
-    # optional attribute: currency_field = 'currency_id' incase currency field have another name then 'currency_id'
-    rent_amount = fields.Monetary('Rent Amount', help="Enter rent amount per month")
+    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company, index=True, required=True)
+    hostel_room_line_ids = fields.One2many(comodel_name='hostel.room.line', inverse_name='room_id', string='Lines', readonly=False)
+    room_number = fields.Char(string="Room Number", required=True)
+    room_type = fields.Selection([('single', 'Single'), ('double', 'Double'), ('triple', 'Triple')], string="Room Type")
+    #currency_id = fields.Many2one(comodel_name="res.currency", string="Currency")
+    #rent_amount = fields.Monetary('Rent Amount', help="Enter rent amount per month")
+    hostel_room_currency = fields.Many2one(comodel_name="res.currency", string="Currency")
+    rent_amount = fields.Monetary('Rent Amount', help="Enter rent amount per month", currency_field='hostel_room_currency') #optional attribute: currency_field = 'hostel_room_currency' incase currency field have another name then 'currency_id'
     cost_price = fields.Float('Room Cost', help="Enter room cost per month")
     category_id = fields.Many2one(comodel_name='hostel.room.category', string="Hostel Room Category")
     student_ids = fields.One2many(comodel_name="hostel.student", inverse_name="room_id", string="Students")
-    member_ids = fields.Many2many('hostel.room.member', string='Members')
-    hostel_amenities_ids = fields.Many2many("hostel.amenities", "hostel_room_amenities_rel", "room_id", "amenity_id",string="Amenities", domain="[('active', '=', True)]", help="Select hostel room amenities")
-    occupancy = fields.Integer(string="Occupancy", required=True, store=True, help="Number of students in the room")
-    availability = fields.Integer(string="Availability", compute="_compute_check_availability", store=True, help="Room availability in hostel")
+    member_ids = fields.Many2many('hostel.room.member', string='Members', check_company=True)
+    hostel_amenities_ids = fields.Many2many("hostel.amenities", "hostel_room_amenities_rel", "room_id", "amenity_id", string="Amenities", domain="[('active', '=', True)]", help="Select hostel room amenities")
+    student_per_room = fields.Integer(string="Student Per Room", required=True, store=True, help="Students allocated per room")
+    availability = fields.Integer(string="Availability", compute="_compute_check_availability", store=True, help="Room availability in hostel") # compute_sudo=True because store=True makes the value computed even if the user doesn't have access to the field
     room_rating = fields.Float('Rooms Average Rating', digits='Rating Value')
     remarks = fields.Text('Remarks')
     previous_room_id = fields.Many2one('hostel.room', string='Previous Room')
@@ -87,11 +91,11 @@ class HostelRoom(models.Model):
         for room in category_rooms:
             room.cost_price += amount_to_increase
 
-    @api.constrains("rent_amount")
+    @api.constrains('rent_amount')
     def _check_rent_amount(self):
         for record in self:
             if record.rent_amount < 0:
-                msg = _("Rent Amount Per Month should not be a negative value!")
+                msg = _("Rent amount must be positive!")
                 raise ValidationError(msg)
 
     @api.constrains('hostel_id')
@@ -104,11 +108,12 @@ class HostelRoom(models.Model):
                     "Please clear its current hostel first."
                 ) % (record.name, record._origin.hostel_id.name, record.hostel_id.name))
 
-    @api.depends("occupancy", "student_ids")
-    # @api.depends_context("occupancy", "student_ids")
+    @api.depends("student_per_room", "student_ids")
+    @api.depends_context("company_id")
     def _compute_check_availability(self):
+        company_id = self.env.context.get('company_id')
         for record in self:
-            record.availability = record.occupancy - len(record.student_ids.ids)
+            record.availability = record.student_per_room - len(record.student_ids.ids)
 
     @api.model
     def _is_allowed_transition(self, old_state, new_state):

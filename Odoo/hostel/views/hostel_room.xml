@@ -22,7 +22,7 @@
                         <field name="room_type"/>
                         <field name="room_number"/>
                         <field name="floor"/>
-                        <field name="occupancy"/>
+                        <field name="student_per_room"/>
                         <field name="student_ids" widget="many2many_tags"/>
                         <field name="availability"/>
                         <field name="image"/>
@@ -31,7 +31,7 @@
                         <field name="member_ids" widget="many2many_tags"/>
                         <field name="rent_amount"/>
                         <field name="cost_price"/>
-                        <field name="currency_id"/>
+                        <field name="hostel_room_currency"/>
                         <field name="remarks"/>
                         <field name="previous_room_id" />
                     </group>
@@ -52,13 +52,13 @@
                 <field name="room_type"/>
                 <field name="room_number"/>
                 <field name="floor"/>
-                <field name="occupancy"/>
+                <field name="student_per_room"/>
                 <field name="availability"/>
                 <field name="image"/>
                 <field name="active"/>
                 <field name="hostel_id" readonly="1"/>
                 <field name="rent_amount"/>
-                <field name="currency_id"/>
+                <field name="hostel_room_currency"/>
             </list>
         </field>
     </record>

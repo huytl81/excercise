@@ -3,7 +3,7 @@
     <data noupdate="0">
         <!-- Decimal Precision -->
         <record forcecreate="True" id="decimal_point" model="decimal.precision">
-            <field name="name">Custom Rating Value</field>
+            <field name="name">Rating Value</field>
             <field name="digits">3</field>
         </record>
 
@@ -54,7 +54,7 @@
         <record id="hostel_room_201" model="hostel.room">
             <field name="name">Standard Room 201</field>
             <field name="room_number">R201</field>
-            <field name="occupancy">1</field>
+            <field name="student_per_room">1</field>
             <field name="category_id" ref="room_category_single"/>
             <field name="rent_amount">150</field>
         </record>
@@ -62,7 +62,7 @@
         <record id="hostel_room_202" model="hostel.room">
             <field name="name">Standard Room 202</field>
             <field name="room_number">R202</field>
-            <field name="occupancy">1</field>
+            <field name="student_per_room">1</field>
             <field name="category_id" ref="room_category_single"/>
             <field name="rent_amount">150</field>
         </record>
@@ -70,7 +70,7 @@
         <record id="hostel_room_203" model="hostel.room">
             <field name="name">Standard Room 203</field>
             <field name="room_number">R203</field>
-            <field name="occupancy">1</field>
+            <field name="student_per_room">1</field>
             <field name="category_id" ref="room_category_single"/>
             <field name="rent_amount">160</field>
         </record>
@@ -78,7 +78,7 @@
         <record id="hostel_room_301" model="hostel.room">
             <field name="name">Double Room 301</field>
             <field name="room_number">R301</field>
-            <field name="occupancy">2</field>
+            <field name="student_per_room">2</field>
             <field name="category_id" ref="room_category_double"/>
             <field name="rent_amount">250</field>
         </record>
@@ -86,7 +86,7 @@
         <record id="hostel_room_302" model="hostel.room">
             <field name="name">Double Room 302</field>
             <field name="room_number">R302</field>
-            <field name="occupancy">2</field>
+            <field name="student_per_room">2</field>
             <field name="category_id" ref="room_category_double"/>
             <field name="rent_amount">250</field>
         </record>
@@ -94,7 +94,7 @@
         <record id="hostel_room_401" model="hostel.room">
             <field name="name">Deluxe Room 401</field>
             <field name="room_number">R401</field>
-            <field name="occupancy">3</field>
+            <field name="student_per_room">3</field>
             <field name="category_id" ref="room_category_deluxe"/>
             <field name="rent_amount">400</field>
         </record>
@@ -102,7 +102,7 @@
         <record id="hostel_room_402" model="hostel.room">
             <field name="name">Deluxe Room 402</field>
             <field name="room_number">R402</field>
-            <field name="occupancy">3</field>
+            <field name="student_per_room">3</field>
             <field name="category_id" ref="room_category_deluxe"/>
             <field name="rent_amount">420</field>
         </record>
@@ -110,7 +110,7 @@
         <record id="hostel_room_501" model="hostel.room">
             <field name="name">President VIP 501</field>
             <field name="room_number">R501</field>
-            <field name="occupancy">4</field>
+            <field name="student_per_room">4</field>
             <field name="category_id" ref="room_category_vip"/>
             <field name="rent_amount">800</field>
         </record>
@@ -118,7 +118,7 @@
         <record id="hostel_room_502" model="hostel.room">
             <field name="name">President VIP 502</field>
             <field name="room_number">R502</field>
-            <field name="occupancy">4</field>
+            <field name="student_per_room">4</field>
             <field name="category_id" ref="room_category_vip"/>
             <field name="rent_amount">850</field>
         </record>

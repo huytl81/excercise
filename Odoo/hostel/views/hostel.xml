@@ -23,9 +23,9 @@
                         <group>
                             <group>
                                 <field name="hostel_code" placeholder="Hostel Code"/>
-                                <field name="reference" placeholder="Reference Models"/>
-                                <field name="model_ref" placeholder="Choose Model"/>
-                                <field name="many2one_reference" placeholder="Many2one Reference Models" invisible="not model_ref"/>
+                                <field name="list_models" placeholder="List of Models"/>
+                                <field name="partner_user_models" placeholder="Choose res.partner or res.users model"/>
+                                <field name="corresponding_records" placeholder="Related records" invisible="not partner_user_models"/>
                             </group>
                             <group>
                                 <label for="street" string="Address"/>
@@ -57,7 +57,7 @@
                         </group>
                         
                         <group string="Rooms">
-                            <field name="hostel_room_ids" nolabel="1" colspan="2">
+                            <field name="hostel_room_line_ids" nolabel="1" colspan="2">
                                 <list string="Rooms" editable="bottom">
                                     <field name="room_id"/>
                                     <field name="room_number"/>
@@ -90,7 +90,7 @@
                     <field name="category_id"/>
                     <field name="state_id"/>
                     <field name="country_id"/>
-                    <field name="hostel_room_ids" widget="many2many_tags"/>
+                    <field name="hostel_room_line_ids" widget="many2many_tags"/>
                 </list>
             </field>
         </record>
