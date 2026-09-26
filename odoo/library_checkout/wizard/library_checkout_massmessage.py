@@ -15,9 +15,9 @@ class CheckoutMassMessage(models.TransientModel):
     @api.model
     def default_get(self, field_names):
         defaults_dict = super().default_get(field_names)
-        # Add values to the defaults_dict here
-        checkout_ids = self.env.context["active_ids"]
-        defaults_dict["checkout_ids"] = [(6, 0, checkout_ids)]
+        checkout_ids = self.env.context.get("active_ids", [])
+        if checkout_ids:
+            defaults_dict["checkout_ids"] = [(6, 0, checkout_ids)]
         return defaults_dict
 
     def button_send(self):
@@ -33,7 +33,7 @@ class CheckoutMassMessage(models.TransientModel):
             checkout.message_post(
                 body=self.message_body,
                 subject=self.message_subject,
-                subtype='mail.mt_comment',
+                subtype_xmlid='mail.mt_comment',
             )
             _logger.debug(
                 "Message on %d to followers: %s",

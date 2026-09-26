@@ -25,34 +25,5 @@
             <field name="privilege_id" ref="privilege_todo_management" />
             <field name="implied_ids" eval="[(4, ref('group_todo_user'))]" />
         </record>
-
-        <!-- rule permission -->
-        <record id="player_rule" model="ir.rule">
-            <field name="name">Player Rules</field>
-            <field name="model_id" ref="model_player" />
-            <field name="domain_force">[('transfer','>=', 0)]</field>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="True"/>
-            <field name="perm_unlink" eval="False"/>
-        </record>
-        <record id="cat_rule" model="ir.rule">
-            <field name="name">Cat Rules</field>
-            <field name="model_id" ref="model_cat" />
-            <field name="domain_force">[('age','>=',0 )]</field>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="True"/>
-            <field name="perm_unlink" eval="False"/>
-        </record>
-        <record id="dog_rule" model="ir.rule">
-            <field name="name">Dog Rules</field>
-            <field name="model_id" ref="model_dog" />
-            <field name="domain_force">[('age','>=',0)]</field>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="True"/>
-            <field name="perm_unlink" eval="False"/>
-        </record>
     </data>
 </odoo>

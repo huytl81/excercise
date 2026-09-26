@@ -7,7 +7,7 @@ parser.add_argument("command", choices=["list", "add", "set", "del"])
 parser.add_argument("params", nargs="*")  # optional args
 args = parser.parse_args()
 
-host, port, db = "localhost", 8069, "odoo15EE"
+host, port, db = "localhost", 8060, "odoo20"
 user, pwd = "admin", "admin"
 api = LibraryAPI(host, port, db, user, pwd)
 

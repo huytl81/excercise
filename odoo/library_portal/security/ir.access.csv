@@ -1,0 +1,8 @@
+id,name,model_id,group_id/id,operation,domain
+access_book_portal,Book Portal Access,library.book,base.group_portal,r,
+access_book_portal_manager,Book Portal Manager Access,library.book,library_app.group_library_manager,crud,
+access_member_portal,Member Portal Access,library.member,base.group_portal,r,"[('partner_id', '=', user.partner_id.id)]"
+access_stage_portal,Checkout Stage Portal Access,library.checkout.stage,base.group_portal,r,
+access_checkout_portal,Checkout Portal Access,library.checkout,base.group_portal,r,"[('member_id.partner_id', '=', user.partner_id.id)]"
+access_checkout_line_portal,Checkout Portal Line Access,library.checkout.line,base.group_portal,r,
+access_book_issue_tag_manager,access.book.issue.manager,book.issue,library_app.group_library_manager,crud,

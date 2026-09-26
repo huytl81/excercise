@@ -1,53 +1,71 @@
-from odoo import models, fields, api
+# -*- coding: utf-8 -*-
+from odoo import models, fields, api, _
 
 
 class LibraryReturnWizard(models.TransientModel):
     _name = 'library.return.wizard'
+    _description = 'Return Books Wizard'
 
-    borrower_id = fields.Many2one('res.partner', string='Borrower')
-    # book_ids = fields.Many2many('library.book', string='Books')
-    book_ids = fields.Many2many('library.book', string='Books', compute="onchange_member", readonly=False)
+    borrower_id = fields.Many2one('res.partner', string='Borrower', required=True)
+    book_ids = fields.Many2many(
+        'library.book',
+        string='Books',
+        compute='_compute_book_ids',
+        readonly=False,
+        store=True,
+    )
 
-    def books_returns(self):
-        loan_modal = self.env['library.book.rent']
-        for rec in self:
-            loans = loan_modal.search(
-                [('state', '=', 'ongoing'),
-                 ('book_id', 'in', rec.book_ids.ids),
-                 ('borrower_id', '=', rec.borrower_id.id)]
-            )
-            for loan in loans:
-                loan.book_return()
-
-    # @api.onchange('borrower_id')
     @api.depends('borrower_id')
-    def onchange_member(self):
-        rent_model = self.env['library.book.rent']
-        books_on_rent = rent_model.search(
-            [('state', '=', 'ongoing'),
-            ('borrower_id', '=', self.borrower_id.id)]
-        )
+    def _compute_book_ids(self):
+        for wizard in self:
+            if wizard.borrower_id:
+                loans = self.env['library.book.rent'].search([
+                    ('stage_id.book_state', '=', 'borrowed'),
+                    ('borrower_id', '=', wizard.borrower_id.id),
+                ])
+                wizard.book_ids = loans.mapped('book_id')
+            else:
+                wizard.book_ids = False
 
-        self.book_ids = books_on_rent.mapped('book_id')
+    @api.onchange('borrower_id')
+    def onchange_member(self):
+        if not self.borrower_id:
+            return {'domain': {'book_ids': [('id', '=', False)]}}
+
+        rent_model = self.env['library.book.rent']
+        books_on_rent = rent_model.search([
+            ('stage_id.book_state', '=', 'borrowed'),
+            ('borrower_id', '=', self.borrower_id.id),
+        ])
+        borrowed_books = books_on_rent.mapped('book_id')
+        self.book_ids = borrowed_books
 
         result = {
-            'domain': {'book_ids': [
-                ('id', 'in', self.book_ids.ids)]
+            'domain': {
+                'book_ids': [('id', 'in', borrowed_books.ids)]
             }
         }
 
-        late_domain = [
-            ('id', 'in', books_on_rent.ids),
-            ('expected_return_date', '<', fields.Date.today())
-        ]
-        late_books = books_on_rent.search(late_domain)
-
+        late_books = books_on_rent.filtered(
+            lambda r: r.expected_return_date and r.expected_return_date < fields.Date.today()
+        )
         if late_books:
-            message = ('Warn the member that the following '
-                        'books are late:\n')
+            message = _('Warn the member that the following books are late:\n')
             titles = late_books.mapped('book_id.name')
             result['warning'] = {
-                'title': 'Late books',
-                'message': message + '\n'.join(titles)
+                'title': _('Late books'),
+                'message': message + '\n'.join(titles),
             }
         return result
+
+    def books_returns(self):
+        self.ensure_one()
+        rent_model = self.env['library.book.rent']
+        loans = rent_model.search([
+            ('stage_id.book_state', '=', 'borrowed'),
+            ('book_id', 'in', self.book_ids.ids),
+            ('borrower_id', '=', self.borrower_id.id),
+        ])
+        for loan in loans:
+            loan.book_return()
+        return {'type': 'ir.actions.act_window_close'}

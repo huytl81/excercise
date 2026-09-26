@@ -5,56 +5,56 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" t-esc="props.title"/>
-                        <button type="button" class="btn-close" t-on-click="onCancel" aria-label="Close"/>
+                        <h5 class="modal-title" t-esc="this.props.title"/>
+                        <button type="button" class="btn-close" t-on-click="() => this.onCancel()" aria-label="Close"/>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">Task Name</label>
-                            <input type="text" class="form-control" t-model="state.task.name"/>
-                            <t t-if="state.errors.name">
+                            <input type="text" class="form-control" t-att-value="this.state.task.name" t-on-input="(ev) => this.state.task.name = ev.target.value"/>
+                            <t t-if="this.state.errors.name">
                                 <div class="text-danger">
-                                    <t t-esc="state.errors.name"/>
+                                    <t t-esc="this.state.errors.name"/>
                                 </div>
                             </t>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Responsible</label>
-                            <select class="form-select" t-model="state.task.user_id">
+                            <select class="form-select" t-att-value="this.state.task.user_id" t-on-change="(ev) => this.state.task.user_id = ev.target.value">
                                 <option value="">Select a user</option>
-                                <t t-foreach="state.users" t-as="user" t-key="user.id">
-                                    <option t-att-value="user.id" t-att-selected="state.task.user_id === user.id" t-esc="user.name"/>
+                                <t t-foreach="this.state.users" t-as="user" t-key="user.id">
+                                    <option t-att-value="user.id" t-att-selected="this.state.task.user_id === user.id" t-esc="user.name"/>
                                 </t>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Priority</label>
-                            <select class="form-select" t-model="state.task.priority">
+                            <select class="form-select" t-att-value="this.state.task.priority" t-on-change="(ev) => this.state.task.priority = ev.target.value">
                                 <option value="">Select priority</option>
-                                <t t-foreach="state.priorityOptions" t-as="option" t-key="option.value">
-                                    <option t-att-value="option.value" t-esc="option.label"/>
+                                <t t-foreach="this.state.priorityOptions" t-as="option" t-key="option.value">
+                                    <option t-att-value="option.value" t-att-selected="this.state.task.priority === option.value" t-esc="option.label"/>
                                 </t>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Deadline</label>
-                            <input type="date" class="form-control" t-model="state.task.deadline"/>
+                            <input type="date" class="form-control" t-att-value="this.state.task.deadline" t-on-input="(ev) => this.state.task.deadline = ev.target.value"/>
                         </div>
                         <div class="mb-3">
-                            <input class="form-check-input" type="checkbox" t-model="state.task.is_done"/>
+                            <input class="form-check-input" type="checkbox" t-att-checked="this.state.task.is_done" t-on-change="(ev) => this.state.task.is_done = ev.target.checked"/>
                             <label class="form-label">Is Done</label>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Color</label>
-                            <input type="color" class="form-control form-control-color" id="color" t-model="state.task.color" t-att-value="state.task.color" title="Choose your color" />
+                            <input type="color" class="form-control form-control-color" id="color" t-att-value="this.state.task.color" title="Choose your color" t-on-input="(ev) => this.state.task.color = ev.target.value"/>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" t-on-click="onCancel">
+                        <button type="button" class="btn btn-secondary" t-on-click="() => this.onCancel()">
                             <span>Cancel</span>
                         </button>
-                        <button type="button" class="btn btn-primary" t-on-click="onSave">
-                            <span t-esc="props.task &amp;&amp; props.task.id ? 'Update' : 'Create'"/>
+                        <button type="button" class="btn btn-primary" t-on-click="() => this.onSave()">
+                            <span t-esc="this.props.task &amp;&amp; this.props.task.id ? 'Update' : 'Create'"/>
                         </button>
                     </div>
                 </div>

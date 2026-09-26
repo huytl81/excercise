@@ -1,11 +1,11 @@
 import odoorpc
 
-db_name = 'master'
+db_name = 'odoo20'
 username = 'admin'
 password = 'admin'
 
 # Prepare the connection to the server
-orpc = odoorpc.ODOO('localhost', port=8017)
+orpc = odoorpc.ODOO('localhost', port=8060)
 orpc.login(db_name, username, password)  # login
 
 # User information

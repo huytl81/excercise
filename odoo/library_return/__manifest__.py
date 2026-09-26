@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "My Library Returns Dates",  # Module title
-    'summary': "Manage return dates for books",  # Module subtitle phrase
+    'name': "My Library Returns Dates",
+    'summary': "Manage return dates for books",
+    'description': """
+        Manage book return dates and due calculations.
+    """,
     'author': "Huy Ta",
-    'website': "http://www.example.com",
-    'category': 'Uncategorized',
-    'version': '16.0.1',
+    'website': "https://www.odoovn.info",
+    'category': 'Library',
+    'version': '1.0.0',
+    'license': 'LGPL-3',
+    'application': False,
+    'installable': True,
+    # any module necessary for this one to work correctly
     'depends': ['library_app'],
+
+    # always loaded
     'data': [
         'views/library_book.xml',
     ],
-    # This demo data files will be loaded if db initialize with demo data (commented becaues file is not added in this example)
-    # 'demo': [
-    #     'demo.xml'
-    # ],
+    'demo': [],
 }

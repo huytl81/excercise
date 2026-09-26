@@ -1,8 +1,8 @@
 from xmlrpc import client
 
 # books data with search_read method
-server_url = 'http://localhost:8017'
-db_name = 'master'
+server_url = 'http://localhost:8060'
+db_name = 'odoo20'
 username = 'admin'
 password = 'admin'
 

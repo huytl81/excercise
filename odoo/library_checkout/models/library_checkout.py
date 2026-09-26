@@ -13,7 +13,7 @@ class Checkout(models.Model):
         return stage.search([("state", "=", "new")], limit=1)
 
     @api.model
-    def _group_expand_stage_id(self, stages, domain, order):
+    def _group_expand_stage_id(self, stages, domain, order=None):
         return stages.search([], order=order)
 
     name = fields.Char(string="Title")
@@ -37,14 +37,13 @@ class Checkout(models.Model):
     kanban_state = fields.Selection([("normal", "Doing"),("blocked", "Blocked"),("done", "Ready")],"Kanban State",default="normal")
     color = fields.Integer()
     priority = fields.Selection([("0", "High"),("1", "Very High"),("2", "Critical")],default="0")
-    @ api.model
-    def create(self, vals):
-        # Code before create: should use the 'vals' dict
-        new_record = super().create(vals)
-        # Code after create: can use the 'new_record' created
-        if new_record.stage_id.state in ("open", "done"):
-            raise exceptions.UserError("State not allowed for new checkouts.")
-        return new_record
+    @api.model_create_multi
+    def create(self, vals_list):
+        new_records = super().create(vals_list)
+        for new_record in new_records:
+            if new_record.stage_id.state in ("open", "done"):
+                raise exceptions.UserError("State not allowed for new checkouts.")
+        return new_records
 
     # def write(self, vals):
     #     # Code before write: 'self' has the old values
@@ -90,7 +89,14 @@ class Checkout(models.Model):
     @api.depends("member_id")
     def _compute_request_date_onchange(self):
         today_date = fields.Date.today()
-        if self.request_date != today_date:
+        for rec in self:
+            if not rec.request_date:
+                rec.request_date = today_date
+
+    @api.onchange("member_id")
+    def onchange_member_id(self):
+        today_date = fields.Date.today()
+        if self.member_id and self.request_date != today_date:
             self.request_date = today_date
             return {
                 "warning": {

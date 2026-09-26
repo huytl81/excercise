@@ -49,7 +49,7 @@
             <t t-snippet="library_portal.snippet_book_dynamic" t-thumbnail="/library_portal/static/src/img/cover.jpg"/>
         </xpath>
 
-        <xpath expr="//div[@id='snippet_options']" position="inside">
+        <!--<xpath expr="//div[@id='snippet_options']" position="inside">
             <div data-selector=".book_snippet">
                 <we-select string="Table Style">
                     <we-button data-select-class="table-striped">Striped</we-button>
@@ -62,7 +62,7 @@
                     <we-button data-select-data-attribute="15" title="15 Books">15</we-button>
                 </we-button-group>
             </div>
-        </xpath>
+        </xpath>-->
     </template>
 
 </odoo>

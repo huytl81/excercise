@@ -4,8 +4,6 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
 from datetime import timedelta
 
-from odoo.tests import Form
-
 _logger = logging.getLogger(__name__)
 
 
@@ -38,8 +36,8 @@ class Book(models.Model):
             else:
                 raise models.ValidationError("Please enter Issued date!")
 
-    name = fields.Char("Book Title", default=None, help="Book cover title.", readonly=False, required=True, index=True, copy=True, deprecated=True, groups="base.group_user")
-    short_name = fields.Char('Short Title', translate=True, index=True)
+    name = fields.Char("Book Title", default=None, help="Book cover title.", readonly=False, required=True, index=True, copy=True, groups="base.group_user")
+    short_name = fields.Char('Short Title', translate=True, index='trigram')
     isbn = fields.Char("ISBN")
     book_type = fields.Selection(
         [("paper", "Paperback"),
@@ -60,7 +58,7 @@ class Book(models.Model):
     # Numeric fields:
     copies = fields.Integer(default=1)
     out_of_print = fields.Boolean()
-    pages = fields.Integer('Number of Pages', groups='library_app.group_library_manager', states={'lost': [('readonly', True)]}, help='Total book page count', company_dependent=False)
+    pages = fields.Integer('Number of Pages', groups='library_app.group_library_manager', help='Total book page count', company_dependent=False)
     reader_rating = fields.Float("Reader Average Rating", (14, 4))
     cost_price = fields.Float('Book cost', digits='Product Price')
     retail_price = fields.Monetary("Retail Price", currency_field='currency_id')
@@ -120,7 +118,8 @@ class Book(models.Model):
     manager_remarks = fields.Text('Manager Remarks')
     old_edition = fields.Many2one('library.book', string='Old Edition', search="_name_search")
 
-    _sql_constraints = [("library_book_name_uq", "UNIQUE (name)", "Title must be unique."), ("library_book_positive_page", "CHECK (pages >= 0)", "No of pages must be positive.")]
+    _name_uq = models.Constraint("UNIQUE (name)", "Title must be unique.")
+    _positive_page = models.Constraint("CHECK (pages >= 0)", "No of pages must be positive.")
 
     report_missing = fields.Text(string="Book is missing", groups='library_app.group_library_manager')
     book_issue_ids = fields.One2many('book.issue', 'book_id')
@@ -194,13 +193,17 @@ class Book(models.Model):
     #     tools.drop_view_if_exists(self.env.cr, self._table)
     #     self.env.cr.execute("CREATE or REPLACE VIEW %s as (%s)" % (self._table, self._query()))
 
-    def name_get(self):
-        result = []
+    @api.depends('name', 'author_ids.name')
+    def _compute_display_name(self):
         for record in self:
             authors = record.author_ids.mapped('name')
-            rec_name = "%s - (%s)" % (record.name, ' & '.join(authors))
-            result.append((record.id, rec_name))
-        return result
+            if authors:
+                record.display_name = f"{record.name} - ({' & '.join(authors)})"
+            else:
+                record.display_name = record.name or ''
+
+    def name_get(self):
+        return [(rec.id, rec.display_name) for rec in self]
 
     @api.model
     def _name_search(self, name='', domain=None, operator='ilike', limit=300, order=None):
@@ -413,6 +416,7 @@ class Book(models.Model):
 
 class LibraryBookIssues(models.Model):
     _name = 'book.issue'
+    _description = 'Book Issue'
     _inherit = ['utm.mixin']
 
     book_id = fields.Many2one('library.book', required=True)

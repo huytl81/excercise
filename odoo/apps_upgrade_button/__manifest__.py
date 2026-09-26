@@ -1,19 +1,24 @@
+# -*- coding: utf-8 -*-
 {
-    'name': 'Quick actions in Apps',
-    'version': '19.0.1.0',
+    'name': "Quick actions in Apps",
+    'summary': "Quick actions in Apps",
+    'description': """
+        Adds quick upgrade and action buttons in Apps view.
+    """,
+    'author': "Huy Ta",
+    'website': "https://www.odoovn.info",
     'category': 'Extra Tools',
-    'sequence': 6,
-    'summary': 'Quick actions in Apps',
-    'author': 'Huy Ta',
-    'website': 'https://huyta.info',
-    'license': 'AGPL-3',
-    'depends': ['base','web',],
+    'version': '1.0.0',
+    'license': 'LGPL-3',
+    'application': False,
+    'installable': True,
+    # any module necessary for this one to work correctly
+    'depends': ['base', 'web'],
+
+    # always loaded
     'data': [
         'views/upgrade_button_views.xml',
     ],
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    'demo': [],
     'images': ['static/description/banner.png'],
-    'odoo_version': '19.0',
 }

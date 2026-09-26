@@ -35,7 +35,7 @@
                             <field name="publisher_city"/>
                             <field name="ref_doc_id"/>
                             <field name="state"/>
-                            <field name="pages"/>
+                            <field name="pages" readonly="state == 'lost'"/>
                             <field name="reader_rating"/>
                             <field name="out_of_print"/>
                             <field name="age_days"/>
@@ -74,12 +74,7 @@
                         </field>
                     </group>
                 </sheet>
-                <!-- Discuss widgets -->
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers"/>
-                    <field name="activity_ids" widget="mail_activity"/>
-                    <field name="message_ids" widget="mail_thread"/>
-                </div>
+                <chatter/>
             </form>
         </field>
     </record>

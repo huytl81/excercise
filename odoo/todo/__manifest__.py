@@ -1,28 +1,24 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Todolist management with OWL",
-
     'summary': "Todolist management with OWL",
-
     'description': """
-        ... by Huy Ta
+        Todolist management with OWL component framework.
     """,
-
     'author': "Huy Ta",
     'website': "https://www.odoovn.info",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Customize Application',
-    'version': '2.0',
-
+    'category': 'Productivity',
+    'version': '1.0.0',
+    'license': 'LGPL-3',
+    'application': True,
+    'installable': True,
     # any module necessary for this one to work correctly
     'depends': ['base', 'web'],
+
+    # always loaded
     'data': [
         'security/todo_task_security.xml',
-        'security/todo_task_access.xml',
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'views/club_view.xml',
         'views/player_view.xml',
         'views/dog_view.xml',
@@ -30,6 +26,7 @@
         'wizards/dog_wizard_view.xml',
         'views/todo_task.xml',
     ],
+    'demo': [],
     'assets': {
         'web.assets_backend': [
             # Services
@@ -39,11 +36,10 @@
             # Form Component
             'todo/static/src/xml/todo_task_popup_modal.xml',
             'todo/static/src/js/todo_task_popup_modal.js',
-            
+
             # Main Component - Must be last
             'todo/static/src/xml/todo_task_action.xml',
             'todo/static/src/js/todo_task_action.js',
         ]
-    }
-
+    },
 }

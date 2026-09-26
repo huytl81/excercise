@@ -6,6 +6,7 @@ from odoo.exceptions import ValidationError, UserError
 
 class LibraryBookRentStatistics(models.Model):
     _name = 'library.book.rent.statistics'
+    _description = 'Book Rent Statistics'
     _auto = False
 
     book_id = fields.Many2one('library.book', string='Book', readonly=True)

@@ -77,12 +77,10 @@
 
     <record id="action_library_config_settings" model="ir.actions.act_window">
         <field name="name">Settings</field>
-        <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.config.settings</field>
-        <field name="view_id" ref="res_config_settings_view_form"/>
         <field name="view_mode">form</field>
-        <field name="target">inline</field>
-        <field name="context">{'module' : 'library_app'}</field>
+        <field name="target">current</field>
+        <field name="context">{'module': 'library_app', 'bin_size': False}</field>
     </record>
     <menuitem id="library_book_setting_menu"
               name="Settings"

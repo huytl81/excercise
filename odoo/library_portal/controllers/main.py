@@ -28,7 +28,7 @@ class Books(http.Controller):
         # return request.make_response(html_result, headers=[('Last-modified', email.utils.formatdate((fields.Datetime.from_string(rs.search([], order='write_date desc', limit=1).write_date) - datetime.datetime(1970, 1, 1)).total_seconds(), usegmt=True))])
         # return request.render("library_app.book_list_template", {"books": books, "authors": authors})
 
-    @http.route('/all-books-json', type='json', auth='none')
+    @http.route('/all-books-json', type='jsonrpc', auth='none')
     def all_books_json(self, **kwargs):
         rs = request.env['library.book'].sudo().search([])
         return rs.read(['name'])

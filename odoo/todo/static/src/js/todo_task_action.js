@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { Component, useRef, useState, onWillStart } from "@odoo/owl";
+import { Component, proxy, signal, onWillStart } from "@odoo/owl";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { TodoTaskPopupModal } from "./todo_task_popup_modal";
@@ -10,6 +10,10 @@ const actionRegistry = registry.category("actions");
 
 // Using Service Layer approach
 export class TodoTaskAction extends Component {
+    static template = "todo_task_action";
+
+    searchInput = signal.ref();
+
     setup() {
         super.setup();
         // my custom services
@@ -20,14 +24,13 @@ export class TodoTaskAction extends Component {
         // dialog service
         this.dialog = useService("dialog");
 
-        this.state = useState({
+        this.state = proxy({
             task: { name: "", priority: "", is_done: false, user_id: "", deadline: "" , color: ""},
             taskList: [],
             users: [],
-            search: ''
+            search: '',
+            priorityOptions: []
         });
-
-        this.searchInput = useRef("searchInput");
 
         this.modal = null;
 
@@ -37,7 +40,7 @@ export class TodoTaskAction extends Component {
             // Sau đó mới lấy danh sách công việc
             await this.getAllTasks();
 
-            const fields = await this.env.services.orm.call("todo.task", "fields_get", [["priority"], ["selection"]]);
+            const fields = await this.orm.call("todo.task", "fields_get", [["priority"], ["selection"]]);
             this.state.priorityOptions = (fields.priority.selection || []).map(([value, label]) => ({value,label}));
         })
     }
@@ -178,11 +181,12 @@ export class TodoTaskAction extends Component {
         }
     }
 
-    async searchTasks(){
-        try{
-            const text = this.searchInput.el.value;
+    async searchTasks() {
+        try {
+            const inputEl = this.searchInput();
+            const text = inputEl ? inputEl.value : "";
             this.state.taskList = await this.taskService.searchTasksService(text) || [];
-        }catch(error){
+        } catch(error) {
             console.error("Error searching tasks:", error);
             this.state.taskList = [];
         }

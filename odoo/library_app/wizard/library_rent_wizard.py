@@ -3,6 +3,7 @@ from odoo import models, fields
 
 class LibraryRentWizard(models.TransientModel):
     _name = 'library.rent.wizard'
+    _description = 'Rent Books Wizard'
 
     borrower_id = fields.Many2one('res.partner', string='Borrower')
     book_ids = fields.Many2many('library.book', string='Books')

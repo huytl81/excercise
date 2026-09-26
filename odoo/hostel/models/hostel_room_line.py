@@ -9,8 +9,6 @@ class HostelRoomLine(models.Model):
     company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company, required=True, index=True)  # Auto‑check company consistency
     hostel_id = fields.Many2one('hostel.hostel', string="Hostel", ondelete='cascade', required=True)
     room_id = fields.Many2one('hostel.room', string="Room", check_company=True, domain="[('hostel_id', '=', False)]", required=True)
-    
-    # Related fields to show information of the selected room
     room_number = fields.Char(related='room_id.room_number', string="Room Number", readonly=True)
     room_type = fields.Selection(related='room_id.room_type', string="Room Type", readonly=True)
     rent_amount = fields.Monetary(related='room_id.rent_amount', string="Rent Amount", readonly=True)
