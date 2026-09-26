@@ -1,19 +1,25 @@
+# -*- coding: utf-8 -*-
 {
     'name': 'Real Estate Ads',
-    'version': '1.0',
-    'category': 'Real Estate',
     'summary': 'Manage real estate properties and ads',
+    'description': """
+        Manage real estate property ads, types, tags, and offers.
+    """,
     'author': 'Huy Ta',
-    'depends': ['base', 'mail','website', 'web'],
+    'website': 'https://www.odoovn.info',
+    'category': 'Real Estate',
+    'version': '1.0.0',
+    'license': 'LGPL-3',
+    'application': True,
+    'installable': True,
+    # any module necessary for this one to work correctly
+    'depends': ['base', 'mail', 'website', 'web'],
+
+    # always loaded
     'data': [
         # Security
-        # Access rules
         'security/access_groups.xml',
-        'security/ir.model.access.csv',
-        'security/property_type_access.xml',
-        'security/property_tag_access.xml',
-        # Record rules
-        'security/record_rules.xml',
+        'security/ir.access.csv',
         # Views
         'views/property_view.xml',
         'views/property_offer_view.xml',
@@ -30,6 +36,10 @@
         'report/report_template.xml',
         'report/property_report.xml',
     ],
+    # Demo
+    'demo': [
+        'demo/property.xml',
+    ],
     # Assets
     'assets': {
         'web.assets_backend': [
@@ -37,11 +47,4 @@
             'real_estate_ads/static/src/xml/my_custom_tag_template.xml',
         ],
     },
-    # Demo
-    'demo': [
-        'demo/property.xml',
-    ],
-    'license': 'LGPL-3',
-    'installable': True,
-    'application': True,
 }

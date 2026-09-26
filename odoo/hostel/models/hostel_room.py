@@ -8,6 +8,7 @@ _logger = logging.getLogger(__name__)
 
 class BaseArchive(models.AbstractModel):
     _name = 'base.archive'
+    _description = 'Base Archive'
 
     active = fields.Boolean(default=True)
 
@@ -15,22 +16,21 @@ class BaseArchive(models.AbstractModel):
         for record in self:
             record.active = not record.active
 
-
 class HostelRoom(models.Model):
     _name = "hostel.room"
     _description = "Hostel Room"
     _inherit = ['mail.thread', 'mail.activity.mixin', 'base.archive']
     #_sql_constraints = [("room_no_unique", "unique(room_number)", "Room number must be unique!")]
     _room_no_uniq = models.Constraint('UNIQUE(room_number)','Room number must be unique!')
-
+    _check_company_auto = True
+    
     name = fields.Char(string="Room Name", required=True)
     description = fields.Text(string="Description")
-    floor = fields.Integer(string="Floor")
-    
+    floor = fields.Integer(string="Floor", aggregator='max')
     image = fields.Binary(string="Image")
-    state = fields.Selection([('draft', 'Unavailable'), ('available', 'Available'), ('closed', 'Closed')],string='State', default='draft')
+    state = fields.Selection([('draft', 'Unavailable'), ('available', 'Available'), ('closed', 'Closed')],string='State', default='draft', group_expand='_expand_state_groups')
     # active = fields.Boolean(string="Active", default=True)
-    hostel_id = fields.Many2one(comodel_name='hostel.hostel', string="Hostel Name", ondelete='restrict')
+    hostel_id = fields.Many2one(comodel_name='hostel.hostel', string="Hostel Name", ondelete='restrict', check_company=True, tracking=True)
     company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company, index=True, required=True)
     hostel_room_line_ids = fields.One2many(comodel_name='hostel.room.line', inverse_name='room_id', string='Lines', readonly=False)
     room_number = fields.Char(string="Room Number", required=True)
@@ -38,14 +38,14 @@ class HostelRoom(models.Model):
     #currency_id = fields.Many2one(comodel_name="res.currency", string="Currency")
     #rent_amount = fields.Monetary('Rent Amount', help="Enter rent amount per month")
     hostel_room_currency = fields.Many2one(comodel_name="res.currency", string="Currency")
-    rent_amount = fields.Monetary('Rent Amount', help="Enter rent amount per month", currency_field='hostel_room_currency') #optional attribute: currency_field = 'hostel_room_currency' incase currency field have another name then 'currency_id'
-    cost_price = fields.Float('Room Cost', help="Enter room cost per month")
+    rent_amount = fields.Monetary('Rent Amount', help="Enter rent amount per month", currency_field='hostel_room_currency', aggregator='avg', tracking=2) #optional attribute: currency_field = 'hostel_room_currency' incase currency field have another name then 'currency_id'
+    cost_price = fields.Float('Room Cost', help="Enter room cost per month", company_dependent=True)
     category_id = fields.Many2one(comodel_name='hostel.room.category', string="Hostel Room Category")
     student_ids = fields.One2many(comodel_name="hostel.student", inverse_name="room_id", string="Students")
     member_ids = fields.Many2many('hostel.room.member', string='Members', check_company=True)
     hostel_amenities_ids = fields.Many2many("hostel.amenities", "hostel_room_amenities_rel", "room_id", "amenity_id", string="Amenities", domain="[('active', '=', True)]", help="Select hostel room amenities")
-    student_per_room = fields.Integer(string="Student Per Room", required=True, store=True, help="Students allocated per room")
-    availability = fields.Integer(string="Availability", compute="_compute_check_availability", store=True, help="Room availability in hostel") # compute_sudo=True because store=True makes the value computed even if the user doesn't have access to the field
+    student_per_room = fields.Integer(string="Student Per Room", required=True, default=1, store=True, help="Students allocated per room")
+    availability = fields.Integer(string="Availability", compute='_compute_check_availability', store=True, help="Room availability in hostel") # compute_sudo=True because store=True makes the value computed even if the user doesn't have access to the field
     room_rating = fields.Float('Rooms Average Rating', digits='Rating Value')
     remarks = fields.Text('Remarks')
     previous_room_id = fields.Many2one('hostel.room', string='Previous Room')
@@ -108,8 +108,8 @@ class HostelRoom(models.Model):
                     "Please clear its current hostel first."
                 ) % (record.name, record._origin.hostel_id.name, record.hostel_id.name))
 
-    @api.depends("student_per_room", "student_ids")
-    @api.depends_context("company_id")
+    @api.depends('student_per_room', 'student_ids')
+    @api.depends_context('company_id')
     def _compute_check_availability(self):
         company_id = self.env.context.get('company_id')
         for record in self:
@@ -233,17 +233,51 @@ class HostelRoom(models.Model):
         return super(HostelRoom, self)._name_search(name=name, args=args, operator=operator, limit=limit,name_get_uid=name_get_uid)
 
     def grouped_data(self):
-        grouped_data = self._get_average_cost(self)
+        grouped_data = self._get_average_cost()
         _logger.info('Grouped data %s', grouped_data)
 
     @api.model
     def _get_average_cost(self):
-        grouped_data = self.env['hostel.room'].read_group(
+        grouped_result = self.env['hostel.room'].read_group(
             domain=['cost_price', '!=', 0],
             #fields=['category_id', 'cost_price:avg'],
             fields=['category_id', 'average_price:avg(cost_price)'],
             groupby=['category_id'],
             orderby='cost_price desc')
-        return grouped_data
+        return grouped_result
 
+    # ======= Group theo category_id ==========
+    @api.model
+    def _get_room_report_by_category(self):
+        grouped_result = self.env['hostel.room'].read_group(
+            domain=['state', '!=', 'draft'],         # Lọc các phòng không ở draft
+            fields=[
+                'hostel_id',                         # Group theo hostel
+                'rent_amount:sum',                   # Tổng tiền thuê (tổng)
+                'rent_amount:avg',                   # Trung bình thuê (TB
+                'rent_amount:count',                 # Đếm phòng
+                'floor:max',                         # Tầng cao nhất
+            ],
+            groupby=['hostel_id'],                   # Group theo hostel
+            having='rent_amount_sum > 0',                  
+            orderby='rent_amount_sum desc'
+        )
+        return grouped_result
 
+    # ======= Group theo state ==========
+    @api.model
+    def _get_room_report_by_state(self):
+        grouped_result = self.env['hostel.room'].read_group(
+            domain=[],
+            fields=['rent_amount:sum'],
+            groupby=['state']
+        )
+        return grouped_result
+
+    @api.model
+    def _expand_state_groups(self, states, domain=None, order=None):
+        """
+        Trả về danh sách tất cả các state (draft, available, closed) để hiển thị đầy đủ các cột trên Kanban/group.
+        """
+        return [key for key, _label in self._fields['state'].selection]
+        

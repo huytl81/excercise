@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+access_library_member_user,Member User Access,library.member,library_app.group_library_user,cru,
+access_library_member_manager,Manager User Access,library.member,library_app.group_library_manager,crud,

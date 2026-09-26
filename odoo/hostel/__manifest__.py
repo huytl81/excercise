@@ -13,9 +13,10 @@
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '19.0.1.2.2',
+    'version': '1.0.0',
+    'license': 'LGPL-3',
     'application': True,
-    'installable':True,
+    'installable': True,
     # any module necessary for this one to work correctly
     'depends': ['base', 'mail'],
 
@@ -23,7 +24,7 @@
     'data': [
         'data/data.xml',
         'security/hostel_security.xml',
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'views/hostel_category.xml',
         'views/hostel.xml',
         'views/hostel_room.xml',

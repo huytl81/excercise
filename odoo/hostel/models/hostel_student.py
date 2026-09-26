@@ -14,7 +14,7 @@ class HostelStudent(models.Model):
     active = fields.Boolean("Active", default=True, help="Activate/Deactivate hostel record")
 
     room_id = fields.Many2one("hostel.room", "Room", check_company=True, help="Select hostel room", ondelete='restrict')
-    hostel_id = fields.Many2one("hostel.hostel", string="Hostel Name", related="room_id.hostel_id", related_sudo=True)
+    hostel_id = fields.Many2one("hostel.hostel", string="Hostel Name", related="room_id.hostel_id", related_sudo=True, check_company=True)
     admission_date = fields.Date('Admission Date', help='Enter student admission date', default=fields.Datetime.today)
     discharge_date = fields.Date('Discharge Date', help='Enter student discharge date')
     duration = fields.Integer('Duration', help='Enter student duration of living in hostel', compute='_compute_check_duration', inverse='_inverse_duration')

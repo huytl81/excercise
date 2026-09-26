@@ -17,14 +17,14 @@ class HostelCategory(models.Model):
     #parent_id = fields.Many2one(comodel_name='hostel.category', string='Parent Category', ondelete='restrict', index=True)
     dad_id = fields.Many2one(comodel_name='hostel.category', string='Mother Category', ondelete='restrict', index=True)
     child_ids = fields.One2many(comodel_name='hostel.category', inverse_name='dad_id', string='Children Categories')
-    parent_path = fields.Char(index=True, unaccent=False)
+    parent_path = fields.Char(index=True)
 
     @api.depends('hostel_ids')
     def _compute_hostel_count(self):
         for record in self:
             record.hostel_count = len(record.hostel_ids)
 
-    @api.constrains('mother_id')
+    @api.constrains('dad_id')
     def _check_hierarchy(self):
         if self._has_cycle():
             raise ValidationError('Error! You cannot create recursive categories.')

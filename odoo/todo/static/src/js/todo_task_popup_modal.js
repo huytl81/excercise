@@ -1,9 +1,20 @@
 /** @odoo-module **/
 
-import { Component, useState } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class TodoTaskPopupModal extends Component {
+    static template = "todo_task_popup_modal";
+
+    props = useProps({
+        title: t.string().optional(),
+        task: t.object().optional(),
+        users: t.array().optional(),
+        priorityOptions: t.array().optional(),
+        onSave: t.function().optional(),
+        close: t.function(),
+    });
+
     setup() {
         this.dialog = useService("dialog");
         
@@ -28,7 +39,7 @@ export class TodoTaskPopupModal extends Component {
             } 
             : defaultTask;
         
-        this.state = useState({
+        this.state = proxy({
             task: taskData,
             errors: {},
             users: (this.props.users || []).map(user => ({
@@ -39,46 +50,31 @@ export class TodoTaskPopupModal extends Component {
         });                     
     }
 
-    // Promise version
-    // onSave(ev) {
-    //     ev.preventDefault();
-    //     if (this.validateForm()) {
-    //         if (this.props.onSave) {
-    //             // Prepare task data with proper type conversion
-    //             const taskData = {
-    //                 ...this.state.task,
-    //                 // Convert empty string to false for user_id
-    //                 user_id: this.state.task.user_id || false
-    //             };
-    //             // Return a promise that resolves when save is complete
-    //             return Promise.resolve(this.props.onSave(taskData))
-    //                 .then(() => this.props.close());
-    //         }
-    //         return this.props.close();
-    //     }
-    //     return Promise.resolve();
-    // }
-
-    async onSave(eve){
-        if (!this.validateForm()){
+    async onSave(ev) {
+        if (ev && ev.preventDefault) {
+            ev.preventDefault();
+        }
+        if (!this.validateForm()) {
             return;
         }
         try {
-            if (this.props.onSave()){
-            const taskData = {
+            if (this.props.onSave) {
+                const taskData = {
                     ...this.state.task,
                     user_id: this.state.task.user_id || false
-            };
-            await this.props.onSave(taskData);
-        }
-        this.props.close();
-        } catch(error){
+                };
+                await this.props.onSave(taskData);
+            }
+            this.props.close();
+        } catch (error) {
             console.error("Error saving task:", error);
         }
     }
 
     async onCancel(ev) {
-        await ev.preventDefault();
+        if (ev && ev.preventDefault) {
+            ev.preventDefault();
+        }
         this.props.close();
     }
 
@@ -91,15 +87,3 @@ export class TodoTaskPopupModal extends Component {
         return Object.keys(errors).length === 0;
     }
 }
-
-TodoTaskPopupModal.props = {
-    title: { type: String, optional: true },
-    task: { type: Object, optional: true },
-    users: { type: Array, optional: true },
-    priorityOptions: { type: Array, optional: true },
-    onSave: { type: Function, optional: true },
-    close: { type: Function, optional: false },
-};
-
-TodoTaskPopupModal.template = "todo_task_popup_modal";
-TodoTaskPopupModal.components = {};

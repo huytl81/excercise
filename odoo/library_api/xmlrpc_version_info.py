@@ -1,6 +1,6 @@
 from xmlrpc import client
 
-server_url = 'http://localhost:8017'
+server_url = 'http://localhost:8060'
 
 common = client.ServerProxy('%s/xmlrpc/2/common' % server_url)
 version_info = common.version()

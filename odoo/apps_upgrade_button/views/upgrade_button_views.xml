@@ -6,7 +6,7 @@
             <field name="model">ir.module.module</field>
             <field name="inherit_id" ref="base.module_view_kanban"/>
             <field name="arch" type="xml">
-                <xpath expr="//footer[hasclass('w-100')]" position="inside">
+                <xpath expr="//footer" position="inside">
                     <button type="object" class="btn btn-warning btn-sm"
                             name="button_immediate_upgrade" t-if="record.state.raw_value == 'installed'" groups="base.group_system">Update
                     </button>

@@ -1,7 +1,7 @@
 from xmlrpc import client
 
-server_url = 'http://localhost:8017'
-db_name = 'master'
+server_url = 'http://localhost:8060'
+db_name = 'odoo20'
 username = 'admin'
 password = 'admin'
 

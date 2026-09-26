@@ -32,7 +32,7 @@ class LibraryAPI():
 
 if __name__ == "__main__":
     # Sample test configurations
-    host, port, db, user, pwd = "localhost", 8069, "odoo15EE", "admin", "admin"
+    host, port, db, user, pwd = "localhost", 8060, "odoo20", "admin", "admin"
     api = LibraryAPI(host, port, db, user, pwd)
     from pprint import pprint
     pprint(api.search_read())

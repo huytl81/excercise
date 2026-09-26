@@ -11,7 +11,7 @@ class Player(models.Model):
     date_of_birth = fields.Date(string="Date of birth", required=True)
     image = fields.Image(string="Image", attachment=True)
     resume = fields.Binary(string="Resume", attachment=True)
-    position = fields.Char(string="Position", groups='group_player_manager')
+    position = fields.Char(string="Position", groups='todo.group_todo_manager')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")
     country = fields.Char(string="Country")
     weight = fields.Float(string="Weight", digits=(5,3))

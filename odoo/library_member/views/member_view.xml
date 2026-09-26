@@ -18,12 +18,7 @@
                         <group name="group_right"/>
                     </group>
                 </sheet>
-                <!-- mail mixin fields -->
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers"/>
-                    <field name="activity_ids" widget="mail_activity"/>
-                    <field name="message_ids" widget="mail_thread"/>
-                </div>
+                <chatter/>
             </form>
         </field>
     </record>
@@ -46,11 +41,11 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
-                <filter name="filter_inactive"
-                        string="Inactive"
-                        domain="[('active','=',True)]"/>
                 <filter name="filter_active"
                         string="Active"
+                        domain="[('active','=',True)]"/>
+                <filter name="filter_inactive"
+                        string="Inactive"
                         domain="[('active','=',False)]"/>
             </search>
         </field>

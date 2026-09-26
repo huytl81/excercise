@@ -1,0 +1,6 @@
+id,name,model_id,group_id/id,operation,domain
+checkout_user,Checkout User,library.checkout,library_app.group_library_user,crud,
+checkout_line_user,CheckoutLine User,library.checkout.line,library_app.group_library_user,crud,
+checkout_stage_user,CheckoutStage User,library.checkout.stage,library_app.group_library_user,r,
+checkout_stage_manager,CheckoutStage Manager,library.checkout.stage,library_app.group_library_manager,crud,
+checkout_massmessage_user,Checkout Mass Message User,library.checkout.massmessage,library_app.group_library_user,crud,

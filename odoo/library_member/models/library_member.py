@@ -5,11 +5,7 @@ class Member(models.Model):
     _name = "library.member"
     _description = "Library Member"
     _inherit = ["mail.thread","mail.activity.mixin"]
-    # _inherits = {"res.partner": "partner_id"}
-    # partner_id = fields.Many2one(
-    #     "res.partner",
-    #     ondelete="cascade",
-    #     required=True)
+    _inherits = {"res.partner": "partner_id"}
 
     partner_id = fields.Many2one("res.partner", delegate=True, ondelete="cascade", required=True)
 

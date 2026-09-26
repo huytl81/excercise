@@ -3,13 +3,13 @@
     <t t-name="todo_task_action">
          <div class="row mx-2 mt-3">
             <div class="col-lg-6">
-                <button class="btn btn-primary" t-on-click="addTask">New Task</button>
-                <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#taskModal" t-on-click="addTask">New</button>-->
+                <button class="btn btn-primary" t-on-click="() => this.addTask()">New Task</button>
+                <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#taskModal" t-on-click="() => this.addTask()">New</button>-->
             </div>
             <div class="col-lg-6">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search here..." t-ref="searchInput" t-on-keyup="searchTasks"/>
-                    <button class="btn btn-outline-primary" t-on-click="searchTasks">Search</button>
+                    <input type="text" class="form-control" placeholder="Search here..." t-ref="this.searchInput" t-on-keyup="() => this.searchTasks()"/>
+                    <button class="btn btn-outline-primary" t-on-click="() => this.searchTasks()">Search</button>
                 </div>
             </div>
         </div>
@@ -31,13 +31,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-if="state.taskList">
-                                <tr t-foreach="state.taskList || []" t-as="task" t-key="task.id">
+                            <t t-if="this.state.taskList">
+                                <tr t-foreach="this.state.taskList || []" t-as="task" t-key="task.id">
                                     <td>
                                         <span t-esc="task?.name || ''"/>
                                     </td>
                                     <td>
-                                        <span t-esc="getUserName(task?.user_id)"/>
+                                        <span t-esc="this.getUserName(task?.user_id)"/>
                                         <!--<span t-esc="task?.user_id?.name || ''"/>-->
                                     </td>
                                     <td>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" t-on-click="saveTask">Save changes</button>
+                        <button type="button" class="btn btn-primary" t-on-click="() => this.saveTask()">Save changes</button>
                     </div>
                 </div>
             </div>

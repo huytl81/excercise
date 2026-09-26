@@ -1,0 +1,9 @@
+id,name,model_id,group_id/id,operation,domain
+access_property_user,Estate Property User,estate.property,real_estate_ads.group_estate_property_user,ru,"[('seller_id', '=', user.id)]"
+access_property_manager,Estate Property Manager,estate.property,real_estate_ads.group_estate_property_manager,crud,
+access_property_offer_user,Estate Property Offer User,estate.property.offer,real_estate_ads.group_estate_property_user,r,
+access_property_offer_manager,Estate Property Offer Manager,estate.property.offer,real_estate_ads.group_estate_property_manager,crud,
+property_type_user_access,Property Type User Access,estate.property.type,real_estate_ads.group_estate_property_user,r,
+property_type_manager_access,Property Type Manager Access,estate.property.type,real_estate_ads.group_estate_property_manager,crud,
+access_property_tag_user,Property Tag User Access,estate.property.tag,real_estate_ads.group_estate_property_user,r,
+access_property_tag_manager,Property Tag Manager Access,estate.property.tag,real_estate_ads.group_estate_property_manager,crud,

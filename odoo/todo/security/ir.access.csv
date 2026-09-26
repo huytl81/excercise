@@ -1,0 +1,15 @@
+id,name,model_id,group_id/id,operation,domain
+access_todo_task_user,Todo Task User,todo.task,todo.group_todo_user,r,
+access_todo_task_manager,Todo Task Manager,todo.task,todo.group_todo_manager,crud,
+access_player_user,player_user,player,todo.group_todo_user,r,
+access_player_manager,player_manager,player,todo.group_todo_manager,crud,
+player_rule,Player Rules,player,,cru,"[('transfer', '>=', 0)]"
+access_club_user,club_user,club,todo.group_todo_user,r,
+access_club_manager,club_manager,club,todo.group_todo_manager,crud,
+access_dog_user,dog_user,dog,todo.group_todo_user,r,
+access_dog_manager,dog_manager,dog,todo.group_todo_manager,crud,
+dog_rule,Dog Rules,dog,,cru,"[('age', '>=', 0)]"
+access_dog_wizard_manager,dog_wizard_manager,dog.wizard,todo.group_todo_manager,crud,
+access_cat_user,cat_user,cat,todo.group_todo_user,r,
+access_cat_manager,cat_manager,cat,todo.group_todo_manager,crud,
+cat_rule,Cat Rules,cat,,cru,"[('age', '>=', 0)]"

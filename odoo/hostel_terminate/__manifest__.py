@@ -1,14 +1,20 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Hostel Terminate Dates",  # Module title
-    'summary': "Manage terminate dates form hostel",  # Module subtitle phrase
-    'author': "Serpent Consulting Services Pvt. Ltd.",
-    'website': "http://www.example.com",
-    'category': 'other',
-    'version': '0.1',
+    'name': "Hostel Terminate Dates",
+    'summary': "Manage terminate dates from hostel",
+    'description': """
+        Manage termination dates for hostel rooms.
+    """,
+    'author': "Huy Ta",
+    'website': "https://www.odoovn.info",
+    'category': 'Uncategorized',
+    'version': '1.0.0',
+    'license': 'LGPL-3',
+    'application': False,
+    'installable': True,
     'depends': ['hostel'],
     'data': [
         'views/hostel_room.xml',
     ],
-
+    'demo': [],
 }

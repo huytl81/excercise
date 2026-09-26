@@ -1,0 +1,19 @@
+id,name,model_id,group_id/id,operation,domain
+access_book_user,access.book.user,library.book,library_app.group_library_user,cru,"[('is_public', '=', True)]"
+access_book_manager,access.book.manager,library.book,library_app.group_library_manager,crud,
+books_portal_rule,Portal user: read published books,library.book,base.group_portal,r,"[('website_published', '=', True)]"
+books_public_rule,Public user: read published books,library.book,base.group_public,r,"[('website_published', '=', True)]"
+access_book_category_user,access.book.category.user,library.book.category,library_app.group_library_user,r,
+access_book_category_manager,access.book.category.manager,library.book.category,library_app.group_library_manager,crud,
+access_book_rent_user,access.book.rent.user,library.book.rent,library_app.group_library_user,r,
+access_book_rent_manager,access.book.rent.manager,library.book.rent,library_app.group_library_manager,crud,
+book_rent_user_rule,Library Book Rent User Access Rule,library.book.rent,,crud,"[('create_uid', '=', user.id)]"
+access_book_rent_wizard_user,access.book.rent.wizard.user,library.rent.wizard,library_app.group_library_user,crud,
+access_book_rent_wizard_manager,access.book.rent.wizard.manager,library.rent.wizard,library_app.group_library_manager,crud,
+access_book_return_wizard_user,access.book.return.wizard.user,library.return.wizard,library_app.group_library_user,crud,
+access_book_return_wizard_manager,access.book.return.wizard.manager,library.return.wizard,library_app.group_library_manager,crud,
+access_book_rent_statistics_manager,access.book.rent.statistics.manager,library.book.rent.statistics,library_app.group_library_manager,crud,
+access_rent_stage_user,access.rent.stage.user,library.rent.stage,library_app.group_library_user,r,
+access_rent_stage_manager,access.rent.stage.manager,library.rent.stage,library_app.group_library_manager,crud,
+access_rent_tag_user,access.rent.tag.user,library.rent.tag,library_app.group_library_user,r,
+access_rent_tag_manager,access.rent.tag.manager,library.rent.tag,library_app.group_library_manager,crud,
