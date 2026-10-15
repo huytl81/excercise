@@ -52,4 +52,4 @@ class BookCategory(models.Model):
                 (0, 0, cat2)
             ]
         }
-        self.create(parent_category_val)
+        record = self.env['library.book.category'].create(parent_category_val)

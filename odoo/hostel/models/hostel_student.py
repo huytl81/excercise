@@ -9,7 +9,9 @@ class HostelStudent(models.Model):
     _inherits = {'res.partner': 'partner_id'}
     _check_company_auto = True
 
-    name = fields.Char("Student Name")
+    # Chỉ giữ khai báo name khi inheritance là extension hoặc prototype
+    # Ở đây không giữ khai báo name vì res.partner đã có name (ngoại trừ khi res.partner là extension hoặc prototype)
+    # name = fields.Char("Student Name")
     gender = fields.Selection([("male", "Male"),("female", "Female"), ("other", "Other")], string="Gender", help="Student gender")
     active = fields.Boolean("Active", default=True, help="Activate/Deactivate hostel record")
 
@@ -19,6 +21,9 @@ class HostelStudent(models.Model):
     discharge_date = fields.Date('Discharge Date', help='Enter student discharge date')
     duration = fields.Integer('Duration', help='Enter student duration of living in hostel', compute='_compute_check_duration', inverse='_inverse_duration')
     partner_id = fields.Many2one('res.partner', required=True, ondelete='cascade')
+    member_number = fields.Char()
+    member_code = fields.Char()
+    date_of_birth = fields.Date('Date of birth')
     # delegate inherit 
     #partner_id = fields.Many2one(comodel_name='res.partner', delegate=True, ondelete='cascade')
 
