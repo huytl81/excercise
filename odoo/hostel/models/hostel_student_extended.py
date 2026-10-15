@@ -6,3 +6,5 @@ class HostelStudentExtended(models.Model):
 
     guardian_name = fields.Char(string='Guardian Name')
     student_code = fields.Char(string='Student Code')
+
+    

@@ -10,14 +10,13 @@ class Hostel(models.Model):
     _rec_names_search = ['name', 'hostel_code', 'email', 'mobile']
     _check_company_auto = True
 
-    def _check_company_domain(self, companies) -> Domain:
-        # Gọi function gốc (trả về list/tuple biểu thức domain dạng => ['|', ('company_id', '=', False), ('company_id', 'parent_of', ...)])
-        # sau đó wrap vào Domain object
-        raw_domain = models.check_company_domain_parent_of(self, companies)
-        return Domain(raw_domain) # Tương đương viết: Domain('company_id', '=', False) | Domain('company_id', 'parent_of', '...')
+    # def _check_company_domain(self, companies) -> Domain:
+    #     # Gọi function gốc (trả về list/tuple biểu thức domain dạng => ['|', ('company_id', '=', False), ('company_id', 'parent_of', ...)])
+    #     # sau đó wrap vào Domain object
+    #     raw_domain = models.check_company_domain_parent_of(self, companies)
+    #     return Domain(raw_domain) # Tương đương viết: Domain('company_id', '=', False) | Domain('company_id', 'parent_of', '...')
 
-    #  ĐÚNG về runtime (Odoo vẫn chạy được) nhưng SAI về typing → đỏ
-    # _check_company_domain = models.check_company_domain_parent_of
+    _check_company_domain = models.check_company_domain_parent_of
 
     _translate = True # or False
     _allow_sudo_commands = False # or True "Allow One2many and Many2many commands targeting this model in an environment using sudo() or with_user()"

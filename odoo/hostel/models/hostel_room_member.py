@@ -16,5 +16,5 @@ class HostelRoomMember(models.Model):
     date_start = fields.Date('Member Since')
     date_end = fields.Date('Termination Date')
     member_number = fields.Char()
-    member_code = fields.Integer()
+    member_code = fields.Char()
     date_of_birth = fields.Date('Date of birth')

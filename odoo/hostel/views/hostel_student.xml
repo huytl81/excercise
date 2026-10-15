@@ -19,7 +19,6 @@
                             <field name="admission_date"/>
                             <field name="discharge_date"/>
                             <field name="duration"/>
-                            <field name="partner_id"/>
                         </group>
                     </sheet>
                     <!-- Discuss widgets -->
@@ -41,7 +40,6 @@
                     <field name="admission_date"/>
                     <field name="discharge_date"/>
                     <field name="duration"/>
-                    <field name="partner_id"/>
                 </list>
             </field>
         </record>

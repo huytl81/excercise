@@ -13,12 +13,15 @@
                     <button name="log_all_members" type="object" string="Log Members" class="btn-primary"/>
                     <button name="update_room_no" type="object" string="Update Room No" class="btn-primary"/>
                     <button name="find_room" type="object" string="Find Room" class="btn-primary"/>
+                    <button name="action_member_create" type="object" string="(0) Create"/>
                     <button name="mapped_rooms" class="btn-primary" string="Get Student Names" type="object"/>
                 </header>
                 <sheet>
                     <group>
                         <field name="name"/>
                         <field name="description"/>
+                        <!-- widget priority: Hiển thị sao đánh giá có thể click chọn -->
+                        <field name="room_rating"/>
                         <field name="room_type"/>
                         <field name="room_number"/>
                         <field name="floor"/>

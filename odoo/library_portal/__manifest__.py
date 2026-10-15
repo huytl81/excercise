@@ -23,9 +23,4 @@
         'views/snippets.xml',
     ],
     'demo': [],
-    'assets': {
-        'web.assets_backend': [
-            'library_portal/static/src/css/library_portal.css',
-        ],
-    },
 }
