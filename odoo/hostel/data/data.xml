@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
         <!-- Decimal Precision -->
         <record forcecreate="True" id="decimal_point" model="decimal.precision">
             <field name="name">Rating Value</field>
@@ -9,7 +9,7 @@
 
         <!-- Company & Partner -->
         <record id="base.main_company" model="res.company">
-            <field name="name">Pack Publishing</field>
+            <field name="name">Stealthy Woods</field>
         </record>
 
         <record id="res_partner_packt" model="res.partner">
@@ -47,15 +47,16 @@
             <field name="name">Double Sharing Temp</field>
         </record>
 
-        <delete model="hostel.room.category" id="room_category_to_remove1"/>
-        <delete model="hostel.room.category" search="[('name', 'ilike', 'Double Sharing Temp')]"/>
+        <!-- Remove records using 2 methods, by id and by search -->
+        <delete model="hostel.room.category" id="room_category_to_remove1" />
+        <delete model="hostel.room.category" search="[('name', 'ilike', 'Double Sharing Temp')]" />
 
         <!-- 9 Rooms -->
         <record id="hostel_room_201" model="hostel.room">
             <field name="name">Standard Room 201</field>
             <field name="room_number">R201</field>
             <field name="student_per_room">1</field>
-            <field name="category_id" ref="room_category_single"/>
+            <field name="category_id" ref="room_category_single" />
             <field name="rent_amount">150</field>
         </record>
 
@@ -63,7 +64,7 @@
             <field name="name">Standard Room 202</field>
             <field name="room_number">R202</field>
             <field name="student_per_room">1</field>
-            <field name="category_id" ref="room_category_single"/>
+            <field name="category_id" ref="room_category_single" />
             <field name="rent_amount">150</field>
         </record>
 
@@ -71,7 +72,7 @@
             <field name="name">Standard Room 203</field>
             <field name="room_number">R203</field>
             <field name="student_per_room">1</field>
-            <field name="category_id" ref="room_category_single"/>
+            <field name="category_id" ref="room_category_single" />
             <field name="rent_amount">160</field>
         </record>
 
@@ -79,7 +80,7 @@
             <field name="name">Double Room 301</field>
             <field name="room_number">R301</field>
             <field name="student_per_room">2</field>
-            <field name="category_id" ref="room_category_double"/>
+            <field name="category_id" ref="room_category_double" />
             <field name="rent_amount">250</field>
         </record>
 
@@ -87,7 +88,7 @@
             <field name="name">Double Room 302</field>
             <field name="room_number">R302</field>
             <field name="student_per_room">2</field>
-            <field name="category_id" ref="room_category_double"/>
+            <field name="category_id" ref="room_category_double" />
             <field name="rent_amount">250</field>
         </record>
 
@@ -95,7 +96,7 @@
             <field name="name">Deluxe Room 401</field>
             <field name="room_number">R401</field>
             <field name="student_per_room">3</field>
-            <field name="category_id" ref="room_category_deluxe"/>
+            <field name="category_id" ref="room_category_deluxe" />
             <field name="rent_amount">400</field>
         </record>
 
@@ -103,7 +104,7 @@
             <field name="name">Deluxe Room 402</field>
             <field name="room_number">R402</field>
             <field name="student_per_room">3</field>
-            <field name="category_id" ref="room_category_deluxe"/>
+            <field name="category_id" ref="room_category_deluxe" />
             <field name="rent_amount">420</field>
         </record>
 
@@ -111,7 +112,7 @@
             <field name="name">President VIP 501</field>
             <field name="room_number">R501</field>
             <field name="student_per_room">4</field>
-            <field name="category_id" ref="room_category_vip"/>
+            <field name="category_id" ref="room_category_vip" />
             <field name="rent_amount">800</field>
         </record>
 
@@ -119,12 +120,17 @@
             <field name="name">President VIP 502</field>
             <field name="room_number">R502</field>
             <field name="student_per_room">4</field>
-            <field name="category_id" ref="room_category_vip"/>
+            <field name="category_id" ref="room_category_vip" />
             <field name="rent_amount">850</field>
         </record>
 
         <!-- Cron-like and initial function updates -->
-        <function model="hostel.room" name="_update_room_rent_amount"/>
-        <function model="hostel.room" name="_update_room_cost_price" eval="(ref('room_category_all'), 20)"/>
+        <function model="hostel.room" name="_update_room_rent_amount" />
+        <function model="hostel.room" name="_update_room_cost_price" eval="([ref('room_category_all')], 20)" />
+        <!-- <function model="res.company" name="write" eval="([ref('base.main_company')],{'name':'Stealthy Wood'})"/> -->
+        <function model="res.company" name="write">
+            <value eval="[ref('base.main_company')]" />
+            <value eval="{'name': 'Stealthy Woods'}" />
+        </function>
     </data>
 </odoo>

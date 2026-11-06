@@ -8,21 +8,16 @@
     """,
     'author': "Huy Ta",
     'website': "https://www.odoovn.info",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
     'category': 'Uncategorized',
-    'version': '1.0.0',
+    'version': '20.0.1.0.0',
     'license': 'LGPL-3',
     'application': True,
     'installable': True,
-    # any module necessary for this one to work correctly
     'depends': ['base', 'mail'],
-
     # always loaded
     'data': [
         'data/data.xml',
+        'data/hostel.room.csv',
         'security/hostel_security.xml',
         'security/ir.access.csv',
         'views/hostel_category.xml',
@@ -40,5 +35,6 @@
             'web/static/src/xml/**/*',
         ],
     },
+    'post_init_hook': '_update_company_email',
 }
 

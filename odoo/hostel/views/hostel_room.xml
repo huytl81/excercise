@@ -14,6 +14,7 @@
                     <button name="update_room_no" type="object" string="Update Room No" class="btn-primary"/>
                     <button name="find_room" type="object" string="Find Room" class="btn-primary"/>
                     <button name="action_member_create" type="object" string="(0) Create"/>
+                    <button name="grouped_data" class="btn-primary" string="Grouped" type="object"/>
                     <button name="mapped_rooms" class="btn-primary" string="Get Student Names" type="object"/>
                 </header>
                 <sheet>

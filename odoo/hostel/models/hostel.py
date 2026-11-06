@@ -18,8 +18,9 @@ class Hostel(models.Model):
 
     _check_company_domain = models.check_company_domain_parent_of
 
-    _translate = True # or False
-    _allow_sudo_commands = False # or True "Allow One2many and Many2many commands targeting this model in an environment using sudo() or with_user()"
+    _translate = True
+    # Allow One2many and Many2many commands targeting this model in an environment using sudo() or with_user()
+    _allow_sudo_commands = False 
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Hostel Name", required=True)
@@ -49,7 +50,7 @@ class Hostel(models.Model):
     corresponding_records = fields.Many2oneReference(model_field='partner_user_models', string='Related Records')
     room_count = fields.Integer(string='Hostel room count', compute='_compute_room_count', inverse='_inverse_room_count', search='_search_room_count', store=True, readonly=False)
 
-    @api.depends('hostel_code')
+    @api.depends('name','hostel_code')
     def _compute_display_name(self):
         for record in self:
             record_name = record.name or ''

@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
-from odoo import fields
+from odoo import fields, api, SUPERUSER_ID
 from datetime import date
 
 # NOTE: This is just for demo purpose
-# This function invoked only if system already have 17.0.0 version installed
+# This function invoked only if system already have 20.0.0 version installed
 
 
 def migrate(cr, version):
+    # env holds all currently loaded models
+    # env = api.Environment(cr, SUPERUSER_ID, {})
     cr.execute('SELECT id, allocation_date_char FROM hostel_room')
     for record_id, old_date in cr.fetchall():
         # check if the field happens to be set in Odoo's internal format

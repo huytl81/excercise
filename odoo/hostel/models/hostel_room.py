@@ -1,10 +1,51 @@
 import logging
-from odoo import models, fields, api, Command
+from os.path import join as opj
+from odoo import models, fields, api, Command, exceptions
 from odoo.tools.translate import _
-from odoo.exceptions import ValidationError, UserError
+# from odoo.exceptions import ValidationError, UserError
+
+EXPORTS_DIR = "/opt/exercise/odoo/hostel/exports"
 
 _logger = logging.getLogger(__name__)
-
+# https://www.odoo.com/documentation/master/developer/reference/cli.html#logging
+# _logger.debug, info, warning, error, critical
+# Terminal: ‑‑log‑handler=prefix:level
+# $ python3.10 ./odoo-bin --log-handler=odoo.addons.my_hostel:DEBUG
+# $ python3.10 ./odoo-bin --log-handler=:ERROR,werkzeug:CRITICAL,odoo.service.server:INFO
+# --- GLOBAL LOG LEVEL (--log-level) ---
+# Cú pháp: python3.10 ./odoo-bin --log-level=<level>
+# Các giá trị có thể dùng:
+# 1. info (Mặc định): Ghi log thông thường (khởi động, request http status...)
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=info
+# 2. warn: Chỉ log cảnh báo (warning) và lỗi (error/critical), bỏ qua info
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=warn
+# 3. error: Chỉ log lỗi (exceptions/traceback) và critical
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=error
+# 4. critical: Mức cao nhất, chỉ log các lỗi hệ thống nghiêm trọng
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=critical
+# 5. debug: Hiển thị chi tiết thông tin gỡ lỗi của các tiến trình nội bộ
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=debug
+# 6. debug_rpc: Log chi tiết các cuộc gọi RPC (gồm params gửi từ web/client)
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=debug_rpc
+# 7. debug_rpc_answer: Log cả RPC request và dữ liệu phản hồi từ server
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=debug_rpc_answer
+# 8. debug_sql: Log mọi câu truy vấn SQL thực thi xuống PostgreSQL kèm thời gian chạy
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=debug_sql
+# 9. test: Dùng khi chạy unit test, lọc log phù hợp với testing
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-level=test --test-enable
+# --- SHORTCUTS CHO LOGGING ---
+# 1. --log-request: Viết tắt của --log-handler=odoo.http.rpc.request:DEBUG
+#    Debug các request JSON-RPC/HTTP gửi từ web client lên backend
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-request
+# 2. --log-response: Viết tắt của --log-handler=odoo.http.rpc.response:DEBUG
+#    Debug dữ liệu phản hồi (response payload) trả về cho client
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-response
+# 3. --log-web: Viết tắt của --log-handler=odoo.http:DEBUG
+#    Debug tầng routing HTTP và controller của Odoo
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-web
+# 4. --log-sql: Viết tắt của --log-handler=odoo.sql_db:DEBUG
+#    Debug riêng các câu lệnh SQL mà không ảnh hưởng log-level toàn cục
+#    $ python3.10 ./odoo-bin -c odoo.conf --log-sql
 
 class BaseArchive(models.AbstractModel):
     _name = 'base.archive'
@@ -21,7 +62,7 @@ class HostelRoom(models.Model):
     _description = "Hostel Room"
     _inherit = ['mail.thread', 'mail.activity.mixin', 'base.archive']
     #_sql_constraints = [("room_no_unique", "unique(room_number)", "Room number must be unique!")]
-    _room_no_uniq = models.Constraint('UNIQUE(room_number)','Room number must be unique!')
+    _room_no_unique = models.Constraint('UNIQUE(room_number)','Room number must be unique!')
     _check_company_auto = True
     
     name = fields.Char(string="Room Name", required=True)
@@ -51,20 +92,23 @@ class HostelRoom(models.Model):
     previous_room_id = fields.Many2one('hostel.room', string='Previous Room')
     allocation_date = fields.Date(string="Allocation Date")
 
+    # Trong create(self, vals_list) thì là list of dicts.
     @api.model_create_multi
     def create(self, vals_list):
         if not self.env.user.has_groups('hostel.group_hostel_manager'):
             for vals in vals_list:
                 if vals.get('remarks'):
-                    raise UserError(_('You are not allowed to modify remarks'))
+                    raise exceptions.UserError(_('You are not allowed to modify remarks'))
         return super().create(vals_list)
 
+    # Trong write(self, vals) thì chỉ là 1 dict duy nhất, chứa các dirty fields (thực sự thay đổi)
     def write(self, vals):
         if not self.env.user.has_groups('hostel.group_hostel_manager'):
             if vals.get('remarks'):
-                raise UserError('You are not allowed to modify remarks')
+                raise exceptions.UserError('You are not allowed to modify remarks')
         if self.env.context.get('loop_breaker'):
             return True
+        # Odoo không sửa đổi context toàn cục của hệ thống, chỉ tạo ra một bản sao self mới (với env mới) mang cờ loop_breaker=True cho riêng nhánh thực thi bên dưới nó.
         self = self.with_context(loop_breaker = True)
         sup = super(HostelRoom, self).write(vals)
         # self.compute_things()  # can cause calls to writes
@@ -95,24 +139,26 @@ class HostelRoom(models.Model):
         for record in self:
             if record.rent_amount < 0:
                 msg = _("Rent amount must be positive!")
-                raise ValidationError(msg)
+                raise exceptions.ValidationError(msg)
 
     @api.constrains('hostel_id')
     def _check_hostel_id_change(self):
         for record in self:
             if record._origin.id and record._origin.hostel_id and record.hostel_id and record._origin.hostel_id != record.hostel_id:
-                raise ValidationError(_(
+                raise exceptions.ValidationError(_(
                     "The room '%s' already belongs to hostel '%s'. "
                     "You cannot assign it to hostel '%s' directly. "
                     "Please clear its current hostel first."
                 ) % (record.name, record._origin.hostel_id.name, record.hostel_id.name))
 
     @api.depends('student_per_room', 'student_ids')
-    @api.depends_context('company_id')
+    @api.depends_context('company')
     def _compute_check_availability(self):
-        company_id = self.env.context.get('company_id')
+        current_company = self.env.company
         for record in self:
-            record.availability = record.student_per_room - len(record.student_ids.ids)
+            active_students = record.student_ids.filtered(lambda s: not s.company_id or s.company_id == current_company)
+            record.availability = record.student_per_room - len(active_students)
+            # record.availability = record.student_per_room - len(record.student_ids.ids)
 
     @api.model
     def _is_allowed_transition(self, old_state, new_state):
@@ -130,7 +176,7 @@ class HostelRoom(models.Model):
             else:
                 # msg = _('Transition from %s to %s is not allowed') % (record.state, new_state)
                 msg = _('Transition from %s to %s is not allowed', record.state, new_state)
-                raise UserError(msg)
+                raise exceptions.UserError(msg)
 
     def make_available(self):
         self._change_state('available')
@@ -181,7 +227,7 @@ class HostelRoom(models.Model):
         self.ensure_one()
         member = self.student_ids[:1]
         if not member:
-            raise UserError(_('Room has no member to update'))
+            raise exceptions.UserError(_('Room has no member to update'))
         self.write({'student_ids': [
             # (1, member.id, {'name': member.name + ' (updated)'}),
             Command.update(member.id, {'name': member.name + ' (updated)'}),
@@ -194,7 +240,7 @@ class HostelRoom(models.Model):
         self.ensure_one()
         member = self.student_ids[:1]
         if not member:
-            raise UserError(_('Room has no member to delete'))
+            raise exceptions.UserError(_('Room has no member to delete'))
         self.write({'student_ids': [
             # (2, member.id),
             Command.delete(member.id),
@@ -207,7 +253,7 @@ class HostelRoom(models.Model):
         self.ensure_one()
         member = self.student_ids[:1]
         if not member:
-            raise UserError(_('Room has no member to remove'))
+            raise exceptions.UserError(_('Room has no member to remove'))
         self.write({'student_ids': [
             # (3, member.id),
             Command.unlink(member.id),
@@ -220,7 +266,7 @@ class HostelRoom(models.Model):
         self.ensure_one()
         member = self.env['hostel.student'].search([('id', 'not in', self.student_ids.ids)], limit=1)
         if not member:
-            raise UserError(_('No free member to add'))
+            raise exceptions.UserError(_('No free member to add'))
         self.write({'student_ids': [
             # (4, member.id),
             Command.link(member.id),
@@ -293,7 +339,8 @@ class HostelRoom(models.Model):
 
     # Sorting recordset
     # không có tham số, _order của model sẽ được áp dụng
-    # dataset quá lớn (> 50,000 phòng) => nên dùng search(order='room_rating DESC') để DB làm vì cho dù Python sort 50k record OK, nhưng PostgreSQL với index trên'room_rating' sẽ nhanh hơn nhiều + tiết kiệm RAM
+    # dataset quá lớn (> 50,000 phòng) => nên dùng search(order='room_rating DESC') để PostgreSQL xử lý 
+    # Python sort 50k record OK nhưng PostgreSQL với index trên'room_rating' sẽ nhanh hơn nhiều + tiết kiệm RAM
     # dataset nhỏ => dùng như code bên dưới vì có cache, nếu dùng search(order='room_rating DESC') => lãng phí 1 lần query vào DB
     def sort_room(self):
         all_rooms = self.search([])
@@ -306,28 +353,6 @@ class HostelRoom(models.Model):
     # def sort_rooms_by_rating(self, rooms):
     #     return rooms.sorted(key='room_rating', reverse=True)
 
-    # Từ Odoo 17, name_get và _name_search không còn được Odoo gọi tới, nên 2 hàm override này không có tác dụng. 
-    # Thay vào đó nên dùng _compute_display_name và _search_display_name.
-
-    # def name_get(self):
-    #     result = []
-    #     for room in self:
-    #         student_name = room.student_ids.mapped('name')
-    #         name = '%s (%s)' % (room.name, ','.join(student_name))
-    #         result.append((room.id, name))
-    #     return result
-
-    # @api.model
-    # def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
-    #     args = [] if args is None else args.copy()
-    #     if not (name == '' and operator == 'ilike'):
-    #         args += ['|', '|', '|',
-    #                  ('name', operator, name),
-    #                  ('room_number', operator, name),
-    #                  ('student_ids.name', operator, name)
-    #                  ]
-    #     return super(HostelRoom, self)._name_search(name=name, args=args, operator=operator, limit=limit,name_get_uid=name_get_uid)
-
     def grouped_data(self):
         grouped_data = self._get_average_cost()
         _logger.info('Grouped data %s', grouped_data)
@@ -335,28 +360,38 @@ class HostelRoom(models.Model):
     @api.model
     def _get_average_cost(self):
         grouped_result = self.env['hostel.room'].read_group(
-            domain=['cost_price', '!=', 0],
-            #fields=['category_id', 'cost_price:avg'],
-            fields=['category_id', 'average_price:avg(cost_price)'],
+            domain=[('cost_price', '!=', 0)],
             groupby=['category_id'],
-            orderby='cost_price desc')
+            aggregates=['cost_price:avg'],
+            order='cost_price:avg desc')
         return grouped_result
+
+    # formatted_read_group, kết quả trả về dạng list[dict] => [{'category_id': (1, 'Deluxe'), 'cost_price:avg': 1500000.0, '__count': 3}, ...]
+    # => tiện duyệt row['category_id'], row['cost_price:avg']
+    # @api.model
+    # def _get_average_cost(self):
+    #     grouped_result = self.env['hostel.room'].formatted_read_group(
+    #         domain=[('cost_price', '!=', 0)],
+    #         groupby=['category_id'],
+    #         aggregates=['cost_price:avg'],
+    #         order='cost_price:avg desc'
+    #     )
+    #     return grouped_result
 
     # ======= Group theo category_id ==========
     @api.model
     def _get_room_report_by_category(self):
         grouped_result = self.env['hostel.room'].read_group(
-            domain=['state', '!=', 'draft'],         # Lọc các phòng không ở draft
-            fields=[
-                'hostel_id',                         # Group theo hostel
-                'rent_amount:sum',                   # Tổng tiền thuê (tổng)
-                'rent_amount:avg',                   # Trung bình thuê (TB
-                'rent_amount:count',                 # Đếm phòng
+            domain=[('state', '!=', 'draft')],       # Lọc các phòng trạng thái khác draft
+            aggregates=[
+                'rent_amount:sum',                   # Tổng tiền thuê
+                'rent_amount:avg',                   # Trung bình tiên thuê
+                'rent_amount:count',                 # Đếm số phòng
                 'floor:max',                         # Tầng cao nhất
             ],
             groupby=['hostel_id'],                   # Group theo hostel
-            having='rent_amount_sum > 0',                  
-            orderby='rent_amount_sum desc'
+            having=[('rent_amount:sum', '>', 0)],                
+            order='rent_amount:sum desc'
         )
         return grouped_result
 
@@ -365,7 +400,7 @@ class HostelRoom(models.Model):
     def _get_room_report_by_state(self):
         grouped_result = self.env['hostel.room'].read_group(
             domain=[],
-            fields=['rent_amount:sum'],
+            aggregates=['rent_amount:sum'],
             groupby=['state']
         )
         return grouped_result
@@ -375,8 +410,8 @@ class HostelRoom(models.Model):
         """
         Trả về danh sách tất cả các state (draft, available, closed) để hiển thị đầy đủ các cột trên Kanban/group.
         """
-        return [(key, _label) for key, _label in self._fields['state'].selection]
-
+        # return [(key, _label) for key, _label in self._fields['state'].selection]
+        return [key for key,_lable in self._fields['state'].selection]
 
     def log_all_room_students(self):
         # This is an empty recordset of model hostel.student
@@ -384,5 +419,25 @@ class HostelRoom(models.Model):
         all_students = students_empty.search([])
         print("ALL Students:", all_students)
         return True
-
-    
+    # pdb debugger
+    # https://docs.python.org/3/library/pdb.html
+    @api.model
+    def export_available_rooms(self):
+        import pdb; pdb.set_trace()
+        # Chay truc tiep trong shell
+        # >>> import pdb
+        # >>> room = env['hostel.room']
+        # >>> pdb.runcall(room.export_available_rooms)
+        _logger.info("Starting export of available hostel rooms")
+        rooms_available_to_export = self.search([('state', '=', 'available')])
+        _logger.debug("Found %d available rooms", len(rooms_available_to_export))
+        file_path = opj(EXPORTS_DIR, "available_rooms.txt")
+        try:
+            with open(file_path, 'w') as f:
+                for room in rooms_available_to_export:
+                    _logger.debug("Writing Room %s | Number %s | Rating %s", room.name, room.room_number, room.room_rating)
+                    f.write(f"{room.name}\t{room.room_number}\t{room.room_rating or 0.0}\n")
+            _logger.info("Room export completed successfully: %s", file_path)
+        except IOError:
+            _logger.exception("Error while writing room data to file: %s", file_path)
+            raise exceptions.UserError("Unable to export room data!")

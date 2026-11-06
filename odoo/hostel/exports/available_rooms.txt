@@ -1,0 +1,3 @@
+Standard Room 201	R201	0.0
+Standard Room 202	R202	0.0
+Standard Room 203	R203	0.0
