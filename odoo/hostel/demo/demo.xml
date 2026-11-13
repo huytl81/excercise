@@ -122,246 +122,368 @@
             <field name="type">common</field>
         </record>
 
-        <!-- Members -->
-        <record id="member_hda" model="hostel.room.member">
+        <!-- ========================================================================================= -->
+        <!-- PHẦN 1: STUDENTS & ROOMS (ONE2MANY: student_ids <-> room_id)                              -->
+        <!-- Mỗi sinh viên tại một thời điểm chỉ thuộc 1 phòng duy nhất.                               -->
+        <!-- ========================================================================================= -->
+        <record id="student_hda" model="hostel.student">
             <field name="name">Husen Daudi</field>
         </record>
-        <record id="member_jvo" model="hostel.room.member">
+        <record id="student_jvo" model="hostel.student">
             <field name="name">Jay Vora</field>
         </record>
-        <record id="member_vb" model="hostel.room.member">
+        <record id="student_vb" model="hostel.student">
             <field name="name">Vacha Bhatt</field>
         </record>
-        <record id="member_jb" model="hostel.room.member">
+        <record id="student_jb" model="hostel.student">
             <field name="name">John Brunn</field>
         </record>
-        <record id="member_alice" model="hostel.room.member">
+        <record id="student_alice" model="hostel.student">
             <field name="name">Alice Smith</field>
         </record>
-        <record id="member_bob" model="hostel.room.member">
+        <record id="student_bob" model="hostel.student">
             <field name="name">Bob Jones</field>
         </record>
-        <record id="member_charlie" model="hostel.room.member">
+        <record id="student_charlie" model="hostel.student">
             <field name="name">Charlie Brown</field>
         </record>
-        <record id="member_david" model="hostel.room.member">
+        <record id="student_david" model="hostel.student">
             <field name="name">David Miller</field>
         </record>
-        <record id="member_eva" model="hostel.room.member">
+        <record id="student_eva" model="hostel.student">
             <field name="name">Eva Green</field>
         </record>
-        <record id="member_frank" model="hostel.room.member">
+        <record id="student_frank" model="hostel.student">
             <field name="name">Frank Harris</field>
         </record>
 
-        <!-- Rooms -->
+        <!-- Rooms: mỗi phòng nhận tập student riêng biệt qua One2many student_ids -->
         <record id="hostel_room_102" model="hostel.room">
             <field name="name">Hostel Room 102</field>
             <field name="room_number">HR102</field>
-            <field name="student_per_room">6</field>
-            <field name="member_ids" eval="[(6, 0, [ref('member_hda'), ref('member_jvo'), ref('member_vb'), ref('member_jb'), ref('member_alice'), ref('member_bob')])]" />
+            <field name="student_per_room">4</field>
+            <!-- Tuple: <field name="student_ids" eval="[(6, 0, [ref('student_hda'), ref('student_jvo'), ref('student_vb'), ref('student_jb')])]" /> -->
+            <field name="student_ids" eval="[Command.set([ref('student_hda'), ref('student_jvo'), ref('student_vb'), ref('student_jb')])]" />
+            <!-- Tuple: <field name="hostel_amenities_ids" eval="[(6, 0, [ref('amenity_wifi'), ref('amenity_ac')])]" /> -->
+            <field name="hostel_amenities_ids" eval="[Command.set([ref('amenity_wifi'), ref('amenity_ac')])]" />
         </record>
         <record id="hostel_room_103" model="hostel.room">
             <field name="name">Hostel Room 103</field>
             <field name="room_number">HR103</field>
             <field name="student_per_room">3</field>
-            <field name="member_ids" eval="[(6, 0, [ref('member_alice'), ref('member_bob'), ref('member_charlie')])]" />
+            <!-- Tuple: <field name="student_ids" eval="[(6, 0, [ref('student_alice'), ref('student_bob'), ref('student_charlie')])]" /> -->
+            <field name="student_ids" eval="[Command.set([ref('student_alice'), ref('student_bob'), ref('student_charlie')])]" />
+            <!-- Tuple: <field name="hostel_amenities_ids" eval="[(6, 0, [ref('amenity_wifi'), ref('amenity_desk')])]" /> -->
+            <field name="hostel_amenities_ids" eval="[Command.set([ref('amenity_wifi'), ref('amenity_desk')])]" />
         </record>
         <record id="hostel_room_104" model="hostel.room">
             <field name="name">Hostel Room 104</field>
             <field name="room_number">HR104</field>
             <field name="student_per_room">3</field>
-            <field name="member_ids" eval="[(6, 0, [ref('member_david'), ref('member_eva'), ref('member_frank')])]" />
+            <!-- Tuple: <field name="student_ids" eval="[(6, 0, [ref('student_david'), ref('student_eva'), ref('student_frank')])]" /> -->
+            <field name="student_ids" eval="[Command.set([ref('student_david'), ref('student_eva'), ref('student_frank')])]" />
+            <!-- Tuple: <field name="hostel_amenities_ids" eval="[(6, 0, [ref('amenity_wifi'), ref('amenity_ac'), ref('amenity_wardrobe')])]" /> -->
+            <field name="hostel_amenities_ids" eval="[Command.set([ref('amenity_wifi'), ref('amenity_ac'), ref('amenity_wardrobe')])]" />
         </record>
 
         <!-- ========================================================================================= -->
-        <!-- DEMO VÍ DỤ CÁC THAO TÁC X2MANY (0, 1, 2, 3, 4, 5, 6) VÀ COMMAND.* TRONG ODOO 20         -->
+        <!-- PHẦN 2: DEMO X2MANY (0..6 & Command.*) TRÊN ONE2MANY (student_ids)                       -->
+        <!-- Đặc thù One2many: mỗi student chỉ có 1 room_id, nên mỗi ví dụ dùng student riêng biệt.   -->
         <!-- ========================================================================================= -->
+        <record id="student_demo_link_1" model="hostel.student">
+            <field name="name">Student Target 1 (for Tuple 4 Link)</field>
+        </record>
+        <record id="student_demo_link_2" model="hostel.student">
+            <field name="name">Student Target 2 (for Command.link)</field>
+        </record>
+        <record id="student_demo_set_1" model="hostel.student">
+            <field name="name">Student Set 1</field>
+        </record>
+        <record id="student_demo_set_2" model="hostel.student">
+            <field name="name">Student Set 2</field>
+        </record>
+        <record id="student_demo_set_3" model="hostel.student">
+            <field name="name">Student Set 3</field>
+        </record>
+        <record id="student_demo_set_4" model="hostel.student">
+            <field name="name">Student Set 4</field>
+        </record>
+        <record id="student_demo_update_tuple" model="hostel.student">
+            <field name="name">Student Original (for Tuple 1 Update)</field>
+        </record>
+        <record id="student_demo_update_cmd" model="hostel.student">
+            <field name="name">Student Original (for Command.update)</field>
+        </record>
+        <record id="student_demo_unlink_1" model="hostel.student">
+            <field name="name">Student Unlink Keep 1</field>
+        </record>
+        <record id="student_demo_unlink_2" model="hostel.student">
+            <field name="name">Student Unlink Target (Tuple 3)</field>
+        </record>
+        <record id="student_demo_unlink_3" model="hostel.student">
+            <field name="name">Student Unlink Keep 2</field>
+        </record>
+        <record id="student_demo_unlink_4" model="hostel.student">
+            <field name="name">Student Unlink Target (Command.unlink)</field>
+        </record>
+        <record id="student_demo_clear_1" model="hostel.student">
+            <field name="name">Student Clear 1</field>
+        </record>
+        <record id="student_demo_clear_2" model="hostel.student">
+            <field name="name">Student Clear 2</field>
+        </record>
+        <record id="student_demo_clear_3" model="hostel.student">
+            <field name="name">Student Clear 3</field>
+        </record>
+        <record id="student_demo_clear_4" model="hostel.student">
+            <field name="name">Student Clear 4</field>
+        </record>
+        <record id="student_demo_delete_tuple" model="hostel.student">
+            <field name="name">Student To Delete via Tuple 2</field>
+        </record>
+        <record id="student_demo_delete_cmd" model="hostel.student">
+            <field name="name">Student To Delete via Command.delete</field>
+        </record>
 
-        <!-- 1. Chuẩn bị các member cho các ví dụ minh họa -->
-        <record id="member_demo_target_1" model="hostel.room.member">
-            <field name="name">Member Target 1 (for Tuple 4 Link)</field>
-        </record>
-        <record id="member_demo_target_2" model="hostel.room.member">
-            <field name="name">Member Target 2 (for Command.link)</field>
-        </record>
-
-        <record id="member_demo_to_update_tuple" model="hostel.room.member">
-            <field name="name">Original Name (for Tuple 1 Update)</field>
-        </record>
-        <record id="member_demo_to_update_cmd" model="hostel.room.member">
-            <field name="name">Original Name (for Command.update)</field>
-        </record>
-
-        <record id="member_demo_to_delete_tuple" model="hostel.room.member">
-            <field name="name">Member To Delete via Tuple 2</field>
-        </record>
-        <record id="member_demo_to_delete_cmd" model="hostel.room.member">
-            <field name="name">Member To Delete via Command.delete</field>
-        </record>
-
-        <!-- ========================================================================================= -->
-        <!-- VÍ DỤ CẶP 0: TẠO MỚI BẢN GHI CON INLINE                                                   -->
-        <!-- Ý nghĩa: Tạo mới một bản ghi con và gán liên kết trực tiếp vào field x2many.             -->
-        <!-- Cảnh báo: Bản ghi tạo inline không có XML ID, mỗi lần nâng cấp module (-u) sẽ tạo bản    -->
-        <!-- ghi mới trùng lặp. Vì vậy nên hạn chế dùng trong file data/demo XML tĩnh.                 -->
-        <!-- ========================================================================================= -->
-        <!-- 0A. Dùng cú pháp Tuple cổ điển: (0, False, vals) hoặc (0, 0, vals) -->
-        <record id="hostel_room_demo_tuple_0" model="hostel.room">
-            <field name="name">Demo Room - Tuple 0 (Create Inline)</field>
-            <field name="room_number">R_TUPLE_0</field>
+        <!-- 0. CREATE INLINE trên One2many -->
+        <record id="hostel_room_demo_o2m_tuple_0" model="hostel.room">
+            <field name="name">Demo O2M - Tuple 0 (Create Student Inline)</field>
+            <field name="room_number">R_O2M_TUPLE_0</field>
             <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[(0, 0, {'name': 'Inline Member (Created via Tuple 0)'})]" />
+            <field name="student_ids" eval="[(0, 0, {'name': 'Inline Student (Tuple 0)'})]" />
+        </record>
+        <record id="hostel_room_demo_o2m_cmd_create" model="hostel.room">
+            <field name="name">Demo O2M - Command.create (Student Inline)</field>
+            <field name="room_number">R_O2M_CMD_CREATE</field>
+            <field name="student_per_room">2</field>
+            <field name="student_ids" eval="[Command.create({'name': 'Inline Student (Command.create)'})]" />
         </record>
 
-        <!-- 0B. Dùng cú pháp Command hiện đại trong Odoo 20: Command.create(vals) -->
-        <record id="hostel_room_demo_cmd_create" model="hostel.room">
-            <field name="name">Demo Room - Command.create (Inline)</field>
-            <field name="room_number">R_CMD_CREATE</field>
+        <!-- 4. LINK trên One2many (gán room_id cho student có sẵn) -->
+        <record id="hostel_room_demo_o2m_tuple_4" model="hostel.room">
+            <field name="name">Demo O2M - Tuple 4 (Link Student)</field>
+            <field name="room_number">R_O2M_TUPLE_4</field>
             <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[Command.create({'name': 'Inline Member (Created via Command.create)'})]" />
+            <field name="student_ids" eval="[(4, ref('student_demo_link_1'), False)]" />
+        </record>
+        <record id="hostel_room_demo_o2m_cmd_link" model="hostel.room">
+            <field name="name">Demo O2M - Command.link (Student)</field>
+            <field name="room_number">R_O2M_CMD_LINK</field>
+            <field name="student_per_room">2</field>
+            <field name="student_ids" eval="[Command.link(ref('student_demo_link_2'))]" />
         </record>
 
-        <!-- ========================================================================================= -->
-        <!-- VÍ DỤ CẶP 4: THÊM LIÊN KẾT VỚI BẢN GHI ĐÃ TỒN TẠI (LINK)                                  -->
-        <!-- Ý nghĩa: Thêm liên kết tới record đã có mà KHÔNG xóa các liên kết đang có sẵn.           -->
-        <!-- ========================================================================================= -->
-        <!-- 4A. Dùng cú pháp Tuple cổ điển: (4, id, False) hoặc (4, id, 0) -->
-        <record id="hostel_room_demo_tuple_4" model="hostel.room">
-            <field name="name">Demo Room - Tuple 4 (Link)</field>
-            <field name="room_number">R_TUPLE_4</field>
+        <!-- 6. SET / REPLACE ALL trên One2many -->
+        <record id="hostel_room_demo_o2m_tuple_6" model="hostel.room">
+            <field name="name">Demo O2M - Tuple 6 (Set Students)</field>
+            <field name="room_number">R_O2M_TUPLE_6</field>
             <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[(4, ref('member_demo_target_1'), False)]" />
+            <field name="student_ids" eval="[(6, 0, [ref('student_demo_set_1'), ref('student_demo_set_2')])]" />
+        </record>
+        <record id="hostel_room_demo_o2m_cmd_set" model="hostel.room">
+            <field name="name">Demo O2M - Command.set (Students)</field>
+            <field name="room_number">R_O2M_CMD_SET</field>
+            <field name="student_per_room">2</field>
+            <field name="student_ids" eval="[Command.set([ref('student_demo_set_3'), ref('student_demo_set_4')])]" />
         </record>
 
-        <!-- 4B. Dùng cú pháp Command hiện đại trong Odoo 20: Command.link(id) -->
-        <record id="hostel_room_demo_cmd_link" model="hostel.room">
-            <field name="name">Demo Room - Command.link</field>
-            <field name="room_number">R_CMD_LINK</field>
+        <!-- 1. UPDATE trên One2many -->
+        <record id="hostel_room_demo_o2m_tuple_1" model="hostel.room">
+            <field name="name">Demo O2M - Tuple 1 (Update Student)</field>
+            <field name="room_number">R_O2M_TUPLE_1</field>
             <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[Command.link(ref('member_demo_target_2'))]" />
+            <field name="student_ids" eval="[(1, ref('student_demo_update_tuple'), {'name': 'Student Updated via Tuple 1'})]" />
+        </record>
+        <record id="hostel_room_demo_o2m_cmd_update" model="hostel.room">
+            <field name="name">Demo O2M - Command.update (Student)</field>
+            <field name="room_number">R_O2M_CMD_UPDATE</field>
+            <field name="student_per_room">2</field>
+            <field name="student_ids" eval="[Command.update(ref('student_demo_update_cmd'), {'name': 'Student Updated via Command.update'})]" />
         </record>
 
-        <!-- ========================================================================================= -->
-        <!-- VÍ DỤ CẶP 6: THAY THẾ TOÀN BỘ DANH SÁCH BẰNG CÁC ID MỚI (SET / REPLACE ALL)              -->
-        <!-- Ý nghĩa: Xóa toàn bộ liên kết cũ và gán bằng danh sách IDs mới được chỉ định.             -->
-        <!-- Đây là lệnh phổ biến nhất khi khởi tạo quan hệ Many2many trong file XML data/demo.       -->
-        <!-- ========================================================================================= -->
-        <!-- 6A. Dùng cú pháp Tuple cổ điển: (6, False, [ids]) hoặc (6, 0, [ids]) -->
-        <record id="hostel_room_demo_tuple_6" model="hostel.room">
-            <field name="name">Demo Room - Tuple 6 (Set/Replace All)</field>
-            <field name="room_number">R_TUPLE_6</field>
+        <!-- 3. UNLINK trên One2many (set room_id = False, student vẫn còn trong DB) -->
+        <record id="hostel_room_demo_o2m_tuple_3" model="hostel.room">
+            <field name="name">Demo O2M - Tuple 3 (Unlink Student)</field>
+            <field name="room_number">R_O2M_TUPLE_3</field>
             <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[(6, 0, [ref('member_alice'), ref('member_bob')])]" />
+            <field name="student_ids" eval="[(6, 0, [ref('student_demo_unlink_1'), ref('student_demo_unlink_2')])]" />
+        </record>
+        <record id="hostel_room_demo_o2m_tuple_3" model="hostel.room">
+            <field name="student_ids" eval="[(3, ref('student_demo_unlink_2'), False)]" />
+        </record>
+        <record id="hostel_room_demo_o2m_cmd_unlink" model="hostel.room">
+            <field name="name">Demo O2M - Command.unlink (Student)</field>
+            <field name="room_number">R_O2M_CMD_UNLINK</field>
+            <field name="student_per_room">2</field>
+            <field name="student_ids" eval="[Command.set([ref('student_demo_unlink_3'), ref('student_demo_unlink_4')])]" />
+        </record>
+        <record id="hostel_room_demo_o2m_cmd_unlink" model="hostel.room">
+            <field name="student_ids" eval="[Command.unlink(ref('student_demo_unlink_4'))]" />
         </record>
 
-        <!-- 6B. Dùng cú pháp Command hiện đại trong Odoo 20: Command.set([ids]) -->
-        <record id="hostel_room_demo_cmd_set" model="hostel.room">
-            <field name="name">Demo Room - Command.set (Replace All)</field>
-            <field name="room_number">R_CMD_SET</field>
+        <!-- 5. CLEAR trên One2many (gỡ toàn bộ student khỏi phòng, set room_id = False) -->
+        <record id="hostel_room_demo_o2m_tuple_5" model="hostel.room">
+            <field name="name">Demo O2M - Tuple 5 (Clear Students)</field>
+            <field name="room_number">R_O2M_TUPLE_5</field>
             <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[Command.set([ref('member_charlie'), ref('member_david')])]" />
+            <field name="student_ids" eval="[(6, 0, [ref('student_demo_clear_1'), ref('student_demo_clear_2')])]" />
+        </record>
+        <record id="hostel_room_demo_o2m_tuple_5" model="hostel.room">
+            <field name="student_ids" eval="[(5, False, False)]" />
+        </record>
+        <record id="hostel_room_demo_o2m_cmd_clear" model="hostel.room">
+            <field name="name">Demo O2M - Command.clear (Students)</field>
+            <field name="room_number">R_O2M_CMD_CLEAR</field>
+            <field name="student_per_room">2</field>
+            <field name="student_ids" eval="[Command.set([ref('student_demo_clear_3'), ref('student_demo_clear_4')])]" />
+        </record>
+        <record id="hostel_room_demo_o2m_cmd_clear" model="hostel.room">
+            <field name="student_ids" eval="[Command.clear()]" />
         </record>
 
-        <!-- ========================================================================================= -->
-        <!-- VÍ DỤ CẶP 1: CẬP NHẬT GIÁ TRỊ CỦA BẢN GHI CON LIÊN KẾT (UPDATE)                           -->
-        <!-- Ý nghĩa: Sửa các trường của bản ghi con liên kết có ID chỉ định.                          -->
-        <!-- ========================================================================================= -->
-        <!-- 1A. Dùng cú pháp Tuple cổ điển: (1, id, vals) -->
-        <record id="hostel_room_demo_tuple_1" model="hostel.room">
-            <field name="name">Demo Room - Tuple 1 (Update Child)</field>
-            <field name="room_number">R_TUPLE_1</field>
+        <!-- 2. DELETE PERMANENT trên One2many (xóa vĩnh viễn student khỏi DB) -->
+        <record id="hostel_room_demo_o2m_tuple_2" model="hostel.room">
+            <field name="name">Demo O2M - Tuple 2 (Delete Student)</field>
+            <field name="room_number">R_O2M_TUPLE_2</field>
             <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[(1, ref('member_demo_to_update_tuple'), {'name': 'Updated via Tuple 1'})]" />
+            <field name="student_ids" eval="[(2, ref('student_demo_delete_tuple'), False)]" />
         </record>
-
-        <!-- 1B. Dùng cú pháp Command hiện đại trong Odoo 20: Command.update(id, vals) -->
-        <record id="hostel_room_demo_cmd_update" model="hostel.room">
-            <field name="name">Demo Room - Command.update (Child)</field>
-            <field name="room_number">R_CMD_UPDATE</field>
+        <record id="hostel_room_demo_o2m_cmd_delete" model="hostel.room">
+            <field name="name">Demo O2M - Command.delete (Student)</field>
+            <field name="room_number">R_O2M_CMD_DELETE</field>
             <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[Command.update(ref('member_demo_to_update_cmd'), {'name': 'Updated via Command.update'})]" />
-        </record>
-
-        <!-- ========================================================================================= -->
-        <!-- VÍ DỤ CẶP 3: NGẮT LIÊN KẾT KHỎI RECORD CHA (UNLINK / DETACH)                              -->
-        <!-- Ý nghĩa: Gỡ bản ghi con ra khỏi field quan hệ nhưng KHÔNG xóa bản ghi con trong database. -->
-        <!-- Minh họa: Bước 1 tạo phòng có 2 thành viên -> Bước 2 cập nhật gỡ 1 thành viên ra.         -->
-        <!-- ========================================================================================= -->
-        <!-- 3A. Dùng cú pháp Tuple cổ điển: (3, id, False) hoặc (3, id, 0) -->
-        <record id="hostel_room_demo_tuple_3" model="hostel.room">
-            <field name="name">Demo Room - Tuple 3 (Unlink)</field>
-            <field name="room_number">R_TUPLE_3</field>
-            <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[(6, 0, [ref('member_alice'), ref('member_bob')])]" />
-        </record>
-        <record id="hostel_room_demo_tuple_3" model="hostel.room">
-            <!-- Thao tác ngắt liên kết member_bob khỏi phòng R_TUPLE_3 (member_bob vẫn tồn tại trong DB) -->
-            <field name="member_ids" eval="[(3, ref('member_bob'), False)]" />
-        </record>
-
-        <!-- 3B. Dùng cú pháp Command hiện đại trong Odoo 20: Command.unlink(id) -->
-        <record id="hostel_room_demo_cmd_unlink" model="hostel.room">
-            <field name="name">Demo Room - Command.unlink</field>
-            <field name="room_number">R_CMD_UNLINK</field>
-            <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[Command.set([ref('member_charlie'), ref('member_david')])]" />
-        </record>
-        <record id="hostel_room_demo_cmd_unlink" model="hostel.room">
-            <!-- Thao tác ngắt liên kết member_david khỏi phòng R_CMD_UNLINK qua Command.unlink -->
-            <field name="member_ids" eval="[Command.unlink(ref('member_david'))]" />
-        </record>
-
-        <!-- ========================================================================================= -->
-        <!-- VÍ DỤ CẶP 5: XÓA SẠCH TOÀN BỘ LIÊN KẾT (CLEAR ALL LINKS)                                  -->
-        <!-- Ý nghĩa: Làm rỗng danh sách liên kết mà KHÔNG xóa các bản ghi con trong database.         -->
-        <!-- Minh họa: Bước 1 gán các thành viên -> Bước 2 cập nhật xóa trắng liên kết.                -->
-        <!-- ========================================================================================= -->
-        <!-- 5A. Dùng cú pháp Tuple cổ điển: (5, False, False) hoặc (5, 0, 0) -->
-        <record id="hostel_room_demo_tuple_5" model="hostel.room">
-            <field name="name">Demo Room - Tuple 5 (Clear All Links)</field>
-            <field name="room_number">R_TUPLE_5</field>
-            <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[(6, 0, [ref('member_alice'), ref('member_bob')])]" />
-        </record>
-        <record id="hostel_room_demo_tuple_5" model="hostel.room">
-            <!-- Thao tác xóa sạch tất cả thành viên khỏi phòng R_TUPLE_5 -->
-            <field name="member_ids" eval="[(5, False, False)]" />
-        </record>
-
-        <!-- 5B. Dùng cú pháp Command hiện đại trong Odoo 20: Command.clear() -->
-        <record id="hostel_room_demo_cmd_clear" model="hostel.room">
-            <field name="name">Demo Room - Command.clear (All Links)</field>
-            <field name="room_number">R_CMD_CLEAR</field>
-            <field name="student_per_room">2</field>
-            <field name="member_ids" eval="[Command.set([ref('member_charlie'), ref('member_david')])]" />
-        </record>
-        <record id="hostel_room_demo_cmd_clear" model="hostel.room">
-            <!-- Thao tác xóa sạch tất cả thành viên khỏi phòng R_CMD_CLEAR qua Command.clear -->
-            <field name="member_ids" eval="[Command.clear()]" />
+            <field name="student_ids" eval="[Command.delete(ref('student_demo_delete_cmd'))]" />
         </record>
 
         <!-- ========================================================================================= -->
-        <!-- VÍ DỤ CẶP 2: XÓA VĨNH VIỄN BẢN GHI CON KHỎI DATABASE (DELETE PERMANENT)                   -->
-        <!-- Ý nghĩa: Thực thi lệnh DELETE SQL xóa hoàn toàn bản ghi con khỏi database.                -->
-        <!-- Thường áp dụng cho One2many lines (như các dòng chi tiết order line, room line).          -->
+        <!-- PHẦN 3: DEMO X2MANY (0..6 & Command.*) TRÊN MANY2MANY (hostel_amenities_ids)              -->
+        <!-- Đặc thù Many2many: nhiều phòng dùng chung amenity qua bảng hostel_room_amenities_rel.     -->
         <!-- ========================================================================================= -->
-        <!-- 2A. Dùng cú pháp Tuple cổ điển: (2, id, False) hoặc (2, id, 0) -->
-        <record id="hostel_room_demo_tuple_2" model="hostel.room">
-            <field name="name">Demo Room - Tuple 2 (Delete Child Record)</field>
-            <field name="room_number">R_TUPLE_2</field>
-            <field name="student_per_room">2</field>
-            <!-- Xóa vĩnh viễn record member_demo_to_delete_tuple khỏi database -->
-            <field name="member_ids" eval="[(2, ref('member_demo_to_delete_tuple'), False)]" />
+        <record id="amenity_demo_update_tuple" model="hostel.amenities">
+            <field name="name">Amenity Original (Tuple 1)</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="amenity_demo_update_cmd" model="hostel.amenities">
+            <field name="name">Amenity Original (Command.update)</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="amenity_demo_delete_tuple" model="hostel.amenities">
+            <field name="name">Amenity To Delete (Tuple 2)</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="amenity_demo_delete_cmd" model="hostel.amenities">
+            <field name="name">Amenity To Delete (Command.delete)</field>
+            <field name="active" eval="True"/>
         </record>
 
-        <!-- 2B. Dùng cú pháp Command hiện đại trong Odoo 20: Command.delete(id) -->
-        <record id="hostel_room_demo_cmd_delete" model="hostel.room">
-            <field name="name">Demo Room - Command.delete (Child Record)</field>
-            <field name="room_number">R_CMD_DELETE</field>
+        <!-- 0. CREATE INLINE trên Many2many -->
+        <record id="hostel_room_demo_m2m_tuple_0" model="hostel.room">
+            <field name="name">Demo M2M - Tuple 0 (Create Amenity Inline)</field>
+            <field name="room_number">R_M2M_TUPLE_0</field>
             <field name="student_per_room">2</field>
-            <!-- Xóa vĩnh viễn record member_demo_to_delete_cmd khỏi database qua Command.delete -->
-            <field name="member_ids" eval="[Command.delete(ref('member_demo_to_delete_cmd'))]" />
+            <field name="hostel_amenities_ids" eval="[(0, 0, {'name': 'Inline Amenity (Tuple 0)', 'active': True})]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_create" model="hostel.room">
+            <field name="name">Demo M2M - Command.create (Amenity Inline)</field>
+            <field name="room_number">R_M2M_CMD_CREATE</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[Command.create({'name': 'Inline Amenity (Command.create)', 'active': True})]" />
+        </record>
+
+        <!-- 4. LINK trên Many2many (thêm liên kết tới amenity có sẵn) -->
+        <record id="hostel_room_demo_m2m_tuple_4" model="hostel.room">
+            <field name="name">Demo M2M - Tuple 4 (Link Amenity)</field>
+            <field name="room_number">R_M2M_TUPLE_4</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[(4, ref('amenity_wifi'), False)]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_link" model="hostel.room">
+            <field name="name">Demo M2M - Command.link (Amenity)</field>
+            <field name="room_number">R_M2M_CMD_LINK</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[Command.link(ref('amenity_ac'))]" />
+        </record>
+
+        <!-- 6. SET / REPLACE ALL trên Many2many -->
+        <record id="hostel_room_demo_m2m_tuple_6" model="hostel.room">
+            <field name="name">Demo M2M - Tuple 6 (Set Amenities)</field>
+            <field name="room_number">R_M2M_TUPLE_6</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[(6, 0, [ref('amenity_wifi'), ref('amenity_fridge')])]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_set" model="hostel.room">
+            <field name="name">Demo M2M - Command.set (Amenities)</field>
+            <field name="room_number">R_M2M_CMD_SET</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[Command.set([ref('amenity_desk'), ref('amenity_wardrobe')])]" />
+        </record>
+
+        <!-- 1. UPDATE trên Many2many -->
+        <record id="hostel_room_demo_m2m_tuple_1" model="hostel.room">
+            <field name="name">Demo M2M - Tuple 1 (Update Amenity)</field>
+            <field name="room_number">R_M2M_TUPLE_1</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[(1, ref('amenity_demo_update_tuple'), {'name': 'Amenity Updated via Tuple 1'})]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_update" model="hostel.room">
+            <field name="name">Demo M2M - Command.update (Amenity)</field>
+            <field name="room_number">R_M2M_CMD_UPDATE</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[Command.update(ref('amenity_demo_update_cmd'), {'name': 'Amenity Updated via Command.update'})]" />
+        </record>
+
+        <!-- 3. UNLINK trên Many2many (chỉ xóa dòng trong bảng trung gian, không xóa amenity) -->
+        <record id="hostel_room_demo_m2m_tuple_3" model="hostel.room">
+            <field name="name">Demo M2M - Tuple 3 (Unlink Amenity)</field>
+            <field name="room_number">R_M2M_TUPLE_3</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[(6, 0, [ref('amenity_wifi'), ref('amenity_ac')])]" />
+        </record>
+        <record id="hostel_room_demo_m2m_tuple_3" model="hostel.room">
+            <field name="hostel_amenities_ids" eval="[(3, ref('amenity_ac'), False)]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_unlink" model="hostel.room">
+            <field name="name">Demo M2M - Command.unlink (Amenity)</field>
+            <field name="room_number">R_M2M_CMD_UNLINK</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[Command.set([ref('amenity_desk'), ref('amenity_wardrobe')])]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_unlink" model="hostel.room">
+            <field name="hostel_amenities_ids" eval="[Command.unlink(ref('amenity_wardrobe'))]" />
+        </record>
+
+        <!-- 5. CLEAR trên Many2many (xóa toàn bộ liên kết bảng trung gian, giữ nguyên amenity) -->
+        <record id="hostel_room_demo_m2m_tuple_5" model="hostel.room">
+            <field name="name">Demo M2M - Tuple 5 (Clear Amenities)</field>
+            <field name="room_number">R_M2M_TUPLE_5</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[(6, 0, [ref('amenity_wifi'), ref('amenity_fridge')])]" />
+        </record>
+        <record id="hostel_room_demo_m2m_tuple_5" model="hostel.room">
+            <field name="hostel_amenities_ids" eval="[(5, False, False)]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_clear" model="hostel.room">
+            <field name="name">Demo M2M - Command.clear (Amenities)</field>
+            <field name="room_number">R_M2M_CMD_CLEAR</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[Command.set([ref('amenity_desk'), ref('amenity_wardrobe')])]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_clear" model="hostel.room">
+            <field name="hostel_amenities_ids" eval="[Command.clear()]" />
+        </record>
+
+        <!-- 2. DELETE PERMANENT trên Many2many (xóa liên kết VÀ xóa hẳn amenity khỏi DB) -->
+        <record id="hostel_room_demo_m2m_tuple_2" model="hostel.room">
+            <field name="name">Demo M2M - Tuple 2 (Delete Amenity)</field>
+            <field name="room_number">R_M2M_TUPLE_2</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[(2, ref('amenity_demo_delete_tuple'), False)]" />
+        </record>
+        <record id="hostel_room_demo_m2m_cmd_delete" model="hostel.room">
+            <field name="name">Demo M2M - Command.delete (Amenity)</field>
+            <field name="room_number">R_M2M_CMD_DELETE</field>
+            <field name="student_per_room">2</field>
+            <field name="hostel_amenities_ids" eval="[Command.delete(ref('amenity_demo_delete_cmd'))]" />
         </record>
     </data>
 </odoo>

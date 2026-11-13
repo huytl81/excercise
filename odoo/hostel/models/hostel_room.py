@@ -1,8 +1,8 @@
 import logging
 from os.path import join as opj
-from odoo import models, fields, api, Command, exceptions
+from odoo import models, fields, api, Command
+from odoo.exceptions import UserError, ValidationError, MissingError, AccessError
 from odoo.tools.translate import _
-# from odoo.exceptions import ValidationError, UserError
 
 EXPORTS_DIR = "/opt/exercise/odoo/hostel/exports"
 
@@ -83,7 +83,6 @@ class HostelRoom(models.Model):
     cost_price = fields.Float('Room Cost', help="Enter room cost per month", company_dependent=True)
     category_id = fields.Many2one(comodel_name='hostel.room.category', string="Hostel Room Category")
     student_ids = fields.One2many(comodel_name="hostel.student", inverse_name="room_id", string="Students")
-    member_ids = fields.Many2many('hostel.room.member', "hostel_room_member_rel", "room_id", "member_id", string='Members', check_company=True)
     hostel_amenities_ids = fields.Many2many("hostel.amenities", "hostel_room_amenities_rel", "room_id", "amenity_id", string="Amenities", domain="[('active', '=', True)]", help="Select hostel room amenities")
     student_per_room = fields.Integer(string="Student Per Room", required=True, default=1, store=True, help="Students allocated per room")
     availability = fields.Integer(string="Availability", compute='_compute_check_availability', store=True, help="Room availability in hostel") # compute_sudo=True because store=True makes the value computed even if the user doesn't have access to the field
@@ -98,14 +97,14 @@ class HostelRoom(models.Model):
         if not self.env.user.has_groups('hostel.group_hostel_manager'):
             for vals in vals_list:
                 if vals.get('remarks'):
-                    raise exceptions.UserError(_('You are not allowed to modify remarks'))
+                    raise UserError(_('You are not allowed to modify remarks'))
         return super().create(vals_list)
 
     # Trong write(self, vals) thì chỉ là 1 dict duy nhất, chứa các dirty fields (thực sự thay đổi)
     def write(self, vals):
         if not self.env.user.has_groups('hostel.group_hostel_manager'):
             if vals.get('remarks'):
-                raise exceptions.UserError('You are not allowed to modify remarks')
+                raise UserError('You are not allowed to modify remarks')
         if self.env.context.get('loop_breaker'):
             return True
         # Odoo không sửa đổi context toàn cục của hệ thống, chỉ tạo ra một bản sao self mới (với env mới) mang cờ loop_breaker=True cho riêng nhánh thực thi bên dưới nó.
@@ -139,13 +138,13 @@ class HostelRoom(models.Model):
         for record in self:
             if record.rent_amount < 0:
                 msg = _("Rent amount must be positive!")
-                raise exceptions.ValidationError(msg)
+                raise ValidationError(msg)
 
     @api.constrains('hostel_id')
     def _check_hostel_id_change(self):
         for record in self:
             if record._origin.id and record._origin.hostel_id and record.hostel_id and record._origin.hostel_id != record.hostel_id:
-                raise exceptions.ValidationError(_(
+                raise ValidationError(_(
                     "The room '%s' already belongs to hostel '%s'. "
                     "You cannot assign it to hostel '%s' directly. "
                     "Please clear its current hostel first."
@@ -176,7 +175,7 @@ class HostelRoom(models.Model):
             else:
                 # msg = _('Transition from %s to %s is not allowed') % (record.state, new_state)
                 msg = _('Transition from %s to %s is not allowed', record.state, new_state)
-                raise exceptions.UserError(msg)
+                raise UserError(msg)
 
     def make_available(self):
         self._change_state('available')
@@ -184,10 +183,10 @@ class HostelRoom(models.Model):
     def make_closed(self):
         self._change_state('closed')
 
-    def log_all_members(self):
-        hostel_members_obj = self.env['hostel.room.member']
-        members = hostel_members_obj.search([])
-        print("Room Members: ", members)
+    def log_all_students(self):
+        hostel_students_obj = self.env['hostel.student']
+        students = hostel_students_obj.search([])
+        _logger.info("Room Students: %s", students)
         return True
 
     def update_room_no(self):
@@ -211,7 +210,7 @@ class HostelRoom(models.Model):
 
     # (0, 0, vals): tạo bản ghi mới rồi gắn vào phòng
     # = [Command.create({...}), Command.create({...})]
-    def action_member_create(self):
+    def action_student_create(self):
         self.ensure_one()
         self.write({'student_ids': [
             # (0, 0, {'name': 'Nguyễn Văn Chuộn', 'member_code': 'NVC001'}),
@@ -219,80 +218,80 @@ class HostelRoom(models.Model):
             Command.create({'name': 'Nguyễn Văn Chuộn', 'member_code': 'NVC001'}),
             Command.create({'name': 'Tran Kim Xuyến', 'member_code': 'TKX002'}),
         ]})
-        _logger.info('(0) Members: %s', self.student_ids.mapped('name'))
+        _logger.info('(0) Students: %s', self.student_ids.mapped('name'))
 
     # (1, id, vals): sửa bản ghi đang được gắn
     # = Command.update
-    def action_member_update(self):
+    def action_student_update(self):
         self.ensure_one()
-        member = self.student_ids[:1]
-        if not member:
-            raise exceptions.UserError(_('Room has no member to update'))
+        student = self.student_ids[:1]
+        if not student:
+            raise UserError(_('Room has no student to update'))
         self.write({'student_ids': [
-            # (1, member.id, {'name': member.name + ' (updated)'}),
-            Command.update(member.id, {'name': member.name + ' (updated)'}),
+            # (1, student.id, {'name': student.name + ' (updated)'}),
+            Command.update(student.id, {'name': student.name + ' (updated)'}),
         ]})
-        _logger.info('(1) Members: %s', self.student_ids.mapped('name'))
+        _logger.info('(1) Students: %s', self.student_ids.mapped('name'))
 
     # (2, id): gỡ khỏi phòng VÀ xoá hẳn bản ghi khỏi DB
     # = Command.delete
-    def action_member_delete(self):
+    def action_student_delete(self):
         self.ensure_one()
-        member = self.student_ids[:1]
-        if not member:
-            raise exceptions.UserError(_('Room has no member to delete'))
+        student = self.student_ids[:1]
+        if not student:
+            raise UserError(_('Room has no student to delete'))
         self.write({'student_ids': [
-            # (2, member.id),
-            Command.delete(member.id),
+            # (2, student.id),
+            Command.delete(student.id),
         ]})
-        _logger.info('(2) Member %s exists in DB: %s', member.id, bool(member.exists()))
+        _logger.info('(2) Student %s exists in DB: %s', student.id, bool(student.exists()))
 
     # (3, id): chỉ gỡ khỏi phòng, bản ghi vẫn còn trong DB
     # = Command.unlink
-    def action_member_unlink(self):
+    def action_student_unlink(self):
         self.ensure_one()
-        member = self.student_ids[:1]
-        if not member:
-            raise exceptions.UserError(_('Room has no member to remove'))
+        student = self.student_ids[:1]
+        if not student:
+            raise UserError(_('Room has no student to remove'))
         self.write({'student_ids': [
-            # (3, member.id),
-            Command.unlink(member.id),
+            # (3, student.id),
+            Command.unlink(student.id),
         ]})
-        _logger.info('(3) Member %s exists in DB: %s', member.id, bool(member.exists()))
+        _logger.info('(3) Student %s exists in DB: %s', student.id, bool(student.exists()))
 
-    # (4, id): gắn thêm bản ghi có sẵn, giữ member cũ
+    # (4, id): gắn thêm bản ghi có sẵn, giữ student cũ
     # = Command.link
-    def action_member_link(self):
+    def action_student_link(self):
         self.ensure_one()
-        member = self.env['hostel.student'].search([('id', 'not in', self.student_ids.ids)], limit=1)
-        if not member:
-            raise exceptions.UserError(_('No free member to add'))
+        student = self.env['hostel.student'].search([('id', 'not in', self.student_ids.ids)], limit=1)
+        if not student:
+            raise UserError(_('No free student to add'))
         self.write({'student_ids': [
-            # (4, member.id),
-            Command.link(member.id),
+            # (4, student.id),
+            Command.link(student.id),
         ]})
-        _logger.info('(4) Members: %s', self.student_ids.mapped('name'))
+        _logger.info('(4) Students: %s', self.student_ids.mapped('name'))
 
-    # (5,): gỡ toàn bộ member, không xoá bản ghi
+    # (5,): gỡ toàn bộ student, không xoá bản ghi
     # = Command.clear()
-    def action_member_clear(self):
+    def action_student_clear(self):
         self.ensure_one()
         self.write({'student_ids': [
             # (5,),
             Command.clear(),
         ]})
-        _logger.info('(5) Members: %s', self.student_ids.mapped('name'))
+        _logger.info('(5) Students: %s', self.student_ids.mapped('name'))
 
     # (6, 0, ids): thay toàn bộ danh sách bằng ids
     # = Command.set(ids)
-    def action_member_replace(self):
+    def action_student_replace(self):
         self.ensure_one()
         students = self.env['hostel.student'].search([], limit=2)
         self.write({'student_ids': [
-            # (6, 0, student_ids.ids),
+            # (6, 0, students.ids),
             Command.set(students.ids),
         ]})
-        _logger.info('(6) Members: %s', self.student_ids.mapped('name'))
+        _logger.info('(6) Students: %s', self.student_ids.mapped('name'))
 
     def find_room(self):
         domain = [
@@ -313,13 +312,13 @@ class HostelRoom(models.Model):
     # Filtering recordset
     def filter_rooms(self):
         rooms = self.search([])
-        filtered_rooms = self.is_has_multiple_members(rooms)
+        filtered_rooms = self.is_has_multiple_students(rooms)
         # filtered_rooms = rooms.filtered(lambda r: len(r.student_ids) > 1)
         _logger.info('Filtered rooms %s', filtered_rooms)
         return True
 
     @api.model
-    def is_has_multiple_members(self, rooms):
+    def is_has_multiple_students(self, rooms):
         def predicate(room):
             if len(room.student_ids) > 1:
                 return True
@@ -330,11 +329,11 @@ class HostelRoom(models.Model):
     # Traversing recordset
     def mapped_rooms(self):
         all_rooms = self.search([])
-        room_members = self.get_member_names(all_rooms)
-        _logger.info('Rooms Members: %s', room_members)
+        room_students = self.get_student_names(all_rooms)
+        _logger.info('Rooms Students: %s', room_students)
 
     @api.model
-    def get_member_names(self, rooms):
+    def get_student_names(self, rooms):
         return rooms.mapped('student_ids.name')
 
     # Sorting recordset
@@ -440,4 +439,7 @@ class HostelRoom(models.Model):
             _logger.info("Room export completed successfully: %s", file_path)
         except IOError:
             _logger.exception("Error while writing room data to file: %s", file_path)
-            raise exceptions.UserError("Unable to export room data!")
+            raise UserError("Unable to export room data!")
+
+    def action_remove_room_students(self):
+        self.student_ids.with_context(is_hostel_room=True).action_remove_room()

@@ -7,12 +7,19 @@
             <field name="model">hostel.student</field>
             <field name="arch" type="xml">
                 <form string="Hostel Student">
+                    <header>
+                        <button name="assign_room" string="Assign Room" type="object" class="btn-primary"/>
+                        <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>
                             <field name="phone"/>
                             <field name="email"/>
                             <field name="gender"/>
+                            <field name="date_of_birth"/>
+                            <field name="member_number"/>
+                            <field name="member_code"/>
                             <field name="active"/>
                             <field name="room_id"/>
                             <field name="hostel_id"/>

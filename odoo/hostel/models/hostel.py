@@ -17,10 +17,9 @@ class Hostel(models.Model):
     #     return Domain(raw_domain) # Tương đương viết: Domain('company_id', '=', False) | Domain('company_id', 'parent_of', '...')
 
     _check_company_domain = models.check_company_domain_parent_of
-
     _translate = True
     # Allow One2many and Many2many commands targeting this model in an environment using sudo() or with_user()
-    _allow_sudo_commands = False 
+    _allow_sudo_commands = False
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Hostel Name", required=True)

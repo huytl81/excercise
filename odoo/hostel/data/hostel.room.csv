@@ -1,8 +1,11 @@
-id,name,room_number,floor,student_per_room,hostel_room_currency/id,rent_amount,member_ids/id,student_ids/name,student_ids/gender,student_ids/company_id/id
-room_1,Hostel Room 01,HR001,1,2,base.USD,500,"hostel.member_alice,hostel.member_bob",Nguyen Van A,male,base.main_company
+id,name,room_number,floor,student_per_room,hostel_room_currency/id,rent_amount,hostel_amenities_ids/id,student_ids/name,student_ids/gender,student_ids/company_id/id
+room_1,Hostel Room 01,HR001,1,2,base.USD,500,"hostel.amenity_wifi,hostel.amenity_ac",Nguyen Van A,male,base.main_company
 ,,,,,,,,Tran Thi B,female,base.main_company
-room_2,Hostel Room 02,HR002,1,2,base.USD,600,"hostel.member_charlie,hostel.member_david",Le Van C,male,base.main_company
+room_2,Hostel Room 02,HR002,1,2,base.USD,600,"hostel.amenity_wifi,hostel.amenity_desk",Le Van C,male,base.main_company
 ,,,,,,,,Pham Thi D,female,base.main_company
-room_3,Hostel Room 03,HR003,2,1,base.USD,550,hostel.member_hda,Hoang Van E,male,base.main_company
-room_4,Hostel Room 04,HR004,2,2,base.USD,650,"hostel.member_jvo,hostel.member_vb",Vu Thi F,female,base.main_company
-room_5,Hostel Room 05,HR005,3,1,base.USD,700,hostel.member_eva,Doan Van G,other,base.main_company
+room_3,Hostel Room 03,HR003,2,1,base.USD,550,"hostel.amenity_wifi,hostel.amenity_ac,hostel.amenity_fridge",Hoang Van E,male,base.main_company
+room_4,Hostel Room 04,HR004,2,2,base.USD,650,"hostel.amenity_desk,hostel.amenity_wardrobe",Vu Thi F,female,base.main_company
+room_5,Hostel Room 05,HR005,3,1,base.USD,700,"hostel.amenity_wifi,hostel.amenity_ac,hostel.amenity_wardrobe",Doan Van G,other,base.main_company
+room_6,Hostel Room 06,HR006,3,3,base.USD,900,"hostel.amenity_wifi,hostel.amenity_ac,hostel.amenity_desk,hostel.amenity_wardrobe",Nguyen Minh K,male,base.main_company
+,,,,,,,,Le Thu H,female,base.main_company
+,,,,,,,,Tran Quoc M,male,base.main_company

@@ -124,6 +124,28 @@
             <field name="rent_amount">850</field>
         </record>
 
+        <!-- Hostel Amenities (used by hostel.room.csv & demo X2many Many2many examples) -->
+        <record id="amenity_wifi" model="hostel.amenities">
+            <field name="name">High-Speed Wi-Fi</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="amenity_ac" model="hostel.amenities">
+            <field name="name">Air Conditioning</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="amenity_fridge" model="hostel.amenities">
+            <field name="name">Mini Fridge</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="amenity_desk" model="hostel.amenities">
+            <field name="name">Study Desk</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="amenity_wardrobe" model="hostel.amenities">
+            <field name="name">Private Wardrobe</field>
+            <field name="active" eval="True"/>
+        </record>
+
         <!-- Cron-like and initial function updates -->
         <function model="hostel.room" name="_update_room_rent_amount" />
         <function model="hostel.room" name="_update_room_cost_price" eval="([ref('room_category_all')], 20)" />

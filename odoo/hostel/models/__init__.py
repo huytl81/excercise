@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from . import hostel
-from . import hostel_room_member
 from . import hostel_room
 from . import hostel_room_copy
 from . import hostel_amenities

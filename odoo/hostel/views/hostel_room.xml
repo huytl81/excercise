@@ -10,10 +10,11 @@
                     <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                     <button name="make_available" type="object" string="Make Available" class="btn-primary"/>
                     <button name="make_closed" type="object" string="Make Closed" class="btn-primary"/>
-                    <button name="log_all_members" type="object" string="Log Members" class="btn-primary"/>
+                    <button name="log_all_students" type="object" string="Log Students" class="btn-primary"/>
                     <button name="update_room_no" type="object" string="Update Room No" class="btn-primary"/>
                     <button name="find_room" type="object" string="Find Room" class="btn-primary"/>
-                    <button name="action_member_create" type="object" string="(0) Create"/>
+                    <button name="action_student_create" type="object" string="(0) Create Student"/>
+                    <button name="action_remove_room_students" type="object" string="Remove Room Students" class="btn-primary"/>
                     <button name="grouped_data" class="btn-primary" string="Grouped" type="object"/>
                     <button name="mapped_rooms" class="btn-primary" string="Get Student Names" type="object"/>
                 </header>
@@ -32,7 +33,7 @@
                         <field name="image"/>
                         <field name="active"/>
                         <field name="hostel_id" readonly="1"/>
-                        <field name="member_ids" widget="many2many_tags"/>
+                        <field name="hostel_amenities_ids" widget="many2many_tags"/>
                         <field name="rent_amount"/>
                         <field name="cost_price"/>
                         <field name="hostel_room_currency"/>

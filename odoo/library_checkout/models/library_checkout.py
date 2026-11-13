@@ -1,5 +1,4 @@
-from odoo import models, fields, api, exceptions
-
+from odoo import models, fields, api, exceptions, _
 
 class Checkout(models.Model):
     _name = "library.checkout"
@@ -20,10 +19,10 @@ class Checkout(models.Model):
     member_id = fields.Many2one("library.member", required=True)
     member_image = fields.Binary(related="member_id.image_128")
     user_id = fields.Many2one("res.users", "Librarian", default=lambda s: s.env.user)
-    # request_date = fields.Date(default=lambda s: fields.Date.today())
     request_date = fields.Date(
-        default=lambda s: fields.Date.today(),
-        compute="_compute_request_date_onchange",
+        string="Request Date",
+        default=fields.Date.context_today,
+        compute="_compute_request_date",
         store=True,
         readonly=False,
     )
@@ -37,6 +36,7 @@ class Checkout(models.Model):
     kanban_state = fields.Selection([("normal", "Doing"),("blocked", "Blocked"),("done", "Ready")],"Kanban State",default="normal")
     color = fields.Integer()
     priority = fields.Selection([("0", "High"),("1", "Very High"),("2", "Critical")],default="0")
+    
     @api.model_create_multi
     def create(self, vals_list):
         new_records = super().create(vals_list)
@@ -87,21 +87,21 @@ class Checkout(models.Model):
     #             }
     #         }
     @api.depends("member_id")
-    def _compute_request_date_onchange(self):
+    def _compute_request_date(self):
         today_date = fields.Date.today()
         for rec in self:
-            if not rec.request_date:
+            if rec.member_id and not rec.request_date:
                 rec.request_date = today_date
 
     @api.onchange("member_id")
-    def onchange_member_id(self):
-        today_date = fields.Date.today()
+    def _onchange_member_id(self):
+        today_date = fields.Date.context_today(self)
         if self.member_id and self.request_date != today_date:
             self.request_date = today_date
             return {
                 "warning": {
-                    "title": "Changed Request Date",
-                    "message": "Request date changed to today!",
+                    "title": _("Changed Request Date"),
+                    "message": _("Request date has been changed to today!"),
                 }
             }
 

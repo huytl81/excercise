@@ -1,12 +1,16 @@
 {
-    "python.defaultInterpreterPath": "/opt/odoo19/.venv/bin/python",
+    "python.defaultInterpreterPath": "/opt/odoo20/.venv/bin/python",
     "python.terminal.activateEnvironment": true,
     "python.analysis.extraPaths": [
-        "/opt/odoo19/odoo-server",
-        "/opt/odoo19/enterprise",
-        "/opt/odoo19/custom_addons",
-        "/opt/odoo19",
+        "/opt/odoo20/odoo-server",
+        "/opt/odoo20/enterprise",
+        "/opt/odoo20/custom_addons",
+        "/opt/odoo20",
         "/opt/exercise/odoo"
     ],
-    "python.envFile": "${workspaceFolder}/.env"
+    "python.envFile": "${workspaceFolder}/.env",
+    "xml.symbols.enabled": false,
+    "python.languageServer": "None",
+    "Odoo.selectedProfile": "default",
+    "Odoo.serverConfigPath": "/opt/odoo20/odools.toml"
 }

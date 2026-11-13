@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError, UserError
+from odoo.exceptions import ValidationError, UserError, AccessError, MissingError
 from datetime import timedelta
 
 _logger = logging.getLogger(__name__)
@@ -25,16 +25,16 @@ class Book(models.Model):
     def _constrain_isbn_valid(self):
         for book in self:
             if book.isbn and not book._check_isbn():
-                raise models.ValidationError("%s is an invalid ISBN" % book.isbn)
+                raise ValidationError("%s is an invalid ISBN" % book.isbn)
 
     @api.constrains("published_date")
     def _constraint_published_date(self):
         for book in self:
             if book and book.published_date:
                 if book.published_date > fields.Date.today():
-                    raise models.ValidationError("Publication date must not be in the future.")
+                    raise ValidationError("Publication date must not be in the future.")
             else:
-                raise models.ValidationError("Please enter Issued date!")
+                raise ValidationError("Please enter Issued date!")
 
     name = fields.Char("Book Title", default=None, help="Book cover title.", readonly=False, required=True, index=True, copy=True, groups="base.group_user")
     short_name = fields.Char('Short Title', translate=True, index='trigram')
@@ -180,14 +180,25 @@ class Book(models.Model):
             return digits[-1] == check
 
     def button_check_isbn(self):
-        for book in self:
-            if not book.isbn:
-                raise ValidationError("Please provide an ISBN for % s" % book.name)
-            if book.isbn and not book._check_isbn():
-                raise ValidationError("%s ISBN is invalid" % book.isbn)
-            else:
-                raise ValidationError("%s ISBN is valid" % book.isbn)
-        return True
+        self.ensure_one()
+        if not self.isbn:
+            # Chuẩn i18n Odoo: truyền tham số vào self.env._
+            raise ValidationError(self.env._("Please provide an ISBN for %(title)s", title=self.name))
+            
+        if not self._check_isbn():
+            raise ValidationError(self.env._("%(isbn)s ISBN is invalid", isbn=self.isbn))
+            
+        # Trả về thông báo thành công xanh lá (notification) thay vì raise lỗi
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': self.env._('ISBN Valid'),
+                'message': self.env._('%(isbn)s is a valid ISBN.', isbn=self.isbn),
+                'type': 'success',
+                'sticky': False,
+            }
+        }
 
     # def init(self):
     #     tools.drop_view_if_exists(self.env.cr, self._table)
